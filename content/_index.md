@@ -13,9 +13,9 @@ name = "Stefan Moser"
 #bio = "IT"
 #avatar = "img/avatar.webp"
 links = [
-    { name = "GitHub", icon = "github", url = "https://github.com/<your-username>" },
-    { name = "Twitter", icon = "twitter", url = "https://twitter.com/<your-username>" },
-    { name = "Email", icon = "email", url = "mailto:<your-email-address>" },
+    { name = "GitHub", icon = "github", url = "https://github.com/Melfelf" },
+    { name = "Twitter", icon = "twitter", url = "https://x.com/Melf11" },
+    { name = "Email", icon = "email", url = "mailto:stefan@melf.ch" },
 ]
 
 # Show a few recent posts in home page
