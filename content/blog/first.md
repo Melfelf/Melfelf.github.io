@@ -1,6 +1,7 @@
 +++
-title = "My first post"
-date = 2019-11-27
+title = "Correlation does not imply causation"
+date = 2025-06-04
 +++
 
-This is my first blog post.
+correlation does not imply causation
+Korrelation impliziert keine Kausalität
