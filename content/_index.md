@@ -1,5 +1,3 @@
-# Stefan "Melf" Moser
-
 +++
 template = 'home.html'
 
@@ -26,6 +24,8 @@ recent_max = 15
 recent_more_text = "more »"
 date_format = "%b %-d, %Y"
 +++
+
+# Stefan "Melf" Moser
 
 Hi, I'm Stefan — also known as *Melf* — a systems engineer and lifelong learner with over two decades of experience in IT infrastructure. I specialize in automation, cloud technologies, and the intersection of human systems and digital transformation.
 
