@@ -13,9 +13,9 @@ id = "melf"
 bio = "IT System Engineer | Automatisierungsarchitekt"
 #avatar = "img/avatar.webp"
 links = [
-    { name = "GitHub", icon = "github", url = "https://github.com/Melfelf" },
-    { name = "Twitter", icon = "twitter", url = "https://x.com/Melf11" },
     { name = "Email", icon = "email", url = "mailto:stefan@melf.ch" },
+    { name = "GitHub", icon = "github", url = "https://github.com/Melfelf" },
+    { name = "Twitter", icon = "twitter", url = "https://x.com/Melf11" },   
 ]
 
 # Show a few recent posts in home page

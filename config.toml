@@ -35,12 +35,11 @@ anchors = "on"
 [extra]
 
 sections = [
-  { name = "blog", path = "/blog", is_external = false },
   { name = "it-pro", path = "/it-pro", is_external = false },
-  { name = "read", path = "/read", is_external = false },
   { name = "projects", path = "/projects", is_external = false },
   { name = "ai-blubber", path = "/ai-blubber", is_external = false },
-  { name = "organisation", path = "/organisation", is_external = false },
+  { name = "read", path = "/read", is_external = false },
+  { name = "blog", path = "/blog", is_external = false },
   # { name = "tags", path = "/tags", is_external = false },
   { name = "github", path = "https://github.com/Melfelf", is_external = true },
 ]
