@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Posts"
-subtitle = "Hier gibt's ungefiltert, was mich gerade bewegt. Von Alltagsmomenten bis zu spontanen Geistesblitzen."
+subtitle = "Hier gibt's ungefiltert, was mich gerade bewegt. Von Alltagsmomenten bis zu spontanen Geistesblitzen. Auf Detusch weil mir das besser liegt für allgemeine Gedanken"
 
 date_format = "%b %-d, %Y"
 
