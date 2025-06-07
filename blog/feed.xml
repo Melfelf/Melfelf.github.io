@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>My Blog</title>
+	<subtitle>My blog site.</subtitle>
+	<link href="https://melf.ch/blog/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://melf.ch/blog/"/>
+	<updated>2025-06-07T00:00:00+00:00</updated>
+	<id>https://melf.ch/blog/feed.xml</id>
+	<entry xml:lang="en">
+		<title>Kurzferien in Cheyres</title>
+		<published>2025-06-07T00:00:00+00:00</published>
+		<updated>2025-06-07T00:00:00+00:00</updated>
+		<link href="https://melf.ch/blog/cheyres07062025/" type="text/html"/>
+		<id>https://melf.ch/blog/cheyres07062025/</id>
+		<content type="html">&lt;h2 id=&quot;kurztrip-nach-cheyres&quot;&gt;Kurztrip nach Cheyres&lt;a class=&quot;zola-anchor&quot; href=&quot;#kurztrip-nach-cheyres&quot; aria-label=&quot;Anchor link for: kurztrip-nach-cheyres&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Ganz spontan packten wir unsere Sachen und machten uns auf den Weg nach Cheyres, einem malerischen Dorf direkt am Ufer des Neuenburgersees. Schon beim Packen kam Vorfreude auf: Sonnencreme, Badesachen und die Nintendo Switch durften natürlich nicht fehlen.&lt;&#x2F;p&gt;
+&lt;p&gt;Für die Mittagsverpflegung legten wir einen Zwischenstopp im Bahnhof Bern ein und genossen dort einen leckeren Burger – perfekt, um gestärkt in den Kurzurlaub zu starten.&lt;&#x2F;p&gt;
+&lt;p&gt;Vor Ort erwartete uns pure Entspannung: gemütliche Stunden am See, gemeinsames Grillen und ein entspannter Apéro rundeten den Tag ab.&lt;&#x2F;p&gt;
+&lt;p&gt;Das Wetter war zunächst schlechter als erwartet, aber wir sind zuversichtlich, dass es bald besser wird.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Yet another blog  post</title>
+		<published>2025-06-05T00:00:00+00:00</published>
+		<updated>2025-06-05T00:00:00+00:00</updated>
+		<link href="https://melf.ch/blog/second/" type="text/html"/>
+		<id>https://melf.ch/blog/second/</id>
+		<content type="html">&lt;p&gt;Just a test&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Correlation does not imply causation</title>
+		<published>2025-06-04T00:00:00+00:00</published>
+		<updated>2025-06-04T00:00:00+00:00</updated>
+		<link href="https://melf.ch/blog/first/" type="text/html"/>
+		<id>https://melf.ch/blog/first/</id>
+		<content type="html">&lt;p&gt;correlation does not imply causation
+Korrelation impliziert keine Kausalität&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

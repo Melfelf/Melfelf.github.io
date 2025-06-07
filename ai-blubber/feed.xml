@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>AI Blubber</title>
+	<subtitle>A blog about AI and related topics.</subtitle>
+	<link href="https://melf.ch/ai-blubber/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://melf.ch/ai-blubber/"/>
+	<updated>2025-06-07T00:00:00+00:00</updated>
+	<id>https://melf.ch/ai-blubber/feed.xml</id>
+	<entry xml:lang="en">
+		<title>Improve BlogPosts with automation and AI </title>
+		<published>2025-06-07T00:00:00+00:00</published>
+		<updated>2025-06-07T00:00:00+00:00</updated>
+		<link href="https://melf.ch/ai-blubber/aboutaiblubber/" type="text/html"/>
+		<id>https://melf.ch/ai-blubber/aboutaiblubber/</id>
+		<content type="html">&lt;p&gt;Goal: Automatically generate complete blog posts from short notes, reflecting my personal style and preferences.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;My thoughts and ideas should remain authentic, but be presented in a clearer and more accessible way for a broader audience.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Use well-structured and fluent sentences.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Create a template to achieve this, as AI instructions:&lt;&#x2F;p&gt;
+&lt;p&gt;Template:&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Short notes or bullet points about the topic.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Instructions for AI:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Expand the notes into a coherent and engaging blog post.&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain my personal style and voice.&lt;&#x2F;li&gt;
+&lt;li&gt;Ensure the content is clear and accessible for a broad audience.&lt;&#x2F;li&gt;
+&lt;li&gt;Use well-structured and fluent sentences.&lt;&#x2F;li&gt;
+&lt;li&gt;Add relevant transitions and context where needed.&lt;&#x2F;li&gt;
+&lt;li&gt;Do not invent facts or add unrelated content.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Example Input:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spontaneous trip to Cheyres&lt;&#x2F;li&gt;
+&lt;li&gt;Packed sunscreen, swimwear, Nintendo Switch&lt;&#x2F;li&gt;
+&lt;li&gt;Lunch at Bern station, had a burger&lt;&#x2F;li&gt;
+&lt;li&gt;Relaxed at the lake, BBQ, evening aperitif&lt;&#x2F;li&gt;
+&lt;li&gt;Weather not as good as expected, hope it improves&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Example Output:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Last weekend, I decided on a spontaneous trip to Cheyres, a picturesque village on the shore of Lake Neuchâtel. Packing was quick but thoughtful: sunscreen, swimwear, and of course, my Nintendo Switch were essentials. On the way, I stopped at Bern station for a delicious burger—just the right start for a short getaway.&lt;br &#x2F;&gt;
+Once in Cheyres, relaxation was the order of the day: lounging by the lake, enjoying a BBQ, and winding down with an evening aperitif. Although the weather wasn’t ideal at first, I’m optimistic it will improve soon.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+</content>
+	</entry>
+</feed>
