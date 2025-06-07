@@ -27,7 +27,7 @@ date_format = "%b %-d, %Y"
 
 # Stefan "Melf" Moser
 
-Hi, I'm Stefan — also known as *Melf* — a systems engineer and lifelong learner with over two decades of experience in IT infrastructure. I specialize in automation, cloud technologies, and the intersection of human systems and digital transformation.
+Hi, I'm Stefan also known as *Melf* a systems engineer and lifelong learner with over two decades of experience in IT infrastructure. I specialize in automation, cloud technologies, and the intersection of human systems and digital transformation.
 
 This space is dedicated to exploring how we can **Make Everything Less Frustrating With Automation & Robotic Execution** — from smart homes to intelligent frameworks, bridging virtual logic and real-world impact.
 
