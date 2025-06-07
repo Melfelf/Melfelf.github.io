@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Posts"
-subtitle = "I write about ...."
+subtitle = "Hier gibt's ungefiltert, was mich gerade bewegt. Von Alltagsmomenten bis zu spontanen Geistesblitzen."
 
 date_format = "%b %-d, %Y"
 
