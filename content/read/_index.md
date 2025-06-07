@@ -1,6 +1,8 @@
 +++
-title = "Book Nook"
-description = "A blog featuring book and audiobook recommendations, reviews, and reading lists."
+title = "Books and more"
+description = "A blog featuring book and audiobook recommendations and reading lists. 
+What I like to read and listen to, maybe some insights which I think are quite useful.
+Someone invested significant time and effort into writing these works, which I believe enhances their quality. Here are some recommendations where I think this is particularly evident."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
