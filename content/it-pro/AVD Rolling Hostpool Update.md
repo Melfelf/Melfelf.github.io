@@ -3,7 +3,7 @@ title = "AVD Rolling Hostpool Update"
 date = 2025-06-07
 +++
 
-## Professional Concept: Automated Rolling Updates for AVD Hostpools
+## Concept: Automated Rolling Updates for AVD Hostpools
 
 ### Objective
 
