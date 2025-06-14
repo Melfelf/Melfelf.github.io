@@ -18,6 +18,7 @@ Automatically generate complete blog posts from short notes, reflecting personal
 - Include clear headings and structure
 - Balance technical accuracy with readability
 - Support multilingual content (German/English as appropriate)
+- Do not use - in sentences use , or start a new sentence
 
 ## Templates by Category
 
