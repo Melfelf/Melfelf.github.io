@@ -1,6 +1,5 @@
 +++
 title = "AVD Custom Image creation"
-date = 2025-06-08
 +++
 
 This sectioned guide covers the process of creating a custom image for Azure Virtual Desktop (AVD) using Azure Custom Image Builder, tailored for Intune Managed AAD-only clients. Use the navigation below to explore each step.
