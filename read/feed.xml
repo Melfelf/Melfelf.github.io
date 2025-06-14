@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Books and more</title>
+	<subtitle>A blog featuring book and audiobook recommendations and reading lists. What I like to read and listen to, maybe some insights which I think are quite useful. Someone invested significant time and effort into writing these works, which I believe enhances their quality. Here are some recommendations where I think this is particularly evident.</subtitle>
+	<link href="https://melf.ch/read/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://melf.ch/read/"/>
+	<updated>2025-06-05T00:00:00+00:00</updated>
+	<id>https://melf.ch/read/feed.xml</id>
+	<entry xml:lang="en">
+		<title>A thousand brains theory</title>
+		<published>2025-06-05T00:00:00+00:00</published>
+		<updated>2025-06-05T00:00:00+00:00</updated>
+		<link href="https://melf.ch/read/athousandbrainstheorie/" type="text/html"/>
+		<id>https://melf.ch/read/athousandbrainstheorie/</id>
+		<content type="html">&lt;p&gt;How does the brain work? Why does AI work?&lt;&#x2F;p&gt;
+&lt;p&gt;Wir wissen immer noch nicht genau, wie das menschliche Gehirn funktioniert oder wie Bewusstsein entsteht. Die hier vorgestellte Theorie liefert eine schlüssige Erklärung für diese Fragen und zeigt zudem, warum KI-Systeme &quot;Intelligenz&quot; entwickeln können. Für mich war diese Theorie ein echtes Aha-Erlebnis plötzlich ergeben viele Dinge Sinn.&lt;&#x2F;p&gt;
+&lt;p&gt;What resonates with me:
+&lt;strong&gt;It just makes so much sense&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Thinking, Fast and Slow</title>
+		<published>2025-06-05T00:00:00+00:00</published>
+		<updated>2025-06-05T00:00:00+00:00</updated>
+		<link href="https://melf.ch/read/thinkingfastandslow/" type="text/html"/>
+		<id>https://melf.ch/read/thinkingfastandslow/</id>
+		<content type="html">&lt;p&gt;&quot;Thinking, Fast and Slow&quot; is a groundbreaking book by Daniel Kahneman that explores the dual systems of thought that drive the way we make decisions. System 1 operates quickly and intuitively, while System 2 is slower, more deliberate, and logical. Kahneman delves into how these systems shape our judgments, influence our biases, and affect our everyday choices. The book combines insights from psychology and behavioral economics, offering readers a deeper understanding of how the mind works and how we can make better decisions by recognizing the strengths and limitations of each system.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
