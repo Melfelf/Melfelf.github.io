@@ -1,6 +1,6 @@
 +++
 title = "How I Use AI to Enhance My Blog Posts"
-date = 2025-06-15
+date = 2025-06-14
 +++
 
 ## A Structured Approach to AI-Enhanced Blogging
