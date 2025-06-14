@@ -1,6 +1,6 @@
 +++
 title = "Als Philosoph wäre ich wohl ein Stoiker. Ich weiss zwar nicht wie Stoizismus genau funktioniert aber damit kann ich umgehen."
-date = 2025-06-04
+date = 2025-06-14
 +++
 
 # Meine Verbindung zum Stoizismus
