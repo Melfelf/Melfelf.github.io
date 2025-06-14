@@ -25,3 +25,5 @@ Trigger Post Setup script after deployment
 (Triggered after AAD Tenant join)
 
 Client Status self tagging after succesfull deployment and Post Setup tasks
+
+Test
