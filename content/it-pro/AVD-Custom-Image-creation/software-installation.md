@@ -1,5 +1,6 @@
 +++
 title = "Software Installation"
+date = 2025-06-14
 +++
 
 # Software Installation

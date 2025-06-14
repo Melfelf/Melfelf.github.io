@@ -1,5 +1,6 @@
 +++
 title = "Image Cleanup"
+date = 2025-06-14
 +++
 
 # Image Cleanup

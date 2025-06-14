@@ -1,5 +1,6 @@
 +++
 title = "Post-Setup Script"
+date = 2025-06-14
 +++
 
 # Post-Setup Script

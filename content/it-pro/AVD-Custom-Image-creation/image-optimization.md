@@ -1,5 +1,6 @@
 +++
 title = "Image Optimization"
+date = 2025-06-14
 +++
 
 # Image Optimization

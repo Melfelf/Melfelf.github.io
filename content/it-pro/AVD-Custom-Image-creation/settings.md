@@ -1,5 +1,6 @@
 +++
 title = "Settings & Configuration"
+date = 2025-06-14
 +++
 
 # Settings & Configuration
