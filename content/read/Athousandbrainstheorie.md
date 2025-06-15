@@ -3,7 +3,7 @@ title = "A thousand brains theory"
 date = 2025-06-05
 +++
 
-![A Thousand Brains Theory](/images/athousandbrains.jpg)
+![A Thousand Brains Theory](/assets/books/athousandbrains.jpg)
 
 How does the brain work? Why does AI work?
 
