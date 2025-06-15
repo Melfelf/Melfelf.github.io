@@ -24,8 +24,13 @@ The solution encompasses the following key components and steps:
 
 1. **Image Configuration Setup:**
    - Implementation of environment-specific configuration files
+   Configuration files control which software should be installed in each image. These configuration files can also be used for additional specific configurations.
+   The configuration files are selected and applied based on the image template names.
    - Setting of registry keys for client identification
+   Identification parameters such as environment, stage, build date, template name and other details are stored as registry keys.
+
    - Configuration of environment-specific settings
+   Settings can be configured individually depending on the stage or environment. The identification is done using the registry keys mentioned above.
 
 2. **Software Management:**
    - Automated software package download
