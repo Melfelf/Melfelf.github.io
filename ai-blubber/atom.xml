@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>MelfsBlog - AI Blubber</title>
+    <subtitle>A blog about stuff</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://melf.ch/ai-blubber/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://melf.ch/ai-blubber/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-07-23T00:00:00+00:00</updated>
+    <id>https://melf.ch/ai-blubber/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Beati pauperes spiritu</title>
+        <published>2025-07-23T00:00:00+00:00</published>
+        <updated>2025-07-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://melf.ch/ai-blubber/beati-pauperes-spiritui/"/>
+        <id>https://melf.ch/ai-blubber/beati-pauperes-spiritui/</id>
+        
+        <content type="html" xml:base="https://melf.ch/ai-blubber/beati-pauperes-spiritui/">&lt;p&gt;„Beati pauperes spiritu“ ist Latein und stammt aus der Bergpredigt im Neuen Testament (Matthäusevangelium 5,3). Wörtlich übersetzt heißt es:&lt;&#x2F;p&gt;
+&lt;p&gt;„Selig sind die Armen im Geiste.“&lt;&#x2F;p&gt;
+&lt;p&gt;⸻&lt;&#x2F;p&gt;
+&lt;p&gt;Bedeutung – theologisch &amp;amp; philosophisch&lt;&#x2F;p&gt;
+&lt;p&gt;Diese Formulierung wird oft missverstanden, weil das deutsche „arm im Geiste“ heute negativ klingt (im Sinne von „geistig beschränkt“). Im ursprünglichen biblischen Kontext ist damit jedoch Demut, Bedürftigkeit und Offenheit gegenüber Gott gemeint – geistige Armut als geistige Offenheit.&lt;&#x2F;p&gt;
+&lt;p&gt;Besser verständlich übersetzt:&lt;&#x2F;p&gt;
+&lt;p&gt;„Selig sind, die arm sind vor Gott.“
+oder
+„Glücklich sind, die erkennen, dass sie Gott brauchen.“&lt;&#x2F;p&gt;
+&lt;p&gt;⸻&lt;&#x2F;p&gt;
+&lt;p&gt;Tieferer Sinn:
+•	Es geht um innere Leere, die nicht Mangel, sondern Empfangsbereitschaft bedeutet.
+•	Es ist eine Anerkennung der eigenen Begrenztheit, die Raum schafft für Weisheit, Gnade oder Erkenntnis.
+•	Im spirituellen Sinne: Wer sich selbst nicht als vollständig oder autonom begreift, ist offen für Transzendenz, Wandel oder Wahrheit.&lt;&#x2F;p&gt;
+&lt;p&gt;⸻&lt;&#x2F;p&gt;
+&lt;p&gt;Mögliche freie Deutungen (z. B. für Reflexion oder Text):
+•	„Glückselig, wer erkennt, dass er nicht alles aus sich selbst heraus vermag.“
+•	„Weise ist, wer seine Bedürftigkeit nicht verleugnet.“
+•	„Die wahre Stärke liegt im Erkennen der eigenen Schwäche.“
+•	„Nur ein leerer Kelch kann gefüllt werden.“&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>How I Use AI to Enhance My Blog Posts</title>
+        <published>2025-06-14T00:00:00+00:00</published>
+        <updated>2025-06-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://melf.ch/ai-blubber/aiblubberinstructions/"/>
+        <id>https://melf.ch/ai-blubber/aiblubberinstructions/</id>
+        
+        <content type="html" xml:base="https://melf.ch/ai-blubber/aiblubberinstructions/">&lt;h2 id=&quot;a-structured-approach-to-ai-enhanced-blogging&quot;&gt;A Structured Approach to AI-Enhanced Blogging&lt;a class=&quot;zola-anchor&quot; href=&quot;#a-structured-approach-to-ai-enhanced-blogging&quot; aria-label=&quot;Anchor link for: a-structured-approach-to-ai-enhanced-blogging&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;ve developed a systematic approach to using AI for enhancing my blog posts while maintaining authenticity. Here&#x27;s how I structure my AI interactions to ensure consistent, high-quality content across different blog categories.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;core-principles&quot;&gt;Core Principles&lt;a class=&quot;zola-anchor&quot; href=&quot;#core-principles&quot; aria-label=&quot;Anchor link for: core-principles&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;My blogging process is built on four fundamental principles:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Preserve authentic thoughts and ideas&lt;&#x2F;li&gt;
+&lt;li&gt;Present content clearly and accessibly&lt;&#x2F;li&gt;
+&lt;li&gt;Use well-structured, fluent sentences&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain consistent formatting across categories&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;writing-style-guidelines&quot;&gt;Writing Style Guidelines&lt;a class=&quot;zola-anchor&quot; href=&quot;#writing-style-guidelines&quot; aria-label=&quot;Anchor link for: writing-style-guidelines&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;To ensure consistency, I&#x27;ve established these key guidelines for AI assistance:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maintain a natural, conversational tone&lt;&#x2F;li&gt;
+&lt;li&gt;Break down complex topics into digestible sections&lt;&#x2F;li&gt;
+&lt;li&gt;Include clear headings and structure&lt;&#x2F;li&gt;
+&lt;li&gt;Balance technical accuracy with readability&lt;&#x2F;li&gt;
+&lt;li&gt;Support both German and English content as appropriate&lt;&#x2F;li&gt;
+&lt;li&gt;Avoid using dashes within sentences, opt for commas or new sentences&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;category-specific-templates&quot;&gt;Category-Specific Templates&lt;a class=&quot;zola-anchor&quot; href=&quot;#category-specific-templates&quot; aria-label=&quot;Anchor link for: category-specific-templates&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;technical-posts-it-pro&quot;&gt;Technical Posts (IT-Pro)&lt;a class=&quot;zola-anchor&quot; href=&quot;#technical-posts-it-pro&quot; aria-label=&quot;Anchor link for: technical-posts-it-pro&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h4&gt;
+&lt;p&gt;For technical content, I structure my input like this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Objective&lt;&#x2F;li&gt;
+&lt;li&gt;Key Requirements&#x2F;Features&lt;&#x2F;li&gt;
+&lt;li&gt;Solution Components&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Example from a recent AVD post:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;plaintext&quot; class=&quot;language-plaintext z-code&quot;&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Topic: AVD Custom Image Creation
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Automated process needed
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Must support multiple environments
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Uses Azure Image Builder
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Needs configuration management
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;personal-blog-posts&quot;&gt;Personal Blog Posts&lt;a class=&quot;zola-anchor&quot; href=&quot;#personal-blog-posts&quot; aria-label=&quot;Anchor link for: personal-blog-posts&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h4&gt;
+&lt;p&gt;For personal content, I focus on:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Key events&#x2F;activities&lt;&#x2F;li&gt;
+&lt;li&gt;Main impressions&lt;&#x2F;li&gt;
+&lt;li&gt;Notable details&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;A recent example:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;plaintext&quot; class=&quot;language-plaintext z-code&quot;&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Trip to Cheyres
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Packed essentials
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Lunch stop
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Lake activities
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;- Weather note
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;book-reviews-insights&quot;&gt;Book Reviews&#x2F;Insights&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-reviews-insights&quot; aria-label=&quot;Anchor link for: book-reviews-insights&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h4&gt;
+&lt;p&gt;For book reviews, I structure around:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Book title&lt;&#x2F;li&gt;
+&lt;li&gt;Key concepts&lt;&#x2F;li&gt;
+&lt;li&gt;Personal insights&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;language-usage-guidelines&quot;&gt;Language Usage Guidelines&lt;a class=&quot;zola-anchor&quot; href=&quot;#language-usage-guidelines&quot; aria-label=&quot;Anchor link for: language-usage-guidelines&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;I&#x27;ve established clear language preferences for different content types:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Technical posts: English&lt;&#x2F;li&gt;
+&lt;li&gt;Personal experiences: German preferred&lt;&#x2F;li&gt;
+&lt;li&gt;Book reviews: Language matching the source material&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;implementation-benefits&quot;&gt;Implementation Benefits&lt;a class=&quot;zola-anchor&quot; href=&quot;#implementation-benefits&quot; aria-label=&quot;Anchor link for: implementation-benefits&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;This structured approach has several advantages:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Consistency:&lt;&#x2F;strong&gt; All posts maintain a similar quality and style&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Efficiency:&lt;&#x2F;strong&gt; Clear templates speed up the writing process&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Authenticity:&lt;&#x2F;strong&gt; Original thoughts remain intact while improving clarity&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Accessibility:&lt;&#x2F;strong&gt; Content is more digestible for readers&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;future-improvements&quot;&gt;Future Improvements&lt;a class=&quot;zola-anchor&quot; href=&quot;#future-improvements&quot; aria-label=&quot;Anchor link for: future-improvements&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;I&#x27;m continuously refining this system based on:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reader feedback&lt;&#x2F;li&gt;
+&lt;li&gt;Content effectiveness&lt;&#x2F;li&gt;
+&lt;li&gt;Writing efficiency&lt;&#x2F;li&gt;
+&lt;li&gt;AI capability developments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The goal is to maintain a balance between automated assistance and personal authenticity, ensuring each post reflects my voice while benefiting from AI&#x27;s enhancing capabilities.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Improve BlogPosts with automation and AI </title>
+        <published>2025-06-07T00:00:00+00:00</published>
+        <updated>2025-06-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://melf.ch/ai-blubber/aboutaiblubber/"/>
+        <id>https://melf.ch/ai-blubber/aboutaiblubber/</id>
+        
+        <content type="html" xml:base="https://melf.ch/ai-blubber/aboutaiblubber/">&lt;p&gt;Goal: Automatically generate complete blog posts from short notes, reflecting my personal style and preferences.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;My thoughts and ideas should remain authentic, but be presented in a clearer and more accessible way for a broader audience.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Use well-structured and fluent sentences.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Create a template to achieve this, as AI instructions:&lt;&#x2F;p&gt;
+&lt;p&gt;Template:&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Short notes or bullet points about the topic.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Instructions for AI:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Expand the notes into a coherent and engaging blog post.&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain my personal style and voice.&lt;&#x2F;li&gt;
+&lt;li&gt;Ensure the content is clear and accessible for a broad audience.&lt;&#x2F;li&gt;
+&lt;li&gt;Use well-structured and fluent sentences.&lt;&#x2F;li&gt;
+&lt;li&gt;Add relevant transitions and context where needed.&lt;&#x2F;li&gt;
+&lt;li&gt;Do not invent facts or add unrelated content.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Example Input:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spontaneous trip to Cheyres&lt;&#x2F;li&gt;
+&lt;li&gt;Packed sunscreen, swimwear, Nintendo Switch&lt;&#x2F;li&gt;
+&lt;li&gt;Lunch at Bern station, had a burger&lt;&#x2F;li&gt;
+&lt;li&gt;Relaxed at the lake, BBQ, evening aperitif&lt;&#x2F;li&gt;
+&lt;li&gt;Weather not as good as expected, hope it improves&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Example Output:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Last weekend, I decided on a spontaneous trip to Cheyres, a picturesque village on the shore of Lake Neuchâtel. Packing was quick but thoughtful: sunscreen, swimwear, and of course, my Nintendo Switch were essentials. On the way, I stopped at Bern station for a delicious burger—just the right start for a short getaway.&lt;br &#x2F;&gt;
+Once in Cheyres, relaxation was the order of the day: lounging by the lake, enjoying a BBQ, and winding down with an evening aperitif. Although the weather wasn’t ideal at first, I’m optimistic it will improve soon.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+</content>
+        
+    </entry>
+</feed>
