@@ -1,6 +1,6 @@
 # Personal Blog and Knowledge Base
 
-This is my personal blog and knowledge base built with GitHub Pages and Jekyll. The site contains various categories of content including technical guides, personal blog posts, and book reviews.
+This is my personal blog and knowledge base built with Zola. The site contains various categories of content including technical guides, personal blog posts, and book reviews.
 
 ## Content Categories
 
@@ -34,18 +34,15 @@ content/
 
 To run this site locally:
 
-1. Install Ruby and Jekyll
+1. Install Zola (https://www.getzola.org)
 2. Clone this repository
-3. Run `bundle install`
-4. Start the local server with `bundle exec jekyll serve`
-5. Visit `http://localhost:4000`
+3. Run `zola build` to build the site or `zola serve` to start the local development server
+4. Visit `http://127.0.0.1:1111`
 
 ## Technologies Used
 
-- GitHub Pages
-- Jekyll
-- Jekyll Theme Primer
-- Various Jekyll plugins for enhanced functionality
+- Zola
+- Serene Theme
 
 ## License
 
