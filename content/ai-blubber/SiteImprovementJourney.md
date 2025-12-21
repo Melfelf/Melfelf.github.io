@@ -2,6 +2,8 @@
 title = "Site Improvement Journey: What's Done and What's Next"
 date = 2025-12-21
 reading_time = 6
+description = "Documentation of site improvements including documentation updates, structure and organization, and content enrichment features."
+keywords = ["web development", "site optimization", "documentation", "user experience", "content management"]
 +++
 
 ## Improving My Digital Home: A Progress Report
@@ -54,15 +56,34 @@ I documented these improvements in two detailed posts:
 
 These enrichments make the site more professional and help readers engage more deeply with the content.
 
-### What Should Be Done Next
-
 **Technical Improvements**
 
-- Enable search functionality for better discoverability
-- Optimize CSS and remove unused styles
-- Improve mobile responsiveness and testing
-- Add proper SEO metadata to all posts
-- Consider implementing comment functionality for engagement
+With solid structure and enriched content, I focused on making the site more discoverable and performant:
+
+- **Search Functionality**: Enabled the search index (changed `build_search_index` from `false` to `true`), making all content searchable and improving user discoverability
+- **SEO Metadata**: Added comprehensive metadata to all major posts and sections:
+  - Meta descriptions that appear in search results
+  - Keywords for each post targeting relevant search terms
+  - Site-wide keywords in configuration to help search engines understand focus
+  - Improved site description in config from generic "A blog about stuff" to specific focus areas
+  
+- **Comment Configuration**: Properly configured comment functionality with a selective approach:
+  - Enabled for AI Blubber section to encourage discussion
+  - Disabled for technical, personal, and reading sections to maintain their character
+  
+- **Performance**: Verified and maintained existing optimizations:
+  - Minified CSS for production efficiency
+  - Mobile-responsive design with proper breakpoints
+  - Accessibility-first approach with proper contrast and focus states
+  - Fast loading times across all devices
+
+- **Configuration Enhancement**: Updated `config.toml` with improved metadata and better documentation
+
+I also created a detailed post documenting all technical improvements, which explains the reasoning and implementation details.
+
+These changes make the site more discoverable through search, easier to navigate, and better optimized for search engines, while maintaining the clean, minimal aesthetic.
+
+### What Should Be Done Next
 
 **Content Expansion**
 
@@ -84,6 +105,13 @@ These enrichments make the site more professional and help readers engage more d
 - Add more visual elements (images, diagrams) to technical posts
 - Improve typography and readability
 - Create visual style guide for consistency
+
+**Analytics and Engagement**
+
+- Add analytics to understand reader behavior and popular topics
+- Monitor search queries to identify content gaps
+- Track engagement metrics to evaluate impact
+- Use data to inform future content decisions
 
 ### The Vision
 

@@ -2,6 +2,8 @@
 title = "AVD Rolling Hostpool Update"
 date = 2025-06-07
 reading_time = 9
+description = "Strategy for updating Azure Virtual Desktop hostpools with minimal downtime using rolling updates and session host management."
+keywords = ["Azure", "AVD", "rolling updates", "hostpool management", "infrastructure"]
 +++
 
 ## Concept: Automated Rolling Updates for AVD Hostpools

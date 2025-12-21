@@ -2,6 +2,8 @@
 title = "Als Philosoph wäre ich wohl ein Stoiker. Ich weiss zwar nicht wie Stoizismus genau funktioniert aber damit kann ich umgehen."
 date = 2025-06-14
 reading_time = 5
+description = "Persönliche Gedanken zum Stoizismus und warum sich diese philosophische Ausrichtung mit meiner Lebenseinstellung deckt."
+keywords = ["Stoizismus", "Philosophie", "persönliche Gedanken", "Lebensphilosophie"]
 +++
 
 # Meine Verbindung zum Stoizismus

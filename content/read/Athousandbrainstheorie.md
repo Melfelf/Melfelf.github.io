@@ -2,6 +2,8 @@
 title = "A thousand brains theory"
 date = 2025-06-05
 reading_time = 10
+description = "Exploring the thousand brains theory and how this neuroscience framework explains both biological and artificial intelligence."
+keywords = ["neuroscience", "artificial intelligence", "brain theory", "machine learning", "consciousness"]
 +++
 
 ## A Thousand Brains Theory

@@ -2,6 +2,8 @@
 title = "Content Templates for Consistent Quality"
 date = 2025-12-21
 reading_time = 7
+description = "Structured templates for technical posts, book reviews, personal blogs, and AI content to maintain consistency and quality."
+keywords = ["content templates", "writing guidelines", "content consistency", "documentation", "best practices"]
 +++
 
 ## Structured Templates for Different Content Types
