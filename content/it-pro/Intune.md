@@ -1,7 +1,7 @@
 +++
 title = "Intune Management"
-date = 2025-06-07T11:00:00
-updated = 2025-06-07T11:00:00
+date = 2025-06-07T11:00:00+02:00
+updated = 2025-06-07T11:00:00+02:00
 +++
 
 ## Professional Concept: Intune Management for Modern Workplaces

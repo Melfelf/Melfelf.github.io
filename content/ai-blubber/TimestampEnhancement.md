@@ -1,8 +1,8 @@
 +++
 title = "Enhanced Timestamp Precision: Adding Hours, Minutes, and Last Modified Dates"
 description = "Implementing precise temporal information for blog posts with creation dates, last modified timestamps, and improved date formatting"
-date = 2025-12-21T16:00:00
-updated = 2025-12-21T16:00:00
+date = 2025-12-21T16:00:00+01:00
+updated = 2025-12-21T16:00:00+01:00
 draft = false
 
 [taxonomies]
@@ -41,16 +41,25 @@ date_format = "%b %-d, %Y at %H:%M"
 This change affects all sections: blog, ai-blubber, it-pro, read, projects, and organisation.
 
 ### 2. Frontmatter Schema Enhancement
-Extended post frontmatter to include both creation and modification timestamps:
+Extended post frontmatter to include both creation and modification timestamps with proper timezone information:
 
 ```toml
 +++
 title = "Example Post"
-date = 2025-12-21T16:00:00      # Creation timestamp
-updated = 2025-12-21T16:00:00   # Last modified timestamp
+date = 2025-12-21T16:00:00+01:00      # Creation timestamp (CET)
+updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
 # ... other fields
 +++
 ```
+
+### 3. Timezone Handling
+Implemented proper timezone support for Switzerland (Central European Time):
+
+- **Winter (CET)**: UTC+1 (e.g., `+01:00`)
+- **Summer (CEST)**: UTC+2 (e.g., `+02:00`)
+- **Format**: RFC 3339 compliant (`YYYY-MM-DDTHH:MM:SS±HH:MM`)
+
+All timestamps now correctly reflect Swiss local time rather than UTC.
 
 ### 3. Template System Updates
 Created custom templates to display enhanced temporal information:
@@ -99,7 +108,7 @@ The changes maintain full backward compatibility:
 The timestamp display uses semantic HTML with proper `datetime` attributes for accessibility and SEO:
 
 ```html
-<time datetime="2025-12-21T16:00:00">
+<time datetime="2025-12-21T16:00:00+01:00">
   Created: Dec 21, 2025 at 16:00
 </time>
 ```
@@ -115,7 +124,12 @@ Timestamps adapt to different screen sizes while maintaining readability.
 ## Technical Considerations
 
 ### Zola Date Handling
-Zola uses the `chrono` crate for date parsing, supporting RFC 3339 format (`YYYY-MM-DDTHH:MM:SS`) which provides excellent precision and standardization.
+Zola uses the `chrono` crate for date parsing, supporting RFC 3339 format with timezone offsets (`YYYY-MM-DDTHH:MM:SS±HH:MM`). This ensures:
+
+- **Timezone Accuracy**: Proper handling of Central European Time (CET/CEST)
+- **DST Compliance**: Automatic adjustment for daylight saving time transitions
+- **Internationalization**: Consistent date representation across different locales
+- **Future-Proofing**: Standards-compliant datetime parsing
 
 ### Performance Impact
 The changes have minimal performance impact:
@@ -143,6 +157,12 @@ Track user engagement with fresh vs. stale content to inform content strategy.
 
 ### Template Parsing Issues
 Initially encountered Zola template parsing errors with macro imports. Resolved by simplifying the template structure and removing problematic macro usage.
+
+### Timezone Accuracy
+Implemented proper Central European Time (CET/CEST) handling:
+- **Summer/Winter Transitions**: Correctly applied +02:00 for CEST and +01:00 for CET
+- **Historical Accuracy**: Updated all existing posts with appropriate timezone offsets
+- **RFC 3339 Compliance**: Used standardized timezone format for all timestamps
 
 ### Date Format Consistency
 Ensured consistent date formatting across all sections and templates using Zola's section-specific configuration.
@@ -172,8 +192,8 @@ date_format = "%b %-d, %Y at %H:%M"
 ```toml
 +++
 title = "Enhanced Timestamps"
-date = 2025-12-21T16:00:00
-updated = 2025-12-21T16:30:00
+date = 2025-12-21T16:00:00+01:00
+updated = 2025-12-21T16:30:00+01:00
 draft = false
 +++
 ```

@@ -1,7 +1,7 @@
 +++
 title = "Wie das hier funktioniert"
-date = 2025-06-14T11:30:00
-updated = 2025-06-14T11:30:00
+date = 2025-06-14T11:30:00+02:00
+updated = 2025-06-14T11:30:00+02:00
 +++
 
 ## Der Gedanke hinter diesem Blog
