@@ -13,7 +13,7 @@ lang = "en"
 title = "Posts"
 subtitle = "Hier gibt's ungefiltert, was mich gerade bewegt. Von Alltagsmomenten bis zu spontanen Geistesblitzen. Auf Deutsch weil mir das besser liegt für allgemeine Gedanken"
 
-date_format = "%b %-d, %Y"
+date_format = "%b %-d, %Y at %H:%M"
 
 categorized = false # posts can be categorized
 back_to_top = true # show back-to-top button

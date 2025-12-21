@@ -1,7 +1,8 @@
 +++
 title = "MelfWare Logo Design Exploration"
 description = "Creating and exploring four distinct logo styles for MelfWare branding"
-date = 2025-12-21
+date = 2025-12-21T12:00:00
+updated = 2025-12-21T15:30:00
 draft = false
 
 [taxonomies]

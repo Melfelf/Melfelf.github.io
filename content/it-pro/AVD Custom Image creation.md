@@ -1,6 +1,7 @@
 +++
 title = "AVD Custom Image creation"
-date = 2025-06-08
+date = 2025-06-08T13:45:00
+updated = 2025-06-08T13:45:00
 reading_time = 8
 description = "Automated process for creating and maintaining custom images for Azure Virtual Desktop using Azure Image Builder with multi-environment support."
 keywords = ["Azure", "AVD", "Azure Virtual Desktop", "Image Builder", "Automation", "Infrastructure"]

@@ -22,7 +22,7 @@ links = [
 recent = false
 recent_max = 15
 recent_more_text = "more »"
-date_format = "%b %-d, %Y"
+date_format = "%b %-d, %Y at %H:%M"
 +++
 
 # Stefan "Melf" Moser

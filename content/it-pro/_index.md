@@ -13,7 +13,7 @@ lang = "en"
 title = "Posts"
 subtitle = "In-depth guides and insights for IT professionals and cloud architects"
 
-date_format = "%b %-d, %Y"
+date_format = "%b %-d, %Y at %H:%M"
 
 categorized = false
 back_to_top = true

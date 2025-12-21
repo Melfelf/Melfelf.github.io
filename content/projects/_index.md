@@ -13,7 +13,7 @@ lang = "en"
 title = "Projects"
 subtitle = "Explore innovative projects and learn from real-world case studies."
 
-date_format = "%b %-d, %Y"
+date_format = "%b %-d, %Y at %H:%M"
 
 categorized = false # posts can be categorized
 back_to_top = true # show back-to-top button

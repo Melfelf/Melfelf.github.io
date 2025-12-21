@@ -1,0 +1,69 @@
+{% extends "_base.html" %}
+
+{% block page %}page{% endblock page %}
+{% block lang %}{% if page.extra.lang %}{{ page.extra.lang }}{% else %}{{ page.lang }}{% endif %}{% endblock lang %}
+{% block title %}{{ page.title }}{% endblock title %}
+{% block desc %}
+  <meta name="description" content="{{ page.description }}">
+{% endblock desc %}
+
+{% block head %}
+{% if config.markdown.highlight_theme == "css" %}
+  {% if config.extra.force_theme == "dark" %}
+    <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-dark.css') }}" />
+  {% else %}
+    <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
+  {% endif %}
+{% endif %}
+{% if page.extra.math %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+{% endif %}
+{% endblock head %}
+
+{% block content %}
+<div id="wrapper">
+  <main>
+    <article>
+      <header>
+        <h1>{{ page.title }}</h1>
+        <div class="post-meta">
+          <time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}">
+            Created: {{ page.date | date(format='%b %-d, %Y at %H:%M') }}
+          </time>
+          {% if page.updated and page.updated != page.date %}
+          <time datetime="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}">
+            • Updated: {{ page.updated | date(format='%b %-d, %Y at %H:%M') }}
+          </time>
+          {% endif %}
+          {% if page.extra.reading_time %}
+          <span class="reading-time">{{ page.extra.reading_time }} min read</span>
+          {% endif %}
+        </div>
+      </header>
+
+      <div class="content">
+        {{ page.content | safe }}
+      </div>
+    </article>
+
+    {% if config.extra.back_link_text %}
+    <div class="back-link">
+      {% from "macros/prose.html" import back_link %}
+      {{ back_link(path=page.path) }}
+    </div>
+    {% endif %}
+  </main>
+</div>
+{% endblock content %}

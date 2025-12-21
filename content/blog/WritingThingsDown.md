@@ -1,6 +1,7 @@
 +++
 title = "Die Kraft des Aufschreibens"
-date = 2025-06-14
+date = 2025-06-14T14:00:00
+updated = 2025-06-14T14:00:00
 +++
 
 ## Warum ich Dinge aufschreibe

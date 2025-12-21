@@ -1,6 +1,7 @@
 +++
 title = "Schlummerland: Letzter Juni Tag 2025"
-date = 2025-06-30
+date = 2025-06-30T20:45:00
+updated = 2025-06-30T20:45:00
 +++
 
 Es ist der letzte Montag und auch Tag im Juni 2025. Es ist heiss und ich liege unter dem Hochbett meines Sohnes. Es läuft Schlummerland unser Gute Nacht Podcast.
