@@ -3,7 +3,7 @@ title = "Schlummerland: Letzter Juni Tag 2025"
 date = 2025-06-30
 +++
 
-Es ist der letzte Montag und auch Tag im Juni 2025. Es ist heiss und ich liege unter dem Hochbett meines Sohnes. Es läuft Schlummerland unser Gute Nacht Podcast. 
+Es ist der letzte Montag und auch Tag im Juni 2025. Es ist heiss und ich liege unter dem Hochbett meines Sohnes. Es läuft Schlummerland unser Gute Nacht Podcast.
 
 Der Juni 2025 ist bisher spektakulär Warm und lockt insbesondere mit noch nie da gewesenen Aare Temperaturen. Gestern 22.8 Grad und das im Juni!
 

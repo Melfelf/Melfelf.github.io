@@ -23,12 +23,12 @@ Automatically generate complete blog posts from short notes, reflecting personal
 ## Templates by Category
 
 ### 1. Technical Posts (IT-Pro)
-**Input Format:**  
+**Input Format:**
 - Objective
 - Key Requirements/Features
 - Solution Components
 
-**Example Input:**  
+**Example Input:**
 ```
 Topic: AVD Custom Image Creation
 - Automated process needed
@@ -37,7 +37,7 @@ Topic: AVD Custom Image Creation
 - Needs configuration management
 ```
 
-**Example Output:**  
+**Example Output:**
 [Reference: AVD Custom Image creation.md]
 ```markdown
 ## Concept: Automated Custom Image Creation for AVD
@@ -52,12 +52,12 @@ We implemented an automated process for creating and maintaining custom images..
 ```
 
 ### 2. Personal Blog Posts
-**Input Format:**  
+**Input Format:**
 - Key events/activities
 - Main impressions
 - Notable details
 
-**Example Input:**  
+**Example Input:**
 ```
 - Trip to Cheyres
 - Packed essentials
@@ -66,7 +66,7 @@ We implemented an automated process for creating and maintaining custom images..
 - Weather note
 ```
 
-**Example Output:**  
+**Example Output:**
 [Reference: Cheyres07062025.md]
 ```markdown
 ## Kurztrip nach Cheyres
@@ -75,12 +75,12 @@ Ganz spontan packten wir unsere Sachen und machten uns auf den Weg...
 ```
 
 ### 3. Book Reviews/Insights
-**Input Format:**  
+**Input Format:**
 - Book title
 - Key concepts
 - Personal insights
 
-**Example Input:**  
+**Example Input:**
 ```
 Book: Thinking, Fast and Slow
 - Dual systems of thought
@@ -88,7 +88,7 @@ Book: Thinking, Fast and Slow
 - Psychological insights
 ```
 
-**Example Output:**  
+**Example Output:**
 [Reference: Thinkingfastandslow.md]
 ```markdown
 "Thinking, Fast and Slow" is a groundbreaking book by Daniel Kahneman that explores...

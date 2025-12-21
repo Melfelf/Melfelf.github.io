@@ -30,7 +30,7 @@ To maintain consistency and quality across different sections of the site, I've 
 - Link to related posts
 
 **Example Sections:**
-```
+```markdown
 ## Objective
 What specific problem does this solve?
 
@@ -71,7 +71,7 @@ Brief explanation before diving in
 - Suggest related books or ideas
 
 **Example Structure:**
-```
+```markdown
 ## What is [Book Title]?
 Brief description of the book and why it matters
 
@@ -112,7 +112,7 @@ Best suited for people interested in...
 - End with a thought that resonates
 
 **Example Structure:**
-```
+```markdown
 ## The Setup
 What happened and why it matters to you
 
@@ -149,7 +149,7 @@ Closing thoughts
 - Be honest about limitations
 
 **Example Structure:**
-```
+```markdown
 ## The Challenge
 What problem were you trying to solve?
 

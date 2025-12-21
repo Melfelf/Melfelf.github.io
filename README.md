@@ -34,7 +34,7 @@ content/
 
 To run this site locally:
 
-1. Install Zola (https://www.getzola.org)
+1. Install Zola ([https://www.getzola.org](https://www.getzola.org))
 2. Clone this repository
 3. Run `zola build` to build the site or `zola serve` to start the local development server
 4. Visit `http://127.0.0.1:1111`

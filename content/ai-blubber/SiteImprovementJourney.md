@@ -66,11 +66,11 @@ With solid structure and enriched content, I focused on making the site more dis
   - Keywords for each post targeting relevant search terms
   - Site-wide keywords in configuration to help search engines understand focus
   - Improved site description in config from generic "A blog about stuff" to specific focus areas
-  
+
 - **Comment Configuration**: Properly configured comment functionality with a selective approach:
   - Enabled for AI Blubber section to encourage discussion
   - Disabled for technical, personal, and reading sections to maintain their character
-  
+
 - **Performance**: Verified and maintained existing optimizations:
   - Minified CSS for production efficiency
   - Mobile-responsive design with proper breakpoints
