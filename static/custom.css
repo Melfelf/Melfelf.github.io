@@ -6,8 +6,8 @@
 }
 
 #site-logo {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 80px;
   margin-bottom: 1rem;
   filter: drop-shadow(0 4px 8px var(--shadow-accent));
   transition: transform 0.3s ease;
