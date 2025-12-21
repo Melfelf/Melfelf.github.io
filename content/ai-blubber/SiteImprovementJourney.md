@@ -1,6 +1,7 @@
 +++
 title = "Site Improvement Journey: What's Done and What's Next"
 date = 2025-12-21
+reading_time = 6
 +++
 
 ## Improving My Digital Home: A Progress Report
@@ -38,14 +39,22 @@ I also created a detailed post documenting the structural improvements, which ex
 
 These improvements lay the groundwork for future enhancements like better cross-linking and topic tagging.
 
-### What Should Be Done Next
-
 **Content Enrichment**
 
-- Add publication dates and reading time estimates to posts
-- Create introductory content for each section explaining what readers will find there
-- Develop a structured format for different content types
-- Add more visual elements like images and diagrams to break up text
+With structure in place, I focused on making content more accessible and valuable. This included:
+
+- **Reading Time Estimates**: All posts now display estimated reading time, helping visitors make informed decisions about which content to dive into
+- **Structured Content Templates**: Created consistent formats for different content types, including technical posts, book reviews, personal blog entries, and AI articles. These templates ensure quality and consistency while remaining flexible enough for authentic voice
+- **Enhanced Metadata**: Updated existing posts with publication dates and reading time information
+- **Improved Post Formatting**: Enhanced key posts with better visual hierarchy, clearer sections, and improved readability
+
+I documented these improvements in two detailed posts:
+- "Content Enrichment: Making Posts More Accessible" explains the philosophy and implementation
+- "Content Templates for Consistent Quality" provides detailed templates for each content type
+
+These enrichments make the site more professional and help readers engage more deeply with the content.
+
+### What Should Be Done Next
 
 **Technical Improvements**
 
@@ -68,6 +77,13 @@ These improvements lay the groundwork for future enhancements like better cross-
 - Add cross-links between related posts in different sections
 - Create thematic collections that group related content
 - Build topic pages that aggregate posts by subject
+
+**Visual Refinement**
+
+- Enhance CSS styling for better visual consistency
+- Add more visual elements (images, diagrams) to technical posts
+- Improve typography and readability
+- Create visual style guide for consistency
 
 ### The Vision
 

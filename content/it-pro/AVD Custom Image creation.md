@@ -1,6 +1,7 @@
 +++
 title = "AVD Custom Image creation"
 date = 2025-06-08
+reading_time = 8
 +++
 
 ## Concept: Automated Custom Image Creation for AVD

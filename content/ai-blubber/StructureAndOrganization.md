@@ -1,6 +1,7 @@
 +++
 title = "Improving Site Structure and Organization"
 date = 2025-12-21
+reading_time = 7
 +++
 
 ## Building a Better Information Architecture
