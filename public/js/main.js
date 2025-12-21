@@ -2,10 +2,8 @@ function enableBackLink() {
   const backLink = document.querySelector('#back-link');
   if (!backLink) return;
   backLink.addEventListener('click', (e) => {
-    if (document.referrer && location.href.startsWith(document.referrer) && !location.hash) {
-      e.preventDefault();
-      history.back();
-    }
+    e.preventDefault();
+    history.back();
   });
 }
 

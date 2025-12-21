@@ -18,55 +18,50 @@ The back button on the website was not functioning correctly. Instead of navigat
 
 ## Root Cause Analysis
 
-The issue was caused by the absence of the `enableBackLink()` JavaScript function in the site's main.js file. This function is responsible for implementing smart back button behavior:
-
-- When the user comes from the same site (internal referrer)
-- And the current page URL starts with the referrer URL
-- And there's no hash in the URL
-- Then prevent the default link behavior and use `history.back()` instead
-
-Without this function, the back button always followed its hardcoded href attribute, which for blog posts points to `/blog`.
+The issue was that the back button was implemented as a link to the section index (e.g., `/blog` for blog posts), with JavaScript to conditionally use `history.back()` only when the referrer was from the same site and met certain conditions. However, this led to inconsistent behavior where the button often fell back to the section index instead of navigating back in history.
 
 ## Solution Implementation
 
-### 1. Added the enableBackLink Function
+### 1. Modified the Back Link Macro
+
+Overrode the theme's macro to set the href to `#` instead of the section path:
+
+```html
+{% macro back_link(path) %}
+<header>
+  <nav>
+    <a id="back-link" href="#">← {{ config.extra.back_link_text }}</a>
+  </nav>
+</header>
+{% endmacro %}
+```
+
+### 2. Updated the enableBackLink Function
+
+Changed the function to always prevent the default link behavior and use `history.back()`:
 
 ```javascript
 function enableBackLink() {
   const backLink = document.querySelector('#back-link');
   if (!backLink) return;
   backLink.addEventListener('click', (e) => {
-    if (document.referrer && location.href.startsWith(document.referrer) && !location.hash) {
-      e.preventDefault();
-      history.back();
-    }
+    e.preventDefault();
+    history.back();
   });
 }
 ```
 
-### 2. Integrated the Function Call
+### 3. Template Override
 
-Added `enableBackLink();` to the main JavaScript execution flow, ensuring it's called on page load.
-
-### 3. Updated Static Files
-
-Created `/static/js/main.js` with the corrected code to ensure the fix persists across site rebuilds.
+Created `/templates/macros/prose.html` to override the theme's macro, ensuring the change applies to all pages using the back link.
 
 ## Key Features of the Fix
 
-- **Smart Navigation**: Uses browser history when coming from internal pages
-- **Fallback Behavior**: Falls back to section navigation when history back is not appropriate
-- **No Breaking Changes**: Maintains existing behavior for external referrers and edge cases
+- **Consistent Navigation**: Always uses browser history for back navigation
+- **Fallback Handling**: If there's no history to go back to, the button does nothing (graceful degradation)
+- **No Breaking Changes**: Maintains the visual appearance and accessibility
 - **Performance**: Lightweight implementation with minimal overhead
 
 ## Testing
 
-The fix has been applied to the live site. The back button now:
-
-1. Uses `history.back()` when navigating from internal pages within the same section
-2. Falls back to the section index when coming from external sources or different sections
-3. Maintains proper accessibility and user experience
-
-## Impact
-
-This improvement enhances user navigation experience by providing more intuitive back button behavior, reducing unnecessary page loads and maintaining user context during site exploration.
+The fix has been applied to ensure the back button now consistently navigates back in browser history across all pages, providing a more intuitive user experience.
