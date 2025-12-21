@@ -1,5 +1,7 @@
 {% extends "_base.html" %}
 
+{% from "macros/prose.html" import back_link %}
+
 {% block page %}page{% endblock page %}
 {% block lang %}{% if page.extra.lang %}{{ page.extra.lang }}{% else %}{{ page.lang }}{% endif %}{% endblock lang %}
 {% block title %}{{ page.title }}{% endblock title %}
@@ -60,7 +62,6 @@
 
     {% if config.extra.back_link_text %}
     <div class="back-link">
-      {% from "macros/prose.html" import back_link %}
       {{ back_link(path=page.path) }}
     </div>
     {% endif %}
