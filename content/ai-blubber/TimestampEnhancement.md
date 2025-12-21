@@ -1,6 +1,6 @@
 +++
-title = "Enhanced Timestamp Precision: Adding Hours, Minutes, and Last Modified Dates"
-description = "Implementing precise temporal information for blog posts with creation dates, last modified timestamps, and improved date formatting"
+title = "Enhanced Timestamp Precision: Creation and Last Modified Dates on Every Blog Post"
+description = "Implementing precise temporal information with creation dates, last modified timestamps, and timezone accuracy visible on all blog posts"
 date = 2025-12-21T16:00:00+01:00
 updated = 2025-12-21T16:00:00+01:00
 draft = false
@@ -67,11 +67,11 @@ Created custom templates to display enhanced temporal information:
 #### Individual Post Template (`templates/page.html`)
 ```html
 <div class="post-meta">
-  <time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}">
+  <time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
     Created: {{ page.date | date(format='%b %-d, %Y at %H:%M') }}
   </time>
   {% if page.updated and page.updated != page.date %}
-  <time datetime="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}">
+  <time datetime="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
     • Updated: {{ page.updated | date(format='%b %-d, %Y at %H:%M') }}
   </time>
   {% endif %}
@@ -89,6 +89,37 @@ Created custom templates to display enhanced temporal information:
   (updated {{ post.updated | date(format=section.extra.date_format) }})
   {% endif %}
 </span>
+```
+
+### 4. CSS Styling Enhancement
+Added custom styling for timestamp display in `static/custom.css`:
+
+```css
+.post-meta {
+  margin: 1rem 0 2rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-accent);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.post-meta time {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.post-meta .reading-time {
+  background: var(--primary-accent);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
 ```
 
 ## Migration Strategy
@@ -117,6 +148,16 @@ The timestamp display uses semantic HTML with proper `datetime` attributes for a
 - **Primary**: Creation date (always visible)
 - **Secondary**: Last modified date (only shown when different)
 - **Tertiary**: Reading time (contextual information)
+
+### Blog Post Visibility
+Both creation and last updated timestamps are prominently displayed on every individual blog post page:
+
+- **Header Section**: Timestamps appear directly under the post title in a styled metadata section
+- **Semantic HTML**: Uses proper `<time>` elements with `datetime` attributes for accessibility
+- **Visual Design**: Custom CSS styling with accent colors and responsive layout
+- **Reading Time**: Displayed as a highlighted badge alongside timestamps
+- **Conditional Display**: Updated timestamp only shows when it differs from creation date
+- **Timezone Aware**: All timestamps display in Swiss local time (CET/CEST)
 
 ### Responsive Behavior
 Timestamps adapt to different screen sizes while maintaining readability.
@@ -173,8 +214,9 @@ Systematically updated all existing content while maintaining site functionality
 ## Results and Impact
 
 The enhanced timestamp system provides readers with:
-- **Clear Content Timeline**: Precise creation and modification information
-- **Trust Indicators**: Transparent update history
+- **Clear Content Timeline**: Precise creation and modification information prominently displayed on every blog post
+- **Trust Indicators**: Transparent update history showing when content was last modified
+- **Timezone Accuracy**: All timestamps display in correct Swiss local time (CET/CEST)
 - **Better Context**: Time-aware content consumption
 - **Professional Polish**: Enterprise-grade temporal information display
 
@@ -201,7 +243,7 @@ draft = false
 ### Template Usage
 ```html
 <!-- Individual posts -->
-<time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}">
+<time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
   Created: {{ page.date | date(format='%b %-d, %Y at %H:%M') }}
 </time>
 

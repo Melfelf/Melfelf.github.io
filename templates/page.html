@@ -39,11 +39,11 @@
       <header>
         <h1>{{ page.title }}</h1>
         <div class="post-meta">
-          <time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}">
+          <time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
             Created: {{ page.date | date(format='%b %-d, %Y at %H:%M') }}
           </time>
           {% if page.updated and page.updated != page.date %}
-          <time datetime="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}">
+          <time datetime="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
             • Updated: {{ page.updated | date(format='%b %-d, %Y at %H:%M') }}
           </time>
           {% endif %}
