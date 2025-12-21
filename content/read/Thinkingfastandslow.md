@@ -2,9 +2,11 @@
 title = "Thinking, Fast and Slow"
 date = 2025-06-05T17:30:00+02:00
 updated = 2025-06-05T17:30:00+02:00
-reading_time = 12
 description = "A groundbreaking exploration of the dual systems of thought that drive decision-making by Nobel laureate Daniel Kahneman."
 keywords = ["psychology", "behavioral economics", "decision-making", "Kahneman", "book review"]
+
+[extra]
+reading_time = 12
 +++
 
 ## "Thinking, Fast and Slow" by Daniel Kahneman

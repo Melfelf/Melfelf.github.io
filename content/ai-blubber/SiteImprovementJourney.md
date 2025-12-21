@@ -1,9 +1,11 @@
 +++
 title = "Site Improvement Journey: What's Done and What's Next"
 date = 2025-12-21
-reading_time = 6
 description = "Documentation of site improvements including documentation updates, structure and organization, and content enrichment features."
 keywords = ["web development", "site optimization", "documentation", "user experience", "content management"]
+
+[extra]
+reading_time = 6
 +++
 
 ## Improving My Digital Home: A Progress Report

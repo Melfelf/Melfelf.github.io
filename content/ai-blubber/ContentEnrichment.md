@@ -1,9 +1,11 @@
 +++
 title = "Content Enrichment: Making Posts More Accessible"
 date = 2025-12-21
-reading_time = 8
 description = "Strategies for improving content accessibility through reading time estimates, structured formatting, and better visual hierarchy."
 keywords = ["content strategy", "accessibility", "user experience", "readability", "blog optimization"]
+
+[extra]
+reading_time = 8
 +++
 
 ## Enhancing Content for Better Readability and Accessibility
