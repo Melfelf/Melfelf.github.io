@@ -39,6 +39,7 @@
     <section id="logo">
       <img src="{{ get_url(path='images/logo.svg') }}" alt="MelfsBlog Logo" id="site-logo">
       <h1 id="site-title">MelfsBlog</h1>
+      <p id="site-tagline">Make Everything Less Frustrating With Automation</p>
     </section>
 
     <section id="info">
@@ -81,6 +82,10 @@
         </button>
         {% endif %}
       </div>
+    </section>
+
+    <section id="brief" class="prose">
+      {{ section.content | trim | safe }}
     </section>
 
     {% if section.extra.recent %}
