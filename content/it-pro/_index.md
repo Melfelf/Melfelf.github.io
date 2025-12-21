@@ -1,6 +1,6 @@
 +++
 title = "IT Pro Blog"
-description = "A blog for IT professionals covering topics like cloud computing, cybersecurity, and system administration."
+description = "Technical guides and insights for modern IT challenges, focusing on Azure, cloud infrastructure, automation, and enterprise management."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Posts"
-subtitle = "Insights and tutorials for modern IT challenges."
+subtitle = "In-depth guides and insights for IT professionals and cloud architects"
 
 date_format = "%b %-d, %Y"
 
@@ -26,3 +26,16 @@ outdate_alert_days = 12
 outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
+
+## Welcome to IT Pro
+
+Technical content focused on practical solutions for modern IT challenges. Here you'll find:
+
+- **Azure & Cloud Infrastructure**: Deep dives into Azure Virtual Desktop, Intune, and cloud architecture
+- **Automation**: Scripting, configuration management, and workflow optimization
+- **Enterprise Management**: Best practices for managing infrastructure at scale
+- **Troubleshooting**: Solutions to common IT problems and edge cases
+
+Each article aims to provide actionable insights backed by real-world experience.
+
+---

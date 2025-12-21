@@ -20,16 +20,25 @@ The first issue I tackled was outdated documentation. The README.md was still de
 
 This ensures that if anyone wants to understand or contribute to the site, they'll have accurate information from the start.
 
-### What Should Be Done Next
-
 **Structure and Organization**
 
-The site has grown organically across several sections: IT-Pro content, personal blog posts, book reviews, and AI-related articles. To make the site nicer and more navigable, I should:
+Building on the momentum, I implemented the first major structural improvement. Each section now has:
 
-- Create clear category landing pages with summaries
-- Improve visual hierarchy and styling consistency
-- Add better cross-linking between related posts
-- Implement a proper tagging system for easier discovery
+- Clear, welcoming landing pages that explain what visitors will find
+- Improved section descriptions for better discoverability
+- Better context around the purpose of each content category
+
+This involved updating landing pages for:
+- **AI Blubber**: Now clearly focused on AI tools, automation, and reflections
+- **IT Pro**: Positioned as in-depth technical guides for cloud and infrastructure
+- **Blog**: Personal thoughts and experiences
+- **Books**: Curated reading recommendations
+
+I also created a detailed post documenting the structural improvements, which explains the thinking behind these changes and their impact on user experience.
+
+These improvements lay the groundwork for future enhancements like better cross-linking and topic tagging.
+
+### What Should Be Done Next
 
 **Content Enrichment**
 
@@ -52,6 +61,13 @@ The site has grown organically across several sections: IT-Pro content, personal
 - Add project showcases with detailed descriptions
 - Continue book reviews with structured insights
 - Create synthesis posts that connect ideas across different sections
+
+**Cross-Linking and Tagging**
+
+- Implement a proper tagging system for easier discovery across posts
+- Add cross-links between related posts in different sections
+- Create thematic collections that group related content
+- Build topic pages that aggregate posts by subject
 
 ### The Vision
 

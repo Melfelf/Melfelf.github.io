@@ -1,6 +1,6 @@
 +++
 title = "My Blog"
-description = "My blog site."
+description = "Personal thoughts, experiences, and reflections on life, work, and everything in between."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Posts"
-subtitle = "Hier gibt's ungefiltert, was mich gerade bewegt. Von Alltagsmomenten bis zu spontanen Geistesblitzen. Auf Detusch weil mir das besser liegt für allgemeine Gedanken"
+subtitle = "Hier gibt's ungefiltert, was mich gerade bewegt. Von Alltagsmomenten bis zu spontanen Geistesblitzen. Auf Deutsch weil mir das besser liegt für allgemeine Gedanken"
 
 date_format = "%b %-d, %Y"
 
@@ -26,3 +26,9 @@ outdate_alert_days = 12
 outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
+
+## Willkommen zu meinem Blog
+
+Hier findest du ungefilterte Gedanken, persönliche Erfahrungen und Reflexionen zu verschiedensten Themen. Von Alltagsmomenten bis zu spontanen Geistesblitzen, alles was mich bewegt.
+
+---

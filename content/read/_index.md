@@ -1,6 +1,6 @@
 +++
 title = "Books and more"
-description = "A blog featuring book and audiobook recommendations and reading lists. What I like to read and listen to, maybe some insights which I think are quite useful. Someone invested significant time and effort into writing these works, which I believe enhances their quality. Here are some recommendations where I think this is particularly evident."
+description = "Curated book and audiobook reviews with insights on reads that stand out for their quality and impact."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Recommendations"
-subtitle = "Discover great reads and listens."
+subtitle = "Thoughtfully selected books and audiobooks worth your time"
 
 date_format = "%b %-d, %Y"
 
@@ -26,3 +26,11 @@ outdate_alert_days = 12
 outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
+
+## Curated Reads
+
+This section features books and audiobooks that have left an impression on me. Each recommendation comes with insights on key concepts and personal takeaways.
+
+Someone invested significant time and effort into writing these works, which I believe enhances their quality. I only feature recommendations where I think this is particularly evident.
+
+---
