@@ -37,9 +37,13 @@
   <main>
     <!-- Site Logo -->
     <section id="logo">
-      <img src="{{ get_url(path='images/melfware-logo-1.svg') }}" alt="MelfWare Logo" id="site-logo">
-      <h1 id="site-title">MelfWare</h1>
-      <p id="site-tagline">Intelligent Automation Solutions</p>
+      <a href="{{ get_url(path='/') }}" class="site-logo" aria-label="MelfWare - Home">
+        <img
+          src="{{ get_url(path='img/melfware-logo.svg') }}"
+          alt="MelfWare - Intelligent Automation"
+          class="site-logo-img"
+        >
+      </a>
     </section>
 
     <section id="info">
