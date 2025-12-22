@@ -5,25 +5,46 @@
   padding: 2rem 0;
 }
 
-#site-logo {
-  width: 200px;
+.site-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.site-header-inner {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo-img {
+  display: block;
   height: 80px;
+  width: auto;
   margin-bottom: 1rem;
   filter: drop-shadow(0 4px 8px var(--shadow-accent));
   transition: transform 0.3s ease;
 }
 
-#site-logo:hover {
+.site-logo-img:hover {
   transform: scale(1.05);
 }
 
-#site-tagline {
-  font-size: 1.1rem;
-  color: var(--text-color);
-  opacity: 0.8;
-  margin: 0.5rem 0 0 0;
-  font-weight: 300;
-  letter-spacing: 0.5px;
+body.dark .site-header {
+  border-bottom-color: #222;
+}
+
+body.dark .site-logo-img {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
 }
 
 /* Enhanced welcome message */
