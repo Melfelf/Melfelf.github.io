@@ -1,4 +1,4 @@
-<svg viewBox="0 0 460 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+<svg viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
   <title id="logoTitle">MelfWare</title>
   <desc id="logoDesc">MelfWare - Intelligent Automation</desc>
 
@@ -11,7 +11,7 @@
   </defs>
 
   <!-- Enhanced dot line (automation flow) -->
-  <g class="logo-dots" transform="translate(110,70)">
+  <g class="logo-dots" transform="translate(10,70)">
     <circle cx="0" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
     <circle cx="24" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
     <circle cx="48" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
@@ -24,7 +24,7 @@
 
   <!-- Refined wordmark -->
   <text class="logo-wordmark"
-        x="105" y="55"
+        x="5" y="55"
         font-family="Segoe UI, system-ui, -apple-system, Arial, sans-serif"
         font-weight="700"
         font-size="38"
@@ -35,7 +35,7 @@
 
   <!-- Subtle tagline -->
   <text class="logo-tagline"
-        x="108" y="95"
+        x="8" y="95"
         font-family="Segoe UI, system-ui, -apple-system, Arial, sans-serif"
         font-size="13"
         letter-spacing="1.3"
