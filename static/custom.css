@@ -34,7 +34,7 @@
   color: var(--text-pale-color);
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.08);
+  background: var(--pill-gradient);
   border: 1px solid var(--border-accent);
 }
 
@@ -44,7 +44,7 @@
   gap: 1.5rem;
   padding: 1.5rem;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(248, 250, 252, 0.9));
+  background: var(--panel-gradient);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-accent);
   box-shadow: 0 12px 36px var(--shadow-accent);
@@ -52,7 +52,7 @@
 }
 
 body.dark .hero-panel {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+  background: var(--panel-gradient);
 }
 
 .hero-main {
@@ -111,7 +111,7 @@ body.dark .hero-panel {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(37, 99, 235, 0.05);
+  background: linear-gradient(90deg, rgba(29, 78, 216, 0.07), rgba(16, 163, 74, 0.07), rgba(251, 191, 36, 0.08));
   padding: 0.65rem 0.9rem;
   border-radius: 10px;
   border: 1px dashed var(--border-accent);
@@ -131,7 +131,7 @@ body.dark .hero-panel {
 .status-card {
   padding: 0.95rem 1rem;
   border-radius: 12px;
-  background: linear-gradient(145deg, rgba(37, 99, 235, 0.08), rgba(6, 182, 212, 0.08));
+  background: linear-gradient(145deg, rgba(29, 78, 216, 0.09), rgba(16, 163, 74, 0.09), rgba(251, 191, 36, 0.08));
   border: 1px solid var(--border-accent);
   box-shadow: 0 10px 24px var(--shadow-accent);
   display: flex;
@@ -221,7 +221,7 @@ body.dark .hero-panel {
   width: 100%;
   padding: 1.25rem;
   border-radius: 14px;
-  background: linear-gradient(145deg, rgba(37, 99, 235, 0.12), rgba(139, 92, 246, 0.12));
+  background: linear-gradient(145deg, rgba(14, 165, 233, 0.14), rgba(16, 163, 74, 0.12), rgba(251, 191, 36, 0.12));
   border: 1px solid var(--border-accent);
   box-shadow: 0 12px 28px var(--shadow-accent);
   display: flex;
@@ -304,13 +304,13 @@ body.dark .featured-grid {
   border-radius: 14px;
   border: 1px solid var(--border-accent);
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(224, 242, 254, 0.65), rgba(240, 253, 244, 0.65));
   box-shadow: 0 8px 22px var(--shadow-accent);
   transition: all 0.25s ease;
 }
 
 body.dark .feature-card {
-  background: rgba(30, 41, 59, 0.7);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 118, 110, 0.16), rgba(55, 65, 81, 0.7));
 }
 
 .feature-card:hover {
@@ -337,7 +337,7 @@ body.dark .feature-card {
   align-items: center;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.12);
+  background: var(--pill-gradient);
   color: var(--primary-accent);
   font-weight: 700;
   border: 1px solid var(--border-accent);
@@ -350,7 +350,7 @@ body.dark .feature-card {
 
 /* Hero section background */
 body.homepage {
-  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 50%, var(--primary-accent) 100%);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-highlight) 28%, var(--bg-gradient-end) 56%, rgba(251, 191, 36, 0.35) 78%, rgba(239, 68, 68, 0.32) 100%);
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -367,32 +367,40 @@ body.dark.homepage main {
 }
 :root {
   /* Enhanced color scheme */
-  --primary-accent: #2563eb;
-  --secondary-accent: #06b6d4;
-  --tertiary-accent: #8b5cf6;
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --error-color: #ef4444;
+  --primary-accent: #1d4ed8;
+  --secondary-accent: #0ea5e9;
+  --tertiary-accent: #16a34a;
+  --quaternary-accent: #fbbf24;
+  --quinary-accent: #ef4444;
+  --primary-accent-dark: #60a5fa;
 
   /* Background gradients */
   --bg-gradient-start: #f8fafc;
-  --bg-gradient-end: #e2e8f0;
+  --bg-gradient-highlight: #e0f2fe;
+  --bg-gradient-end: #fffbeb;
 
   /* Border and shadow enhancements */
-  --border-accent: rgba(37, 99, 235, 0.1);
-  --shadow-accent: rgba(37, 99, 235, 0.05);
+  --border-accent: rgba(15, 23, 42, 0.08);
+  --shadow-accent: rgba(15, 23, 42, 0.06);
 
   /* Text enhancements */
-  --text-gradient: linear-gradient(135deg, #2563eb, #06b6d4);
+  --text-gradient: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 22%, #16a34a 48%, #fbbf24 72%, #ef4444 100%);
+  --pill-gradient: linear-gradient(120deg, rgba(29, 78, 216, 0.08), rgba(16, 163, 74, 0.08), rgba(251, 191, 36, 0.1));
+  --panel-gradient: linear-gradient(135deg, rgba(29, 78, 216, 0.08), rgba(14, 165, 233, 0.08), rgba(16, 163, 74, 0.08), rgba(251, 191, 36, 0.08));
+  --action-gradient: linear-gradient(120deg, #1d4ed8, #0ea5e9 28%, #16a34a 55%, #fbbf24 80%, #ef4444 100%);
 }
 
 /* Dark mode colors */
 body.dark {
   --bg-gradient-start: #0f172a;
-  --bg-gradient-end: #1e293b;
-  --border-accent: rgba(6, 182, 212, 0.1);
-  --shadow-accent: rgba(6, 182, 212, 0.05);
-  --text-gradient: linear-gradient(135deg, #06b6d4, #8b5cf6);
+  --bg-gradient-highlight: #0b3a5c;
+  --bg-gradient-end: #1f2937;
+  --border-accent: rgba(103, 232, 249, 0.18);
+  --shadow-accent: rgba(0, 0, 0, 0.35);
+  --text-gradient: linear-gradient(135deg, #38bdf8 0%, #60a5fa 22%, #22c55e 48%, #facc15 72%, #f87171 100%);
+  --pill-gradient: linear-gradient(120deg, rgba(56, 189, 248, 0.16), rgba(34, 197, 94, 0.14), rgba(250, 204, 21, 0.14));
+  --panel-gradient: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(34, 197, 94, 0.12), rgba(250, 204, 21, 0.1), rgba(248, 113, 113, 0.12));
+  --action-gradient: linear-gradient(120deg, #60a5fa, #38bdf8 28%, #22c55e 55%, #facc15 80%, #f87171 100%);
 }
 
 /* Override theme variables for enhanced colors */
@@ -422,12 +430,12 @@ body.dark main {
 
 /* Enhanced buttons */
 button, .button, a.instant, #back-link {
-  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  background: var(--action-gradient);
   border: none;
   border-radius: 8px;
   color: white;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
 }
 
 button:hover, .button:hover, a.instant:hover, #back-link:hover {
