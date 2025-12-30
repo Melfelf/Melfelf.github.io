@@ -35,7 +35,8 @@
 {% block content %}
 <div id="wrapper">
   <main>
-    <section id="logo" class="logo-band">
+    <!-- Site Logo -->
+    <section id="logo">
       <a href="{{ get_url(path='/') }}" class="site-logo" aria-label="MelfWare - Home">
         <img
           src="{{ get_url(path='img/melfware-logo.svg') }}"
@@ -43,88 +44,46 @@
           class="site-logo-img"
         >
       </a>
-      {% if section.extra.overline %}
-      <div class="logo-overline">{{ section.extra.overline }}</div>
-      {% endif %}
     </section>
 
-    <section id="info" class="hero-panel">
-      <div class="hero-main">
-        <div class="hero-header">
-          <div>
-            <span class="eyebrow">Stefan “Melf” Moser</span>
-            <div class="name-row">
-              <span id="name">{{ section.extra.name }}</span>
-              {% if section.extra.id %}
-              <span id="id">@{{ section.extra.id }}</span>
-              {% endif %}
-            </div>
-            {% if section.extra.bio %}
-            <p id="bio">{{ section.extra.bio }}</p>
-            {% endif %}
-          </div>
-        </div>
-
-        {% if section.extra.highlights %}
-        <ul class="highlight-list">
-          {% for item in section.extra.highlights %}
-          <li>
-            <span class="checkmark">•</span>
-            <span>{{ item }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-
-        {% if section.extra.status_cards %}
-        <div class="status-grid">
-          {% for stat in section.extra.status_cards %}
-          <div class="status-card">
-            <span class="label">{{ stat.label }}</span>
-            <span class="value">{{ stat.value }}</span>
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
-
-        <div class="link-row">
-          <div class="primary-links">
-            {% for section in config.extra.sections %}
-            <a {% if section.is_external %}href="{{ section.path }}" target="_blank" rel='noreferrer noopener'{% else %}href="{{ get_url(path=section.path) }}" class="instant"{% endif %}>{{ section.name }}</a>
-            {% endfor %}
-          </div>
-          <div class="social-links">
-            {% for link in section.extra.links %}
-            <a href="{{ link.url }}" aria-label="{{ link.name }}" target="_blank" rel='noreferrer noopener'>
-              {% set icon_path = "icon/" ~ link.icon ~ ".svg" %}
-              {% set icon = load_data(path=icon_path) %}
-              {{ icon | safe }}
-            </a>
-            {% endfor %}
-            {% if not section.extra.footer and not config.extra.force_theme %}
-            {% set moon_icon = load_data(path="icon/moon.svg") %}
-            {% set sun_icon = load_data(path="icon/sun.svg") %}
-            <button id="theme-toggle" aria-label="theme switch">
-              <span class="moon-icon">{{ moon_icon | safe }}</span>
-              <span class="sun-icon">{{ sun_icon | safe }}</span>
-            </button>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-aside">
-        {% if section.extra.contact_note %}
-        <div class="contact-card">
-          <p>{{ section.extra.contact_note }}</p>
-          {% if section.extra.links %}
-            {% for link in section.extra.links %}
-              {% if link.name == "Email" %}
-              <a class="button instant" href="{{ link.url }}">Start a conversation</a>
-              {% endif %}
-            {% endfor %}
+    <section id="info">
+      {% if section.extra.avatar %}
+      <img src="{{ get_url(path=section.extra.avatar) }}" alt="avatar">
+      {% endif %}
+      <div id="text">
+        <div>
+          <span id="name">{{ section.extra.name }}</span>
+          {% if section.extra.id %}
+          <span id="id">@{{ section.extra.id }}</span>
           {% endif %}
         </div>
+        {% if section.extra.bio %}
+        <div id="bio"> {{ section.extra.bio }} </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section id="links">
+      <div id="left">
+        {% for section in config.extra.sections %}
+        <a {% if section.is_external %}href="{{ section.path }}" target="_blank" rel='noreferrer noopener'{% else %}href="{{ get_url(path=section.path) }}" class="instant"{% endif %}>{{ section.name }}</a>
+        {% endfor %}
+      </div>
+      <div id="right">
+        {% for link in section.extra.links %}
+        <a href="{{ link.url }}" aria-label="{{ link.name }}" target="_blank" rel='noreferrer noopener'>
+          {% set icon_path = "icon/" ~ link.icon ~ ".svg" %}
+          {% set icon = load_data(path=icon_path) %}
+          {{ icon | safe }}
+        </a>
+        {% endfor %}
+        {% if not section.extra.footer and not config.extra.force_theme %}
+        {% set moon_icon = load_data(path="icon/moon.svg") %}
+        {% set sun_icon = load_data(path="icon/sun.svg") %}
+        <button id="theme-toggle" aria-label="theme switch">
+          <span class="moon-icon">{{ moon_icon | safe }}</span>
+          <span class="sun-icon">{{ sun_icon | safe }}</span>
+        </button>
         {% endif %}
       </div>
     </section>
@@ -132,26 +91,6 @@
     <section id="brief" class="prose">
       {{ section.content | trim | safe }}
     </section>
-
-    {% if section.extra.featured_sections %}
-    <section class="featured-grid">
-      <div class="section-title">
-        <p class="eyebrow">Explore</p>
-        <h2>Start with a focus area</h2>
-      </div>
-      <div class="feature-cards">
-        {% for item in section.extra.featured_sections %}
-        <a class="feature-card instant" href="{{ get_url(path=item.path) }}">
-          <div class="card-header">
-            <span class="pill">{{ item.name }}</span>
-            <span class="arrow">→</span>
-          </div>
-          <p>{{ item.description }}</p>
-        </a>
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
 
     {% if section.extra.recent %}
     {% set blog_section_path = config.extra.blog_section_path | trim_start_matches(pat="/") %}
