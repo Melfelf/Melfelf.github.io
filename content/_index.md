@@ -4,26 +4,6 @@ template = 'home.html'
 [extra]
 lang = 'en'
 
-# Hero presentation
-overline = "Automation strategist • Cloud reliability engineer"
-highlights = [
-    "Automation-first delivery and guardrails",
-    "Azure, AVD, and endpoint management",
-    "AI-assisted scripting and observability"
-]
-status_cards = [
-    { label = "Current focus", value = "Azure automation and digital workspace reliability" },
-    { label = "Building", value = "Opinionated runbooks, self-service tooling, and resilient workflows" },
-    { label = "Toolbox", value = "PowerShell, Bicep, DevOps pipelines, and a lot of curiosity" }
-]
-featured_sections = [
-    { name = "Projects", path = "/projects", description = "Automation builds, home lab experiments, and prototypes." },
-    { name = "IT Pro", path = "/it-pro", description = "Practical notes on Azure, virtualization, and endpoint management." },
-    { name = "AI Blubber", path = "/ai-blubber", description = "Hands-on AI workflows, promptcraft, and operational lessons." },
-    { name = "Read", path = "/read", description = "Reading notes and takeaways from technology and leadership books." }
-]
-contact_note = "Let’s design stable, automated workflows together."
-
 # Show footer in home page
 footer = false
 
@@ -49,8 +29,6 @@ date_format = "%b %-d, %Y at %H:%M"
 
 Hi, I'm Stefan, also known as *Melf*, a seasoned IT systems engineer with over two decades of experience in infrastructure, automation, and digital transformation. My journey spans from traditional IT operations to cutting-edge cloud architectures and AI-driven automation.
 
-Every role I have taken—whether building datacenters, rolling out Azure Virtual Desktop, or automating endpoint management—was anchored in one belief: good technology should get out of the way so people can do their best work.
-
 ## My Mission
 
 **Make Everything Less Frustrating With Automation & Robotic Execution**
@@ -63,12 +41,5 @@ I believe in the power of intelligent systems to bridge the gap between human in
 - **AI & Automation**: Exploring the intersection of artificial intelligence and practical automation
 - **Personal Reflections**: Thoughts on technology's impact on society, work, and human experience
 - **Book Insights**: Curated recommendations and analysis of books on technology, psychology, and philosophy
-
-## How I Work
-
-- **Systematic thinking first**: I start with architecture, guardrails, and repeatable workflows.
-- **Automation as culture**: Scripts and pipelines are great, but the win is when teams adopt the mindset.
-- **Measure and iterate**: Success is defined with metrics—stability, cost, performance, and user happiness.
-- **Human lens**: Even the most technical project should make life easier for the people who depend on it.
 
 Welcome to my corner of the internet — a space for thoughtful exploration of technology's role in shaping our future.
