@@ -1,7 +1,6 @@
 +++
 title = "The Home Automation Robot Team"
 description = "Coordinating a fleet of small robots to handle household tasks through shared automation playbooks."
-date = 2025-06-07
 template = "blog.html"
 page_template = "post.html"
 insert_anchor_links = "right"
@@ -10,6 +9,7 @@ sort_by = "date"
 
 [extra]
 lang = "en"
+date = 2025-06-07
 
 title = "Home Automation Crew"
 subtitle = "From vacuuming to voice-assisted errands, tracking how miniature robots team up around the house."
