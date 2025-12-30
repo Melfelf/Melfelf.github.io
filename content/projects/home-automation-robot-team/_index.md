@@ -35,3 +35,10 @@ Early milestones focus on:
 - Designing a central “task board” that can negotiate jobs between robots and static automations.
 - Building reliable fallbacks so one robot can cover for another when something goes wrong.
 - Simplifying human inputs—short commands, NFC triggers, and voice prompts that get translated into repeatable routines.
+
+Current toolkit:
+- Home Assistant as orchestrator, MQTT as the common bus.
+- A mix aus Saugroboter, Steckdosen, kleinen ESP32-Sensoren.
+- Python-Skripte für Ad-hoc-Automationen, die später gehärtet werden.
+
+Ziel: Eine Mannschaft, die kleine Haushaltsaufgaben zuverlässig selbst koordiniert und bei Fehlern automatisch eskaliert.

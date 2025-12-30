@@ -38,4 +38,11 @@ This section explores the fascinating world of artificial intelligence, from pra
 
 Whether you're curious about how to work with AI tools or interested in deeper discussions about artificial intelligence, you'll find something here.
 
+## How I Work With AI
+
+- **Show your work**: Prompts, failures, and iterations are part of every write-up.
+- **Guardrails first**: Safety, transparency, and reproducibility over flashy demos.
+- **Bilingual**: Deutsch für persönliche Notizen, Englisch für technische Tiefe.
+- **Evidence matters**: Wenn eine Aussage getestet wurde, schreibe ich das dazu.
+
 ---

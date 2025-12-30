@@ -33,4 +33,9 @@ This section features books and audiobooks that have left an impression on me. E
 
 Someone invested significant time and effort into writing these works, which I believe enhances their quality. I only feature recommendations where I think this is particularly evident.
 
+### Wie ich lese und schreibe
+- Notiere pro Kapitel zwei Kernideen.
+- Markiere Stellen, die konkrete Handlungen auslösen (z. B. ein Experiment oder ein Gespräch).
+- Schreibe die Rezensionen kurz nach dem Lesen, ergänze später um gelebte Erfahrungen.
+
 ---

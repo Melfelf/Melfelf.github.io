@@ -119,3 +119,9 @@ All changes are implemented in `/static/custom.css` and will be automatically in
 - **Week 4**: Testing, refinement, and deployment
 
 This plan provides a structured approach to visually enhance the website while preserving its professional character.
+
+## Next Validation Steps
+
+- Run Lighthouse and contrast checks on both light and dark modes.
+- Capture before/after screenshots for the homepage and a long-form post.
+- Ask 2–3 readers for quick feedback on readability after the gradient updates.

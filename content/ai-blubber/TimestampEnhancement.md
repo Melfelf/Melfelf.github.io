@@ -183,6 +183,12 @@ The changes have minimal performance impact:
 - Machine-readable datetime attributes
 - Screen reader friendly date formatting
 
+### What Readers Notice
+
+- Klar erkennbar, wann ein Beitrag entstanden und zuletzt gepflegt wurde.
+- Lesedauer als schnelle Orientierung, ob ein Artikel in die aktuelle Pause passt.
+- Einheitliche Darstellung über alle Sektionen hinweg.
+
 ## Future Enhancements
 
 ### Potential Extensions

@@ -62,3 +62,19 @@ The solution encompasses the following key components and steps:
    - Deployment status tracking
    - Client self-tagging verification
    - Success criteria validation
+
+### Operational Tips
+
+- **Template naming**: Align template names with configuration files to avoid mismatched payloads.
+- **Gold image hygiene**: Run health checks (SFC/DISM), clear logs, and reset Windows Update state before sealing.
+- **Security hardening**: Bake baseline policies (Defender, Exploit Guard, Credential Guard) into the image where possible.
+- **Rollback plan**: Keep at least one prior image version available; maintain checksums to verify integrity.
+- **Cost control**: Schedule builds during off-hours and clean up stale image versions automatically.
+
+### Validation Checklist
+
+1. Session hosts boot with correct registry tags.
+2. Required apps install silently and appear in Start/Menu/FSLogix profiles.
+3. Monitoring agents register with the correct workspace.
+4. Sign-in, Teams optimization, and printer redirection tested by two users.
+5. Image version and build date visible in both registry and host tags.

@@ -35,3 +35,27 @@ The solution involves the following key components and steps:
 6. **On-Demand Update Mechanism:** Implement a method for manually triggering updates when immediate action is required.
 7. **Monitoring and Alerts:** Set up monitoring for the update process, with alerts for any failures or issues that require attention.
 
+### Runbook Outline
+
+1. **Pre-flight checks**
+   - Confirm hostpool health, drain mode status, and image availability.
+   - Validate capacity to ensure enough active hosts during rollout.
+2. **Session draining**
+   - Set hosts to drain with a defined grace period.
+   - Notify active users where possible before disconnecting lingering sessions.
+3. **Redeploy cycle**
+   - Delete and recreate hosts from the latest image on ephemeral disks.
+   - Attach monitoring agents and validate FSLogix share access.
+4. **Health verification**
+   - Run synthetic sign-in tests.
+   - Check registration status and latency for each host.
+5. **Handover and rollback**
+   - Flip new hosts to production and remove drain mode.
+   - Provide a fast rollback to the previous image if sign-in or app validation fails.
+
+### Design Considerations
+
+- **Ephemeral vs. persistent**: Use ephemeral for speed and security, but keep a small set of persistent hosts for DR and hibernation scenarios.
+- **Change windows**: Align with business low-usage periods; automate notifications to service owners.
+- **Logging**: Centralize logs (Log Analytics) for each lifecycle step to simplify audits and RCA.
+- **Testing**: Maintain a pre-production hostpool that mirrors production with a reduced host count.

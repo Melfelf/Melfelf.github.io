@@ -183,3 +183,10 @@ These templates aren't strict rules, they're guidelines. They ensure:
 
 The best templates feel invisible to the reader, making the information flow naturally while being structured enough to help writers organize their thoughts effectively.
 
+### Editing Flow I Follow
+
+1. Draft with the appropriate template.
+2. Read aloud once; shorten every second sentence.
+3. Add metadata (date, updated, reading time, keywords).
+4. Link to at least one related post or section.
+5. Final scan for German/English consistency depending on the section.

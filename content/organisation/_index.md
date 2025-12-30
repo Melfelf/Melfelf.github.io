@@ -26,3 +26,7 @@ outdate_alert_days = 12
 outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
+
+## Why I Write About Organizations
+
+Technology only works when teams, processes, and incentives align. In dieser Sektion sammle ich kurze Beobachtungen zu Führung, Meetings, Feedback-Loops und Teamstrukturen. Der Fokus liegt auf praktischen, sofort nutzbaren Ideen statt Management-Jargon.

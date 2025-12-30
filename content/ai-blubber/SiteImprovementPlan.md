@@ -123,6 +123,11 @@ The website currently features:
 - **Accessibility**: WCAG AA compliance
 - **Technical**: 99.9% uptime, fast build times
 
+Current benchmarks (Dec 2025):
+- Lighthouse: high 80s on mobile, low 90s on desktop
+- Build time: ~2s locally with Zola
+- Accessibility: passing automated checks; manual keyboard testing ongoing
+
 ## Resource Requirements
 
 - **Time**: 2-3 months for Phase 1-2 implementation

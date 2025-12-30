@@ -65,3 +65,10 @@ Created `/templates/macros/prose.html` to override the theme's macro, ensuring t
 ## Testing
 
 The fix has been applied to ensure the back button now consistently navigates back in browser history across all pages, providing a more intuitive user experience.
+
+### Quick Test Script
+
+1. Navigate from the homepage to a blog post via a tag or search result.
+2. Click the back button: expect to return to the referring list/search page.
+3. Open a post directly in a new tab: back button should do nothing (no history), not dump you at `/blog`.
+4. Repeat on mobile to verify tap targets and preventDefault behavior.

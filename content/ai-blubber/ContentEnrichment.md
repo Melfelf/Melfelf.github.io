@@ -121,3 +121,9 @@ Content enrichment isn't about adding fluff or unnecessary elements. It's about 
 
 When content is well-presented, the ideas shine through, and readers get more value from every post.
 
+### Mini Checklist Before Publishing
+
+- Reading time present and realistic.
+- Headings every ~3–4 paragraphs for scannability.
+- One pull-quote or bold key line per long article.
+- Links to related posts at the end when relevant.
