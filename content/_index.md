@@ -45,8 +45,6 @@ recent_more_text = "more »"
 date_format = "%b %-d, %Y at %H:%M"
 +++
 
-# Stefan "Melf" Moser
-
 Hi, I'm Stefan, also known as *Melf*, a seasoned IT systems engineer with over two decades of experience in infrastructure, automation, and digital transformation. My journey spans from traditional IT operations to cutting-edge cloud architectures and AI-driven automation.
 
 Every role I have taken—whether building datacenters, rolling out Azure Virtual Desktop, or automating endpoint management—was anchored in one belief: good technology should get out of the way so people can do their best work.

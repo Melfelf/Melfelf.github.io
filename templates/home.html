@@ -65,34 +65,7 @@
           </div>
         </div>
 
-        {% if section.extra.highlights %}
-        <ul class="highlight-list">
-          {% for item in section.extra.highlights %}
-          <li>
-            <span class="checkmark">•</span>
-            <span>{{ item }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-
-        {% if section.extra.status_cards %}
-        <div class="status-grid">
-          {% for stat in section.extra.status_cards %}
-          <div class="status-card">
-            <span class="label">{{ stat.label }}</span>
-            <span class="value">{{ stat.value }}</span>
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
-
         <div class="link-row">
-          <div class="primary-links">
-            {% for section in config.extra.sections %}
-            <a {% if section.is_external %}href="{{ section.path }}" target="_blank" rel='noreferrer noopener'{% else %}href="{{ get_url(path=section.path) }}" class="instant"{% endif %}>{{ section.name }}</a>
-            {% endfor %}
-          </div>
           <div class="social-links">
             {% for link in section.extra.links %}
             <a href="{{ link.url }}" aria-label="{{ link.name }}" target="_blank" rel='noreferrer noopener'>
@@ -110,24 +83,51 @@
             </button>
             {% endif %}
           </div>
-        </div>
-      </div>
-
-      <div class="hero-aside">
-        {% if section.extra.contact_note %}
-        <div class="contact-card">
-          <p>{{ section.extra.contact_note }}</p>
-          {% if section.extra.links %}
-            {% for link in section.extra.links %}
+          
+          {% if section.extra.contact_note %}
+          <div class="hero-actions">
+             {% for link in section.extra.links %}
               {% if link.name == "Email" %}
               <a class="button instant" href="{{ link.url }}">Start a conversation</a>
               {% endif %}
             {% endfor %}
+          </div>
           {% endif %}
         </div>
-        {% endif %}
       </div>
     </section>
+
+    {% if section.extra.highlights or section.extra.status_cards %}
+    <section class="overview-panel">
+        {% if section.extra.highlights %}
+        <div class="overview-column">
+            <h3>Highlights</h3>
+            <ul class="highlight-list">
+            {% for item in section.extra.highlights %}
+            <li>
+                <span class="checkmark">•</span>
+                <span>{{ item }}</span>
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if section.extra.status_cards %}
+        <div class="overview-column">
+            <h3>Current Status</h3>
+            <div class="status-grid">
+            {% for stat in section.extra.status_cards %}
+            <div class="status-card">
+                <span class="label">{{ stat.label }}</span>
+                <span class="value">{{ stat.value }}</span>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </section>
+    {% endif %}
 
     <section id="brief" class="prose">
       {{ section.content | trim | safe }}
