@@ -1,8 +1,8 @@
 +++
 title = "Project Spotlights"
-description = "A blog showcasing interesting projects, case studies, and project management insights."
+description = "A curated list of active projects with quick links into their latest updates."
 sort_by = "date"
-template = "blog.html"
+template = "projects.html"
 page_template = "post.html"
 insert_anchor_links = "right"
 generate_feeds = true
@@ -26,3 +26,5 @@ outdate_alert_days = 12
 outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
+
+Welcome to the Projects hub. Each spotlight below links to a dedicated project space with its own updates, logs, and artifacts. Dive in to follow along or pick up where the last milestone left off.

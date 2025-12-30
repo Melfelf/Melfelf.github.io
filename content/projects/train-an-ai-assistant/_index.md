@@ -1,6 +1,7 @@
 +++
 title = "Train an AI Assistant"
 description = "Project hub for building a tailored AI assistant, from data curation to deployment-ready evaluation."
+date = 2025-12-30
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"

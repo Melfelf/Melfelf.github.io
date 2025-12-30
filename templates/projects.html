@@ -1,0 +1,132 @@
+{% extends "_base.html" %}
+{% import "macros/prose.html" as prose %}
+
+{% block page %}blog{% endblock page %}
+{% block lang %}{% if section.extra.lang %}{{ section.extra.lang }}{% else %}{{ section.lang }}{% endif %}{% endblock lang %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block desc %}
+  {% if section.description %}
+  <meta name="description" content="{{ section.description }}">
+  {% endif %}
+{% endblock desc %}
+
+{% block head %}
+{% if config.markdown.highlight_theme == "css" %}
+  {% if config.extra.force_theme == "dark" %}
+    <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-dark.css') }}" />
+  {% else %}
+    <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
+  {% endif %}
+{% endif %}
+{% if section.extra.math %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true }
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+{% endif %}
+{% endblock head %}
+
+{% block content %}
+<div id="wrapper">
+  <main>
+    {{ prose::back_link() }}
+
+    <div class="section-title">
+      <h1>{{ section.extra.title | default(value=section.title) }}</h1>
+      {% if section.description %}
+      <p>{{ section.description }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.content | trim != "" %}
+    <section class="prose">
+      {{ section.content | safe }}
+    </section>
+    {% endif %}
+
+    {% set date_format = section.extra.date_format | default(value="%b %-d, %Y") %}
+
+    {% set subsections = [] %}
+    {% for sub_path in section.subsections %}
+      {% set_global subsections = subsections | concat(with=[get_section(path=sub_path)]) %}
+    {% endfor %}
+    {% set subsections = subsections | sort(attribute="date") | reverse %}
+
+    {% if subsections | length > 0 %}
+    <section class="prose collection-wrapper">
+      {% for sub in subsections %}
+      <div class="collection card">
+        <div class="meta">
+          <a class="title" href="{{ sub.permalink }}">{{ sub.title }}</a>
+          {% if sub.date %}
+          <div class="date">{{ sub.date | date(format=date_format) }}</div>
+          {% endif %}
+        </div>
+        {% set summary = sub.extra.subtitle | default(value=sub.description) %}
+        {% if summary %}
+        <div class="subtitle">{{ summary }}</div>
+        {% endif %}
+        {% if sub.content %}
+        {% set excerpt = sub.content | striptags | truncate(length=260) %}
+        {% if excerpt | trim != "" %}
+        <div class="content">
+          <p>{{ excerpt }}</p>
+        </div>
+        {% endif %}
+        {% endif %}
+        <div class="tags">
+          <div>
+            <span>Explore</span>
+            <a href="{{ sub.permalink }}">View project updates</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if section.pages | length > 0 %}
+    <section class="prose collection-wrapper">
+      {% for page in section.pages %}
+      <div class="collection card">
+        <div class="meta">
+          <a class="title" href="{{ page.permalink }}">{{ page.title }}</a>
+          {% if page.date %}
+          <div class="date">{{ page.date | date(format=date_format) }}</div>
+          {% endif %}
+        </div>
+        {% if page.description %}
+        <div class="subtitle">{{ page.description }}</div>
+        {% endif %}
+        {% if page.summary %}
+        <div class="content">
+          {{ page.summary | safe }}
+        </div>
+        {% else %}
+        {% set excerpt = page.content | striptags | truncate(length=260) %}
+        {% if excerpt | trim != "" %}
+        <div class="content">
+          <p>{{ excerpt }}</p>
+        </div>
+        {% endif %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </section>
+    {% endif %}
+  </main>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{{ get_url(path='js/lightense.min.js') }}"></script>
+{% endblock script %}
