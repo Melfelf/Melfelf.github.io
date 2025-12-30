@@ -75,3 +75,11 @@ Codex remains useful here: generate tool-call skeletons, draft unit tests for to
 - Define success metrics (e.g., 85% correctness on the seed set, zero unsafe outputs) before expanding the scope.
 
 This blogpost marks the starting point. With a Codex-bootstrapped baseline and a tight evaluation loop, we can iterate confidently toward a reliable, production-ready AI assistant.
+
+### Quick Starter Checklist
+
+- [ ] Charter written and pinned.
+- [ ] Seed workflows documented with desired outputs.
+- [ ] Baseline prompt with 3–5 few-shot examples.
+- [ ] Manual evaluation sheet with scoring rubric.
+- [ ] Automation script to replay evaluations after each change.

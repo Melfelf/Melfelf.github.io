@@ -29,3 +29,15 @@ The book combines insights from psychology and behavioral economics, offering re
 ### Why This Matters
 
 Understanding these two systems of thought has profound implications for how we approach decisions, both personal and professional. By recognizing when System 1 (fast, emotional, automatic) versus System 2 (slow, deliberate, logical) thinking dominates, we can make more conscious choices about when to trust our instincts and when to slow down and think carefully.
+
+### Key Takeaways I Keep Using
+
+- **Priming-Effekte** sind real: Rahmenbedingungen beeinflussen Antworten stärker als gedacht.
+- **Verlustaversion** dominiert Entscheidungen; ich frage mich bewusst, ob ich gerade nur Angst vor Verlust habe.
+- **Ankereffekte** meiden: Zahlen zuerst aufschreiben, bevor ich mich von externen Werten leiten lasse.
+
+### Für wen das Buch passt
+
+- Menschen, die verstehen wollen, warum sie oft „aus dem Bauch“ handeln.
+- Führungskräfte, die Entscheidungsprozesse transparenter gestalten wollen.
+- Alle, die Biases in Meetings, Planung oder Risikoeinschätzungen reduzieren möchten.

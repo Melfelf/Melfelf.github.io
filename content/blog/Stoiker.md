@@ -19,6 +19,8 @@ Als Philosoph wäre ich wohl ein Stoiker. Ich weiss zwar nicht wie Stoizismus ge
 
 Die Grundprinzipien des Stoizismus scheinen mit meiner Denkweise übereinzustimmen. Besonders die Idee, dass wir nur das kontrollieren können was in unserer Macht steht und alles andere akzeptieren müssen, entspricht meiner Lebenseinstellung.
 
+Stoizismus bedeutet für mich nicht Gefühllosigkeit, sondern bewusste Priorisierung: Was kann ich aktiv beeinflussen, und was darf ich loslassen? Dieses Denken hilft, weniger Energie in Frust zu stecken und mehr in Lösungen zu investieren.
+
 ## Was mich anzieht
 
 Einige Aspekte die mich am Stoizismus besonders ansprechen:
@@ -29,3 +31,10 @@ Einige Aspekte die mich am Stoizismus besonders ansprechen:
 * Die Betonung von rationalem Denken
 
 Auch wenn ich kein Experte in stoischer Philosophie bin, finde ich mich in vielen ihrer Grundprinzipien wieder. Vielleicht ist es genau diese intuitive Übereinstimmung, die mich zu dieser Philosophie hinzieht.
+
+### Stoisches Toolkit, das mir hilft
+- **Negative Visualisierung**: Kurz vorstellen, was schiefgehen könnte, um die Gegenwart zu schätzen.
+- **Dichotomie der Kontrolle**: Liste machen: „beeinflussbar“ vs. „nicht beeinflussbar“.
+- **Tägliche Reflexion**: Abends fragen: Was habe ich heute aktiv gesteuert? Was habe ich akzeptiert?
+
+Kleine Routinen wie diese holen die Philosophie in den Alltag.

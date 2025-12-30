@@ -28,3 +28,9 @@ outdate_alert_text_after = " days ago and may be out of date."
 +++
 
 Welcome to the Projects hub. Each spotlight below links to a dedicated project space with its own updates, logs, and artifacts. Dive in to follow along or pick up where the last milestone left off.
+
+### How I Document Projects
+- **Objective first**: Eine klare Zielsetzung pro Projekt.
+- **Small increments**: Logs capture weekly or sprint-sized changes.
+- **Evidence**: Architecture notes, diagrams, and scripts where possible.
+- **Retros**: What worked, what broke, what to try next.

@@ -127,3 +127,9 @@ Good technical implementation should be invisible to the user. They shouldn't ha
 
 These improvements represent that philosophy: making the site feel more polished and user-friendly without requiring visitors to understand the technical details behind the scenes.
 
+### Quick Setup Cheatsheet
+
+- Enable search: `build_search_index = true` in `config.toml`.
+- Add metadata: `description`, `keywords`, and author fields per post.
+- Configure comments per section: toggle `comment` in section frontmatter.
+- Verify performance: run `zola build` and open the generated pages for a sanity check.

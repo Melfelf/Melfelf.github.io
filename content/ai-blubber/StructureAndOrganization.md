@@ -56,3 +56,10 @@ These structural improvements lay the foundation for:
 
 This is how I approach site improvements: identify a problem, implement a solution, and use it as a foundation for future enhancements. A clearer structure now makes every future improvement easier to implement and more impactful for visitors.
 
+### Quick Checklist for New Sections
+
+- Start with a short welcome that explains the "why".
+- List 3–5 typical topics readers will find.
+- Set expectations for language (DE/EN) and tone.
+- Add date formats and metadata for consistency.
+- Provide one cross-link to a related section to encourage exploration.

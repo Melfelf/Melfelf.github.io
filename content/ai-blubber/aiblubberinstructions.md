@@ -15,6 +15,7 @@ My blogging process is built on four fundamental principles:
 2. Present content clearly and accessibly
 3. Use well-structured, fluent sentences
 4. Maintain consistent formatting across categories
+5. Be explicit about where AI contributed and where I edited manually
 
 ### Writing Style Guidelines
 
@@ -95,3 +96,11 @@ I'm continuously refining this system based on:
 - AI capability developments
 
 The goal is to maintain a balance between automated assistance and personal authenticity, ensuring each post reflects my voice while benefiting from AI's enhancing capabilities.
+
+### Operational Checklist I Use Before Publishing
+
+1. **Voice check**: Does the draft still sound like me?
+2. **Fact check**: Every claim verified or clearly marked as opinion.
+3. **Structure scan**: Headings, bullets, and short paragraphs for scannability.
+4. **Metadata**: Dates, keywords, and reading time filled.
+5. **Change log**: Note where AI suggestions were accepted or rejected.

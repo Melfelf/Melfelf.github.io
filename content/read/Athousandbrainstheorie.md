@@ -49,3 +49,6 @@ This theory bridges the gap between neuroscience and artificial intelligence in 
 
 **Recommended for:** Anyone curious about how the brain works, interested in AI, or fascinated by the intersection of neuroscience and technology.
 
+### Personal Reflection
+
+Nach dem Lesen habe ich meine Erwartung an KI-Systeme anders bewertet: Viele kleine Modelle oder Agenten, die jeweils Teile der Welt abbilden, wirken realistischer als ein monolithischer Ansatz. Im Alltag bedeutet das für mich, Automationen modular zu bauen und ihnen jeweils klare, kleine Aufgaben zu geben.

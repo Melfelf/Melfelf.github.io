@@ -16,3 +16,4 @@ Heute ist der letzte Montag – und zugleich der letzte Tag – im Juni 2025. Di
 
 Der Juni 2025 war bislang außergewöhnlich warm und überraschte mit rekordverdächtigen Aare-Temperaturen. Gestern wurden 22,8 Grad gemessen – und das schon im Juni!
 
+Der Podcast läuft, die Lichter sind gedimmt, und es ist einer dieser Momente, in denen die Zeit kurz stillsteht. Kind beruhigen, Atmen hören, selber herunterfahren. Gleichzeitig schaltet der Kopf nicht ganz ab: Welche Aufgaben warten morgen? Habe ich genug getrunken bei dieser Hitze? Kleine Routinen wie dieser Podcast schaffen es immer wieder, den Tag sauber zu beenden.

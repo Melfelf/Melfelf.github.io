@@ -42,3 +42,9 @@ Welcome to the project space for creating a focused AI assistant tailored to rea
 Follow along as we evolve from Codex prototypes to a reliable, production-ready assistant.
 
 ---
+
+### Current Focus Areas
+
+- Build an evaluation harness with a small but high-quality seed set.
+- Iterate prompts with transparent change logs.
+- Capture failure patterns (hallucination, missing context, tone drift) and address them explicitly.

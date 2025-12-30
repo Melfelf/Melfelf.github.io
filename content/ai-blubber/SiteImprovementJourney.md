@@ -115,9 +115,10 @@ These changes make the site more discoverable through search, easier to navigate
 - Track engagement metrics to evaluate impact
 - Use data to inform future content decisions
 
+I plan to revisit these lists quarterly, pruning items that are done or no longer valuable, and prioritizing tasks that reduce friction for readers first.
+
 ### The Vision
 
 My goal is to create a site that feels like a genuine reflection of my interests and expertise, while being valuable and accessible to visitors. Each improvement brings us closer to that goal, whether it's fixing documentation, enhancing navigation, or adding thoughtfully curated content.
 
 This iterative approach, where I continuously identify and address issues, seems like the best way to grow something meaningful. What matters most is that the content remains authentic and useful, while the presentation becomes progressively more polished.
-

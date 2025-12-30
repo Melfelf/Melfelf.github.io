@@ -24,6 +24,9 @@ Short notes or bullet points about the topic.
 - Use well-structured and fluent sentences.
 - Add relevant transitions and context where needed.
 - Do not invent facts or add unrelated content.
+- Prefer present tense for narrative; past tense for lessons learned.
+- Suggest one short summary sentence at the end.
+- Propose a title variant if the current one is weak.
 
 **Example Input:**
 - Spontaneous trip to Cheyres
@@ -36,5 +39,6 @@ Short notes or bullet points about the topic.
 Last weekend, I decided on a spontaneous trip to Cheyres, a picturesque village on the shore of Lake Neuchâtel. Packing was quick but thoughtful: sunscreen, swimwear, and of course, my Nintendo Switch were essentials. On the way, I stopped at Bern station for a delicious burger—just the right start for a short getaway.  
 Once in Cheyres, relaxation was the order of the day: lounging by the lake, enjoying a BBQ, and winding down with an evening aperitif. Although the weather wasn’t ideal at first, I’m optimistic it will improve soon.
 
----
+**Publishing checklist:** Add `date`, `updated`, and `reading_time` to the frontmatter; sanity-check with a quick aloud read to ensure it still sounds like me.
 
+---

@@ -38,6 +38,6 @@ Technical content focused on practical solutions for modern IT challenges. Here 
 - **Enterprise Management**: Best practices for managing infrastructure at scale
 - **Troubleshooting**: Solutions to common IT problems and edge cases
 
-Each article aims to provide actionable insights backed by real-world experience.
+Each article aims to provide actionable insights backed by real-world experience. I favor reproducible steps, architecture diagrams, and guardrails over marketing. If etwas theoretisch bleibt, schreibe ich es dazu – Praxisnähe hat Vorrang.
 
 ---

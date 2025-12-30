@@ -31,4 +31,13 @@ outdate_alert_text_after = " days ago and may be out of date."
 
 Hier findest du ungefilterte Gedanken, persönliche Erfahrungen und Reflexionen zu verschiedensten Themen. Von Alltagsmomenten bis zu spontanen Geistesblitzen, alles was mich bewegt.
 
+## Was dich erwartet
+
+- **Alltag & Reisen**: Kleine und große Momente, die im Gedächtnis bleiben.
+- **Gedankenblitze**: Ideen, die nachts auftauchen und am Morgen noch Bestand haben.
+- **Meta-Reflexionen**: Wie ich über KI, Arbeit und Familienleben nachdenke.
+- **Einfach ehrlich**: Keine Hochglanz-Storys, sondern authentische Eindrücke.
+
+Ich schreibe bevorzugt auf Deutsch, weil es sich für persönliche Themen am natürlichsten anfühlt.
+
 ---
