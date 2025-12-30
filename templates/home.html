@@ -8,6 +8,8 @@
 {% endblock desc %}
 
 {% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}">
 {% if config.markdown.highlight_theme == "css" %}
   {% if config.extra.force_theme == "dark" %}
     <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-dark.css') }}" />
