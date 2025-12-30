@@ -4,6 +4,26 @@ template = 'home.html'
 [extra]
 lang = 'en'
 
+# Hero presentation
+overline = "Automation strategist • Cloud reliability engineer"
+highlights = [
+    "Automation-first delivery and guardrails",
+    "Azure, AVD, and endpoint management",
+    "AI-assisted scripting and observability"
+]
+status_cards = [
+    { label = "Current focus", value = "Azure automation and digital workspace reliability" },
+    { label = "Building", value = "Opinionated runbooks, self-service tooling, and resilient workflows" },
+    { label = "Toolbox", value = "PowerShell, Bicep, DevOps pipelines, and a lot of curiosity" }
+]
+featured_sections = [
+    { name = "Projects", path = "/projects", description = "Automation builds, home lab experiments, and prototypes." },
+    { name = "IT Pro", path = "/it-pro", description = "Practical notes on Azure, virtualization, and endpoint management." },
+    { name = "AI Blubber", path = "/ai-blubber", description = "Hands-on AI workflows, promptcraft, and operational lessons." },
+    { name = "Read", path = "/read", description = "Reading notes and takeaways from technology and leadership books." }
+]
+contact_note = "Let’s design stable, automated workflows together."
+
 # Show footer in home page
 footer = false
 
