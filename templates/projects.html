@@ -59,7 +59,7 @@
     {% for sub_path in section.subsections %}
       {% set_global subsections = subsections | concat(with=[get_section(path=sub_path)]) %}
     {% endfor %}
-    {% set subsections = subsections | sort(attribute="date") | reverse %}
+    {% set subsections = subsections | sort(attribute="extra.date") | reverse %}
 
     {% if subsections | length > 0 %}
     <section class="prose collection-wrapper">
@@ -67,8 +67,9 @@
       <div class="collection card">
         <div class="meta">
           <a class="title" href="{{ sub.permalink }}">{{ sub.title }}</a>
-          {% if sub.date %}
-          <div class="date">{{ sub.date | date(format=date_format) }}</div>
+          {% set card_date = sub.date | default(value=sub.extra.date) %}
+          {% if card_date %}
+          <div class="date">{{ card_date | date(format=date_format) }}</div>
           {% endif %}
         </div>
         {% set summary = sub.extra.subtitle | default(value=sub.description) %}
