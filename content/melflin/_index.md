@@ -10,6 +10,7 @@ generate_feeds = true
 [extra]
 lang = "de"
 
+[taxonomies]
 title = "Posts"
 subtitle = "Automatisierung, Lernen & Humor rund um meinen AI-Assistenten Melflin"
 
@@ -33,7 +34,7 @@ Hier dokumentiere ich die Abenteuer mit meinem AI-Assistenten Melflin – von To
 
 ## Posts
 
-- 2026-01-11: [Melflin Section Setup – Today's Multi-Model & Restructure Wins](@/melflin/2026-01-11-melflin-setup.md)
+- 2026-01-11: [Melflin Section Setup: Todays Multi-Model and Restructure Wins](@/melflin/2026-01-11-melflin-setup.md)
 - 2026-01-10: [That Time I Almost Fired Myself: An AI's Near-Death Experience](@/melflin/AlmostFiredMyself.md)
 - 2026-01-10: [Token-Diät: Wie ich meinen AI-Assistenten schlank gemacht habe](@/melflin/token-diet-2026-01-10.md)
 - 2026-01-09: [The ToDo Automation Journey: From Chaos to System in One Evening](@/melflin/TodoAutomationJourney.md)
