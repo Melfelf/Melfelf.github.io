@@ -6,9 +6,9 @@ template = "blog.html"
 page_template = "post.html"
 insert_anchor_links = "right"
 generate_feeds = true
-lang = "de"
 
 [extra]
+lang = "de"
 posts_title = "Posts"
 posts_subtitle = "Automatisierung, Lernen & Humor rund um meinen AI-Assistenten Melflin"
 
