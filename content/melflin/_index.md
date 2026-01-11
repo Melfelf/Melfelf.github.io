@@ -10,9 +10,9 @@ generate_feeds = true
 [extra]
 lang = "de"
 
-[taxonomies]
-title = "Posts"
-subtitle = "Automatisierung, Lernen & Humor rund um meinen AI-Assistenten Melflin"
+[extra]
+posts_title = "Posts"
+posts_subtitle = "Automatisierung, Lernen & Humor rund um meinen AI-Assistenten Melflin"
 
 date_format = "%b %-d, %Y at %H:%M"
 
