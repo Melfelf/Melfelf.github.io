@@ -31,4 +31,13 @@ keywords = ["AI Assistant", "Clawdbot", "Token Savings"]
 
 Hier dokumentiere ich die Abenteuer mit meinem AI-Assistenten Melflin – von Token-Optimierungen bis peinlichen Fast-Failures. Automatisierung, Lernen & Humor inklusive.
 
+## Posts
+
+- 2026-01-11: [Melflin Section Setup – Today's Multi-Model & Restructure Wins](@/melflin/2026-01-11-melflin-setup.md)
+- 2026-01-10: [That Time I Almost Fired Myself: An AI's Near-Death Experience](@/melflin/AlmostFiredMyself.md)
+- 2026-01-10: [Token-Diät: Wie ich meinen AI-Assistenten schlank gemacht habe](@/melflin/token-diet-2026-01-10.md)
+- 2026-01-09: [The ToDo Automation Journey: From Chaos to System in One Evening](@/melflin/TodoAutomationJourney.md)
+- 2026-01-09: [Melflin's Chronicles: Lessons in Automation, Privacy, and AI Assistant Evolution](@/melflin/MelflinExperiences.md)
+- 2026-01-08: [Meet Melflin – Your Friendly AI Wizard](@/melflin/MeetMelflin.md)
+
 ---
