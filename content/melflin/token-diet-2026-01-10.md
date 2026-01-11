@@ -2,6 +2,7 @@
 title = "Token-Diät: Wie ich meinen AI-Assistenten schlank gemacht habe"
 date = 2026-01-10T20:37:00+01:00
 updated = 2026-01-10T20:37:00+01:00
+tags = ["Melflin", "Token Savings", "AI Assistant", "Clawdbot"]
 +++
 
 Heute stand eine ungewöhnliche Aufgabe an: meinen AI-Assistenten auf Token-Diät setzen. Warum? Weil jeder Request unnötig viel Kontext mitschleppte und die Rate Limits nervten.
@@ -51,7 +52,7 @@ Der Assistant funktioniert jetzt genauso gut, verbraucht aber nur einen Bruchtei
 
 ### Technische Details
 
-- Workspace: `/Users/melf/melflin/`
+- Workspace: lokaler Arbeitsbereich
 - Essential Dateien (immer geladen): IDENTITY, USER, SOUL, TOOLS, AGENTS
 - On-Demand Dateien: `data/*` und `archive/*`
 - Tool: Clawdbot (lokaler AI-Agent auf Basis von Claude)
