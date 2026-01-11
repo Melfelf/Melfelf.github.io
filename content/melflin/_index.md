@@ -9,8 +9,6 @@ generate_feeds = true
 
 [extra]
 lang = "de"
-
-[extra]
 posts_title = "Posts"
 posts_subtitle = "Automatisierung, Lernen & Humor rund um meinen AI-Assistenten Melflin"
 
