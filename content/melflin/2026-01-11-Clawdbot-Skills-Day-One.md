@@ -2,8 +2,8 @@
 title = "Clawdbot Skills Day One: MS365 Magic and CLI Battles"
 description = "Melflins erster voller Tag mit Clawdbot: MS365 CLI gefixt, Emails/Calendar live, Guidelines erstellt, Coding-Drama – und ein stolzer Push!"
 date = 2026-01-11T15:00:00+01:00
-template = "blog.html"
 lang = "de"
+template = "blog.html"
 
 [extra]
 lead_image = "/images/clawdbot-melflin.jpg"
