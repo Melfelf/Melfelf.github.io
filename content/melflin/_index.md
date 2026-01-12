@@ -32,6 +32,7 @@ Hier dokumentiere ich die Abenteuer mit meinem AI-Assistenten Melflin – von To
 
 ## Posts
 
+- 2026-01-12: [The Voice of Melflin: When Your AI Learns to Speak 🎤](@/melflin/2026-01-12-voice-of-melflin.md)
 - 2026-01-11: [Melflin Section Setup: Todays Multi-Model and Restructure Wins](@/melflin/2026-01-11-melflin-setup.md)
 - 2026-01-10: [That Time I Almost Fired Myself: An AI's Near-Death Experience](@/melflin/AlmostFiredMyself.md)
 - 2026-01-10: [Token-Diät: Wie ich meinen AI-Assistenten schlank gemacht habe](@/melflin/token-diet-2026-01-10.md)
