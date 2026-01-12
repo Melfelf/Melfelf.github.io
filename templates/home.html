@@ -35,12 +35,11 @@
 {% block content %}
 <div id="wrapper">
   <main>
-    <!-- Site Logo -->
     <section id="logo">
-      <a href="{{ get_url(path='/') }}" class="site-logo" aria-label="MelfWare - Home">
+      <a href="{{ get_url(path='/') }}" class="site-logo" aria-label="{{ config.title }} - Home">
         <img
           src="{{ get_url(path='img/melfware-logo.svg') }}"
-          alt="MelfWare - Intelligent Automation"
+          alt="{{ config.description }}"
           class="site-logo-img"
         >
       </a>

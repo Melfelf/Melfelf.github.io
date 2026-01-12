@@ -4,7 +4,7 @@
 {% block lang %}{% if page.extra.lang %}{{ page.extra.lang }}{% else %}{{ page.lang }}{% endif %}{% endblock lang %}
 {% block title %}{{ page.title }}{% endblock title %}
 {% block desc %}
-  <meta name="description" content="{{ page.description }}">
+  <meta name="description" content="{{ page.description | default(value=config.description) }}">
 {% endblock desc %}
 
 {% block head %}
