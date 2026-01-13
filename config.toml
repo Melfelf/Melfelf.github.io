@@ -25,11 +25,12 @@ smart_punctuation = false
 
 [markdown.highlighting]
 enable = true
-theme = "serene-dark"
+# Syntect theme names often include the file extension.
+theme = "serene-dark.tmTheme"
 extra_syntaxes_and_themes = ["highlight_themes"]
 themes_css = [
-  { theme = "serene-light", filename = "hl-light.css" },
-  { theme = "serene-dark", filename = "hl-dark.css" },
+  { theme = "serene-light.tmTheme", filename = "hl-light.css" },
+  { theme = "serene-dark.tmTheme", filename = "hl-dark.css" },
 ]
 
 [slugify]
