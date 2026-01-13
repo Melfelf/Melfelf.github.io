@@ -26,15 +26,10 @@ smart_punctuation = false
 # and use a real highlighting theme for the HTML it produces.
 
 [markdown.highlighting]
-enable = true
-
-# Use Zola built-in highlight themes so GitHub Pages (zola 0.22.0) can build reliably.
-# These entries also generate `hl-light.css` / `hl-dark.css` into the site root.
-theme = "base16-ocean-dark"
-themes_css = [
-  { theme = "base16-ocean-light", filename = "hl-light.css" },
-  { theme = "base16-ocean-dark", filename = "hl-dark.css" },
-]
+# GitHub Pages currently builds with Zola 0.22.0 and a limited set of bundled themes.
+# To keep deploys reliable, we disable Zola's syntax highlighting and ship our own
+# `static/hl-light.css` / `static/hl-dark.css` (Serene-style) which the templates load.
+enable = false
 
 [slugify]
 paths = "on"
