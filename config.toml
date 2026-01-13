@@ -25,11 +25,10 @@ smart_punctuation = false
 # We keep the Serene highlight CSS files in `static/hl-light.css` and `static/hl-dark.css`
 # and use a real highlighting theme for the HTML it produces.
 
-[markdown.highlighting]
-# GitHub Pages currently builds with Zola 0.22.0 and a limited set of bundled themes.
-# To keep deploys reliable, we disable Zola's syntax highlighting and ship our own
-# `static/hl-light.css` / `static/hl-dark.css` (Serene-style) which the templates load.
-enable = false
+# GitHub Pages currently builds with Zola 0.22.0; highlight theme availability differs.
+# Disable Zola's syntax highlighting to keep deploys reliable; templates still load
+# our `static/hl-light.css` / `static/hl-dark.css`.
+highlighting = false
 
 [slugify]
 paths = "on"
