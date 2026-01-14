@@ -37,3 +37,5 @@ So gehe ich vor, um Korrelation nicht mit Kausalität zu verwechseln:
 ### Fazit
 
 Die Erkenntnis "Korrelation impliziert keine Kausalität" ist ein wichtiges Werkzeug für kritisches Denken - nicht nur in der IT, sondern in allen Bereichen des Lebens. Wer Ursache und Wirkung sauber trennt, löst Probleme schneller, trifft bessere Entscheidungen und lässt sich weniger von scheinbar offensichtlichen Zusammenhängen täuschen.
+
+Test
