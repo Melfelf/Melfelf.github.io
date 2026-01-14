@@ -13,19 +13,25 @@ generate_feeds = false # Whether to generate a feed file in root, read docs for 
 taxonomies = [{ name = "tags" }, { name = "categories" }]
 
 [markdown]
-highlight_code = true
-highlight_theme = "css"
-# Use Serene's bundled highlight themes (provided by the theme submodule).
-extra_syntaxes_and_themes = ["themes/serene/highlight_themes"]
-highlight_themes_css = [
-  { theme = "serene-light", filename = "hl-light.css" },
-  { theme = "serene-dark", filename = "hl-dark.css" },
-]
 render_emoji = false
 external_links_target_blank = false
 external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = false
+
+# Zola 0.22 expects `markdown.highlighting` to be a struct (not a boolean).
+# We vendor Serene's TextMate themes into `highlight_themes/` so builds can
+# resolve them without depending on theme submodule paths.
+
+[markdown.highlighting]
+enable = true
+# Theme keys are the file stems (no `.tmTheme`).
+theme = "serene-dark"
+extra_syntaxes_and_themes = ["highlight_themes"]
+themes_css = [
+  { theme = "serene-light", filename = "hl-light.css" },
+  { theme = "serene-dark", filename = "hl-dark.css" },
+]
 
 [slugify]
 paths = "on"
