@@ -26,6 +26,7 @@ jobs:
         run: |
           zola build
           echo "melf.ch" > public/CNAME
+          touch public/.nojekyll
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
