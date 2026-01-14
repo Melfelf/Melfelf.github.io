@@ -1,10 +1,13 @@
 # On every push this script is executed
-on: push
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 name: Build and deploy GH Pages
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
     steps:
@@ -12,6 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 1
 
       - name: Install Zola
         uses: taiki-e/install-action@v2
