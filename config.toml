@@ -27,7 +27,7 @@ smart_punctuation = false
 enable = true
 # Theme keys are the file stems (no `.tmTheme`).
 theme = "serene-dark"
-extra_syntaxes_and_themes = ["highlight_themes/themes"]
+extra_syntaxes_and_themes = ["highlight_themes"]
 themes_css = [
   { theme = "serene-light", filename = "hl-light.css" },
   { theme = "serene-dark", filename = "hl-dark.css" },
