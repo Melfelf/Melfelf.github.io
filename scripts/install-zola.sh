@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Installs a pinned Zola binary into ./bin for local builds/tests.
-ZOLA_VERSION="${ZOLA_VERSION:-0.19.2}"
+ZOLA_VERSION="${ZOLA_VERSION:-0.22.0}"
 INSTALL_DIR="${ZOLA_BIN_DIR:-./bin}"
 
 OS="$(uname -s)"
