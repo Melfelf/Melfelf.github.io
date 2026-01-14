@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Comprehensive plan for enhancing the website&#x27;s user experience, performance, and functionality">
+
+  <title>Site Improvement Plan</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#objective">Objective</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#current-state-analysis">Current State Analysis</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#key-improvement-areas">Key Improvement Areas</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#1-user-experience-enhancements">1. User Experience Enhancements</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#2-performance-optimization">2. Performance Optimization</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#3-seo-and-discoverability">3. SEO and Discoverability</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-content-and-organization">4. Content and Organization</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#5-accessibility-and-inclusivity">5. Accessibility and Inclusivity</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#6-technical-infrastructure">6. Technical Infrastructure</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#7-mobile-and-cross-device-experience">7. Mobile and Cross-Device Experience</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#8-analytics-and-measurement">8. Analytics and Measurement</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#implementation-phases">Implementation Phases</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#phase-1-foundation-priority-high">Phase 1: Foundation (Priority: High)</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#phase-2-user-experience-priority-high">Phase 2: User Experience (Priority: High)</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#phase-3-content-and-growth-priority-medium">Phase 3: Content and Growth (Priority: Medium)</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#phase-4-advanced-features-priority-low">Phase 4: Advanced Features (Priority: Low)</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#success-metrics">Success Metrics</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#resource-requirements">Resource Requirements</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#risk-assessment">Risk Assessment</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#timeline">Timeline</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Site Improvement Plan</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Dec 21, 2025 at 00:00</span>
+            </div>
+
+          
+          <div id="tags">
+            <a class="instant" href="https://melf.ch/tags/ux"><span>#</span>UX</a><a class="instant" href="https://melf.ch/tags/performance"><span>#</span>Performance</a><a class="instant" href="https://melf.ch/tags/seo"><span>#</span>SEO</a><a class="instant" href="https://melf.ch/tags/analytics"><span>#</span>Analytics</a><a class="instant" href="https://melf.ch/tags/accessibility"><span>#</span>Accessibility</a>
+          </div>
+          
+        </div>
+
+        
+        
+
+        
+
+        <h2 id="objective">Objective<a class="zola-anchor" href="#objective" aria-label="Anchor link for: objective" style="visibility: hidden;"></a>
+</h2>
+<p>Develop a comprehensive roadmap to improve the website's user experience, performance, discoverability, and overall functionality while maintaining the professional aesthetic and content quality.</p>
+<h2 id="current-state-analysis">Current State Analysis<a class="zola-anchor" href="#current-state-analysis" aria-label="Anchor link for: current-state-analysis" style="visibility: hidden;"></a>
+</h2>
+<p>The website currently features:</p>
+<ul>
+<li>Clean, minimal design with recent visual enhancements</li>
+<li>Well-organized content structure (blog, it-pro, ai-blubber, etc.)</li>
+<li>Responsive design with dark/light mode support</li>
+<li>Basic SEO implementation</li>
+<li>Static site generation with Zola</li>
+</ul>
+<h2 id="key-improvement-areas">Key Improvement Areas<a class="zola-anchor" href="#key-improvement-areas" aria-label="Anchor link for: key-improvement-areas" style="visibility: hidden;"></a>
+</h2>
+<h3 id="1-user-experience-enhancements">1. User Experience Enhancements<a class="zola-anchor" href="#1-user-experience-enhancements" aria-label="Anchor link for: 1-user-experience-enhancements" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>Homepage Redesign</strong>: ✅ COMPLETED - Added logo, improved layout, enhanced visual hierarchy</li>
+<li><strong>Navigation Improvements</strong>: Implement breadcrumb navigation, improve mobile menu</li>
+<li><strong>Content Discovery</strong>: Add related posts, tag clouds, search functionality</li>
+<li><strong>Interactive Elements</strong>: Add smooth scrolling, loading states, micro-interactions</li>
+<li><strong>User Feedback</strong>: Implement contact forms, comment systems where appropriate</li>
+</ul>
+<h3 id="2-performance-optimization">2. Performance Optimization<a class="zola-anchor" href="#2-performance-optimization" aria-label="Anchor link for: 2-performance-optimization" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>Image Optimization</strong>: Implement WebP/AVIF formats, lazy loading, responsive images</li>
+<li><strong>Bundle Optimization</strong>: Minimize CSS/JS, implement code splitting</li>
+<li><strong>Caching Strategy</strong>: Add proper cache headers, service worker for offline access</li>
+<li><strong>CDN Integration</strong>: Use CDN for static assets</li>
+<li><strong>Core Web Vitals</strong>: Optimize for Google's performance metrics</li>
+</ul>
+<h3 id="3-seo-and-discoverability">3. SEO and Discoverability<a class="zola-anchor" href="#3-seo-and-discoverability" aria-label="Anchor link for: 3-seo-and-discoverability" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>Meta Tags Enhancement</strong>: Add Open Graph, Twitter Cards, structured data</li>
+<li><strong>Sitemap Generation</strong>: Ensure comprehensive XML sitemap</li>
+<li><strong>Content Optimization</strong>: Improve heading structure, alt texts, internal linking</li>
+<li><strong>Analytics Integration</strong>: Add Google Analytics, search console</li>
+<li><strong>Rich Snippets</strong>: Implement schema markup for articles, author info</li>
+</ul>
+<h3 id="4-content-and-organization">4. Content and Organization<a class="zola-anchor" href="#4-content-and-organization" aria-label="Anchor link for: 4-content-and-organization" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>Content Strategy</strong>: Plan for regular posting schedule, content pillars</li>
+<li><strong>Archive System</strong>: Improve date-based archives, category organization</li>
+<li><strong>Multilingual Support</strong>: Consider English/German content expansion</li>
+<li><strong>Content Types</strong>: Add case studies, tutorials, resource pages</li>
+<li><strong>Newsletter Integration</strong>: Add subscription functionality</li>
+</ul>
+<h3 id="5-accessibility-and-inclusivity">5. Accessibility and Inclusivity<a class="zola-anchor" href="#5-accessibility-and-inclusivity" aria-label="Anchor link for: 5-accessibility-and-inclusivity" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>WCAG Compliance</strong>: Audit and improve accessibility scores</li>
+<li><strong>Keyboard Navigation</strong>: Ensure full keyboard accessibility</li>
+<li><strong>Screen Reader Support</strong>: Add ARIA labels, semantic HTML</li>
+<li><strong>Color Contrast</strong>: Verify contrast ratios across themes</li>
+<li><strong>Font and Typography</strong>: Optimize readability</li>
+</ul>
+<h3 id="6-technical-infrastructure">6. Technical Infrastructure<a class="zola-anchor" href="#6-technical-infrastructure" aria-label="Anchor link for: 6-technical-infrastructure" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>Build Process</strong>: Automate deployment, add CI/CD pipeline</li>
+<li><strong>Monitoring</strong>: Add uptime monitoring, error tracking</li>
+<li><strong>Security</strong>: Implement security headers, HTTPS enforcement</li>
+<li><strong>Backup Strategy</strong>: Regular content and configuration backups</li>
+<li><strong>Version Control</strong>: Improve git workflow, branching strategy</li>
+</ul>
+<h3 id="7-mobile-and-cross-device-experience">7. Mobile and Cross-Device Experience<a class="zola-anchor" href="#7-mobile-and-cross-device-experience" aria-label="Anchor link for: 7-mobile-and-cross-device-experience" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>Mobile Optimization</strong>: Test and improve mobile performance</li>
+<li><strong>Touch Interactions</strong>: Optimize for touch devices</li>
+<li><strong>Progressive Web App</strong>: Consider PWA implementation</li>
+<li><strong>Cross-Browser Testing</strong>: Ensure compatibility across browsers</li>
+</ul>
+<h3 id="8-analytics-and-measurement">8. Analytics and Measurement<a class="zola-anchor" href="#8-analytics-and-measurement" aria-label="Anchor link for: 8-analytics-and-measurement" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><strong>User Behavior Tracking</strong>: Implement event tracking, conversion goals</li>
+<li><strong>Performance Monitoring</strong>: Add real user monitoring</li>
+<li><strong>Content Analytics</strong>: Track popular content, user engagement</li>
+<li><strong>A/B Testing</strong>: Framework for testing improvements</li>
+</ul>
+<h2 id="implementation-phases">Implementation Phases<a class="zola-anchor" href="#implementation-phases" aria-label="Anchor link for: implementation-phases" style="visibility: hidden;"></a>
+</h2>
+<h3 id="phase-1-foundation-priority-high">Phase 1: Foundation (Priority: High)<a class="zola-anchor" href="#phase-1-foundation-priority-high" aria-label="Anchor link for: phase-1-foundation-priority-high" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Performance optimization (image optimization, caching)</li>
+<li>SEO enhancements (meta tags, sitemap)</li>
+<li>Accessibility audit and basic fixes</li>
+<li>Analytics setup</li>
+</ul>
+<h3 id="phase-2-user-experience-priority-high">Phase 2: User Experience (Priority: High)<a class="zola-anchor" href="#phase-2-user-experience-priority-high" aria-label="Anchor link for: phase-2-user-experience-priority-high" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Navigation improvements</li>
+<li>Content discovery features</li>
+<li>Mobile optimization</li>
+<li>Interactive elements</li>
+</ul>
+<h3 id="phase-3-content-and-growth-priority-medium">Phase 3: Content and Growth (Priority: Medium)<a class="zola-anchor" href="#phase-3-content-and-growth-priority-medium" aria-label="Anchor link for: phase-3-content-and-growth-priority-medium" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Content strategy implementation</li>
+<li>Newsletter system</li>
+<li>Social media integration</li>
+<li>Community features</li>
+</ul>
+<h3 id="phase-4-advanced-features-priority-low">Phase 4: Advanced Features (Priority: Low)<a class="zola-anchor" href="#phase-4-advanced-features-priority-low" aria-label="Anchor link for: phase-4-advanced-features-priority-low" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>PWA implementation</li>
+<li>Advanced analytics</li>
+<li>Multilingual support</li>
+<li>API integrations</li>
+</ul>
+<h2 id="success-metrics">Success Metrics<a class="zola-anchor" href="#success-metrics" aria-label="Anchor link for: success-metrics" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>Performance</strong>: Achieve 90+ Lighthouse scores</li>
+<li><strong>SEO</strong>: Improve search rankings, organic traffic growth</li>
+<li><strong>User Engagement</strong>: Increase time on site, reduce bounce rate</li>
+<li><strong>Accessibility</strong>: WCAG AA compliance</li>
+<li><strong>Technical</strong>: 99.9% uptime, fast build times</li>
+</ul>
+<p>Current benchmarks (Dec 2025):</p>
+<ul>
+<li>Lighthouse: high 80s on mobile, low 90s on desktop</li>
+<li>Build time: ~2s locally with Zola</li>
+<li>Accessibility: passing automated checks; manual keyboard testing ongoing</li>
+</ul>
+<h2 id="resource-requirements">Resource Requirements<a class="zola-anchor" href="#resource-requirements" aria-label="Anchor link for: resource-requirements" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>Time</strong>: 2-3 months for Phase 1-2 implementation</li>
+<li><strong>Tools</strong>: Additional development tools, analytics services</li>
+<li><strong>Budget</strong>: Minimal (mostly free tools and services)</li>
+<li><strong>Skills</strong>: Web development, SEO, UX design</li>
+</ul>
+<h2 id="risk-assessment">Risk Assessment<a class="zola-anchor" href="#risk-assessment" aria-label="Anchor link for: risk-assessment" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>Technical Complexity</strong>: Some features may require significant development</li>
+<li><strong>Maintenance Overhead</strong>: New features need ongoing maintenance</li>
+<li><strong>Performance Impact</strong>: Ensure optimizations don't negatively affect speed</li>
+<li><strong>User Adoption</strong>: Changes should not confuse existing users</li>
+</ul>
+<h2 id="timeline">Timeline<a class="zola-anchor" href="#timeline" aria-label="Anchor link for: timeline" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>Month 1</strong>: Complete Phase 1 (Foundation)</li>
+<li><strong>Month 2</strong>: Complete Phase 2 (User Experience)</li>
+<li><strong>Month 3</strong>: Begin Phase 3 (Content and Growth)</li>
+<li><strong>Ongoing</strong>: Monitoring, maintenance, and iterative improvements</li>
+</ul>
+<p>This plan provides a structured approach to systematically improve the website across multiple dimensions, ensuring it remains modern, accessible, and effective at achieving its goals.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025 by S.Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
