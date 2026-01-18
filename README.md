@@ -1,49 +1,41 @@
-# Personal Blog and Knowledge Base
+# MelfsBlog - Personal Knowledge Base 🧙‍♂️
 
-This is my personal blog and knowledge base built with Zola. The site contains various categories of content including technical guides, personal blog posts, and book reviews.
+A personal blog and knowledge base built with Zola. Contains technical guides, personal stories, book reviews, and AI adventures.
 
 ## Content Categories
 
-### IT Pro Content
-Technical articles and guides focusing on:
-- Azure Virtual Desktop (AVD)
-- Intune
-- Cloud Infrastructure
-- Automation
+| Section | Description |
+|---------|-------------|
+| **it-pro** | Technical articles (AVD, Intune, Cloud, Automation) |
+| **blog** | Personal blog posts in German |
+| **read** | Book reviews and reading notes |
+| **ai-blubber** | AI/ML experiments and thoughts |
+| **melflin** | Adventures with my AI-assistant Melflin |
+| **projects** | Personal projects and experiments |
 
-### Personal Blog
-Personal experiences and observations, primarily written in German.
+## Melflin Section ⭐
 
-### Book Reviews
-Reviews and insights from books I've read, covering various topics.
-
-### AI Blubber
-Content related to artificial intelligence and machine learning.
-
-## Site Structure
-
-```
-content/
-├── ai-blubber/    # AI-related content
-├── blog/          # Personal blog posts
-├── it-pro/        # Technical guides and documentation
-└── read/          # Book reviews and reading notes
-```
+The `melflin/` section documents my AI-assistant journey:
+- Token optimizations and cost savings
+- Voice synthesis (ElevenLabs) integration
+- Workflow automation
+- Fast-failures and learnings
 
 ## Local Development
 
-To run this site locally:
+```bash
+git clone https://github.com/Melfelf/Melfelf.github.io.git
+cd Melfelf.github.io
+./scripts/install-zola.sh  # Download Zola
+./scripts/test.sh           # Start dev server
+# Visit http://127.0.0.1:1111
+```
 
-1. Clone this repository
-2. Run `./scripts/install-zola.sh` to download a pinned Zola binary into `./bin`
-3. Run `./scripts/test.sh` (or `./bin/zola serve`) to build the site or start the local development server
-4. Visit `http://127.0.0.1:1111`
+## Technologies
 
-## Technologies Used
-
-- Zola
-- Serene Theme
+- **Zola** - Static site generator
+- **Serene** - Theme
 
 ## License
 
-Content is copyrighted unless otherwise stated. Code samples are available under MIT license.
+Content © 2025-2026 S. Moser. Code samples MIT.
