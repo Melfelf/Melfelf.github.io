@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Structured templates for technical posts, book reviews, personal blogs, and AI content to maintain consistency and quality.">
+
+  <title>Content Templates for Consistent Quality</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#structured-templates-for-different-content-types">Structured Templates for Different Content Types</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#technical-post-template-it-pro-section">Technical Post Template (IT-Pro Section)</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#book-review-template-read-section">Book Review Template (Read Section)</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#personal-blog-template-blog-section">Personal Blog Template (Blog Section)</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#ai-automation-template-ai-blubber-section">AI &amp; Automation Template (AI Blubber Section)</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#using-these-templates">Using These Templates</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#editing-flow-i-follow">Editing Flow I Follow</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Content Templates for Consistent Quality</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Dec 21, 2025 at 00:00</span>
+            </div>
+
+          
+        </div>
+
+        
+        
+
+        
+
+        <h2 id="structured-templates-for-different-content-types">Structured Templates for Different Content Types<a class="zola-anchor" href="#structured-templates-for-different-content-types" aria-label="Anchor link for: structured-templates-for-different-content-types" style="visibility: hidden;"></a>
+</h2>
+<p>To maintain consistency and quality across different sections of the site, I've developed structured templates for each content type. These ensure that whether you're reading a technical guide, a book review, or a personal reflection, you know what to expect and get the information you need efficiently.</p>
+<h3 id="technical-post-template-it-pro-section">Technical Post Template (IT-Pro Section)<a class="zola-anchor" href="#technical-post-template-it-pro-section" aria-label="Anchor link for: technical-post-template-it-pro-section" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Structure:</strong></p>
+<ol>
+<li><strong>Introduction</strong> - Hook the reader with the problem or challenge</li>
+<li><strong>Objective</strong> - What will you learn or achieve?</li>
+<li><strong>Key Requirements/Features</strong> - List the main points upfront</li>
+<li><strong>Solution Overview</strong> - Big picture before details</li>
+<li><strong>Implementation Steps</strong> - Clear, numbered steps</li>
+<li><strong>Considerations</strong> - Edge cases, alternatives, gotchas</li>
+<li><strong>Conclusion</strong> - Key takeaways and next steps</li>
+</ol>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Include code examples where relevant</li>
+<li>Use diagrams or ASCII art for complex concepts</li>
+<li>Clearly mark sections with H3 headers</li>
+<li>Include estimated reading time</li>
+<li>Add update dates if the content changes</li>
+<li>Link to related posts</li>
+</ul>
+<p><strong>Example Sections:</strong></p>
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">## Objective
+What specific problem does this solve?
+
+## Key Features
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Implementation Overview
+Brief explanation before diving in
+
+## Step-by-Step Guide
+### Step 1: ...
+### Step 2: ...
+
+## Key Takeaways
+- Lesson 1
+- Lesson 2
+</code></pre>
+<h3 id="book-review-template-read-section">Book Review Template (Read Section)<a class="zola-anchor" href="#book-review-template-read-section" aria-label="Anchor link for: book-review-template-read-section" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Structure:</strong></p>
+<ol>
+<li><strong>Opening</strong> - Hook: Why should someone read this book?</li>
+<li><strong>Book Details</strong> - Author, publication, category</li>
+<li><strong>Main Themes</strong> - Key concepts and ideas</li>
+<li><strong>Key Insights</strong> - Specific takeaways (3-5 main points)</li>
+<li><strong>Personal Reflection</strong> - How it impacted you</li>
+<li><strong>Who Should Read This</strong> - Target audience</li>
+<li><strong>Recommendation</strong> - Final thoughts and rating</li>
+</ol>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Lead with your strongest impression</li>
+<li>Highlight specific quotes if relevant</li>
+<li>Explain why certain ideas matter</li>
+<li>Connect to personal experience</li>
+<li>Be honest about what didn't work too</li>
+<li>Suggest related books or ideas</li>
+</ul>
+<p><strong>Example Structure:</strong></p>
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">## What is [Book Title]?
+Brief description of the book and why it matters
+
+## Main Themes
+- Theme 1 and explanation
+- Theme 2 and explanation
+
+## Key Insights
+1. **Insight One** - What this means and why it matters
+2. **Insight Two** - Real-world application
+3. **Insight Three** - Why it changed my perspective
+
+## Personal Takeaway
+Your honest reaction and how it influences you
+
+## Who Should Read This
+Best suited for people interested in...
+
+## Final Thoughts
+</code></pre>
+<h3 id="personal-blog-template-blog-section">Personal Blog Template (Blog Section)<a class="zola-anchor" href="#personal-blog-template-blog-section" aria-label="Anchor link for: personal-blog-template-blog-section" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Structure:</strong></p>
+<ol>
+<li><strong>Hook</strong> - Grab attention with the most interesting part</li>
+<li><strong>Context</strong> - Set the scene, explain the situation</li>
+<li><strong>Experience</strong> - Walk through what happened</li>
+<li><strong>Observations</strong> - What you noticed or learned</li>
+<li><strong>Reflection</strong> - Deeper thoughts on the experience</li>
+<li><strong>Closing</strong> - Send readers off with something to think about</li>
+</ol>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Use conversational language</li>
+<li>Include specific details that bring the story alive</li>
+<li>Don't be afraid of showing personality</li>
+<li>Use sensory details when describing experiences</li>
+<li>Connect personal moments to broader ideas</li>
+<li>End with a thought that resonates</li>
+</ul>
+<p><strong>Example Structure:</strong></p>
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">## The Setup
+What happened and why it matters to you
+
+## How It Unfolded
+Narrative description of events
+
+## What Struck Me
+Personal observations and reactions
+
+## Thinking It Through
+Deeper reflection on what it means
+
+## Moving Forward
+Closing thoughts
+</code></pre>
+<h3 id="ai-automation-template-ai-blubber-section">AI &amp; Automation Template (AI Blubber Section)<a class="zola-anchor" href="#ai-automation-template-ai-blubber-section" aria-label="Anchor link for: ai-automation-template-ai-blubber-section" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Structure:</strong></p>
+<ol>
+<li><strong>Problem Statement</strong> - What challenge are we addressing?</li>
+<li><strong>The Approach</strong> - How did you tackle it?</li>
+<li><strong>Tools &amp; Methods</strong> - What did you use?</li>
+<li><strong>Results &amp; Observations</strong> - What happened?</li>
+<li><strong>Lessons Learned</strong> - Key takeaways</li>
+<li><strong>Next Steps</strong> - Future exploration</li>
+<li><strong>Related Content</strong> - Links to similar ideas</li>
+</ol>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Be specific about what you tested</li>
+<li>Document failures as well as successes</li>
+<li>Explain the reasoning behind choices</li>
+<li>Show before/after comparisons</li>
+<li>Include screenshots or examples</li>
+<li>Be honest about limitations</li>
+</ul>
+<p><strong>Example Structure:</strong></p>
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">## The Challenge
+What problem were you trying to solve?
+
+## My Approach
+How did you decide to tackle it?
+
+## What I Built&#x2F;Used
+Specific tools and methods
+
+## Results
+What happened when you tried it?
+
+## Lessons Learned
+- Key insight 1
+- Key insight 2
+- Key insight 3
+
+## What This Opens Up
+Future possibilities or related explorations
+</code></pre>
+<h3 id="using-these-templates">Using These Templates<a class="zola-anchor" href="#using-these-templates" aria-label="Anchor link for: using-these-templates" style="visibility: hidden;"></a>
+</h3>
+<p>These templates aren't strict rules, they're guidelines. They ensure:</p>
+<ul>
+<li><strong>Consistency</strong>: Readers know what to expect</li>
+<li><strong>Clarity</strong>: Information is organized logically</li>
+<li><strong>Completeness</strong>: Important elements aren't overlooked</li>
+<li><strong>Accessibility</strong>: Content is easy to scan and navigate</li>
+<li><strong>Quality</strong>: Effort goes into presentation, not just content</li>
+</ul>
+<p>The best templates feel invisible to the reader, making the information flow naturally while being structured enough to help writers organize their thoughts effectively.</p>
+<h3 id="editing-flow-i-follow">Editing Flow I Follow<a class="zola-anchor" href="#editing-flow-i-follow" aria-label="Anchor link for: editing-flow-i-follow" style="visibility: hidden;"></a>
+</h3>
+<ol>
+<li>Draft with the appropriate template.</li>
+<li>Read aloud once; shorten every second sentence.</li>
+<li>Add metadata (date, updated, reading time, keywords).</li>
+<li>Link to at least one related post or section.</li>
+<li>Final scan for German/English consistency depending on the section.</li>
+</ol>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025 by S.Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
