@@ -3,168 +3,194 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>Melflin Live Preview</title>
+  <title>Melflin Heute</title>
   <style>
     body {
-      margin:0;
-      background:#fff;
-      color:#111;
-      font-family: Georgia, 'Times New Roman', serif;
-      -webkit-font-smoothing:none;
-      text-rendering:geometricPrecision;
+      margin: 0;
+      background: #fff;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: none;
+      text-rendering: geometricPrecision;
     }
     .page {
-      width:800px;
-      height:480px;
-      margin:0 auto;
-      box-sizing:border-box;
-      padding:24px 28px 18px 28px;
-      display:grid;
-      grid-template-rows:auto 1fr auto;
-      gap:16px;
-      overflow:hidden;
-      background:#fff;
+      width: 800px;
+      height: 480px;
+      margin: 0 auto;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 22px 26px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 18px;
+      overflow: hidden;
     }
     .header {
-      border-bottom:3px solid #111;
-      padding-bottom:10px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 20px;
+      align-items: end;
+      border-bottom: 3px solid #111;
+      padding-bottom: 10px;
     }
-    .header h1 {
-      margin:0;
-      font-size:36px;
-      line-height:1.0;
-      font-weight:700;
-      letter-spacing:-0.02em;
+    .title-big {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1;
+      margin: 0;
     }
-    .header p {
-      margin:8px 0 0;
-      font-size:18px;
-      line-height:1.25;
-      color:#222;
+    .subtitle {
+      margin-top: 8px;
+      font-size: 17px;
+      line-height: 1.25;
+      color: #222;
+      font-weight: 600;
     }
-    .main {
-      display:grid;
-      grid-template-columns:1.6fr 0.9fr;
-      gap:26px;
-      min-height:0;
+    .meta-right {
+      text-align: right;
+      font-size: 15px;
+      line-height: 1.35;
+      color: #222;
+      font-weight: 700;
     }
-    .left {
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      min-height:0;
+    .content {
+      display: grid;
+      grid-template-columns: 1.45fr 0.95fr;
+      gap: 20px;
+      min-height: 0;
     }
-    .section-title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      font-weight:800;
-      margin-bottom:10px;
+    .events {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 14px;
+      min-height: 0;
     }
-    .item {
-      display:grid;
-      grid-template-columns:145px 1fr;
-      gap:12px;
-      padding:10px 0;
-      border-top:1px solid #bdbdbd;
+    .event-card {
+      border: 3px solid #111;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
     }
-    .item:first-of-type {
-      border-top:2px solid #111;
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #444;
     }
-    .when {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:14px;
-      font-weight:800;
-      line-height:1.2;
+    .who {
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #333;
     }
-    .title {
-      font-size:22px;
-      line-height:1.08;
-      font-weight:700;
+    .event-title {
+      font-size: 27px;
+      line-height: 1.05;
+      font-weight: 800;
     }
-    .prefix {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:12px;
-      letter-spacing:0.04em;
-      text-transform:uppercase;
-      font-weight:700;
-      color:#444;
+    .event-when {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #222;
     }
-    .right {
-      display:flex;
-      flex-direction:column;
-      gap:22px;
-      padding-top:2px;
+    .side {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 14px;
+      min-height: 0;
     }
     .panel {
-      border-top:3px solid #111;
-      padding-top:8px;
+      border-top: 3px solid #111;
+      padding-top: 10px;
+      overflow: hidden;
     }
     .panel h2 {
-      margin:0 0 8px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:13px;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      font-weight:800;
+      margin: 0 0 8px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
     }
-    .panel .lead {
-      font-size:21px;
-      line-height:1.12;
-      font-weight:700;
+    .lead {
+      font-size: 24px;
+      line-height: 1.08;
+      font-weight: 800;
     }
-    .panel .sub {
-      margin-top:6px;
-      font-size:15px;
-      line-height:1.25;
-      color:#222;
+    .subline {
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: #222;
     }
-    .micro {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:14px;
-      line-height:1.35;
-      margin-top:6px;
-      font-weight:700;
-    }
-    .footer-note {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:11px;
-      color:#555;
-      border-top:1px solid #ddd;
-      padding-top:6px;
+    .note {
+      font-size: 18px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: #111;
     }
   </style>
 </head>
 <body>
   <div class='page'>
     <div class='header'>
-      <h1>Dienstag, 31.03.2026</h1>
-      <p>Live-Feed aus Familien- und relevanten persönlichen Kalenderdaten.</p>
-    </div>
-    <div class='main'>
-      <div class='left'>
-        <div class='section-title'>Heute / Nächste Schritte</div>
-        <div class='item'><div class='when'>Di 31.03. 15:30</div><div class='title'><span class='prefix'>[Familie]</span> Für Arthur da sein -&gt; Stefan</div></div><div class='item'><div class='when'>Do 02.04. ganztägig</div><div class='title'><span class='prefix'>[Arthur]</span> Schulfrei – Weiterbildung Lehrpersonen</div></div><div class='item'><div class='when'>Do 02.04. 14:30</div><div class='title'><span class='prefix'>[Familie]</span> Stefan für Arthur da</div></div>
+      <div>
+        <div class='title-big'>Heute</div>
+        <div class='subtitle'>Live-Feed aus Familien- und relevanten persönlichen Kalenderdaten.</div>
       </div>
-      <div class='right'>
+      <div class='meta-right'>
+        Dienstag, 31.03.2026
+      </div>
+    </div>
+    <div class='content'>
+      <div class='events'>
+        
+    <div class='event-card'>
+      <div class='eyebrow'>Nächster Termin</div>
+      <div class='who'>Familie</div>
+      <div class='event-title'>Für Arthur da sein -&gt; Stefan</div>
+      <div class='event-when'>Di 31.03. 15:30</div>
+    </div>
+    
+    <div class='event-card'>
+      <div class='eyebrow'>Danach</div>
+      <div class='who'>Arthur</div>
+      <div class='event-title'>Schulfrei – Weiterbildung Lehrpersonen</div>
+      <div class='event-when'>Do 02.04. ganztägig</div>
+    </div>
+    
+    <div class='event-card'>
+      <div class='eyebrow'>Später</div>
+      <div class='who'>Familie</div>
+      <div class='event-title'>Stefan für Arthur da</div>
+      <div class='event-when'>Do 02.04. 14:30</div>
+    </div>
+    
+      </div>
+      <div class='side'>
         <div class='panel'>
           <h2>Wetter</h2>
           <div class='lead'>5°C, teilweise bewölkt</div>
-          <div class='sub'>Max 5°C · Min -3°C · Regenchance 100%</div>
+          <div class='subline'>Max 5°C · Min -3°C · Regenchance 100%</div>
         </div>
         <div class='panel'>
           <h2>Transit</h2>
           <div class='lead'>Bern Felsenau → Bern Bahnhof</div>
-          <div class='micro'>14:54 · S9 · Bern</div><div class='micro'>15:09 · S9 · Bern</div>
+          <div class='subline'>14:54 · S9 · Bern</div><div class='subline'>15:09 · S9 · Bern</div>
         </div>
         <div class='panel'>
           <h2>Melflin</h2>
-          <div class='sub'>Zeige zuerst die nächste relevante Familieninformation.</div>
+          <div class='note'>Zeige zuerst die nächste relevante Familieninformation.</div>
         </div>
       </div>
     </div>
-    
   </div>
 </body>
 </html>
