@@ -7,28 +7,133 @@
   <style>
     body {
       margin:0;
-      background:#ffffff;
-      color:#000;
-      font-family: Arial, Helvetica, sans-serif;
-      -webkit-font-smoothing: none;
-      -moz-osx-font-smoothing: auto;
-      text-rendering: geometricPrecision;
+      background:#fff;
+      color:#111;
+      font-family: Georgia, 'Times New Roman', serif;
+      -webkit-font-smoothing:none;
+      text-rendering:geometricPrecision;
     }
-    .page { width:800px; height:480px; margin:0 auto; background:#fff; box-sizing:border-box; padding:18px 18px; display:grid; grid-template-rows:auto 1fr auto; gap:12px; overflow:hidden; }
-    .header h1 { margin:0; font-size:34px; line-height:1.0; font-weight:800; letter-spacing:-0.01em; }
-    .header p { margin:8px 0 0; font-size:18px; color:#111; font-weight:600; }
-    .main-grid { display:grid; grid-template-columns:1.55fr 0.95fr; gap:12px; min-height:0; }
-    .stack { display:grid; grid-template-rows:auto auto auto; gap:12px; min-height:0; }
-    .card { border:3px solid #000; border-radius:10px; padding:12px 14px; background:#fff; min-height:0; overflow:hidden; }
-    .card h2 { margin:0 0 10px; font-size:18px; text-transform:uppercase; letter-spacing:0.02em; font-weight:800; }
-    .item { display:grid; grid-template-columns:138px 1fr; gap:10px; padding:8px 0; border-top:2px solid #ddd; }
-    .item:first-of-type { border-top:0; }
-    .when { font-weight:800; font-size:15px; line-height:1.2; }
-    .title { font-size:19px; line-height:1.15; font-weight:700; }
-    .mini { font-size:16px; margin-top:8px; color:#111; line-height:1.25; font-weight:700; }
-    .muted { color:#333; font-weight:600; }
-    .hint { font-size:17px; line-height:1.3; font-weight:700; }
-    .status { font-size:12px; color:#444; padding-top:4px; }
+    .page {
+      width:800px;
+      height:480px;
+      margin:0 auto;
+      box-sizing:border-box;
+      padding:24px 28px 18px 28px;
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+      gap:16px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .header {
+      border-bottom:3px solid #111;
+      padding-bottom:10px;
+    }
+    .header h1 {
+      margin:0;
+      font-size:36px;
+      line-height:1.0;
+      font-weight:700;
+      letter-spacing:-0.02em;
+    }
+    .header p {
+      margin:8px 0 0;
+      font-size:18px;
+      line-height:1.25;
+      color:#222;
+    }
+    .main {
+      display:grid;
+      grid-template-columns:1.6fr 0.9fr;
+      gap:26px;
+      min-height:0;
+    }
+    .left {
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      min-height:0;
+    }
+    .section-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .item {
+      display:grid;
+      grid-template-columns:145px 1fr;
+      gap:12px;
+      padding:10px 0;
+      border-top:1px solid #bdbdbd;
+    }
+    .item:first-of-type {
+      border-top:2px solid #111;
+    }
+    .when {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      font-weight:800;
+      line-height:1.2;
+    }
+    .title {
+      font-size:22px;
+      line-height:1.08;
+      font-weight:700;
+    }
+    .prefix {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:#444;
+    }
+    .right {
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+      padding-top:2px;
+    }
+    .panel {
+      border-top:3px solid #111;
+      padding-top:8px;
+    }
+    .panel h2 {
+      margin:0 0 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-weight:800;
+    }
+    .panel .lead {
+      font-size:21px;
+      line-height:1.12;
+      font-weight:700;
+    }
+    .panel .sub {
+      margin-top:6px;
+      font-size:15px;
+      line-height:1.25;
+      color:#222;
+    }
+    .micro {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      line-height:1.35;
+      margin-top:6px;
+      font-weight:700;
+    }
+    .footer-note {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:11px;
+      color:#555;
+      border-top:1px solid #ddd;
+      padding-top:6px;
+    }
   </style>
 </head>
 <body>
@@ -37,25 +142,25 @@
       <h1>Dienstag, 31.03.2026</h1>
       <p>Live-Feed aus Familien- und relevanten persönlichen Kalenderdaten.</p>
     </div>
-    <div class='main-grid'>
-      <div class='card'>
-        <h2>Highlights</h2>
-        <div class='item'><div class='when'>Di 31.03. 15:30</div><div class='title'>[Familie] Für Arthur da sein -&gt; Stefan</div></div><div class='item'><div class='when'>Do 02.04. ganztägig</div><div class='title'>[Arthur] Schulfrei – Weiterbildung Lehrpersonen</div></div><div class='item'><div class='when'>Do 02.04. 14:30</div><div class='title'>[Familie] Stefan für Arthur da</div></div>
+    <div class='main'>
+      <div class='left'>
+        <div class='section-title'>Heute / Nächste Schritte</div>
+        <div class='item'><div class='when'>Di 31.03. 15:30</div><div class='title'><span class='prefix'>[Familie]</span> Für Arthur da sein -&gt; Stefan</div></div><div class='item'><div class='when'>Do 02.04. ganztägig</div><div class='title'><span class='prefix'>[Arthur]</span> Schulfrei – Weiterbildung Lehrpersonen</div></div><div class='item'><div class='when'>Do 02.04. 14:30</div><div class='title'><span class='prefix'>[Familie]</span> Stefan für Arthur da</div></div>
       </div>
-      <div class='stack'>
-        <div class='card'>
+      <div class='right'>
+        <div class='panel'>
           <h2>Wetter</h2>
-          <div class='hint'>5°C, teilweise bewölkt</div>
-          <div class='mini'>Max 5°C · Min -3°C · Regenchance 100%</div>
+          <div class='lead'>5°C, teilweise bewölkt</div>
+          <div class='sub'>Max 5°C · Min -3°C · Regenchance 100%</div>
         </div>
-        <div class='card'>
+        <div class='panel'>
           <h2>Transit</h2>
-          <div class='hint'>Bern Felsenau → Bern Bahnhof</div>
-          <div class='mini'><strong>S9</strong> 14:54</div><div class='mini'><strong>S9</strong> 15:09</div>
+          <div class='lead'>Bern Felsenau → Bern Bahnhof</div>
+          <div class='micro'>14:54 · S9 · Bern</div><div class='micro'>15:09 · S9 · Bern</div>
         </div>
-        <div class='card'>
+        <div class='panel'>
           <h2>Melflin</h2>
-          <div class='hint'>Zeige zuerst die nächste relevante Familieninformation.</div>
+          <div class='sub'>Zeige zuerst die nächste relevante Familieninformation.</div>
         </div>
       </div>
     </div>
