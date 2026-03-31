@@ -5,22 +5,30 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>Melflin Live Preview</title>
   <style>
-    body { margin:0; background:#f3f3ef; color:#111; font-family:Arial,Helvetica,sans-serif; }
-    .page { width:800px; height:480px; margin:0 auto; background:#fafaf6; box-sizing:border-box; padding:18px 20px; display:grid; grid-template-rows:auto 1fr auto; gap:12px; overflow:hidden; }
-    .header h1 { margin:0; font-size:30px; line-height:1.05; font-weight:700; }
-    .header p { margin:6px 0 0; font-size:16px; color:#333; }
-    .main-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:12px; min-height:0; }
+    body {
+      margin:0;
+      background:#ffffff;
+      color:#000;
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: auto;
+      text-rendering: geometricPrecision;
+    }
+    .page { width:800px; height:480px; margin:0 auto; background:#fff; box-sizing:border-box; padding:18px 18px; display:grid; grid-template-rows:auto 1fr auto; gap:12px; overflow:hidden; }
+    .header h1 { margin:0; font-size:34px; line-height:1.0; font-weight:800; letter-spacing:-0.01em; }
+    .header p { margin:8px 0 0; font-size:18px; color:#111; font-weight:600; }
+    .main-grid { display:grid; grid-template-columns:1.55fr 0.95fr; gap:12px; min-height:0; }
     .stack { display:grid; grid-template-rows:auto auto auto; gap:12px; min-height:0; }
-    .card { border:2px solid #111; border-radius:12px; padding:12px 14px; background:#fff; min-height:0; overflow:hidden; }
-    .card h2 { margin:0 0 8px; font-size:16px; text-transform:uppercase; letter-spacing:0.03em; }
-    .item { display:grid; grid-template-columns:132px 1fr; gap:10px; padding:7px 0; border-top:1px solid #d8d8d0; }
+    .card { border:3px solid #000; border-radius:10px; padding:12px 14px; background:#fff; min-height:0; overflow:hidden; }
+    .card h2 { margin:0 0 10px; font-size:18px; text-transform:uppercase; letter-spacing:0.02em; font-weight:800; }
+    .item { display:grid; grid-template-columns:138px 1fr; gap:10px; padding:8px 0; border-top:2px solid #ddd; }
     .item:first-of-type { border-top:0; }
-    .when { font-weight:700; font-size:13px; line-height:1.25; }
-    .title { font-size:16px; line-height:1.2; }
-    .mini { font-size:14px; margin-top:7px; color:#222; line-height:1.35; }
-    .muted { color:#555; }
-    .hint { font-size:15px; line-height:1.35; }
-    .status { font-size:12px; color:#555; padding-top:4px; }
+    .when { font-weight:800; font-size:15px; line-height:1.2; }
+    .title { font-size:19px; line-height:1.15; font-weight:700; }
+    .mini { font-size:16px; margin-top:8px; color:#111; line-height:1.25; font-weight:700; }
+    .muted { color:#333; font-weight:600; }
+    .hint { font-size:17px; line-height:1.3; font-weight:700; }
+    .status { font-size:12px; color:#444; padding-top:4px; }
   </style>
 </head>
 <body>
@@ -32,23 +40,22 @@
     <div class='main-grid'>
       <div class='card'>
         <h2>Highlights</h2>
-        <div class='item'><div class='when'>Di 31.03. 15:30</div><div class='title'>[Familie] Für Arthur da sein -&gt; Stefan</div></div><div class='item'><div class='when'>Do 02.04. ganztägig</div><div class='title'>[Arthur] Schulfrei – Weiterbildung Lehrpersonen</div></div><div class='item'><div class='when'>Do 02.04. 14:30</div><div class='title'>[Familie] Stefan für Arthur da</div></div><div class='item'><div class='when'>Fr 03.04. ganztägig</div><div class='title'>[Arthur] Start Frühlingsferien</div></div>
+        <div class='item'><div class='when'>Di 31.03. 15:30</div><div class='title'>[Familie] Für Arthur da sein -&gt; Stefan</div></div><div class='item'><div class='when'>Do 02.04. ganztägig</div><div class='title'>[Arthur] Schulfrei – Weiterbildung Lehrpersonen</div></div><div class='item'><div class='when'>Do 02.04. 14:30</div><div class='title'>[Familie] Stefan für Arthur da</div></div>
       </div>
       <div class='stack'>
         <div class='card'>
           <h2>Wetter</h2>
-          <div class='hint'><strong>5°C, teilweise bewölkt</strong></div>
+          <div class='hint'>5°C, teilweise bewölkt</div>
           <div class='mini'>Max 5°C · Min -3°C · Regenchance 100%</div>
         </div>
         <div class='card'>
           <h2>Transit</h2>
-          <div class='hint'><strong>Bern Felsenau → Bern Bahnhof</strong></div>
-          <div class='mini'><strong>S9</strong> Bern<br>14:54 · Gl. 2</div><div class='mini'><strong>S9</strong> Bern<br>15:09 · Gl. 2</div>
+          <div class='hint'>Bern Felsenau → Bern Bahnhof</div>
+          <div class='mini'><strong>S9</strong> 14:54</div><div class='mini'><strong>S9</strong> 15:09</div>
         </div>
         <div class='card'>
           <h2>Melflin</h2>
-          <div class='hint'><strong>Tipp:</strong> Zeige zuerst die nächste relevante Familieninformation.</div>
-          <div class='mini'><strong>Frage:</strong> Was muss heute sichtbar bleiben?</div>
+          <div class='hint'>Zeige zuerst die nächste relevante Familieninformation.</div>
         </div>
       </div>
     </div>
