@@ -24,6 +24,8 @@
     .side { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; min-height: 0; }
     .panel { border-top: 3px solid #111; padding-top: 8px; overflow: hidden; }
     .panel h2 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
+    .panel-head { display: flex; align-items: flex-start; justify-content: space-between; }
+    .weather-icon { font-size: 28px; line-height: 1; font-weight: 800; margin-top: -2px; }
     .lead { font-size: 19px; line-height: 1.12; font-weight: 800; }
     .subline { margin-top: 6px; font-size: 14px; line-height: 1.25; font-weight: 700; color: #222; }
     .note { font-size: 19px; line-height: 1.32; font-weight: 700; }
@@ -83,8 +85,8 @@
       </div>
       <div class='side'>
         <div class='panel'>
-          <h2>Wetter · Bern</h2>
-          <div class='subline'>☀ Jetzt Draussen: 8.4°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20.3°C · innen</div><div class='subline'>In 3h: 5.8°C · klar</div><div class='subline'>In 6h: 3.3°C · überwiegend klar</div>
+          <div class='panel-head'><h2>Wetter · Bern</h2><div class='weather-icon'>☀</div></div>
+          <div class='subline'>Jetzt Draussen: 8.3°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20.3°C · innen</div><div class='subline'>In 3h: 4.8°C · teilweise bewölkt</div><div class='subline'>In 6h: 2.7°C · überwiegend klar</div>
         </div>
         <div class='panel'>
           <h2>Melflin</h2>
@@ -92,7 +94,7 @@
         </div>
       </div>
     </div>
-    <div class='update-stamp'>Letztes Update 01.04. 16:58</div>
+    <div class='update-stamp'>Letztes Update 01.04. 17:02</div>
   </div>
 </body>
 </html>
