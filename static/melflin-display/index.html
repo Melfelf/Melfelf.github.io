@@ -25,7 +25,9 @@
     .panel { border-top: 3px solid #111; padding-top: 8px; overflow: hidden; }
     .panel h2 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
     .panel-head { display: flex; align-items: flex-start; justify-content: space-between; }
-    .weather-icon { font-size: 42px; line-height: 0.9; font-weight: 800; margin-top: -6px; color: #111; }
+    .weather-icons { display: flex; align-items: flex-start; gap: 8px; margin-top: -6px; }
+    .weather-icon { font-size: 34px; line-height: 0.9; font-weight: 800; color: #111; }
+    .moon-icon { font-size: 28px; line-height: 1; font-weight: 800; color: #111; }
     .lead { font-size: 19px; line-height: 1.12; font-weight: 800; }
     .subline { margin-top: 6px; font-size: 14px; line-height: 1.25; font-weight: 700; color: #222; }
     .note { font-size: 19px; line-height: 1.32; font-weight: 700; }
@@ -40,7 +42,7 @@
       </div>
       <div class='right-header'>
         <div class='rbs-title'>Nächste 4 RBS-Bähnli nach Bern</div>
-        <div class='rbs-times'>17:09 - 17:24 - 17:39 - 17:54</div>
+        <div class='rbs-times'>17:24 - 17:39 - 17:54 - 18:09</div>
       </div>
     </div>
     <div class='content'>
@@ -85,8 +87,8 @@
       </div>
       <div class='side'>
         <div class='panel'>
-          <div class='panel-head'><h2>Wetter · Bern</h2><div class='weather-icon'>◐</div></div>
-          <div class='subline'>Jetzt Draussen: 8.3°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20.3°C · innen</div><div class='subline'>In 3h: 4.8°C · teilweise bewölkt</div><div class='subline'>In 6h: 2.7°C · überwiegend klar</div>
+          <div class='panel-head'><h2>Wetter · Bern</h2><div class='weather-icons'><span class='weather-icon'>◯</span><span class='moon-icon' title='Vollmond'>○</span></div></div>
+          <div class='subline'>Jetzt Draussen: 8.2°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20.4°C · innen</div><div class='subline'>In 3h: 4.8°C · teilweise bewölkt</div><div class='subline'>In 6h: 2.7°C · überwiegend klar</div>
         </div>
         <div class='panel'>
           <h2>Melflin</h2>
@@ -94,7 +96,7 @@
         </div>
       </div>
     </div>
-    <div class='update-stamp'>Letztes Update 01.04. 17:05</div>
+    <div class='update-stamp'>Letztes Update 01.04. 17:11</div>
   </div>
 </body>
 </html>
