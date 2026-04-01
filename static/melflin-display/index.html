@@ -6,7 +6,7 @@
   <title>Melflin Heute</title>
   <style>
     body { margin: 0; background: #fff; color: #111; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: none; text-rendering: geometricPrecision; }
-    .page { width: 800px; height: 480px; margin: 0 auto; box-sizing: border-box; padding: 22px 24px 18px 24px; display: grid; grid-template-rows: auto 1fr; gap: 14px; overflow: hidden; background: #fff; }
+    .page { position: relative; width: 800px; height: 480px; margin: 0 auto; box-sizing: border-box; padding: 22px 24px 18px 24px; display: grid; grid-template-rows: auto 1fr; gap: 14px; overflow: hidden; background: #fff; }
     .header { display: grid; grid-template-columns: 1fr 1fr; align-items: end; border-bottom: 3px solid #111; padding-bottom: 10px; gap: 18px; }
     .left-header { display:flex; align-items:flex-end; gap:16px; }
     .title-big { font-size: 46px; font-weight: 800; line-height: 1; margin: 0; letter-spacing: -0.03em; }
@@ -27,6 +27,7 @@
     .lead { font-size: 19px; line-height: 1.12; font-weight: 800; }
     .subline { margin-top: 6px; font-size: 14px; line-height: 1.25; font-weight: 700; color: #222; }
     .note { font-size: 19px; line-height: 1.32; font-weight: 700; }
+    .update-stamp { position: absolute; right: 24px; bottom: 18px; font-size: 11px; color: #666; }
   </style>
 </head>
 <body>
@@ -38,7 +39,7 @@
       </div>
       <div class='right-header'>
         <div class='rbs-title'>Nächste 4 RBS-Bähnli nach Bern</div>
-        <div class='rbs-times'>16:09 - 16:24 - 16:39 - 16:54</div>
+        <div class='rbs-times'>16:54 - 17:09 - 17:24 - 17:39</div>
       </div>
     </div>
     <div class='content'>
@@ -69,7 +70,7 @@
       <div class='side'>
         <div class='panel'>
           <h2>Wetter · Bern</h2>
-          <div class='subline'>Jetzt Draussen: 8.4°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20°C · innen</div><div class='subline'>In 3h: 5.8°C · klar</div><div class='subline'>In 6h: 3.3°C · überwiegend klar</div>
+          <div class='subline'>Jetzt Draussen: 8.5°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20.1°C · innen</div><div class='subline'>In 3h: 5.8°C · klar</div><div class='subline'>In 6h: 3.3°C · überwiegend klar</div>
         </div>
         <div class='panel'>
           <h2>Melflin</h2>
@@ -77,6 +78,7 @@
         </div>
       </div>
     </div>
+    <div class='update-stamp'>Letztes Update 01.04. 16:45</div>
   </div>
 </body>
 </html>
