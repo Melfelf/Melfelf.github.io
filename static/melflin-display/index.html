@@ -15,12 +15,12 @@
     .rbs-times { margin-top: 6px; font-size: 21px; font-weight: 800; line-height: 1.2; }
     .content { display: grid; grid-template-columns: 1.52fr 0.92fr; gap: 18px; min-height: 0; }
     .events { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 10px; min-height: 0; }
-    .event-card { border: 3px solid #111; border-radius: 14px; padding: 8px 12px; display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden; }
-    .event-meta { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 8px; margin-bottom: 6px; }
+    .event-card { border: 3px solid #111; border-radius: 14px; padding: 8px 12px 10px 12px; display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
+    .event-meta { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 8px; margin-bottom: 4px; }
     .meta-left { font-size: 11px; font-weight: 800; color: #555; text-align: left; }
     .meta-center { font-size: 13px; font-weight: 800; color: #222; text-align: center; white-space: nowrap; }
     .meta-right { font-size: 12px; font-weight: 800; color: #222; text-align: right; white-space: nowrap; }
-    .event-title { font-size: 21px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; }
+    .event-title { font-size: 19px; line-height: 1.14; font-weight: 800; letter-spacing: -0.01em; display: flex; align-items: center; height: 100%; }
     .side { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; min-height: 0; }
     .panel { border-top: 3px solid #111; padding-top: 8px; overflow: hidden; }
     .panel h2 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
@@ -28,7 +28,7 @@
     .weather-icons { display: flex; align-items: flex-start; gap: 10px; margin-top: -4px; }
     .weather-icon { width: 44px; height: 44px; }
     .weather-icon svg, .moon-icon svg { width: 100%; height: 100%; display: block; }
-    .moon-icon { width: 30px; height: 30px; margin-top: 6px; }
+    .moon-icon { width: 24px; height: 24px; margin-top: 9px; }
     .lead { font-size: 19px; line-height: 1.12; font-weight: 800; }
     .subline { margin-top: 6px; font-size: 14px; line-height: 1.25; font-weight: 700; color: #222; }
     .note { font-size: 19px; line-height: 1.32; font-weight: 700; }
@@ -43,7 +43,7 @@
       </div>
       <div class='right-header'>
         <div class='rbs-title'>Nächste 4 RBS-Bähnli nach Bern</div>
-        <div class='rbs-times'>17:24 - 17:39 - 17:54 - 18:09</div>
+        <div class='rbs-times'>Noch keine Verbindungen</div>
       </div>
     </div>
     <div class='content'>
@@ -88,8 +88,8 @@
       </div>
       <div class='side'>
         <div class='panel'>
-          <div class='panel-head'><h2>Wetter · Bern</h2><div class='weather-icons'><div class='weather-icon' aria-label='Wetter'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><circle cx='32' cy='32' r='10'/><path d='M32 6v10M32 48v10M6 32h10M48 32h10M13 13l7 7M44 44l7 7M13 51l7-7M44 20l7-7'/></g></svg></div><div class='moon-icon' title='Vollmond' aria-label='Vollmond'><svg viewBox='0 0 64 64' aria-hidden='true'><circle cx='32' cy='32' r='18' fill='none' stroke='#111' stroke-width='4'/></svg></div></div></div>
-          <div class='subline'>Jetzt Draussen: 8.2°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20.4°C · innen</div><div class='subline'>In 3h: 4.8°C · teilweise bewölkt</div><div class='subline'>In 6h: 2.7°C · überwiegend klar</div>
+          <div class='panel-head'><h2>Wetter · Bern</h2><div class='weather-icons'><div class='weather-icon' aria-label='Wetter'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><circle cx='32' cy='32' r='10'/><path d='M32 6v10M32 48v10M6 32h10M48 32h10M13 13l7 7M44 44l7 7M13 51l7-7M44 20l7-7'/></g></svg></div><div class='moon-icon' title='Vollmond' aria-label='Vollmond'><svg viewBox='0 0 64 64' aria-hidden='true'><circle cx='32' cy='32' r='20' fill='#fff' stroke='#111' stroke-width='4'/></svg></div></div></div>
+          <div class='subline'>Jetzt Draussen: 8.1°C · überwiegend klar</div><div class='subline'>Wohnzimmer: 20.4°C · innen</div><div class='subline'>In 3h: 4.8°C · teilweise bewölkt</div><div class='subline'>In 6h: 2.7°C · überwiegend klar</div>
         </div>
         <div class='panel'>
           <h2>Melflin</h2>
@@ -97,7 +97,7 @@
         </div>
       </div>
     </div>
-    <div class='update-stamp'>Letztes Update 01.04. 17:15</div>
+    <div class='update-stamp'>Letztes Update 01.04. 17:20</div>
   </div>
 </body>
 </html>
