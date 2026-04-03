@@ -15,11 +15,11 @@ subtitle = "Explore innovative projects and learn from real-world case studies."
 
 date_format = "%b %-d, %Y at %H:%M"
 
-categorized = false # posts can be categorized
-back_to_top = true # show back-to-top button
-toc = true # show table-of-contents
-comment = false # enable comment
-copy = true # show copy button in code block
+categorized = false
+back_to_top = true
+toc = true
+comment = false
+copy = true
 
 outdate_alert = false
 outdate_alert_days = 12
@@ -27,7 +27,20 @@ outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
 
-Welcome to the Projects hub. Each spotlight below links to a dedicated project space with its own updates, logs, and artifacts. Dive in to follow along or pick up where the last milestone left off.
+Welcome to the Projects hub. Each spotlight below links to a dedicated project space with its own updates, logs, and artifacts.
+
+## Quick Jump
+
+- [Melflin Display](./melflin-display/)
+- [Agent System Instructions](./agent-system-instructions/)
+- [Train an AI Assistant](./train-an-ai-assistant/)
+- [Home Automation Robot Team](./home-automation-robot-team/)
+
+## What lives here
+
+- **Project hubs** with their own logs and documentation
+- **Architecture notes** and operational learnings
+- **Implementation details** that are too project-specific for the general Melflin section
 
 ### How I Document Projects
 - **Objective first**: Eine klare Zielsetzung pro Projekt.
