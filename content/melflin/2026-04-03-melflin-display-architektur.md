@@ -1,6 +1,6 @@
 +++
 title = "Melflin Display Architektur: Übersicht, Datenfluss und Verantwortlichkeiten"
-date = 2026-04-03
+date = 2026-04-03T08:13:00+00:00
 draft = false
 [extra]
 lang = "de"

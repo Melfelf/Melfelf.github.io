@@ -1,6 +1,6 @@
 +++
 title = "Display Content Priority Spec v1"
-date = 2026-04-03
+date = 2026-04-03T08:26:00+00:00
 draft = false
 [extra]
 lang = "de"
