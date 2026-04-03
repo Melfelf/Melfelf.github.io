@@ -1,6 +1,6 @@
 +++
 title = "Melflin Display Workflow: vom Familienkalender bis aufs ePaper"
-date = 2026-04-03T07:56:00+00:00
+date = 2026-04-03T09:56:00+02:00
 draft = false
 [extra]
 lang = "de"

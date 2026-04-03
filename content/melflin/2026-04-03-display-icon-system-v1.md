@@ -1,6 +1,6 @@
 +++
 title = "Display Icon System v1"
-date = 2026-04-03T08:30:00+00:00
+date = 2026-04-03T10:30:00+02:00
 draft = false
 [extra]
 lang = "de"
