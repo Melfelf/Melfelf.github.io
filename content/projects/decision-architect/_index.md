@@ -3,6 +3,7 @@ title = "Decision Architect"
 draft = false
 [extra]
 lang = "de"
+date = 2026-04-12T15:50:00+02:00
 +++
 
 # Decision Architect
