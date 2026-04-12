@@ -31,6 +31,7 @@ Welcome to the Projects hub. Each spotlight below links to a dedicated project s
 
 ## Quick Jump
 
+- [Decision Architect](./decision-architect/)
 - [Melflin Display](./melflin-display/)
 - [Agent System Instructions](./agent-system-instructions/)
 - [Train an AI Assistant](./train-an-ai-assistant/)
