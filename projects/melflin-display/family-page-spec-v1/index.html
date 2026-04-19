@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Personal thoughts, experiences, and reflections on life, work, and everything in between.">
+
+  <title>Family Page Spec v1</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#family-page-spec-v1">Family Page Spec v1</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#ziel">Ziel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#1-rolle-der-familienseite">1. Rolle der Familienseite</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#1-1-nicht-konkurrenz-zur-hauptseite">1.1 Nicht Konkurrenz zur Hauptseite</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#1-2-kein-vollkalender">1.2 Kein Vollkalender</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#2-kernnutzen">2. Kernnutzen</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#2-1-tageskontext">2.1 Tageskontext</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#2-2-morgen-vorbereiten">2.2 Morgen vorbereiten</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#2-3-personenbezug-klaren">2.3 Personenbezug klären</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#2-4-offene-schlaufen-sichtbar-machen">2.4 Offene Schlaufen sichtbar machen</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#3-inhaltliche-priorisierung">3. Inhaltliche Priorisierung</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#3-1-reihenfolge-der-relevanz">3.1 Reihenfolge der Relevanz</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#4-blocke-fur-die-familienseite">4. Blöcke für die Familienseite</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#4-1-hero-date">4.1 hero_date</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-2-today-family-context">4.2 today_family_context</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-3-today-schedule">4.3 today_schedule</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-4-tomorrow-preview">4.4 tomorrow_preview</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-5-family-focus">4.5 family_focus</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-6-short-week-preview">4.6 short_week_preview</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-7-last-update">4.7 last_update</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#5-was-nicht-auf-die-familienseite-gehort">5. Was nicht auf die Familienseite gehört</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#5-1-zu-viele-technische-statusdetails">5.1 Zu viele technische Statusdetails</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#5-2-vollstandige-langlisten">5.2 Vollständige Langlisten</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#5-3-zu-viel-wiederholung-der-hauptseite">5.3 Zu viel Wiederholung der Hauptseite</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#6-layout-empfehlung-v1">6. Layout-Empfehlung v1</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#fur-das-aktuelle-7-5-epaper-im-landscape-format">Für das aktuelle 7.5&quot; ePaper im Landscape-Format</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#7-selektionsregeln">7. Selektionsregeln</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#7-1-heute-vor-morgen">7.1 Heute vor morgen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#7-2-ganztagig-darf-prominent-sein">7.2 Ganztägig darf prominent sein</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#7-3-purple-bleibt-erganzend">7.3 Purple bleibt ergänzend</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#7-4-personenzuordnung-muss-sofort-lesbar-sein">7.4 Personenzuordnung muss sofort lesbar sein</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#8-unterschied-zur-priority-spec-der-hauptseite">8. Unterschied zur Priority Spec der Hauptseite</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#9-erfolgskriterien">9. Erfolgskriterien</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#10-kurzfassung">10. Kurzfassung</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Family Page Spec v1</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Apr 4, 2026 at 20:45</span>
+            </div>
+
+          
+        </div>
+
+        
+        
+
+        
+
+        <h1 id="family-page-spec-v1">Family Page Spec v1<a class="zola-anchor" href="#family-page-spec-v1" aria-label="Anchor link for: family-page-spec-v1" style="visibility: hidden;"></a>
+</h1>
+<p>Die Familienseite darf nicht einfach eine zweite Seite mit "mehr Kalender" sein. Wenn sie echten Nutzen bringen soll, muss sie eine andere Aufgabe erfüllen als die Hauptseite.</p>
+<p>Die Hauptseite beantwortet:</p>
+<blockquote>
+<p>Was ist heute am wichtigsten?</p>
+</blockquote>
+<p>Die Familienseite soll dagegen beantworten:</p>
+<blockquote>
+<p>Wie sieht der Familienkontext als Ganzes aus – heute, morgen und in den nächsten Tagen?</p>
+</blockquote>
+<p>Dieses Dokument definiert dafür eine erste, V2-kompatible Spezifikation.</p>
+<hr />
+<h2 id="ziel">Ziel<a class="zola-anchor" href="#ziel" aria-label="Anchor link for: ziel" style="visibility: hidden;"></a>
+</h2>
+<p>Die Familienseite soll:</p>
+<ul>
+<li>den Tageskontext verständlich machen</li>
+<li>Vorbereitung erleichtern</li>
+<li>Personenbezug klar machen</li>
+<li>nicht nur informieren, sondern koordinieren helfen</li>
+</ul>
+<p>Sie ist damit bewusst:</p>
+<ul>
+<li>vollständiger als die Hauptseite</li>
+<li>weniger aggressiv kuratiert</li>
+<li>stärker auf Familienlogik als auf Einzel-Highlights ausgerichtet</li>
+</ul>
+<hr />
+<h1 id="1-rolle-der-familienseite">1. Rolle der Familienseite<a class="zola-anchor" href="#1-rolle-der-familienseite" aria-label="Anchor link for: 1-rolle-der-familienseite" style="visibility: hidden;"></a>
+</h1>
+<h2 id="1-1-nicht-konkurrenz-zur-hauptseite">1.1 Nicht Konkurrenz zur Hauptseite<a class="zola-anchor" href="#1-1-nicht-konkurrenz-zur-hauptseite" aria-label="Anchor link for: 1-1-nicht-konkurrenz-zur-hauptseite" style="visibility: hidden;"></a>
+</h2>
+<p>Die Familienseite ersetzt die Hauptseite nicht.</p>
+<h3 id="hauptseite">Hauptseite<a class="zola-anchor" href="#hauptseite" aria-label="Anchor link for: hauptseite" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>kuratiert</li>
+<li>knapp</li>
+<li>stark priorisiert</li>
+<li>eher "Was jetzt wichtig ist"</li>
+</ul>
+<h3 id="familienseite">Familienseite<a class="zola-anchor" href="#familienseite" aria-label="Anchor link for: familienseite" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>kontextreicher</li>
+<li>strukturierter</li>
+<li>stärker vorbereitend</li>
+<li>eher "Was wir als Familie verstehen und im Blick behalten sollten"</li>
+</ul>
+<h2 id="1-2-kein-vollkalender">1.2 Kein Vollkalender<a class="zola-anchor" href="#1-2-kein-vollkalender" aria-label="Anchor link for: 1-2-kein-vollkalender" style="visibility: hidden;"></a>
+</h2>
+<p>Auch die Familienseite ist nicht einfach ein unendlicher Kalenderdump.</p>
+<p>Sie bleibt eine gestaltete Ansicht.</p>
+<hr />
+<h1 id="2-kernnutzen">2. Kernnutzen<a class="zola-anchor" href="#2-kernnutzen" aria-label="Anchor link for: 2-kernnutzen" style="visibility: hidden;"></a>
+</h1>
+<p>Die Familienseite soll vor allem in vier Bereichen Nutzen stiften.</p>
+<h2 id="2-1-tageskontext">2.1 Tageskontext<a class="zola-anchor" href="#2-1-tageskontext" aria-label="Anchor link for: 2-1-tageskontext" style="visibility: hidden;"></a>
+</h2>
+<p>Was gilt heute als Rahmen des Tages?</p>
+<p>Beispiele:</p>
+<ul>
+<li>Schulfrei</li>
+<li>Ferienbeginn</li>
+<li>Prüfungstag</li>
+<li>Betreuungs-/Abholkontext</li>
+<li>Familienrelevanter Besuch / Termin</li>
+</ul>
+<h2 id="2-2-morgen-vorbereiten">2.2 Morgen vorbereiten<a class="zola-anchor" href="#2-2-morgen-vorbereiten" aria-label="Anchor link for: 2-2-morgen-vorbereiten" style="visibility: hidden;"></a>
+</h2>
+<p>Was ist morgen schon relevant genug, dass man es heute wissen sollte?</p>
+<p>Beispiele:</p>
+<ul>
+<li>Ferienstart</li>
+<li>Packen</li>
+<li>Schule / Spezialtag</li>
+<li>Familienlogistik</li>
+<li>wichtige Purple-Termine mit Familienrelevanz</li>
+</ul>
+<h2 id="2-3-personenbezug-klaren">2.3 Personenbezug klären<a class="zola-anchor" href="#2-3-personenbezug-klaren" aria-label="Anchor link for: 2-3-personenbezug-klaren" style="visibility: hidden;"></a>
+</h2>
+<p>Wen betrifft was?</p>
+<p>Wichtige Gruppen:</p>
+<ul>
+<li>Arthur</li>
+<li>Sandra</li>
+<li>Familie</li>
+<li>Stefan</li>
+</ul>
+<h2 id="2-4-offene-schlaufen-sichtbar-machen">2.4 Offene Schlaufen sichtbar machen<a class="zola-anchor" href="#2-4-offene-schlaufen-sichtbar-machen" aria-label="Anchor link for: 2-4-offene-schlaufen-sichtbar-machen" style="visibility: hidden;"></a>
+</h2>
+<p>Die Familienseite kann auch leichte Vorbereitungs- oder Organisationslogik tragen.</p>
+<p>Nicht als Todo-App. Aber als kleiner Koordinationspuffer.</p>
+<hr />
+<h1 id="3-inhaltliche-priorisierung">3. Inhaltliche Priorisierung<a class="zola-anchor" href="#3-inhaltliche-priorisierung" aria-label="Anchor link for: 3-inhaltliche-priorisierung" style="visibility: hidden;"></a>
+</h1>
+<h2 id="3-1-reihenfolge-der-relevanz">3.1 Reihenfolge der Relevanz<a class="zola-anchor" href="#3-1-reihenfolge-der-relevanz" aria-label="Anchor link for: 3-1-reihenfolge-der-relevanz" style="visibility: hidden;"></a>
+</h2>
+<h3 id="a-heute-aktive-familienrealitat">A. Heute aktive Familienrealität<a class="zola-anchor" href="#a-heute-aktive-familienrealitat" aria-label="Anchor link for: a-heute-aktive-familienrealitat" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>heutige ganztägige Rahmenbedingungen</li>
+<li>heutige Familien-/Kindertermine</li>
+<li>heutige Uhrzeit-relevante Dinge</li>
+</ul>
+<h3 id="b-morgen-vorbereitungsrelevante-dinge">B. Morgen vorbereitungsrelevante Dinge<a class="zola-anchor" href="#b-morgen-vorbereitungsrelevante-dinge" aria-label="Anchor link for: b-morgen-vorbereitungsrelevante-dinge" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>morgige Starts</li>
+<li>morgige Sondertage</li>
+<li>morgige Termine mit Vorbereitungsbedarf</li>
+</ul>
+<h3 id="c-kurzfristige-vorschau">C. Kurzfristige Vorschau<a class="zola-anchor" href="#c-kurzfristige-vorschau" aria-label="Anchor link for: c-kurzfristige-vorschau" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>wichtige Dinge in den nächsten 2–5 Tagen</li>
+</ul>
+<hr />
+<h1 id="4-blocke-fur-die-familienseite">4. Blöcke für die Familienseite<a class="zola-anchor" href="#4-blocke-fur-die-familienseite" aria-label="Anchor link for: 4-blocke-fur-die-familienseite" style="visibility: hidden;"></a>
+</h1>
+<p>Family Page Spec v1 empfiehlt folgende Kernblöcke.</p>
+<h2 id="4-1-hero-date">4.1 <code>hero_date</code><a class="zola-anchor" href="#4-1-hero-date" aria-label="Anchor link for: 4-1-hero-date" style="visibility: hidden;"></a>
+</h2>
+<h3 id="zweck">Zweck<a class="zola-anchor" href="#zweck" aria-label="Anchor link for: zweck" style="visibility: hidden;"></a>
+</h3>
+<p>Klare zeitliche Verankerung der Seite.</p>
+<h3 id="inhalt">Inhalt<a class="zola-anchor" href="#inhalt" aria-label="Anchor link for: inhalt" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Datum</li>
+<li>optional kleiner Subkontext wie Wochentag / Ferien / Wochenende</li>
+</ul>
+<hr />
+<h2 id="4-2-today-family-context">4.2 <code>today_family_context</code><a class="zola-anchor" href="#4-2-today-family-context" aria-label="Anchor link for: 4-2-today-family-context" style="visibility: hidden;"></a>
+</h2>
+<h3 id="zweck-1">Zweck<a class="zola-anchor" href="#zweck-1" aria-label="Anchor link for: zweck-1" style="visibility: hidden;"></a>
+</h3>
+<p>Zeigt die wichtigsten Dinge, die <strong>heute</strong> den Familienrahmen bilden.</p>
+<h3 id="inhalt-1">Inhalt<a class="zola-anchor" href="#inhalt-1" aria-label="Anchor link for: inhalt-1" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>ganztägige Family-/Arthur-/Sandra-Einträge</li>
+<li>heutige zentrale Familienrealität</li>
+</ul>
+<h3 id="beispiele">Beispiele<a class="zola-anchor" href="#beispiele" aria-label="Anchor link for: beispiele" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><code>[Arthur] Schulfrei</code></li>
+<li><code>[Arthur] Start Frühlingsferien</code></li>
+<li><code>[Familie] Stefan für Arthur da</code></li>
+</ul>
+<h3 id="wichtig">Wichtig<a class="zola-anchor" href="#wichtig" aria-label="Anchor link for: wichtig" style="visibility: hidden;"></a>
+</h3>
+<p>Ganztägige Einträge müssen hier prominent und nicht nur beiläufig erscheinen.</p>
+<hr />
+<h2 id="4-3-today-schedule">4.3 <code>today_schedule</code><a class="zola-anchor" href="#4-3-today-schedule" aria-label="Anchor link for: 4-3-today-schedule" style="visibility: hidden;"></a>
+</h2>
+<h3 id="zweck-2">Zweck<a class="zola-anchor" href="#zweck-2" aria-label="Anchor link for: zweck-2" style="visibility: hidden;"></a>
+</h3>
+<p>Zeigt zeitgebundene heutige Einträge in klarer zeitlicher Ordnung.</p>
+<h3 id="inhalt-2">Inhalt<a class="zola-anchor" href="#inhalt-2" aria-label="Anchor link for: inhalt-2" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Uhrzeit-Termine heute</li>
+<li>mit Personenzuordnung</li>
+</ul>
+<h3 id="darstellung">Darstellung<a class="zola-anchor" href="#darstellung" aria-label="Anchor link for: darstellung" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>kompakt</li>
+<li>gut scanbar</li>
+<li>nicht zu viel Text pro Eintrag</li>
+</ul>
+<hr />
+<h2 id="4-4-tomorrow-preview">4.4 <code>tomorrow_preview</code><a class="zola-anchor" href="#4-4-tomorrow-preview" aria-label="Anchor link for: 4-4-tomorrow-preview" style="visibility: hidden;"></a>
+</h2>
+<h3 id="zweck-3">Zweck<a class="zola-anchor" href="#zweck-3" aria-label="Anchor link for: zweck-3" style="visibility: hidden;"></a>
+</h3>
+<p>Zeigt Dinge von morgen, die heute schon relevant sind.</p>
+<h3 id="inhalt-3">Inhalt<a class="zola-anchor" href="#inhalt-3" aria-label="Anchor link for: inhalt-3" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Ferienbeginn</li>
+<li>Prüfungen</li>
+<li>Schul-/Spezialtage</li>
+<li>Familienrelevante Purple-Einträge</li>
+<li>Pack-/Vorbereitungslogik</li>
+</ul>
+<h3 id="regel">Regel<a class="zola-anchor" href="#regel" aria-label="Anchor link for: regel" style="visibility: hidden;"></a>
+</h3>
+<p>Nicht alles von morgen. Nur das, was Vorbereitungswert hat.</p>
+<hr />
+<h2 id="4-5-family-focus">4.5 <code>family_focus</code><a class="zola-anchor" href="#4-5-family-focus" aria-label="Anchor link for: 4-5-family-focus" style="visibility: hidden;"></a>
+</h2>
+<h3 id="zweck-4">Zweck<a class="zola-anchor" href="#zweck-4" aria-label="Anchor link for: zweck-4" style="visibility: hidden;"></a>
+</h3>
+<p>Verdichtet 1–3 relevante organisatorische Aussagen.</p>
+<h3 id="beispiele-1">Beispiele<a class="zola-anchor" href="#beispiele-1" aria-label="Anchor link for: beispiele-1" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Arthur hat heute Schulfrei und morgen Ferienstart.</li>
+<li>Für morgen ist Vorbereitung sinnvoll.</li>
+<li>Heute kein dichter Zeitplan, aber Pack-/Ordnungslogik relevant.</li>
+</ul>
+<h3 id="charakter">Charakter<a class="zola-anchor" href="#charakter" aria-label="Anchor link for: charakter" style="visibility: hidden;"></a>
+</h3>
+<p>Eher Koordination als Kalenderkopie.</p>
+<hr />
+<h2 id="4-6-short-week-preview">4.6 <code>short_week_preview</code><a class="zola-anchor" href="#4-6-short-week-preview" aria-label="Anchor link for: 4-6-short-week-preview" style="visibility: hidden;"></a>
+</h2>
+<h3 id="zweck-5">Zweck<a class="zola-anchor" href="#zweck-5" aria-label="Anchor link for: zweck-5" style="visibility: hidden;"></a>
+</h3>
+<p>Sehr knappe Vorschau auf die nächsten Tage.</p>
+<h3 id="inhalt-4">Inhalt<a class="zola-anchor" href="#inhalt-4" aria-label="Anchor link for: inhalt-4" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>nur 3–5 wichtigste kommende Punkte</li>
+<li>keine Vollständigkeit</li>
+</ul>
+<h3 id="nutzen">Nutzen<a class="zola-anchor" href="#nutzen" aria-label="Anchor link for: nutzen" style="visibility: hidden;"></a>
+</h3>
+<p>Hilft, Tage nicht isoliert zu sehen.</p>
+<hr />
+<h2 id="4-7-last-update">4.7 <code>last_update</code><a class="zola-anchor" href="#4-7-last-update" aria-label="Anchor link for: 4-7-last-update" style="visibility: hidden;"></a>
+</h2>
+<h3 id="zweck-6">Zweck<a class="zola-anchor" href="#zweck-6" aria-label="Anchor link for: zweck-6" style="visibility: hidden;"></a>
+</h3>
+<p>Transparenz über Aktualität.</p>
+<hr />
+<h1 id="5-was-nicht-auf-die-familienseite-gehort">5. Was nicht auf die Familienseite gehört<a class="zola-anchor" href="#5-was-nicht-auf-die-familienseite-gehort" aria-label="Anchor link for: 5-was-nicht-auf-die-familienseite-gehort" style="visibility: hidden;"></a>
+</h1>
+<h2 id="5-1-zu-viele-technische-statusdetails">5.1 Zu viele technische Statusdetails<a class="zola-anchor" href="#5-1-zu-viele-technische-statusdetails" aria-label="Anchor link for: 5-1-zu-viele-technische-statusdetails" style="visibility: hidden;"></a>
+</h2>
+<p>Die Familienseite ist kein Debug-Panel.</p>
+<h2 id="5-2-vollstandige-langlisten">5.2 Vollständige Langlisten<a class="zola-anchor" href="#5-2-vollstandige-langlisten" aria-label="Anchor link for: 5-2-vollstandige-langlisten" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn die Seite nur in Liste kippt, verliert sie ihren Nutzen.</p>
+<h2 id="5-3-zu-viel-wiederholung-der-hauptseite">5.3 Zu viel Wiederholung der Hauptseite<a class="zola-anchor" href="#5-3-zu-viel-wiederholung-der-hauptseite" aria-label="Anchor link for: 5-3-zu-viel-wiederholung-der-hauptseite" style="visibility: hidden;"></a>
+</h2>
+<p>Die Familienseite darf Überschneidung haben, aber nicht nur eine aufgeblasene Kopie der Home-Seite sein.</p>
+<hr />
+<h1 id="6-layout-empfehlung-v1">6. Layout-Empfehlung v1<a class="zola-anchor" href="#6-layout-empfehlung-v1" aria-label="Anchor link for: 6-layout-empfehlung-v1" style="visibility: hidden;"></a>
+</h1>
+<h2 id="fur-das-aktuelle-7-5-epaper-im-landscape-format">Für das aktuelle 7.5" ePaper im Landscape-Format<a class="zola-anchor" href="#fur-das-aktuelle-7-5-epaper-im-landscape-format" aria-label="Anchor link for: fur-das-aktuelle-7-5-epaper-im-landscape-format" style="visibility: hidden;"></a>
+</h2>
+<h3 id="empfohlene-struktur">Empfohlene Struktur<a class="zola-anchor" href="#empfohlene-struktur" aria-label="Anchor link for: empfohlene-struktur" style="visibility: hidden;"></a>
+</h3>
+<h4 id="oben">Oben<a class="zola-anchor" href="#oben" aria-label="Anchor link for: oben" style="visibility: hidden;"></a>
+</h4>
+<ul>
+<li><code>hero_date</code></li>
+</ul>
+<h4 id="linke-spalte">Linke Spalte<a class="zola-anchor" href="#linke-spalte" aria-label="Anchor link for: linke-spalte" style="visibility: hidden;"></a>
+</h4>
+<ul>
+<li><code>today_family_context</code></li>
+<li><code>today_schedule</code></li>
+</ul>
+<h4 id="rechte-spalte">Rechte Spalte<a class="zola-anchor" href="#rechte-spalte" aria-label="Anchor link for: rechte-spalte" style="visibility: hidden;"></a>
+</h4>
+<ul>
+<li><code>tomorrow_preview</code></li>
+<li><code>family_focus</code></li>
+<li><code>last_update</code></li>
+</ul>
+<h3 id="optional">Optional<a class="zola-anchor" href="#optional" aria-label="Anchor link for: optional" style="visibility: hidden;"></a>
+</h3>
+<p>Wenn der Platz reicht:</p>
+<ul>
+<li>kleine <code>short_week_preview</code></li>
+</ul>
+<hr />
+<h1 id="7-selektionsregeln">7. Selektionsregeln<a class="zola-anchor" href="#7-selektionsregeln" aria-label="Anchor link for: 7-selektionsregeln" style="visibility: hidden;"></a>
+</h1>
+<h2 id="7-1-heute-vor-morgen">7.1 Heute vor morgen<a class="zola-anchor" href="#7-1-heute-vor-morgen" aria-label="Anchor link for: 7-1-heute-vor-morgen" style="visibility: hidden;"></a>
+</h2>
+<p>Heute aktive Familienrealität hat Vorrang.</p>
+<h2 id="7-2-ganztagig-darf-prominent-sein">7.2 Ganztägig darf prominent sein<a class="zola-anchor" href="#7-2-ganztagig-darf-prominent-sein" aria-label="Anchor link for: 7-2-ganztagig-darf-prominent-sein" style="visibility: hidden;"></a>
+</h2>
+<p>Ganztägige Familien-/Kinderereignisse dürfen nicht versteckt werden.</p>
+<h2 id="7-3-purple-bleibt-erganzend">7.3 Purple bleibt ergänzend<a class="zola-anchor" href="#7-3-purple-bleibt-erganzend" aria-label="Anchor link for: 7-3-purple-bleibt-erganzend" style="visibility: hidden;"></a>
+</h2>
+<p>Purple-Einträge dürfen vorkommen, aber nur wenn sie Familienkontext wirklich stärken.</p>
+<h2 id="7-4-personenzuordnung-muss-sofort-lesbar-sein">7.4 Personenzuordnung muss sofort lesbar sein<a class="zola-anchor" href="#7-4-personenzuordnung-muss-sofort-lesbar-sein" aria-label="Anchor link for: 7-4-personenzuordnung-muss-sofort-lesbar-sein" style="visibility: hidden;"></a>
+</h2>
+<p>Jeder Eintrag soll schnell erkennbar machen, wen er betrifft.</p>
+<hr />
+<h1 id="8-unterschied-zur-priority-spec-der-hauptseite">8. Unterschied zur Priority Spec der Hauptseite<a class="zola-anchor" href="#8-unterschied-zur-priority-spec-der-hauptseite" aria-label="Anchor link for: 8-unterschied-zur-priority-spec-der-hauptseite" style="visibility: hidden;"></a>
+</h1>
+<p>Die Hauptseite folgt stärker der Logik:</p>
+<ul>
+<li>Auswahl</li>
+<li>Begrenzung</li>
+<li>kuratierter Fokus</li>
+</ul>
+<p>Die Familienseite folgt stärker der Logik:</p>
+<ul>
+<li>Kontext</li>
+<li>Gruppierung</li>
+<li>Vorbereitung</li>
+<li>Familienverständnis</li>
+</ul>
+<p>Das ist ein absichtlicher Unterschied.</p>
+<hr />
+<h1 id="9-erfolgskriterien">9. Erfolgskriterien<a class="zola-anchor" href="#9-erfolgskriterien" aria-label="Anchor link for: 9-erfolgskriterien" style="visibility: hidden;"></a>
+</h1>
+<p>Family Page Spec v1 ist gut umgesetzt, wenn:</p>
+<ul>
+<li>heutige Familienrealität mit einem Blick verständlich wird</li>
+<li>morgige Vorbereitung sichtbar wird</li>
+<li>ganztägige Kinder-/Familieneinträge nicht verloren gehen</li>
+<li>Purple-Personal nicht dominiert</li>
+<li>die Seite nicht wie eine dumpfe Kalenderliste wirkt</li>
+</ul>
+<hr />
+<h1 id="10-kurzfassung">10. Kurzfassung<a class="zola-anchor" href="#10-kurzfassung" aria-label="Anchor link for: 10-kurzfassung" style="visibility: hidden;"></a>
+</h1>
+<p>Die Familienseite soll keine grössere Home-Seite sein.</p>
+<p>Sie soll ein <strong>Familien-Koordinationsboard</strong> sein.</p>
+<p>Darum ist v1:</p>
+<ul>
+<li>heute-orientiert</li>
+<li>morgen-vorbereitend</li>
+<li>personenbezogen</li>
+<li>ganztägig-freundlich</li>
+<li>kontextreicher als die Hauptseite</li>
+</ul>
+<p>Damit bekommt sie eine klare eigene Rolle im Display-System.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025 by S.Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
