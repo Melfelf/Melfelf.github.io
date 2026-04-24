@@ -1,6 +1,6 @@
 +++
-title = "Project Spotlights"
-description = "A curated list of active projects with quick links into their latest updates."
+title = "Projects"
+description = "Projektbereiche mit Dokumentation, Architektur, Learnings und laufenden Iterationen statt einzelner verstreuter Posts."
 sort_by = "date"
 template = "projects.html"
 page_template = "post.html"
@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Projects"
-subtitle = "Explore innovative projects and learn from real-world case studies."
+subtitle = "Hier liegen die Dinge, die grösser sind als ein einzelner Artikel: Projekte mit eigener Struktur, Doku und laufender Entwicklung."
 
 date_format = "%b %-d, %Y at %H:%M"
 
@@ -27,7 +27,7 @@ outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
 
-Welcome to the Projects hub. Each spotlight below links to a dedicated project space with its own updates, logs, and artifacts.
+Willkommen im Projektbereich. Hier landen Vorhaben, die über einen einzelnen Blogpost hinausgehen und deshalb ihre eigene Struktur brauchen.
 
 ## Quick Jump
 
@@ -37,14 +37,14 @@ Welcome to the Projects hub. Each spotlight below links to a dedicated project s
 - [Train an AI Assistant](./train-an-ai-assistant/)
 - [Home Automation Robot Team](./home-automation-robot-team/)
 
-## What lives here
+## Was hier hingehört
 
-- **Project hubs** with their own logs and documentation
-- **Architecture notes** and operational learnings
-- **Implementation details** that are too project-specific for the general Melflin section
+- **Projekt-Hubs** mit eigener Doku, statt lose Informationen über die ganze Seite zu verteilen
+- **Architektur- und Betriebsnotizen**, wenn ein Thema mehr Struktur braucht
+- **laufende Iterationen**, bei denen Verlauf und Entscheidungen wichtiger sind als nur das Endergebnis
 
-### How I Document Projects
-- **Objective first**: Eine klare Zielsetzung pro Projekt.
-- **Small increments**: Logs capture weekly or sprint-sized changes.
-- **Evidence**: Architecture notes, diagrams, and scripts where possible.
-- **Retros**: What worked, what broke, what to try next.
+### Wie ich Projekte dokumentiere
+- **Ziel zuerst** — was das Projekt lösen soll, nicht nur was gebaut wurde
+- **kleine nachvollziehbare Schritte** — lieber echte Iterationen als grosse rückblickende Erzählungen
+- **Evidenz statt Behauptung** — Doku, Runbooks, Skizzen oder Skripte, wenn sie helfen
+- **ehrliche Retros** — was funktioniert hat, was unnötig war und was noch nicht sauber ist

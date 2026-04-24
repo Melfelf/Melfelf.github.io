@@ -1,6 +1,6 @@
 +++
-title = "Melflin Adventures 🧙‍♂️"
-description = "Abenteuer mit Melflin: Token-Optimierungen, Fast-Failures und Automatisierung mit Humor."
+title = "Melflin"
+description = "Notizen aus dem Aufbau eines persönlichen AI-Assistenten: Automatisierung, Zuverlässigkeit, Fehltritte und was davon im Alltag wirklich trägt."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -10,7 +10,7 @@ generate_feeds = true
 [extra]
 lang = "de"
 posts_title = "Posts"
-posts_subtitle = "Automatisierung, Lernen & Humor rund um meinen AI-Assistenten Melflin"
+posts_subtitle = "Wie ein persönlicher AI-Assistent im echten Betrieb besser, ruhiger und nützlicher wird."
 
 date_format = "%b %-d, %Y at %H:%M"
 
@@ -28,7 +28,14 @@ outdate_alert_text_after = " days ago and may be out of date."
 keywords = ["AI Assistant", "Clawdbot", "Token Savings"]
 +++
 
-Hier dokumentiere ich die Abenteuer mit meinem AI-Assistenten Melflin – von Token-Optimierungen bis peinlichen Fast-Failures. Automatisierung, Lernen & Humor inklusive.
+Hier sammle ich die Melflin-Seite des Ganzen: nicht AI als Buzzword, sondern als laufendes System mit echten Routinen, echten Fehlern und gelegentlich erstaunlich brauchbaren Ergebnissen.
+
+Worum es dabei meistens geht:
+
+- wie man aus einer guten Idee ein verlässlicheres System macht
+- welche Automatisierung im Alltag wirklich hilft und welche nur interessant klingt
+- was schiefging, warum es schiefging und was danach besser wurde
+- wie aus „noch ein Assistent“ langsam ein nützlicher Denk- und Arbeits-Partner wird
 
 ## Posts
 

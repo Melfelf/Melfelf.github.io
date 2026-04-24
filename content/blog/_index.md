@@ -1,6 +1,6 @@
 +++
-title = "My Blog"
-description = "Personal thoughts, experiences, and reflections on life, work, and everything in between."
+title = "Blog"
+description = "Persönliche Notizen, Beobachtungen und Texte zu Alltag, Arbeit, Technologie und dem, was dazwischen hängen bleibt."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -10,8 +10,8 @@ generate_feeds = true
 [extra]
 lang = "en"
 
-title = "Posts"
-subtitle = "Hier gibt's ungefiltert, was mich gerade bewegt. Von Alltagsmomenten bis zu spontanen Geistesblitzen. Auf Deutsch weil mir das besser liegt für allgemeine Gedanken"
+title = "Blog"
+subtitle = "Persönliche Texte auf Deutsch: direkt, ungefiltert und näher an echten Gedanken als an sauberer Selbstinszenierung."
 
 date_format = "%b %-d, %Y at %H:%M"
 
@@ -27,17 +27,17 @@ outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date."
 +++
 
-## Willkommen zu meinem Blog
+## Persönliche Notizen statt Hochglanz
 
-Hier findest du ungefilterte Gedanken, persönliche Erfahrungen und Reflexionen zu verschiedensten Themen. Von Alltagsmomenten bis zu spontanen Geistesblitzen, alles was mich bewegt.
+Hier landen Dinge, die nicht sauber in eine Fachkategorie passen, aber trotzdem aufschreibenswert sind: Beobachtungen, kleine Erkenntnisse, Reibungen im Alltag und Gedanken, die mir nicht mehr aus dem Kopf gehen.
 
-## Was dich erwartet
+## Was du hier findest
 
-- **Alltag & Reisen**: Kleine und große Momente, die im Gedächtnis bleiben.
-- **Gedankenblitze**: Ideen, die nachts auftauchen und am Morgen noch Bestand haben.
-- **Meta-Reflexionen**: Wie ich über KI, Arbeit und Familienleben nachdenke.
-- **Einfach ehrlich**: Keine Hochglanz-Storys, sondern authentische Eindrücke.
+- **Alltag & Familie** — das, was zwischen Kalender, Arbeit und echtem Leben passiert
+- **Technik mit Nebenwirkungen** — wenn Tools, Systeme oder Gewohnheiten mehr mit uns machen als gedacht
+- **Gedanken in Arbeit** — noch nicht komplett fertig, aber schon nützlich genug zum Teilen
+- **Deutsch, wenn es persönlicher wird** — weil sich manche Dinge so einfach ehrlicher schreiben lassen
 
-Ich schreibe bevorzugt auf Deutsch, weil es sich für persönliche Themen am natürlichsten anfühlt.
+Ich mag Texte, die klar sind, aber nicht geschniegelt. Lieber brauchbar als geschniegelt.
 
 ---

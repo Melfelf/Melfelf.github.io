@@ -159,10 +159,11 @@ body.dark #left a:hover {
 
 /* Homepage only: nicer hero heading */
 body.homepage #brief h1 {
-  font-size: 2rem;
-  line-height: 1.15;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1.08;
   margin-top: 0.2rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+  max-width: 14ch;
   background: linear-gradient(135deg, var(--melf-accent), var(--melf-accent-2));
   -webkit-background-clip: text;
   background-clip: text;
@@ -171,9 +172,26 @@ body.homepage #brief h1 {
 
 body.homepage #brief h2 {
   color: var(--melf-accent);
+  margin-top: 1.8rem;
+}
+
+body.homepage #brief p {
+  max-width: 70ch;
+}
+
+body.homepage #brief ul {
+  padding-left: 1.2rem;
+}
+
+body.homepage #brief li + li {
+  margin-top: 0.4rem;
 }
 
 /* Post list cards: slightly tighter */
+.layout-list {
+  margin: 0 0 2rem;
+}
+
 .post-list a {
   border-radius: var(--melf-radius-sm);
   border: 1px solid var(--melf-border);
@@ -195,6 +213,34 @@ body.dark .post-list a {
 pre {
   border-radius: var(--melf-radius-md);
   border: 1px solid var(--melf-border);
+}
+
+/* Homepage recent posts */
+body.homepage .layout-list {
+  background: var(--melf-surface);
+  border: 1px solid var(--melf-border);
+  border-radius: var(--melf-radius-lg);
+  box-shadow: var(--melf-shadow-soft);
+  padding: 1.25rem;
+}
+
+body.homepage .section-intro {
+  margin-bottom: 1rem;
+}
+
+body.homepage .section-intro h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+body.homepage .section-intro p {
+  margin: 0;
+  opacity: 0.82;
+}
+
+body.homepage .read-more {
+  margin-top: 1rem;
 }
 
 /* Focus states: visible and consistent */

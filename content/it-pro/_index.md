@@ -1,6 +1,6 @@
 +++
-title = "IT Pro Blog"
-description = "Technical guides and insights for modern IT challenges, focusing on Azure, cloud infrastructure, automation, and enterprise management."
+title = "IT Pro"
+description = "Praxisnahe technische Beiträge zu Azure, Intune, Infrastruktur, Betrieb und Automatisierung ohne Marketingnebel."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -10,8 +10,8 @@ generate_feeds = true
 [extra]
 lang = "en"
 
-title = "Posts"
-subtitle = "In-depth guides and insights for IT professionals and cloud architects"
+title = "IT Pro"
+subtitle = "Technische Beiträge aus der Praxis: Azure, Endpoint Management, Infrastruktur und Automatisierung mit echter Betriebsperspektive."
 
 date_format = "%b %-d, %Y at %H:%M"
 
@@ -29,15 +29,17 @@ outdate_alert_text_after = " days ago and may be out of date."
 keywords = ["Azure", "cloud infrastructure", "automation", "IT management", "Azure Virtual Desktop", "Intune", "enterprise"]
 +++
 
-## Welcome to IT Pro
+## Technik, die im Betrieb bestehen muss
 
-Technical content focused on practical solutions for modern IT challenges. Here you'll find:
+Hier schreibe ich über Dinge, die in echten Umgebungen funktionieren sollen, nicht nur in Demos oder Architekturfolien.
 
-- **Azure & Cloud Infrastructure**: Deep dives into Azure Virtual Desktop, Intune, and cloud architecture
-- **Automation**: Scripting, configuration management, and workflow optimization
-- **Enterprise Management**: Best practices for managing infrastructure at scale
-- **Troubleshooting**: Solutions to common IT problems and edge cases
+## Schwerpunkte
 
-Each article aims to provide actionable insights backed by real-world experience. I favor reproducible steps, architecture diagrams, and guardrails over marketing. If etwas theoretisch bleibt, schreibe ich es dazu – Praxisnähe hat Vorrang.
+- **Azure & Cloud** — Architektur, Plattformbetrieb und die Stellen, an denen Theorie auf Realität trifft
+- **Endpoint & Workplace** — Intune, Images, Rollouts und die Mühen der letzten Meile
+- **Automation** — Skripte, Abläufe und Guardrails, die Reibung wirklich reduzieren
+- **Troubleshooting** — Fehlerbilder, Randfälle und Learnings, die man lieber einmal sauber dokumentiert
+
+Ich mag reproduzierbare Schritte, klare Annahmen und ehrliche Grenzen. Wenn etwas nur unter bestimmten Bedingungen funktioniert, gehört genau das in den Text.
 
 ---

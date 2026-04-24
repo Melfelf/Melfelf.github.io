@@ -1,6 +1,6 @@
 +++
-title = "AI Blubber"
-description = "Thoughts on AI, automation, and the intersection of artificial intelligence with everyday tools and workflow optimization."
+title = "AI Notes"
+description = "Gedanken, Experimente und Einordnungen zu AI, Automatisierung und den Stellen, an denen Modelle im Alltag tatsächlich nützlich oder unerquicklich werden."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -10,8 +10,8 @@ generate_feeds = true
 [extra]
 lang = "en"
 
-title = "Posts"
-subtitle = "Exploring artificial intelligence, automation, and how AI tools shape our work and creativity"
+title = "AI Notes"
+subtitle = "Notizen zu AI jenseits des Hypes: praktische Nutzung, Experimente, Reibungen und Folgen für echte Arbeit."
 
 date_format = "%b %-d, %Y at %H:%M"
 
@@ -27,22 +27,22 @@ outdate_alert_text_before = "This article was last updated "
 outdate_alert_text_after = " days ago and may be out of date. AI is a fast-moving field!"
 +++
 
-## Welcome to AI Blubber
+## AI, aber ohne Weihrauch
 
-This section explores the fascinating world of artificial intelligence, from practical automation tools to philosophical implications. Here you'll find:
+Hier sammle ich Gedanken und Versuche rund um AI, Automatisierung und die Frage, was davon im Alltag wirklich trägt.
 
-- **AI-Assisted Workflows**: How I use AI tools to improve productivity and creativity
-- **Automation & Tools**: Practical guides for leveraging AI in everyday tasks
-- **Reflections**: Thoughts on the role of AI in society, work, and personal growth
-- **Experiments**: Documenting AI-driven projects and learnings
+## Was du hier eher findest
 
-Whether you're curious about how to work with AI tools or interested in deeper discussions about artificial intelligence, you'll find something here.
+- **praktische Nutzung statt Show** — Workflows, Agenten, Hilfssysteme und der ganze klebrige Zwischenraum dazwischen
+- **Reflexion mit Bodenhaftung** — nicht nur was Modelle können, sondern auch wo sie nerven, täuschen oder unnötig kompliziert machen
+- **Experimente mit Spuren** — inklusive Fehlversuchen, Umwegen und Kurskorrekturen
+- **ein bisschen Theorie, aber nur wenn sie hilft**
 
-## How I Work With AI
+## Wie ich über AI schreibe
 
-- **Show your work**: Prompts, failures, and iterations are part of every write-up.
-- **Guardrails first**: Safety, transparency, and reproducibility over flashy demos.
-- **Bilingual**: Deutsch für persönliche Notizen, Englisch für technische Tiefe.
-- **Evidence matters**: Wenn eine Aussage getestet wurde, schreibe ich das dazu.
+- **Show your work** — Prompts, Fehlannahmen und Iterationen gehören dazu
+- **Guardrails first** — lieber verlässlich als beeindruckend
+- **bilingual by usefulness** — Deutsch oder Englisch, je nachdem was dem Thema besser dient
+- **Evidenz schlägt Vibe** — wenn etwas getestet wurde, schreibe ich das dazu
 
 ---

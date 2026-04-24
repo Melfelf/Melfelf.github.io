@@ -93,7 +93,11 @@
     {% set blog_section_path = config.extra.blog_section_path | trim_start_matches(pat="/") %}
     {% set section_md_path = blog_section_path ~ "/_index.md" %}
     {% set blog_section = get_section(path=section_md_path) %}
-    <section class="layout-list">
+    <section class="layout-list home-recent-posts">
+      <div class="section-intro">
+        <h2>Neu im Logbuch</h2>
+        <p>Ein paar der letzten Einträge — eher Werkbank als Hochglanzbroschüre.</p>
+      </div>
       <div class="post-list">
         {% for post in blog_section.pages | slice(end=section.extra.recent_max) %}
         <a class="post instant {% if post.extra.featured %}featured{% endif %}" href="{{ post.permalink }}">
