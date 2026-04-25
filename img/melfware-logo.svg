@@ -1,0 +1,45 @@
+<svg viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">MelfWare</title>
+  <desc id="logoDesc">MelfWare - Intelligent Automation</desc>
+
+  <defs>
+    <linearGradient id="mw-blue-refined" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#0074FF"/>
+      <stop offset="50%" stop-color="#00B7FF"/>
+      <stop offset="100%" stop-color="#00E0FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Enhanced dot line (automation flow) -->
+  <g class="logo-dots" transform="translate(10,70)">
+    <circle cx="0" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+    <circle cx="24" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+    <circle cx="48" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+    <circle cx="72" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+    <circle cx="96" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+    <circle cx="120" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+    <circle cx="144" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+    <circle cx="168" cy="0" r="3.2" fill="url(#mw-blue-refined)"/>
+  </g>
+
+  <!-- Refined wordmark -->
+  <text class="logo-wordmark"
+        x="5" y="55"
+        font-family="Segoe UI, system-ui, -apple-system, Arial, sans-serif"
+        font-weight="700"
+        font-size="38"
+        letter-spacing="0.5"
+        fill="url(#mw-blue-refined)">
+    MelfWare
+  </text>
+
+  <!-- Subtle tagline -->
+  <text class="logo-tagline"
+        x="8" y="95"
+        font-family="Segoe UI, system-ui, -apple-system, Arial, sans-serif"
+        font-size="13"
+        letter-spacing="1.3"
+        fill="#666666">
+    INTELLIGENT AUTOMATION
+  </text>
+</svg>

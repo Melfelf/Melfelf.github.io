@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Persönliche Notizen, Beobachtungen und Texte zu Alltag, Arbeit, Technologie und dem, was dazwischen hängen bleibt.">
+
+  <title>Display Status &amp; Traceability v1</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#display-status-traceability-v1">Display Status &amp; Traceability v1</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#zweck">Zweck</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#1-betriebsworkflow">1. Betriebsworkflow</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#2-system-cron-automatischer-refresh">2. System-Cron &#x2F; automatischer Refresh</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-1">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-1">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#3-familienkalender-als-primare-quelle">3. Familienkalender als primäre Quelle</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-2">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-2">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#4-personlicher-kalender-nur-mit-purple-kategorie">4. Persönlicher Kalender nur mit Purple-Kategorie</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-3">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-3">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#5-wetter-quelle-netatmo-open-meteo">5. Wetter-Quelle: Netatmo + Open-Meteo</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-4">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-4">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#6-transit-fallback-uber-cache">6. Transit-Fallback über Cache</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-5">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-5">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#7-hauptseiten-prioritatslogik-gemass-spec">7. Hauptseiten-Prioritätslogik gemäss Spec</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-6">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-6">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#8-hauptseite-vs-family-seite-rollentrennung">8. Hauptseite vs. Family-Seite Rollentrennung</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-7">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-7">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#9-melflin-block-prioritat-info-erinnerung-spruch">9. Melflin-Block: Priorität Info &gt; Erinnerung &gt; Spruch</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-8">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-8">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#10-zitatfallback">10. Zitatfallback</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-9">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-9">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#11-source-of-truth-trennung">11. Source-of-Truth-Trennung</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-10">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-10">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#12-icon-system">12. Icon-System</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-11">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-11">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#13-runbook-operations">13. Runbook &#x2F; Operations</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-12">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-12">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#14-cache-publish-robustheit">14. Cache-&#x2F;Publish-Robustheit</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-13">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-13">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#15-dokumentationslandschaft-insgesamt">15. Dokumentationslandschaft insgesamt</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#dokumentiert-14">Dokumentiert?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#implementiert-14">Implementiert?</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#zusammenfassung-nach-status">Zusammenfassung nach Status</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#voll-implementiert">Voll implementiert</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#teilimplementiert-noch-feinschliff-notig">Teilimplementiert &#x2F; noch Feinschliff nötig</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#wichtigster-offener-rest">Wichtigster offener Rest</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#kurzfazit">Kurzfazit</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Display Status &amp; Traceability v1</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Apr 3, 2026 at 10:52</span>
+            </div>
+
+          
+        </div>
+
+        
+        
+
+        
+
+        <h1 id="display-status-traceability-v1">Display Status &amp; Traceability v1<a class="zola-anchor" href="#display-status-traceability-v1" aria-label="Anchor link for: display-status-traceability-v1" style="visibility: hidden;"></a>
+</h1>
+<p>Inzwischen gibt es mehrere Dokumente zum Melflin-Display:</p>
+<ul>
+<li>Workflow</li>
+<li>Architektur</li>
+<li>Agent System Instructions</li>
+<li>Content Priority Spec</li>
+<li>Runbook</li>
+<li>Icon System</li>
+<li>Source of Truth</li>
+</ul>
+<p>Das ist gut. Aber genau an diesem Punkt entsteht schnell ein neues Problem:</p>
+<blockquote>
+<p>Was davon ist schon real umgesetzt – und was ist noch Zielbild?</p>
+</blockquote>
+<p>Dieses Dokument ist die Antwort darauf.</p>
+<p>Es ist eine <strong>Traceability-/Statusübersicht</strong> zwischen Doku und Implementierung.</p>
+<hr />
+<h2 id="zweck">Zweck<a class="zola-anchor" href="#zweck" aria-label="Anchor link for: zweck" style="visibility: hidden;"></a>
+</h2>
+<p>Dieses Dokument markiert für wichtige Punkte jeweils einen Status:</p>
+<ul>
+<li><strong>Implementiert</strong></li>
+<li><strong>Teilimplementiert</strong></li>
+<li><strong>Dokumentiert, aber noch nicht fertig umgesetzt</strong></li>
+<li><strong>Offen / Zielbild</strong></li>
+</ul>
+<hr />
+<h1 id="1-betriebsworkflow">1. Betriebsworkflow<a class="zola-anchor" href="#1-betriebsworkflow" aria-label="Anchor link for: 1-betriebsworkflow" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert">Dokumentiert?<a class="zola-anchor" href="#dokumentiert" aria-label="Anchor link for: dokumentiert" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert">Implementiert?<a class="zola-anchor" href="#implementiert" aria-label="Anchor link for: implementiert" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h3 id="status">Status<a class="zola-anchor" href="#status" aria-label="Anchor link for: status" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung">Bemerkung<a class="zola-anchor" href="#bemerkung" aria-label="Anchor link for: bemerkung" style="visibility: hidden;"></a>
+</h3>
+<p>Der grundlegende Pipeline-Weg funktioniert:</p>
+<ul>
+<li>Feed bauen</li>
+<li>HTML rendern</li>
+<li>publizieren</li>
+<li>öffentliche Seite aktualisieren</li>
+<li>Display lädt die Seite</li>
+</ul>
+<hr />
+<h1 id="2-system-cron-automatischer-refresh">2. System-Cron / automatischer Refresh<a class="zola-anchor" href="#2-system-cron-automatischer-refresh" aria-label="Anchor link for: 2-system-cron-automatischer-refresh" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-1">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-1" aria-label="Anchor link for: dokumentiert-1" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-1">Implementiert?<a class="zola-anchor" href="#implementiert-1" aria-label="Anchor link for: implementiert-1" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h3 id="status-1">Status<a class="zola-anchor" href="#status-1" aria-label="Anchor link for: status-1" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung-1">Bemerkung<a class="zola-anchor" href="#bemerkung-1" aria-label="Anchor link for: bemerkung-1" style="visibility: hidden;"></a>
+</h3>
+<p>Der stündliche System-Cron läuft und aktualisiert das Display.</p>
+<hr />
+<h1 id="3-familienkalender-als-primare-quelle">3. Familienkalender als primäre Quelle<a class="zola-anchor" href="#3-familienkalender-als-primare-quelle" aria-label="Anchor link for: 3-familienkalender-als-primare-quelle" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-2">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-2" aria-label="Anchor link for: dokumentiert-2" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-2">Implementiert?<a class="zola-anchor" href="#implementiert-2" aria-label="Anchor link for: implementiert-2" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h3 id="status-2">Status<a class="zola-anchor" href="#status-2" aria-label="Anchor link for: status-2" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung-2">Bemerkung<a class="zola-anchor" href="#bemerkung-2" aria-label="Anchor link for: bemerkung-2" style="visibility: hidden;"></a>
+</h3>
+<p>Das Melflin-Outlook-Konto ist die primäre Quelle für Familienereignisse.</p>
+<hr />
+<h1 id="4-personlicher-kalender-nur-mit-purple-kategorie">4. Persönlicher Kalender nur mit Purple-Kategorie<a class="zola-anchor" href="#4-personlicher-kalender-nur-mit-purple-kategorie" aria-label="Anchor link for: 4-personlicher-kalender-nur-mit-purple-kategorie" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-3">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-3" aria-label="Anchor link for: dokumentiert-3" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-3">Implementiert?<a class="zola-anchor" href="#implementiert-3" aria-label="Anchor link for: implementiert-3" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h3 id="status-3">Status<a class="zola-anchor" href="#status-3" aria-label="Anchor link for: status-3" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung-3">Bemerkung<a class="zola-anchor" href="#bemerkung-3" aria-label="Anchor link for: bemerkung-3" style="visibility: hidden;"></a>
+</h3>
+<p>Persönliche Einträge von Stefan werden nur berücksichtigt, wenn <code>Purple category</code> gesetzt ist.</p>
+<hr />
+<h1 id="5-wetter-quelle-netatmo-open-meteo">5. Wetter-Quelle: Netatmo + Open-Meteo<a class="zola-anchor" href="#5-wetter-quelle-netatmo-open-meteo" aria-label="Anchor link for: 5-wetter-quelle-netatmo-open-meteo" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-4">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-4" aria-label="Anchor link for: dokumentiert-4" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-4">Implementiert?<a class="zola-anchor" href="#implementiert-4" aria-label="Anchor link for: implementiert-4" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h3 id="status-4">Status<a class="zola-anchor" href="#status-4" aria-label="Anchor link for: status-4" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung-4">Bemerkung<a class="zola-anchor" href="#bemerkung-4" aria-label="Anchor link for: bemerkung-4" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Netatmo liefert Ist-Werte</li>
+<li>Open-Meteo liefert Forecast</li>
+</ul>
+<hr />
+<h1 id="6-transit-fallback-uber-cache">6. Transit-Fallback über Cache<a class="zola-anchor" href="#6-transit-fallback-uber-cache" aria-label="Anchor link for: 6-transit-fallback-uber-cache" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-5">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-5" aria-label="Anchor link for: dokumentiert-5" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-5">Implementiert?<a class="zola-anchor" href="#implementiert-5" aria-label="Anchor link for: implementiert-5" style="visibility: hidden;"></a>
+</h2>
+<p>Ja, aber mit Vorbehalt.</p>
+<h3 id="status-5">Status<a class="zola-anchor" href="#status-5" aria-label="Anchor link for: status-5" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Teilimplementiert / praktisch nutzbar</strong></p>
+<h3 id="bemerkung-5">Bemerkung<a class="zola-anchor" href="#bemerkung-5" aria-label="Anchor link for: bemerkung-5" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><code>cache/transit.json</code> existiert</li>
+<li>letzter gültiger Stand wird gespeichert</li>
+<li>Fallback-Pfad ist im System vorhanden</li>
+</ul>
+<p>Was noch beobachtet werden sollte:</p>
+<ul>
+<li>Verhalten bei echtem wiederholtem API-Ausfall im Alltag</li>
+<li>saubere Kennzeichnung des Cache-Zustands in jeder Lage</li>
+</ul>
+<hr />
+<h1 id="7-hauptseiten-prioritatslogik-gemass-spec">7. Hauptseiten-Prioritätslogik gemäss Spec<a class="zola-anchor" href="#7-hauptseiten-prioritatslogik-gemass-spec" aria-label="Anchor link for: 7-hauptseiten-prioritatslogik-gemass-spec" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-6">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-6" aria-label="Anchor link for: dokumentiert-6" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-6">Implementiert?<a class="zola-anchor" href="#implementiert-6" aria-label="Anchor link for: implementiert-6" style="visibility: hidden;"></a>
+</h2>
+<p>Teilweise.</p>
+<h3 id="status-6">Status<a class="zola-anchor" href="#status-6" aria-label="Anchor link for: status-6" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Teilimplementiert</strong></p>
+<h3 id="bemerkung-6">Bemerkung<a class="zola-anchor" href="#bemerkung-6" aria-label="Anchor link for: bemerkung-6" style="visibility: hidden;"></a>
+</h3>
+<p>Es gibt bereits eine regelbasierte Auswahl, nicht mehr nur reine Score-Sortierung.</p>
+<p>Aber:</p>
+<ul>
+<li>die tatsächliche Hauptseiten-Auswahl entspricht noch nicht stabil exakt der Spec</li>
+<li>ganztägige / heute / morgen / Familie / Arthur-Verhältnisse sind noch nicht final abgestimmt</li>
+</ul>
+<p>Das bleibt aktuell der wichtigste fachliche Restpunkt.</p>
+<hr />
+<h1 id="8-hauptseite-vs-family-seite-rollentrennung">8. Hauptseite vs. Family-Seite Rollentrennung<a class="zola-anchor" href="#8-hauptseite-vs-family-seite-rollentrennung" aria-label="Anchor link for: 8-hauptseite-vs-family-seite-rollentrennung" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-7">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-7" aria-label="Anchor link for: dokumentiert-7" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-7">Implementiert?<a class="zola-anchor" href="#implementiert-7" aria-label="Anchor link for: implementiert-7" style="visibility: hidden;"></a>
+</h2>
+<p>Teilweise.</p>
+<h3 id="status-7">Status<a class="zola-anchor" href="#status-7" aria-label="Anchor link for: status-7" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Teilimplementiert</strong></p>
+<h3 id="bemerkung-7">Bemerkung<a class="zola-anchor" href="#bemerkung-7" aria-label="Anchor link for: bemerkung-7" style="visibility: hidden;"></a>
+</h3>
+<p>Es gibt zwei getrennte Seiten mit unterschiedlichen Rollen.</p>
+<p>Was noch nicht vollständig ausgeschärft ist:</p>
+<ul>
+<li>welche Inhalte bewusst nur auf die Family-Seite gehören</li>
+<li>wie aggressiv die Hauptseite kuratieren soll</li>
+</ul>
+<hr />
+<h1 id="9-melflin-block-prioritat-info-erinnerung-spruch">9. Melflin-Block: Priorität Info &gt; Erinnerung &gt; Spruch<a class="zola-anchor" href="#9-melflin-block-prioritat-info-erinnerung-spruch" aria-label="Anchor link for: 9-melflin-block-prioritat-info-erinnerung-spruch" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-8">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-8" aria-label="Anchor link for: dokumentiert-8" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-8">Implementiert?<a class="zola-anchor" href="#implementiert-8" aria-label="Anchor link for: implementiert-8" style="visibility: hidden;"></a>
+</h2>
+<p>Ja, in brauchbarer Form.</p>
+<h3 id="status-8">Status<a class="zola-anchor" href="#status-8" aria-label="Anchor link for: status-8" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung-8">Bemerkung<a class="zola-anchor" href="#bemerkung-8" aria-label="Anchor link for: bemerkung-8" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li><code>display-note.md</code> hat Vorrang</li>
+<li>Zitatfallback existiert</li>
+<li>Quotes rotieren bei Fallback</li>
+</ul>
+<hr />
+<h1 id="10-zitatfallback">10. Zitatfallback<a class="zola-anchor" href="#10-zitatfallback" aria-label="Anchor link for: 10-zitatfallback" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-9">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-9" aria-label="Anchor link for: dokumentiert-9" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-9">Implementiert?<a class="zola-anchor" href="#implementiert-9" aria-label="Anchor link for: implementiert-9" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h3 id="status-9">Status<a class="zola-anchor" href="#status-9" aria-label="Anchor link for: status-9" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung-9">Bemerkung<a class="zola-anchor" href="#bemerkung-9" aria-label="Anchor link for: bemerkung-9" style="visibility: hidden;"></a>
+</h3>
+<p>Es gibt eine eigene <code>quotes.txt</code>, aus der bei fehlendem manuellem Inhalt zufällig gewählt wird.</p>
+<hr />
+<h1 id="11-source-of-truth-trennung">11. Source-of-Truth-Trennung<a class="zola-anchor" href="#11-source-of-truth-trennung" aria-label="Anchor link for: 11-source-of-truth-trennung" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-10">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-10" aria-label="Anchor link for: dokumentiert-10" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-10">Implementiert?<a class="zola-anchor" href="#implementiert-10" aria-label="Anchor link for: implementiert-10" style="visibility: hidden;"></a>
+</h2>
+<p>Weitgehend ja.</p>
+<h3 id="status-10">Status<a class="zola-anchor" href="#status-10" aria-label="Anchor link for: status-10" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert / dokumentarisch abgesichert</strong></p>
+<h3 id="bemerkung-10">Bemerkung<a class="zola-anchor" href="#bemerkung-10" aria-label="Anchor link for: bemerkung-10" style="visibility: hidden;"></a>
+</h3>
+<p>Die Systemlogik folgt inzwischen schon grösstenteils dieser Aufteilung. Der neue Wert liegt vor allem in der klaren Dokumentation und Debugbarkeit.</p>
+<hr />
+<h1 id="12-icon-system">12. Icon-System<a class="zola-anchor" href="#12-icon-system" aria-label="Anchor link for: 12-icon-system" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-11">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-11" aria-label="Anchor link for: dokumentiert-11" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-11">Implementiert?<a class="zola-anchor" href="#implementiert-11" aria-label="Anchor link for: implementiert-11" style="visibility: hidden;"></a>
+</h2>
+<p>Teilweise.</p>
+<h3 id="status-11">Status<a class="zola-anchor" href="#status-11" aria-label="Anchor link for: status-11" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Teilimplementiert / gestalterisch offen</strong></p>
+<h3 id="bemerkung-11">Bemerkung<a class="zola-anchor" href="#bemerkung-11" aria-label="Anchor link for: bemerkung-11" style="visibility: hidden;"></a>
+</h3>
+<p>Es gibt funktionierende Icons, aber kein eindeutig final akzeptiertes Set.</p>
+<p>Vor allem beim Mond gilt:</p>
+<ul>
+<li>technisch vorhanden</li>
+<li>gestalterisch noch nicht endgültig zufriedenstellend</li>
+</ul>
+<hr />
+<h1 id="13-runbook-operations">13. Runbook / Operations<a class="zola-anchor" href="#13-runbook-operations" aria-label="Anchor link for: 13-runbook-operations" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-12">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-12" aria-label="Anchor link for: dokumentiert-12" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-12">Implementiert?<a class="zola-anchor" href="#implementiert-12" aria-label="Anchor link for: implementiert-12" style="visibility: hidden;"></a>
+</h2>
+<p>Als Doku ja, als Prozess grösstenteils auch.</p>
+<h3 id="status-12">Status<a class="zola-anchor" href="#status-12" aria-label="Anchor link for: status-12" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert als Betriebswissen</strong></p>
+<h3 id="bemerkung-12">Bemerkung<a class="zola-anchor" href="#bemerkung-12" aria-label="Anchor link for: bemerkung-12" style="visibility: hidden;"></a>
+</h3>
+<p>Die wichtigsten Diagnosepfade sind dokumentiert und bereits in echter Fehlersuche genutzt worden.</p>
+<hr />
+<h1 id="14-cache-publish-robustheit">14. Cache-/Publish-Robustheit<a class="zola-anchor" href="#14-cache-publish-robustheit" aria-label="Anchor link for: 14-cache-publish-robustheit" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-13">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-13" aria-label="Anchor link for: dokumentiert-13" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-13">Implementiert?<a class="zola-anchor" href="#implementiert-13" aria-label="Anchor link for: implementiert-13" style="visibility: hidden;"></a>
+</h2>
+<p>Teilweise.</p>
+<h3 id="status-13">Status<a class="zola-anchor" href="#status-13" aria-label="Anchor link for: status-13" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Teilimplementiert</strong></p>
+<h3 id="bemerkung-13">Bemerkung<a class="zola-anchor" href="#bemerkung-13" aria-label="Anchor link for: bemerkung-13" style="visibility: hidden;"></a>
+</h3>
+<p>Es gibt versionierte Artefakte und ein robusteres Publish-Verständnis.</p>
+<p>Was bewusst wieder zurückgenommen wurde:</p>
+<ul>
+<li>loader-/iframe-basierte Lösung für Cache-Busting</li>
+</ul>
+<p>Grund:</p>
+<ul>
+<li>auf dem Device zu fragil</li>
+</ul>
+<hr />
+<h1 id="15-dokumentationslandschaft-insgesamt">15. Dokumentationslandschaft insgesamt<a class="zola-anchor" href="#15-dokumentationslandschaft-insgesamt" aria-label="Anchor link for: 15-dokumentationslandschaft-insgesamt" style="visibility: hidden;"></a>
+</h1>
+<h2 id="dokumentiert-14">Dokumentiert?<a class="zola-anchor" href="#dokumentiert-14" aria-label="Anchor link for: dokumentiert-14" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h2 id="implementiert-14">Implementiert?<a class="zola-anchor" href="#implementiert-14" aria-label="Anchor link for: implementiert-14" style="visibility: hidden;"></a>
+</h2>
+<p>Ja.</p>
+<h3 id="status-14">Status<a class="zola-anchor" href="#status-14" aria-label="Anchor link for: status-14" style="visibility: hidden;"></a>
+</h3>
+<p><strong>Implementiert</strong></p>
+<h3 id="bemerkung-14">Bemerkung<a class="zola-anchor" href="#bemerkung-14" aria-label="Anchor link for: bemerkung-14" style="visibility: hidden;"></a>
+</h3>
+<p>Die Dokumentationsbasis ist inzwischen stark genug, um nicht mehr bei jedem Problem neu rätseln zu müssen.</p>
+<hr />
+<h1 id="zusammenfassung-nach-status">Zusammenfassung nach Status<a class="zola-anchor" href="#zusammenfassung-nach-status" aria-label="Anchor link for: zusammenfassung-nach-status" style="visibility: hidden;"></a>
+</h1>
+<h2 id="voll-implementiert">Voll implementiert<a class="zola-anchor" href="#voll-implementiert" aria-label="Anchor link for: voll-implementiert" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>Workflow-Grundpipeline</li>
+<li>System-Cron</li>
+<li>Familienkalender als Hauptquelle</li>
+<li>Purple-Kategorie-Filter</li>
+<li>Netatmo + Open-Meteo Wettermodell</li>
+<li>Melflin-Block mit Note/Fallback</li>
+<li>Zitatfallback</li>
+<li>Runbook-Basis</li>
+<li>Dokumentationsbasis</li>
+</ul>
+<h2 id="teilimplementiert-noch-feinschliff-notig">Teilimplementiert / noch Feinschliff nötig<a class="zola-anchor" href="#teilimplementiert-noch-feinschliff-notig" aria-label="Anchor link for: teilimplementiert-noch-feinschliff-notig" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>Hauptseiten-Prioritätslogik</li>
+<li>Hauptseite vs. Family-Seite Rollentrennung</li>
+<li>Transit-Fallback-Verhalten im Alltag</li>
+<li>Publish-/Cache-Robustheit in Grenzfällen</li>
+<li>Icon-System final</li>
+</ul>
+<h2 id="wichtigster-offener-rest">Wichtigster offener Rest<a class="zola-anchor" href="#wichtigster-offener-rest" aria-label="Anchor link for: wichtigster-offener-rest" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn man alles priorisiert, bleibt der grösste fachliche Restpunkt:</p>
+<blockquote>
+<p><strong>Die Hauptseiten-Auswahl muss noch sauber an die Priority Spec angenähert werden.</strong></p>
+</blockquote>
+<p>Danach ist das sichtbarste Produktproblem weitgehend entschärft.</p>
+<hr />
+<h1 id="kurzfazit">Kurzfazit<a class="zola-anchor" href="#kurzfazit" aria-label="Anchor link for: kurzfazit" style="visibility: hidden;"></a>
+</h1>
+<p>Dieses Dokument ist bewusst unspektakulär, aber sehr nützlich.</p>
+<p>Denn es verhindert zwei typische Fehler:</p>
+<ul>
+<li>Doku feiern, obwohl nichts umgesetzt ist</li>
+<li>weiterbauen, obwohl etwas längst erledigt ist</li>
+</ul>
+<p>Der aktuelle Zustand ist gut:</p>
+<ul>
+<li>vieles funktioniert schon wirklich</li>
+<li>wenige Punkte sind noch offen</li>
+<li>und die offenen Punkte sind inzwischen klar benannt</li>
+</ul>
+<p>Genau das ist ein brauchbarer Stand für ein wachsendes System.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>

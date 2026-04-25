@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Persönliche Notizen, Beobachtungen und Texte zu Alltag, Arbeit, Technologie und dem, was dazwischen hängen bleibt.">
+
+  <title>Display Icon System v1</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#display-icon-system-v1">Display Icon System v1</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#ziel">Ziel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#1-grundregeln">1. Grundregeln</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#1-1-monochrom-first">1.1 Monochrom first</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#1-2-weniger-detail-mehr-lesbarkeit">1.2 Weniger Detail, mehr Lesbarkeit</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#1-3-ein-gemeinsamer-stil">1.3 Ein gemeinsamer Stil</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#2-wetter-icon-system">2. Wetter-Icon-System</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#zustande-die-unterstutzt-werden-sollen">Zustände, die unterstützt werden sollen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#anforderungen">Anforderungen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#nicht-ziel">Nicht-Ziel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#3-mond-icon-system">3. Mond-Icon-System</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#problem-aus-den-bisherigen-iterationen">Problem aus den bisherigen Iterationen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zielbild">Zielbild</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#unterstutzte-hauptzustande">Unterstützte Hauptzustände</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#4-grossenregeln">4. Größenregeln</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#wettericon">Wettericon</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#mondicon">Mondicon</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#verhaltnis">Verhältnis</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#5-platzierung">5. Platzierung</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#wetterbox">Wetterbox</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#trennlinien">Trennlinien</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#6-quellstrategie-fur-icons">6. Quellstrategie für Icons</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#bevorzugt">Bevorzugt</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#geeignete-kandidaten">Geeignete Kandidaten</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#wenn-externe-sets-ubernommen-werden">Wenn externe Sets übernommen werden</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#7-anpassungsregeln">7. Anpassungsregeln</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#8-akzeptanzkriterien">8. Akzeptanzkriterien</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#wetter">Wetter</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#mond">Mond</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#gesamtbild">Gesamtbild</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#9-praktische-entscheidung-fur-v1">9. Praktische Entscheidung für v1</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#10-kurzfassung">10. Kurzfassung</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Display Icon System v1</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Apr 3, 2026 at 10:30</span>
+            </div>
+
+          
+        </div>
+
+        
+        
+
+        
+
+        <h1 id="display-icon-system-v1">Display Icon System v1<a class="zola-anchor" href="#display-icon-system-v1" aria-label="Anchor link for: display-icon-system-v1" style="visibility: hidden;"></a>
+</h1>
+<p>Nach Workflow-, Architektur-, Prioritäts- und Runbook-Doku bleibt noch ein sichtbares, aber wichtiges Thema offen:</p>
+<p><strong>das Icon-System des Displays.</strong></p>
+<p>Vor allem beim Wetter- und Mondbereich hat sich gezeigt, dass kleine Unterschiede in Form, Kontrast und Geometrie auf einem monochromen ePaper-Display sofort auffallen.</p>
+<p>Dieses Dokument definiert deshalb <strong>Icon System v1</strong> als gestalterische und technische Basis.</p>
+<hr />
+<h2 id="ziel">Ziel<a class="zola-anchor" href="#ziel" aria-label="Anchor link for: ziel" style="visibility: hidden;"></a>
+</h2>
+<p>Die Icons auf dem Display sollen:</p>
+<ul>
+<li>klar lesbar sein</li>
+<li>auch auf ePaper funktionieren</li>
+<li>nicht verspielt wirken</li>
+<li>nicht nach zusammengewürfeltem Symbolmix aussehen</li>
+<li>in Stil, Gewicht und Grösse zusammenpassen</li>
+</ul>
+<hr />
+<h1 id="1-grundregeln">1. Grundregeln<a class="zola-anchor" href="#1-grundregeln" aria-label="Anchor link for: 1-grundregeln" style="visibility: hidden;"></a>
+</h1>
+<h2 id="1-1-monochrom-first">1.1 Monochrom first<a class="zola-anchor" href="#1-1-monochrom-first" aria-label="Anchor link for: 1-1-monochrom-first" style="visibility: hidden;"></a>
+</h2>
+<p>Alle Icons werden für Schwarzweiss / ePaper gedacht.</p>
+<p>Das bedeutet:</p>
+<ul>
+<li>kein Farbcode als Bedeutungsträger</li>
+<li>Form muss alleine funktionieren</li>
+<li>Kontrast muss ohne Grauverläufe lesbar bleiben</li>
+</ul>
+<h2 id="1-2-weniger-detail-mehr-lesbarkeit">1.2 Weniger Detail, mehr Lesbarkeit<a class="zola-anchor" href="#1-2-weniger-detail-mehr-lesbarkeit" aria-label="Anchor link for: 1-2-weniger-detail-mehr-lesbarkeit" style="visibility: hidden;"></a>
+</h2>
+<p>Zu feine Verzierungen funktionieren auf dem Zielmedium schlecht.</p>
+<p>Bevorzugt werden:</p>
+<ul>
+<li>klare Konturen</li>
+<li>einfache Flächen</li>
+<li>robuste Silhouetten</li>
+</ul>
+<h2 id="1-3-ein-gemeinsamer-stil">1.3 Ein gemeinsamer Stil<a class="zola-anchor" href="#1-3-ein-gemeinsamer-stil" aria-label="Anchor link for: 1-3-ein-gemeinsamer-stil" style="visibility: hidden;"></a>
+</h2>
+<p>Wetter- und Mondsymbole dürfen nicht aus völlig verschiedenen visuellen Familien stammen.</p>
+<p>Regeln:</p>
+<ul>
+<li>ähnlicher Strichcharakter</li>
+<li>ähnliche visuelle Dichte</li>
+<li>ähnliche optische Grösse</li>
+<li>keine Mischung aus Cartoon + technischer Geometrie</li>
+</ul>
+<hr />
+<h1 id="2-wetter-icon-system">2. Wetter-Icon-System<a class="zola-anchor" href="#2-wetter-icon-system" aria-label="Anchor link for: 2-wetter-icon-system" style="visibility: hidden;"></a>
+</h1>
+<h2 id="zustande-die-unterstutzt-werden-sollen">Zustände, die unterstützt werden sollen<a class="zola-anchor" href="#zustande-die-unterstutzt-werden-sollen" aria-label="Anchor link for: zustande-die-unterstutzt-werden-sollen" style="visibility: hidden;"></a>
+</h2>
+<h3 id="primare-wetterzustande">Primäre Wetterzustände<a class="zola-anchor" href="#primare-wetterzustande" aria-label="Anchor link for: primare-wetterzustande" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>klar / sonnig</li>
+<li>bewölkt / bedeckt</li>
+<li>Regen / Niesel</li>
+<li>Schnee</li>
+<li>Gewitter</li>
+<li>Nebel</li>
+</ul>
+<h2 id="anforderungen">Anforderungen<a class="zola-anchor" href="#anforderungen" aria-label="Anchor link for: anforderungen" style="visibility: hidden;"></a>
+</h2>
+<p>Ein Wettericon muss schon ohne Text grob lesbar sein.</p>
+<p>Beispiele:</p>
+<ul>
+<li>Sonne: klar als Sonne erkennbar</li>
+<li>Wolke: robuste Wolkensilhouette</li>
+<li>Regen: Wolke + Regenlinien</li>
+<li>Schnee: Wolke + Schneemarkierung</li>
+<li>Gewitter: Wolke + Blitz</li>
+</ul>
+<h2 id="nicht-ziel">Nicht-Ziel<a class="zola-anchor" href="#nicht-ziel" aria-label="Anchor link for: nicht-ziel" style="visibility: hidden;"></a>
+</h2>
+<p>Das Icon muss nicht jeden meteorologischen Spezialfall ausdrücken.</p>
+<p>Es reicht, wenn die Hauptklasse visuell klar ist.</p>
+<hr />
+<h1 id="3-mond-icon-system">3. Mond-Icon-System<a class="zola-anchor" href="#3-mond-icon-system" aria-label="Anchor link for: 3-mond-icon-system" style="visibility: hidden;"></a>
+</h1>
+<h2 id="problem-aus-den-bisherigen-iterationen">Problem aus den bisherigen Iterationen<a class="zola-anchor" href="#problem-aus-den-bisherigen-iterationen" aria-label="Anchor link for: problem-aus-den-bisherigen-iterationen" style="visibility: hidden;"></a>
+</h2>
+<p>Die bisherigen Mondsymbole waren zu oft:</p>
+<ul>
+<li>zu geometrisch</li>
+<li>zu abstrakt</li>
+<li>zu kreisförmig</li>
+<li>nicht klar genug als „Mond“ lesbar</li>
+</ul>
+<h2 id="zielbild">Zielbild<a class="zola-anchor" href="#zielbild" aria-label="Anchor link for: zielbild" style="visibility: hidden;"></a>
+</h2>
+<p>Ein Mondicon soll als Mond erkennbar sein, nicht nur als Kreis mit Phase.</p>
+<h3 id="das-bedeutet">Das bedeutet<a class="zola-anchor" href="#das-bedeutet" aria-label="Anchor link for: das-bedeutet" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>erkennbare Mond-Silhouette</li>
+<li>Phase visuell nachvollziehbar</li>
+<li>nicht zu technisch</li>
+<li>nicht zu verspielt</li>
+</ul>
+<h2 id="unterstutzte-hauptzustande">Unterstützte Hauptzustände<a class="zola-anchor" href="#unterstutzte-hauptzustande" aria-label="Anchor link for: unterstutzte-hauptzustande" style="visibility: hidden;"></a>
+</h2>
+<p>Für das Display reichen fünf Zustände:</p>
+<ul>
+<li>Neumond</li>
+<li>zunehmende Sichel / zunehmender Mond</li>
+<li>Halbmond / Viertel</li>
+<li>abnehmender Mond</li>
+<li>Vollmond</li>
+</ul>
+<p>Eine interne Berechnung kann feiner sein, aber die visuelle Ausgabe darf auf diese Kernzustände gemappt werden.</p>
+<hr />
+<h1 id="4-grossenregeln">4. Größenregeln<a class="zola-anchor" href="#4-grossenregeln" aria-label="Anchor link for: 4-grossenregeln" style="visibility: hidden;"></a>
+</h1>
+<h2 id="wettericon">Wettericon<a class="zola-anchor" href="#wettericon" aria-label="Anchor link for: wettericon" style="visibility: hidden;"></a>
+</h2>
+<p>Soll das dominante Icon im Wetterkopf sein.</p>
+<h3 id="ziel-1">Ziel<a class="zola-anchor" href="#ziel-1" aria-label="Anchor link for: ziel-1" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>sichtbar</li>
+<li>aber nicht dominant gegenüber Text</li>
+<li>nicht grösser als nötig</li>
+</ul>
+<h2 id="mondicon">Mondicon<a class="zola-anchor" href="#mondicon" aria-label="Anchor link for: mondicon" style="visibility: hidden;"></a>
+</h2>
+<p>Soll kleiner sein als das Wettericon.</p>
+<h3 id="ziel-2">Ziel<a class="zola-anchor" href="#ziel-2" aria-label="Anchor link for: ziel-2" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Ergänzung</li>
+<li>nicht Konkurrenz</li>
+<li>klar als zweites, sekundäres Symbol lesbar</li>
+</ul>
+<h2 id="verhaltnis">Verhältnis<a class="zola-anchor" href="#verhaltnis" aria-label="Anchor link for: verhaltnis" style="visibility: hidden;"></a>
+</h2>
+<p>Empfohlenes visuelles Verhältnis:</p>
+<ul>
+<li>Wettericon = 1.0</li>
+<li>Mondicon = ca. 0.65 bis 0.75</li>
+</ul>
+<hr />
+<h1 id="5-platzierung">5. Platzierung<a class="zola-anchor" href="#5-platzierung" aria-label="Anchor link for: 5-platzierung" style="visibility: hidden;"></a>
+</h1>
+<h2 id="wetterbox">Wetterbox<a class="zola-anchor" href="#wetterbox" aria-label="Anchor link for: wetterbox" style="visibility: hidden;"></a>
+</h2>
+<p>Die Icons sitzen rechts oben im Wetterblock.</p>
+<h3 id="regeln">Regeln<a class="zola-anchor" href="#regeln" aria-label="Anchor link for: regeln" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Wettericon links innerhalb des Icon-Clusters</li>
+<li>Mondicon rechts daneben</li>
+<li>beide auf einer ruhigen gemeinsamen Achse</li>
+<li>genügend Freiraum zum Titel</li>
+</ul>
+<h2 id="trennlinien">Trennlinien<a class="zola-anchor" href="#trennlinien" aria-label="Anchor link for: trennlinien" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn der Platz für das Icon-System knapp wird, hat Lesbarkeit Vorrang vor dekorativer Trennlinie.</p>
+<p>Darum gilt:</p>
+<ul>
+<li>im Wetterblock darf eine obere Trennlinie entfallen, wenn sie den Iconbereich unnötig bedrängt</li>
+</ul>
+<hr />
+<h1 id="6-quellstrategie-fur-icons">6. Quellstrategie für Icons<a class="zola-anchor" href="#6-quellstrategie-fur-icons" aria-label="Anchor link for: 6-quellstrategie-fur-icons" style="visibility: hidden;"></a>
+</h1>
+<h2 id="bevorzugt">Bevorzugt<a class="zola-anchor" href="#bevorzugt" aria-label="Anchor link for: bevorzugt" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>offene SVG-Quellen</li>
+<li>monochrom gut adaptierbar</li>
+<li>rechtlich sauber nutzbar</li>
+</ul>
+<h2 id="geeignete-kandidaten">Geeignete Kandidaten<a class="zola-anchor" href="#geeignete-kandidaten" aria-label="Anchor link for: geeignete-kandidaten" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>Wikimedia Commons</li>
+<li>andere offene SVG-Sets mit klarer Lizenz</li>
+</ul>
+<h2 id="wenn-externe-sets-ubernommen-werden">Wenn externe Sets übernommen werden<a class="zola-anchor" href="#wenn-externe-sets-ubernommen-werden" aria-label="Anchor link for: wenn-externe-sets-ubernommen-werden" style="visibility: hidden;"></a>
+</h2>
+<p>Dann soll dokumentiert werden:</p>
+<ul>
+<li>Quelle</li>
+<li>Lizenz</li>
+<li>welche Anpassungen gemacht wurden</li>
+<li>warum genau dieses Set gewählt wurde</li>
+</ul>
+<hr />
+<h1 id="7-anpassungsregeln">7. Anpassungsregeln<a class="zola-anchor" href="#7-anpassungsregeln" aria-label="Anchor link for: 7-anpassungsregeln" style="visibility: hidden;"></a>
+</h1>
+<p>Externe Icons dürfen angepasst werden, wenn nötig, um sie displaytauglich zu machen.</p>
+<p>Zulässige Anpassungen:</p>
+<ul>
+<li>Strichstärke</li>
+<li>Grösse</li>
+<li>Ausschnitt / ViewBox</li>
+<li>Reduktion von Details</li>
+<li>Umstellung auf monochrom</li>
+</ul>
+<p>Nicht sinnvoll:</p>
+<ul>
+<li>übermässiges manuelles Umformen, bis das Originalset nicht mehr erkennbar und nicht mehr konsistent ist</li>
+</ul>
+<hr />
+<h1 id="8-akzeptanzkriterien">8. Akzeptanzkriterien<a class="zola-anchor" href="#8-akzeptanzkriterien" aria-label="Anchor link for: 8-akzeptanzkriterien" style="visibility: hidden;"></a>
+</h1>
+<p>Ein finales Icon-System gilt als gut genug, wenn:</p>
+<h3 id="wetter">Wetter<a class="zola-anchor" href="#wetter" aria-label="Anchor link for: wetter" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>man ohne Text grob erkennt, um welche Wetterlage es geht</li>
+<li>es auf ePaper sauber und ruhig wirkt</li>
+<li>es nicht wie ein Fremdkörper wirkt</li>
+</ul>
+<h3 id="mond">Mond<a class="zola-anchor" href="#mond" aria-label="Anchor link for: mond" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>man auf den ersten Blick erkennt: <strong>das ist der Mond</strong></li>
+<li>die Phase grob verständlich bleibt</li>
+<li>das Symbol nicht wie ein Kreis/Diagramm verwechselt wird</li>
+</ul>
+<h3 id="gesamtbild">Gesamtbild<a class="zola-anchor" href="#gesamtbild" aria-label="Anchor link for: gesamtbild" style="visibility: hidden;"></a>
+</h3>
+<ul>
+<li>Wetter- und Mondicon wirken wie Teil derselben Familie</li>
+<li>weder zu dominant noch zu klein</li>
+<li>keine visuelle Hektik im Wetterblock</li>
+</ul>
+<hr />
+<h1 id="9-praktische-entscheidung-fur-v1">9. Praktische Entscheidung für v1<a class="zola-anchor" href="#9-praktische-entscheidung-fur-v1" aria-label="Anchor link for: 9-praktische-entscheidung-fur-v1" style="visibility: hidden;"></a>
+</h1>
+<p>Für Version 1 soll gelten:</p>
+<ol>
+<li>ein festes kleines Icon-Set definieren</li>
+<li>dieses nicht bei jeder Kleinigkeit wieder austauschen</li>
+<li>danach erst wieder anfassen, wenn ein klar besserer Ersatz vorhanden ist</li>
+</ol>
+<p>Wichtiger Grundsatz:</p>
+<blockquote>
+<p>Ein stabiles gutes Set ist wertvoller als dauernde kleine Symbol-Experimente.</p>
+</blockquote>
+<hr />
+<h1 id="10-kurzfassung">10. Kurzfassung<a class="zola-anchor" href="#10-kurzfassung" aria-label="Anchor link for: 10-kurzfassung" style="visibility: hidden;"></a>
+</h1>
+<p>Das Display braucht ein kleines, ruhiges, monochromes Icon-System.</p>
+<p>Dafür gilt:</p>
+<ul>
+<li>ePaper-Lesbarkeit vor Detail</li>
+<li>Mond muss wie Mond aussehen</li>
+<li>Wettericon klar und robust</li>
+<li>Wetter grösser als Mond</li>
+<li>ein konsistenter Stil</li>
+<li>externe offene SVGs sind willkommen, wenn sie gut adaptierbar sind</li>
+</ul>
+<p>Damit ist das Thema nicht mehr nur Geschmackssache, sondern hat jetzt eine klare Regelbasis.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Persönliche Notizen, Beobachtungen und Texte zu Alltag, Arbeit, Technologie und dem, was dazwischen hängen bleibt.">
+
+  <title>Decision Architect V2: Von Optionen zu Lernschleifen</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#decision-architect-v2-von-optionen-zu-lernschleifen">Decision Architect V2: Von Optionen zu Lernschleifen</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#von-der-auswahloberflache-zum-entscheidungszyklus">Von der Auswahloberfläche zum Entscheidungszyklus</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#das-eigentliche-problem">Das eigentliche Problem</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#die-rolle-des-agenten">Die Rolle des Agenten</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#warum-drei-optionen-trotzdem-bleiben">Warum drei Optionen trotzdem bleiben</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#kuratierung-statt-roher-generierung">Kuratierung statt roher Generierung</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#outcome-tracking-die-entscheidung-endet-nicht-mit-dem-klick">Outcome Tracking: Die Entscheidung endet nicht mit dem Klick</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#von-der-entscheidung-zur-lernschleife">Von der Entscheidung zur Lernschleife</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#was-das-fur-kleine-entscheidungen-bedeutet">Was das für kleine Entscheidungen bedeutet</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#was-ich-bewusst-nicht-will">Was ich bewusst nicht will</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#die-form-in-der-ich-es-momentan-sehe">Die Form, in der ich es momentan sehe</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#warum-mich-das-interessiert">Warum mich das interessiert</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#vorlaufiges-fazit">Vorläufiges Fazit</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Decision Architect V2: Von Optionen zu Lernschleifen</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Apr 12, 2026 at 16:38</span>
+            </div>
+
+          
+        </div>
+
+        
+        
+
+        
+
+        <h1 id="decision-architect-v2-von-optionen-zu-lernschleifen">Decision Architect V2: Von Optionen zu Lernschleifen<a class="zola-anchor" href="#decision-architect-v2-von-optionen-zu-lernschleifen" aria-label="Anchor link for: decision-architect-v2-von-optionen-zu-lernschleifen" style="visibility: hidden;"></a>
+</h1>
+<p>Die erste Idee hinter dem <strong>Decision Architect</strong> war relativ einfach:</p>
+<ul>
+<li>drei brauchbare Optionen zeigen</li>
+<li>Details nur bei Bedarf öffnen</li>
+<li>Entscheidung nicht mit Analyse erschlagen</li>
+</ul>
+<p>Das ist nach wie vor sinnvoll.
+Aber je länger ich darüber nachdenke, desto klarer wird: <strong>Eine gute Entscheidungsoberfläche allein reicht nicht.</strong></p>
+<p>Wenn das System nur drei Optionen liefert und danach verschwindet, bleibt ein grosser Teil des eigentlichen Problems ungelöst.</p>
+<p>Denn die interessante Frage ist nicht nur:</p>
+<p><strong>Welche Option wurde gewählt?</strong></p>
+<p>Sondern auch:</p>
+<ul>
+<li>wurde sie tatsächlich umgesetzt?</li>
+<li>war sie praktikabel?</li>
+<li>blieb sie liegen?</li>
+<li>war die Entscheidung im Alltag hilfreich?</li>
+<li>haben die Vorschläge überhaupt zur Realität gepasst?</li>
+</ul>
+<p>Genau daraus entsteht die nächste Stufe der Idee.</p>
+<h2 id="von-der-auswahloberflache-zum-entscheidungszyklus">Von der Auswahloberfläche zum Entscheidungszyklus<a class="zola-anchor" href="#von-der-auswahloberflache-zum-entscheidungszyklus" aria-label="Anchor link for: von-der-auswahloberflache-zum-entscheidungszyklus" style="visibility: hidden;"></a>
+</h2>
+<p>Version 2 denkt den Decision Architect nicht mehr nur als Auswahl-UI, sondern als <strong>lernenden Entscheidungszyklus</strong>.</p>
+<p>Das System soll nicht nur Optionen anzeigen, sondern eine komplette Schleife unterstützen:</p>
+<ol>
+<li>Entscheidung vorbereiten</li>
+<li>Optionen kuratieren</li>
+<li>Entscheidung treffen</li>
+<li>spätere Umsetzung rückmelden</li>
+<li>Ergebnis auswerten</li>
+<li>künftige Vorschläge verbessern</li>
+</ol>
+<p>Damit verschiebt sich der Schwerpunkt.</p>
+<p>V1 war vor allem ein gutes Interface.
+V2 wird eher ein System, das über Zeit <strong>bessere Entscheidungsvorbereitung</strong> liefern soll.</p>
+<h2 id="das-eigentliche-problem">Das eigentliche Problem<a class="zola-anchor" href="#das-eigentliche-problem" aria-label="Anchor link for: das-eigentliche-problem" style="visibility: hidden;"></a>
+</h2>
+<p>Viele Alltags- und Projektentscheidungen sind nicht gross genug, um jedes Mal eine saubere Analyse zu rechtfertigen.</p>
+<p>Aber sie sind auch nicht klein genug, um beliebig zu sein.</p>
+<p>Genau dort entsteht Reibung.</p>
+<p>Man merkt oft:</p>
+<ul>
+<li>eigentlich sollte ich kurz sauber überlegen</li>
+<li>eigentlich sollte ich Alternativen vergleichen</li>
+<li>eigentlich sollte ich kurz recherchieren</li>
+<li>eigentlich sollte ich die Konsequenzen mitdenken</li>
+</ul>
+<p>Und dann macht man es trotzdem nicht, weil der Aufwand zu hoch ist.</p>
+<p>Das führt dazu, dass viele scheinbar kleine Entscheidungen auf wackliger Grundlage getroffen werden.
+Nicht aus Dummheit, sondern aus Ermüdung.</p>
+<h2 id="die-rolle-des-agenten">Die Rolle des Agenten<a class="zola-anchor" href="#die-rolle-des-agenten" aria-label="Anchor link for: die-rolle-des-agenten" style="visibility: hidden;"></a>
+</h2>
+<p>Genau diesen anstrengenden Teil soll der Agent übernehmen.</p>
+<p>Nicht die Verantwortung.
+Nicht die letzte Entscheidung.
+Sondern den kognitiv lästigen Unterbau:</p>
+<ul>
+<li>Optionen vorbereiten</li>
+<li>Annahmen sichtbar machen</li>
+<li>kleine Recherchen durchführen</li>
+<li>Tradeoffs sortieren</li>
+<li>schlechte Vorschläge aussortieren</li>
+<li>Widersprüche benennen</li>
+<li>die Vorschläge auf grösseren Gesamtnutzen prüfen</li>
+</ul>
+<p>Das ist für mich die zentrale These hinter V2:</p>
+<blockquote>
+<p>Der Agent übernimmt den anstrengenden Teil des Hinterfragens, Recherchierens und Kuratierens, damit auch kleine Entscheidungen auf einer besseren Grundlage getroffen werden und über Zeit zu besseren Gesamtergebnissen führen.</p>
+</blockquote>
+<h2 id="warum-drei-optionen-trotzdem-bleiben">Warum drei Optionen trotzdem bleiben<a class="zola-anchor" href="#warum-drei-optionen-trotzdem-bleiben" aria-label="Anchor link for: warum-drei-optionen-trotzdem-bleiben" style="visibility: hidden;"></a>
+</h2>
+<p>Die kompakte Oberfläche aus V1 bleibt bestehen.</p>
+<p>Der Nutzer soll weiterhin zuerst sehen:</p>
+<ul>
+<li>Vorschlag 1</li>
+<li>Vorschlag 2</li>
+<li>Vorschlag 3</li>
+<li>plus Freitext</li>
+</ul>
+<p>Diese Ebene ist weiterhin wichtig, weil sie die kognitive Last klein hält.</p>
+<p>Der Unterschied ist nur:
+Die drei Vorschläge sollen in V2 nicht mehr einfach rohe Modellantworten sein.
+Sie sollen <strong>kuratiert</strong> sein.</p>
+<h2 id="kuratierung-statt-roher-generierung">Kuratierung statt roher Generierung<a class="zola-anchor" href="#kuratierung-statt-roher-generierung" aria-label="Anchor link for: kuratierung-statt-roher-generierung" style="visibility: hidden;"></a>
+</h2>
+<p>Jede der drei Entscheidungsoptionen soll vor der Anzeige durch eine kleine interne Agentenlogik verbessert werden.</p>
+<p>Dafür bieten sich in meinem Setup besonders diese Rollen an:</p>
+<h3 id="1-rubberduck">1. Rubberduck+<a class="zola-anchor" href="#1-rubberduck" aria-label="Anchor link for: 1-rubberduck" style="visibility: hidden;"></a>
+</h3>
+<p>Rubberduck+ hilft dabei,</p>
+<ul>
+<li>die eigentliche Frage zu schärfen</li>
+<li>versteckte Annahmen sichtbar zu machen</li>
+<li>Widersprüche zu erkennen</li>
+<li>unnötigen Denknebel wegzuschneiden</li>
+</ul>
+<h3 id="2-advisory-team">2. Advisory Team<a class="zola-anchor" href="#2-advisory-team" aria-label="Anchor link for: 2-advisory-team" style="visibility: hidden;"></a>
+</h3>
+<p>Das Advisory-Team hilft dabei,</p>
+<ul>
+<li>Tradeoffs klarer zu machen</li>
+<li>grössere Zusammenhänge mitzudenken</li>
+<li>lokale Bequemlichkeit von echter Sinnhaftigkeit zu unterscheiden</li>
+<li>Optionen in einen grösseren Kontext einzuordnen</li>
+</ul>
+<h3 id="3-recherche-layer">3. Recherche-Layer<a class="zola-anchor" href="#3-recherche-layer" aria-label="Anchor link for: 3-recherche-layer" style="visibility: hidden;"></a>
+</h3>
+<p>Nicht jede Entscheidung braucht Recherche.
+Aber wenn Fakten oder Vergleichsinfos fehlen, sollte der Agent sie gezielt nachziehen.</p>
+<p>Zum Beispiel:</p>
+<ul>
+<li>Preise</li>
+<li>technische Unterschiede</li>
+<li>Fristen</li>
+<li>Kompatibilität</li>
+<li>Erfahrungswerte</li>
+<li>Vergleich von Varianten</li>
+</ul>
+<p>Der Punkt ist nicht, jede Mikroentscheidung künstlich aufzublasen.
+Sondern die nötige Tiefe genau dort zu liefern, wo sie den Unterschied macht.</p>
+<h2 id="outcome-tracking-die-entscheidung-endet-nicht-mit-dem-klick">Outcome Tracking: Die Entscheidung endet nicht mit dem Klick<a class="zola-anchor" href="#outcome-tracking-die-entscheidung-endet-nicht-mit-dem-klick" aria-label="Anchor link for: outcome-tracking-die-entscheidung-endet-nicht-mit-dem-klick" style="visibility: hidden;"></a>
+</h2>
+<p>Ein besonders wichtiger Teil von V2 ist die Rückmeldung nach der Entscheidung.</p>
+<p>Das System soll später abfragen können:</p>
+<ul>
+<li>erledigt</li>
+<li>teilweise erledigt</li>
+<li>liegen geblieben</li>
+<li>anders gelöst</li>
+<li>optional: warum</li>
+</ul>
+<p>Das ist wichtig, weil sonst nur die <strong>Auswahl</strong> optimiert wird, nicht die <strong>tatsächliche Wirkung</strong>.</p>
+<p>Ein Vorschlag kann auf dem Bildschirm plausibel wirken und im Alltag trotzdem regelmässig scheitern.
+Zum Beispiel weil er:</p>
+<ul>
+<li>zu ambitioniert war</li>
+<li>nicht in den Tagesablauf passt</li>
+<li>zu viel Kontext voraussetzt</li>
+<li>zwar rational gut aussieht, aber praktisch nie umgesetzt wird</li>
+</ul>
+<p>Wenn das System solche Muster erkennt, kann es mit der Zeit bessere Vorschläge machen.</p>
+<h2 id="von-der-entscheidung-zur-lernschleife">Von der Entscheidung zur Lernschleife<a class="zola-anchor" href="#von-der-entscheidung-zur-lernschleife" aria-label="Anchor link for: von-der-entscheidung-zur-lernschleife" style="visibility: hidden;"></a>
+</h2>
+<p>Damit wird aus dem Decision Architect eine Lernschleife:</p>
+<ul>
+<li>Welche Vorschläge werden oft gewählt?</li>
+<li>Welche werden tatsächlich umgesetzt?</li>
+<li>Welche bleiben regelmässig liegen?</li>
+<li>Welche Art von Begründung hilft?</li>
+<li>Wo sind Optionen theoretisch gut, aber praktisch untauglich?</li>
+<li>Welche Mikroentscheidungen zahlen langfristig wirklich auf grössere Ziele ein?</li>
+</ul>
+<p>Das ist für mich einer der spannendsten Teile der ganzen Idee.</p>
+<p>Denn gute Entscheidungsunterstützung sollte nicht nur im Moment der Auswahl gut aussehen.
+Sie sollte über Zeit merken, <strong>was tatsächlich trägt</strong>.</p>
+<h2 id="was-das-fur-kleine-entscheidungen-bedeutet">Was das für kleine Entscheidungen bedeutet<a class="zola-anchor" href="#was-das-fur-kleine-entscheidungen-bedeutet" aria-label="Anchor link for: was-das-fur-kleine-entscheidungen-bedeutet" style="visibility: hidden;"></a>
+</h2>
+<p>Gerade bei kleinen Entscheidungen wird das interessant.</p>
+<p>Nicht bei den grossen, seltenen Grundsatzfragen.
+Sondern bei den vielen kleinen Dingen wie:</p>
+<ul>
+<li>was heute wirklich Priorität haben sollte</li>
+<li>welche Erledigung zuerst sinnvoll ist</li>
+<li>ob etwas jetzt gemacht, verschoben oder bewusst ignoriert werden sollte</li>
+<li>welche von mehreren plausiblen kleinen Optionen wirklich den grösseren Nutzen hat</li>
+</ul>
+<p>Genau dort ist die Reibung hoch und die Disziplin niedrig.
+Und genau dort kann ein guter Agent enorm nützlich sein.</p>
+<h2 id="was-ich-bewusst-nicht-will">Was ich bewusst nicht will<a class="zola-anchor" href="#was-ich-bewusst-nicht-will" aria-label="Anchor link for: was-ich-bewusst-nicht-will" style="visibility: hidden;"></a>
+</h2>
+<p>Auch in V2 will ich kein System, das:</p>
+<ul>
+<li>jede Entscheidung künstlich dramatisiert</li>
+<li>für alles eine Mini-Strategieberatung aufführt</li>
+<li>aus Kleinkram ein Analyse-Theater macht</li>
+<li>den Nutzer mit Reflexionspflicht nervt</li>
+</ul>
+<p>Das Ziel ist nicht mehr Aufwand.
+Das Ziel ist <strong>mehr Qualität bei weniger mentalem Verschleiss</strong>.</p>
+<h2 id="die-form-in-der-ich-es-momentan-sehe">Die Form, in der ich es momentan sehe<a class="zola-anchor" href="#die-form-in-der-ich-es-momentan-sehe" aria-label="Anchor link for: die-form-in-der-ich-es-momentan-sehe" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn ich die V2-Idee in einen Satz giessen müsste, dann so:</p>
+<blockquote>
+<p>Decision Architect V2 erweitert die reine Auswahloberfläche zu einem lernenden Entscheidungszyklus: Optionen werden vorab durch Agenten kuratiert, mit Recherche angereichert und nach der Auswahl gegen die tatsächliche Umsetzung gespiegelt.</p>
+</blockquote>
+<p>Oder noch einfacher:</p>
+<blockquote>
+<p>Nicht nur besser wählen. Auch besser daraus lernen.</p>
+</blockquote>
+<h2 id="warum-mich-das-interessiert">Warum mich das interessiert<a class="zola-anchor" href="#warum-mich-das-interessiert" aria-label="Anchor link for: warum-mich-das-interessiert" style="visibility: hidden;"></a>
+</h2>
+<p>Mich interessiert diese Richtung, weil sie zwei Welten verbindet, die oft getrennt gedacht werden:</p>
+<ul>
+<li><strong>ruhige, gute Interfaces</strong></li>
+<li><strong>agentische Tiefe im Hintergrund</strong></li>
+</ul>
+<p>Vorne bleibt die Oberfläche knapp.
+Hinten darf das System ruhig mehr Arbeit übernehmen.</p>
+<p>Das ist für mich viel interessanter als entweder</p>
+<ul>
+<li>eine dumme Oberfläche mit zu wenig Substanz</li>
+<li>oder ein beeindruckend wirkender Agent, der zwar viel redet, aber schlechte Entscheidungsoberflächen baut</li>
+</ul>
+<h2 id="vorlaufiges-fazit">Vorläufiges Fazit<a class="zola-anchor" href="#vorlaufiges-fazit" aria-label="Anchor link for: vorlaufiges-fazit" style="visibility: hidden;"></a>
+</h2>
+<p>V1 war die Idee eines guten Auswahlfensters.</p>
+<p>V2 ist die Idee eines Systems, das:</p>
+<ul>
+<li>kleine Entscheidungen besser vorbereitet</li>
+<li>sie nicht nur anzeigt, sondern kuratiert</li>
+<li>die tatsächliche Umsetzung mitdenkt</li>
+<li>und aus diesem Feedback lernt</li>
+</ul>
+<p>Wenn das gut gemacht ist, entsteht vielleicht etwas Seltenes:</p>
+<p>Ein Assistent, der nicht nur Antworten liefert, sondern dazu beiträgt, dass auch kleine Entscheidungen im Alltag weniger zufällig und langfristig nützlicher werden.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
