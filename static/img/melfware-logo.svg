@@ -1,45 +1,56 @@
-<svg viewBox="0 0 300 76" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
-  <title id="logoTitle">MelfWare</title>
-  <desc id="logoDesc">MelfWare - intelligent automation</desc>
-
+<svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Melfware</title>
+  <desc id="logoDesc">Bold Melfware wordmark with an automation pulse forming a central W.</desc>
   <defs>
-    <linearGradient id="mw-word" x1="0" y1="0" x2="300" y2="76" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2f7dff"/>
-      <stop offset="0.52" stop-color="#00b7ff"/>
-      <stop offset="1" stop-color="#4df0d2"/>
+    <linearGradient id="mw-word" x1="40" y1="30" x2="610" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.48" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
     </linearGradient>
-    <linearGradient id="mw-node" x1="20" y1="16" x2="60" y2="60" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#7aa2ff"/>
-      <stop offset="1" stop-color="#4df0d2"/>
+    <linearGradient id="mw-line" x1="40" y1="130" x2="628" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.52" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
     </linearGradient>
   </defs>
 
-  <g fill="none" stroke="url(#mw-node)" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M19 40H50" stroke-width="3.5"/>
-    <path d="M34 25V55" stroke-width="3.5"/>
-    <path d="M50 40L66 28" stroke-width="3.5"/>
-    <path d="M50 40L66 52" stroke-width="3.5"/>
-  </g>
-  <g fill="url(#mw-node)">
-    <circle cx="19" cy="40" r="6"/>
-    <circle cx="34" cy="25" r="5"/>
-    <circle cx="34" cy="55" r="5"/>
-    <circle cx="66" cy="28" r="5.5"/>
-    <circle cx="66" cy="52" r="5.5"/>
-  </g>
+  <text x="38" y="112"
+        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
+        font-size="92"
+        font-weight="800"
+        letter-spacing="-3.2"
+        fill="url(#mw-word)">Melf</text>
 
-  <text x="86" y="41"
-        font-family="Inter, Segoe UI, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-        font-size="34"
-        font-weight="760"
-        letter-spacing="-0.6"
-        fill="url(#mw-word)">MelfWare</text>
+  <text x="432" y="112"
+        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
+        font-size="92"
+        font-weight="800"
+        letter-spacing="-3.2"
+        fill="url(#mw-word)">are</text>
 
-  <text x="88" y="61"
-        font-family="Inter, Segoe UI, system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif"
-        font-size="9.5"
-        font-weight="650"
-        letter-spacing="2.2"
-        fill="currentColor"
-        opacity="0.58">INTELLIGENT AUTOMATION</text>
+  <path d="M40 130
+           H270
+           L286 130
+           L314 182
+           L350 66
+           L386 182
+           L424 92
+           L444 130
+           H628"
+        fill="none"
+        stroke="url(#mw-line)"
+        stroke-width="15"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <circle cx="40" cy="130" r="12" fill="#3b82f6"/>
+  <circle cx="628" cy="130" r="12" fill="#2dd4bf"/>
+
+  <text x="432" y="174"
+        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
+        font-size="20"
+        font-weight="700"
+        letter-spacing="7.4"
+        fill="#8b95a1"
+        opacity="0.86">AUTOMATION</text>
 </svg>
