@@ -76,10 +76,7 @@
         <div id="bio"> {{ section.extra.bio }} </div>
         {% endif %}
       </div>
-    </section>
-
-    <section id="links" class="contact-row" aria-label="Contact links">
-      <div id="right">
+      <div id="right" class="profile-contact" aria-label="Contact links">
         {% for link in section.extra.links %}
         <a href="{{ link.url }}" aria-label="{{ link.name }}" target="_blank" rel='noreferrer noopener'>
           {% set icon_path = "icon/" ~ link.icon ~ ".svg" %}
@@ -106,7 +103,7 @@
           {% set nav_section = get_section(path=section_path, metadata_only=true) %}
           <a class="section-card instant" href="{{ get_url(path=item.path) }}">
             <span class="section-card-label">{{ item.name }}</span>
-            <strong>{{ nav_section.extra.subtitle | default(value=nav_section.description) | default(value=nav_section.title) }}</strong>
+            <span class="section-card-summary">{{ nav_section.extra.subtitle | default(value=nav_section.description) | default(value=nav_section.title) }}</span>
           </a>
         {% endif %}
       {% endfor %}
