@@ -1,3 +1,4 @@
+{% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
 
 {% block page %}page{% endblock page %}
@@ -13,6 +14,7 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}">
 {% if page.extra.math %}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -33,6 +35,7 @@
 {% block content %}
 <div id="wrapper">
   <main>
+    {{ nav::site_nav(current_path=page.path) }}
     <article>
       <header>
         <h1>{{ page.title }}</h1>

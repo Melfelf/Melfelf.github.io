@@ -1,3 +1,4 @@
+{% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
 
 {% block page %}homepage{% endblock page%}
@@ -13,6 +14,7 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}">
 {% if section.extra.math %}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -33,17 +35,33 @@
 {% block content %}
 <div id="wrapper">
   <main>
-    <section id="logo">
-      <a href="{{ get_url(path='/') }}" class="site-logo" aria-label="{{ config.title }} - Home">
-        <img
-          src="{{ get_url(path='img/melfware-logo.svg') }}"
-          alt="{{ config.description }}"
-          class="site-logo-img"
-        >
-      </a>
+    {{ nav::site_nav(current_path="/") }}
+
+    <section class="home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Infrastructure. Automation. Practical AI.</p>
+        <div id="brief" class="prose">
+          {{ section.content | trim | safe }}
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Profile">
+        <a href="{{ get_url(path='/') }}" class="site-logo" aria-label="{{ config.title }} - Home">
+          <img
+            src="{{ get_url(path='img/melfware-logo.svg') }}"
+            alt="{{ config.description }}"
+            class="site-logo-img"
+          >
+        </a>
+        <div class="signal-list">
+          <span>Azure & Endpoint</span>
+          <span>Automation design</span>
+          <span>AI workflows</span>
+          <span>Systems thinking</span>
+        </div>
+      </aside>
     </section>
 
-    <section id="info">
+    <section id="info" class="profile-strip">
       {% if section.extra.avatar %}
       <img src="{{ get_url(path=section.extra.avatar) }}" alt="avatar">
       {% endif %}
@@ -60,12 +78,7 @@
       </div>
     </section>
 
-    <section id="links">
-      <div id="left">
-        {% for section in config.extra.sections %}
-        <a {% if section.is_external %}href="{{ section.path }}" target="_blank" rel='noreferrer noopener'{% else %}href="{{ get_url(path=section.path) }}" class="instant"{% endif %}>{{ section.name }}</a>
-        {% endfor %}
-      </div>
+    <section id="links" class="contact-row" aria-label="Contact links">
       <div id="right">
         {% for link in section.extra.links %}
         <a href="{{ link.url }}" aria-label="{{ link.name }}" target="_blank" rel='noreferrer noopener'>
@@ -85,8 +98,18 @@
       </div>
     </section>
 
-    <section id="brief" class="prose">
-      {{ section.content | trim | safe }}
+    <section class="section-grid" aria-label="Site sections">
+      {% for item in config.extra.sections %}
+        {% if not item.is_external %}
+          {% set item_base = item.path | trim_start_matches(pat="/") %}
+          {% set section_path = item_base ~ "/_index.md" %}
+          {% set nav_section = get_section(path=section_path, metadata_only=true) %}
+          <a class="section-card instant" href="{{ get_url(path=item.path) }}">
+            <span class="section-card-label">{{ item.name }}</span>
+            <strong>{{ nav_section.extra.subtitle | default(value=nav_section.description) | default(value=nav_section.title) }}</strong>
+          </a>
+        {% endif %}
+      {% endfor %}
     </section>
 
     {% if section.extra.recent %}
@@ -96,7 +119,7 @@
     <section class="layout-list home-recent-posts">
       <div class="section-intro">
         <h2>Neu im Logbuch</h2>
-        <p>Ein paar der letzten Einträge — eher Werkbank als Hochglanzbroschüre.</p>
+        <p>Die letzten Einträge aus dem persönlichen Blog.</p>
       </div>
       <div class="post-list">
         {% for post in blog_section.pages | slice(end=section.extra.recent_max) %}

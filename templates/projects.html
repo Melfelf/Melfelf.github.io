@@ -1,5 +1,6 @@
-{% extends "_base.html" %}
 {% import "macros/prose.html" as prose %}
+{% import "macros/nav.html" as nav %}
+{% extends "_base.html" %}
 
 {% block page %}blog{% endblock page %}
 {% block lang %}{% if section.extra.lang %}{{ section.extra.lang }}{% else %}{{ section.lang }}{% endif %}{% endblock lang %}
@@ -16,6 +17,7 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}">
 {% if section.extra.math %}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -36,6 +38,7 @@
 {% block content %}
 <div id="wrapper">
   <main>
+    {{ nav::site_nav(current_path=section.path) }}
     {{ prose::back_link() }}
 
     <div class="section-title">

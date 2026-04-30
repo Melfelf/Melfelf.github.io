@@ -33,19 +33,4 @@ I build infrastructure, automation, and AI-supported workflows that remove frict
 
 **Make Everything Less Frustrating With Automation & Robotic Execution**
 
-That sounds slightly dramatic, but it is the right direction.
-I care about systems that are reliable, understandable, and actually useful in daily work — from Azure and endpoint management to practical AI assistants, process design, and the awkward human side of technology decisions.
-
-## What this site is for
-
-- **Infrastructure & Automation** — Azure, Intune, cloud operations, workflow design, and the boring details that make systems dependable
-- **Practical AI** — experiments, assistants, and automation that survive contact with real life
-- **Thinking in Public** — notes on leadership, technology, psychology, philosophy, and how systems shape behaviour
-- **Books & Ideas** — distilled takeaways worth keeping, not performative reading lists
-
-## What you can expect
-
-I prefer practical write-ups over polished thought leadership.
-Most posts are closer to a working logbook than to marketing copy: what worked, what failed, what got simpler, and what I would do differently next time.
-
-If that saves you time, good — that is the whole point.
+This site is my working logbook for Azure, endpoint management, practical AI assistants, automation design, projects, books, and the human side of making systems useful.
