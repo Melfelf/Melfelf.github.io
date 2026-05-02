@@ -1,0 +1,56 @@
+<svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Melfware</title>
+  <desc id="logoDesc">Bold Melfware wordmark with an automation pulse forming a central W.</desc>
+  <defs>
+    <linearGradient id="mw-word" x1="40" y1="30" x2="610" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.48" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <linearGradient id="mw-line" x1="40" y1="130" x2="628" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.52" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+
+  <text x="38" y="112"
+        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
+        font-size="92"
+        font-weight="800"
+        letter-spacing="-3.2"
+        fill="url(#mw-word)">Melf</text>
+
+  <text x="432" y="112"
+        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
+        font-size="92"
+        font-weight="800"
+        letter-spacing="-3.2"
+        fill="url(#mw-word)">are</text>
+
+  <path d="M40 130
+           H270
+           L286 130
+           L314 182
+           L350 66
+           L386 182
+           L424 92
+           L444 130
+           H628"
+        fill="none"
+        stroke="url(#mw-line)"
+        stroke-width="15"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <circle cx="40" cy="130" r="12" fill="#3b82f6"/>
+  <circle cx="628" cy="130" r="12" fill="#2dd4bf"/>
+
+  <text x="432" y="174"
+        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
+        font-size="20"
+        font-weight="700"
+        letter-spacing="7.4"
+        fill="#8b95a1"
+        opacity="0.86">AUTOMATION</text>
+</svg>
