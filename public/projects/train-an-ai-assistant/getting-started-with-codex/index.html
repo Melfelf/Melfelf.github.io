@@ -82,6 +82,7 @@
 
 <link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
 
+<link rel="stylesheet" href="https://melf.ch/custom.css">
 
 
   
@@ -164,6 +165,51 @@
   </aside>
   <main>
     
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+    <img src="https://melf.ch/img/melfware-logo.svg" alt="" class="brand-mark">
+    <span>Stefan &quot;Melf&quot; Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog">Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro">IT Pro</a>
+      
+    
+      
+      
+      <a class="instant active" href="https://melf.ch/projects">Projects</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin">Melflin</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/ai-blubber">AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read">Books</a>
+      
+    
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub</a>
+      
+    
+  </div>
+</nav>
+
+    
 <header>
   <nav>
     <a id="back-link" href="#">← Back</a>
@@ -211,13 +257,12 @@
 <h2 id="use-codex-to-draft-the-baseline-prompt">Use Codex to draft the baseline prompt<a class="zola-anchor" href="#use-codex-to-draft-the-baseline-prompt" aria-label="Anchor link for: use-codex-to-draft-the-baseline-prompt" style="visibility: hidden;"></a>
 </h2>
 <p>Start with a system prompt that encodes the charter, tone, and formatting. Ask Codex to propose a structured prompt and then refine it manually. A simple template:</p>
-<pre><code>You are &lt;assistant-name&gt;, a concise AI assistant for &lt;audience&gt;.
-Always:
-- Ask for missing context in one sentence.
-- Show a numbered plan before long answers.
-- Cite tools or docs you relied on.
-Avoid speculation; say &quot;I don&#x27;t know&quot; when uncertain.
-</code></pre>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="plain"><span class="giallo-l"><span>You are &lt;assistant-name&gt;, a concise AI assistant for &lt;audience&gt;.</span></span>
+<span class="giallo-l"><span>Always:</span></span>
+<span class="giallo-l"><span>- Ask for missing context in one sentence.</span></span>
+<span class="giallo-l"><span>- Show a numbered plan before long answers.</span></span>
+<span class="giallo-l"><span>- Cite tools or docs you relied on.</span></span>
+<span class="giallo-l"><span>Avoid speculation; say &quot;I don&#39;t know&quot; when uncertain.</span></span></code></pre>
 <p>Pair this with 3–5 <strong>few-shot examples</strong> built from your seed workflows. Codex can help draft these examples quickly—treat them as prototypes you will edit for accuracy and tone.</p>
 <h2 id="build-the-first-evaluation-loop">Build the first evaluation loop<a class="zola-anchor" href="#build-the-first-evaluation-loop" aria-label="Anchor link for: build-the-first-evaluation-loop" style="visibility: hidden;"></a>
 </h2>
@@ -284,7 +329,7 @@ Automation script to replay evaluations after each change.</li>
 <footer>
   <div class="left">
     <div class="copyright">
-      © 2025 by S.Moser
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
       
       <span>|</span>
       Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>

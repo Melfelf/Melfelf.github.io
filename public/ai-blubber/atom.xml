@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <title>MelfsBlog - AI Blubber</title>
-    <subtitle>A personal blog about technology, personal thoughts, book reviews, and AI insights.</subtitle>
+    <title>Stefan &quot;Melf&quot; Moser - AI Notes</title>
+    <subtitle>Infrastructure, automation, AI, and practical systems that make work and life less frustrating.</subtitle>
     <link rel="self" type="application/atom+xml" href="https://melf.ch/ai-blubber/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://melf.ch/ai-blubber/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
@@ -39,24 +39,21 @@
 &lt;h3 id=&quot;1-date-format-standardization&quot;&gt;1. Date Format Standardization&lt;a class=&quot;zola-anchor&quot; href=&quot;#1-date-format-standardization&quot; aria-label=&quot;Anchor link for: 1-date-format-standardization&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Updated all section configuration files to include time components:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# Before
-date_format = &amp;quot;%b %-d, %Y&amp;quot;
-
-# After
-date_format = &amp;quot;%b %-d, %Y at %H:%M&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;# Before&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;date_format =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;%b %-d, %Y&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;# After&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;date_format =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;%b %-d, %Y at %H:%M&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This change affects all sections: blog, ai-blubber, it-pro, read, projects, and organisation.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;2-frontmatter-schema-enhancement&quot;&gt;2. Frontmatter Schema Enhancement&lt;a class=&quot;zola-anchor&quot; href=&quot;#2-frontmatter-schema-enhancement&quot; aria-label=&quot;Anchor link for: 2-frontmatter-schema-enhancement&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Extended post frontmatter to include both creation and modification timestamps with proper timezone information:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;+++
-title = &amp;quot;Example Post&amp;quot;
-date = 2025-12-21T16:00:00+01:00      # Creation timestamp (CET)
-updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
-# ... other fields
-+++
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;3-timezone-handling&quot;&gt;3. Timezone Handling&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-timezone-handling&quot; aria-label=&quot;Anchor link for: 3-timezone-handling&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;title =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;Example Post&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;date =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 2025-12-21T16:00:00+01:00&lt;&#x2F;span&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;      # Creation timestamp (CET)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;updated =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 2025-12-21T16:00:00+01:00&lt;&#x2F;span&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;   # Last modified timestamp (CET)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;# ... other fields&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;3-timezone-handling&quot;&gt;3. Timezone Handling&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-timezone-handling&quot; aria-label=&quot;Anchor link for: 3-timezone-handling&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Implemented proper timezone support for Switzerland (Central European Time):&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -70,59 +67,53 @@ updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
 &lt;p&gt;Created custom templates to display enhanced temporal information:&lt;&#x2F;p&gt;
 &lt;h4 id=&quot;individual-post-template-templates-page-html&quot;&gt;Individual Post Template (&lt;code&gt;templates&#x2F;page.html&lt;&#x2F;code&gt;)&lt;a class=&quot;zola-anchor&quot; href=&quot;#individual-post-template-templates-page-html&quot; aria-label=&quot;Anchor link for: individual-post-template-templates-page-html&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h4&gt;
-&lt;pre data-lang=&quot;html&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;div class=&amp;quot;post-meta&amp;quot;&amp;gt;
-  &amp;lt;time datetime=&amp;quot;{{ page.date | date(format=&amp;#x27;%Y-%m-%dT%H:%M:%S%z&amp;#x27;) }}&amp;quot;&amp;gt;
-    Created: {{ page.date | date(format=&amp;#x27;%b %-d, %Y at %H:%M&amp;#x27;) }}
-  &amp;lt;&amp;#x2F;time&amp;gt;
-  {% if page.updated and page.updated != page.date %}
-  &amp;lt;time datetime=&amp;quot;{{ page.updated | date(format=&amp;#x27;%Y-%m-%dT%H:%M:%S%z&amp;#x27;) }}&amp;quot;&amp;gt;
-    • Updated: {{ page.updated | date(format=&amp;#x27;%b %-d, %Y at %H:%M&amp;#x27;) }}
-  &amp;lt;&amp;#x2F;time&amp;gt;
-  {% endif %}
-  {% if page.extra.reading_time %}
-  &amp;lt;span class=&amp;quot;reading-time&amp;quot;&amp;gt;{{ page.extra.reading_time }} min read&amp;lt;&amp;#x2F;span&amp;gt;
-  {% endif %}
-&amp;lt;&amp;#x2F;div&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h4 id=&quot;homepage-recent-posts-templates-home-html&quot;&gt;Homepage Recent Posts (&lt;code&gt;templates&#x2F;home.html&lt;&#x2F;code&gt;)&lt;a class=&quot;zola-anchor&quot; href=&quot;#homepage-recent-posts-templates-home-html&quot; aria-label=&quot;Anchor link for: homepage-recent-posts-templates-home-html&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; class&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;post-meta&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; datetime&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;{{ page.date | date(format=&amp;#39;%Y-%m-%dT%H:%M:%S%z&amp;#39;) }}&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    Created: {{ page.date | date(format=&amp;#39;%b %-d, %Y at %H:%M&amp;#39;) }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {% if page.updated and page.updated != page.date %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; datetime&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;{{ page.updated | date(format=&amp;#39;%Y-%m-%dT%H:%M:%S%z&amp;#39;) }}&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    • Updated: {{ page.updated | date(format=&amp;#39;%b %-d, %Y at %H:%M&amp;#39;) }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {% if page.extra.reading_time %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; class&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;reading-time&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{{ page.extra.reading_time }} min read&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h4 id=&quot;homepage-recent-posts-templates-home-html&quot;&gt;Homepage Recent Posts (&lt;code&gt;templates&#x2F;home.html&lt;&#x2F;code&gt;)&lt;a class=&quot;zola-anchor&quot; href=&quot;#homepage-recent-posts-templates-home-html&quot; aria-label=&quot;Anchor link for: homepage-recent-posts-templates-home-html&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h4&gt;
-&lt;pre data-lang=&quot;html&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;span class=&amp;quot;date&amp;quot;&amp;gt;
-  {{ post.date | date(format=section.extra.date_format) }}
-  {% if post.updated and post.updated != post.date %}
-  (updated {{ post.updated | date(format=section.extra.date_format) }})
-  {% endif %}
-&amp;lt;&amp;#x2F;span&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;4-css-styling-enhancement&quot;&gt;4. CSS Styling Enhancement&lt;a class=&quot;zola-anchor&quot; href=&quot;#4-css-styling-enhancement&quot; aria-label=&quot;Anchor link for: 4-css-styling-enhancement&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; class&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;date&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {{ post.date | date(format=section.extra.date_format) }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {% if post.updated and post.updated != post.date %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  (updated {{ post.updated | date(format=section.extra.date_format) }})&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;4-css-styling-enhancement&quot;&gt;4. CSS Styling Enhancement&lt;a class=&quot;zola-anchor&quot; href=&quot;#4-css-styling-enhancement&quot; aria-label=&quot;Anchor link for: 4-css-styling-enhancement&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Added custom styling for timestamp display in &lt;code&gt;static&#x2F;custom.css&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;css&quot; class=&quot;language-css &quot;&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;.post-meta {
-  margin: 1rem 0 2rem 0;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-accent);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.post-meta time {
-  color: var(--text-color);
-  font-weight: 500;
-}
-
-.post-meta .reading-time {
-  background: var(--primary-accent);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;migration-strategy&quot;&gt;Migration Strategy&lt;a class=&quot;zola-anchor&quot; href=&quot;#migration-strategy&quot; aria-label=&quot;Anchor link for: migration-strategy&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;css&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;.post-meta&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  margin&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 0 2&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 0&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  padding&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 0&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  border-bottom&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;px&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; solid var&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;--border-accent&lt;&#x2F;span&gt;&lt;span&gt;);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  display&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; flex&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  flex-wrap&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; wrap&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  align-items&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; center&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  gap&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  font-size&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 0.9&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  color&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; var&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;--text-muted&lt;&#x2F;span&gt;&lt;span&gt;);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;.post-meta&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt; time&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  color&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; var&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;--text-color&lt;&#x2F;span&gt;&lt;span&gt;);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  font-weight&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 500&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;.post-meta .reading-time&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  background&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; var&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;--primary-accent&lt;&#x2F;span&gt;&lt;span&gt;);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  color&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; white&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  padding&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 0.25&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 0.75&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  border-radius&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 12&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;px&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  font-size&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 0.8&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;rem&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;  font-weight&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 500&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;migration-strategy&quot;&gt;Migration Strategy&lt;a class=&quot;zola-anchor&quot; href=&quot;#migration-strategy&quot; aria-label=&quot;Anchor link for: migration-strategy&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;existing-content-updates&quot;&gt;Existing Content Updates&lt;a class=&quot;zola-anchor&quot; href=&quot;#existing-content-updates&quot; aria-label=&quot;Anchor link for: existing-content-updates&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
@@ -140,11 +131,9 @@ updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
 &lt;h3 id=&quot;visual-design&quot;&gt;Visual Design&lt;a class=&quot;zola-anchor&quot; href=&quot;#visual-design&quot; aria-label=&quot;Anchor link for: visual-design&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;The timestamp display uses semantic HTML with proper &lt;code&gt;datetime&lt;&#x2F;code&gt; attributes for accessibility and SEO:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;html&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;time datetime=&amp;quot;2025-12-21T16:00:00+01:00&amp;quot;&amp;gt;
-  Created: Dec 21, 2025 at 16:00
-&amp;lt;&amp;#x2F;time&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;information-hierarchy&quot;&gt;Information Hierarchy&lt;a class=&quot;zola-anchor&quot; href=&quot;#information-hierarchy&quot; aria-label=&quot;Anchor link for: information-hierarchy&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; datetime&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;2025-12-21T16:00:00+01:00&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Created: Dec 21, 2025 at 16:00&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;information-hierarchy&quot;&gt;Information Hierarchy&lt;a class=&quot;zola-anchor&quot; href=&quot;#information-hierarchy&quot; aria-label=&quot;Anchor link for: information-hierarchy&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Primary&lt;&#x2F;strong&gt;: Creation date (always visible)&lt;&#x2F;li&gt;
@@ -245,31 +234,26 @@ updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
 &lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;date-format-configuration&quot;&gt;Date Format Configuration&lt;a class=&quot;zola-anchor&quot; href=&quot;#date-format-configuration&quot; aria-label=&quot;Anchor link for: date-format-configuration&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# In content&amp;#x2F;blog&amp;#x2F;_index.md
-date_format = &amp;quot;%b %-d, %Y at %H:%M&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;post-frontmatter&quot;&gt;Post Frontmatter&lt;a class=&quot;zola-anchor&quot; href=&quot;#post-frontmatter&quot; aria-label=&quot;Anchor link for: post-frontmatter&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;# In content&#x2F;blog&#x2F;_index.md&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;date_format =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;%b %-d, %Y at %H:%M&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;post-frontmatter&quot;&gt;Post Frontmatter&lt;a class=&quot;zola-anchor&quot; href=&quot;#post-frontmatter&quot; aria-label=&quot;Anchor link for: post-frontmatter&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;+++
-title = &amp;quot;Enhanced Timestamps&amp;quot;
-date = 2025-12-21T16:00:00+01:00
-updated = 2025-12-21T16:30:00+01:00
-draft = false
-+++
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;template-usage&quot;&gt;Template Usage&lt;a class=&quot;zola-anchor&quot; href=&quot;#template-usage&quot; aria-label=&quot;Anchor link for: template-usage&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;title =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;Enhanced Timestamps&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;date =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 2025-12-21T16:00:00+01:00&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;updated =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 2025-12-21T16:30:00+01:00&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;draft =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; false&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;template-usage&quot;&gt;Template Usage&lt;a class=&quot;zola-anchor&quot; href=&quot;#template-usage&quot; aria-label=&quot;Anchor link for: template-usage&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;html&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;!-- Individual posts --&amp;gt;
-&amp;lt;time datetime=&amp;quot;{{ page.date | date(format=&amp;#x27;%Y-%m-%dT%H:%M:%S%z&amp;#x27;) }}&amp;quot;&amp;gt;
-  Created: {{ page.date | date(format=&amp;#x27;%b %-d, %Y at %H:%M&amp;#x27;) }}
-&amp;lt;&amp;#x2F;time&amp;gt;
-
-&amp;lt;!-- Homepage listings --&amp;gt;
-{{ post.date | date(format=section.extra.date_format) }}
-{% if post.updated and post.updated != post.date %}
-(updated {{ post.updated | date(format=section.extra.date_format) }})
-{% endif %}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;&amp;lt;!-- Individual posts --&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; datetime&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;{{ page.date | date(format=&amp;#39;%Y-%m-%dT%H:%M:%S%z&amp;#39;) }}&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Created: {{ page.date | date(format=&amp;#39;%b %-d, %Y at %H:%M&amp;#39;) }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;&amp;lt;!-- Homepage listings --&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{{ post.date | date(format=section.extra.date_format) }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{% if post.updated and post.updated != post.date %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;(updated {{ post.updated | date(format=section.extra.date_format) }})&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This implementation demonstrates how small, thoughtful improvements to information architecture can significantly enhance user experience and content credibility.&lt;&#x2F;p&gt;
 </content>
         
@@ -321,9 +305,8 @@ draft = false
 &lt;li&gt;Minimalist approach focusing on readability&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Technical Implementation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;svg&quot; class=&quot;language-svg &quot;&gt;&lt;code class=&quot;language-svg&quot; data-lang=&quot;svg&quot;&gt;&amp;lt;rect x=&amp;quot;0&amp;quot; y=&amp;quot;0&amp;quot; width=&amp;quot;200&amp;quot; height=&amp;quot;80&amp;quot; rx=&amp;quot;8&amp;quot; fill=&amp;quot;url(#melfwareGradient1)&amp;quot; opacity=&amp;quot;0.1&amp;quot;&amp;#x2F;&amp;gt;
-&amp;lt;text x=&amp;quot;15&amp;quot; y=&amp;quot;50&amp;quot; font-family=&amp;quot;Arial, sans-serif&amp;quot; font-size=&amp;quot;28&amp;quot; font-weight=&amp;quot;700&amp;quot; fill=&amp;quot;url(#melfwareGradient1)&amp;quot;&amp;gt;MelfWare&amp;lt;&amp;#x2F;text&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;rect x=&amp;quot;0&amp;quot; y=&amp;quot;0&amp;quot; width=&amp;quot;200&amp;quot; height=&amp;quot;80&amp;quot; rx=&amp;quot;8&amp;quot; fill=&amp;quot;url(#melfwareGradient1)&amp;quot; opacity=&amp;quot;0.1&amp;quot;&#x2F;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;text x=&amp;quot;15&amp;quot; y=&amp;quot;50&amp;quot; font-family=&amp;quot;Arial, sans-serif&amp;quot; font-size=&amp;quot;28&amp;quot; font-weight=&amp;quot;700&amp;quot; fill=&amp;quot;url(#melfwareGradient1)&amp;quot;&amp;gt;MelfWare&amp;lt;&#x2F;text&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;strong&gt;Best For&lt;&#x2F;strong&gt;: Professional presentations, business cards, clean digital interfaces&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;style-2-tech-geometric&quot;&gt;Style 2: Tech Geometric&lt;a class=&quot;zola-anchor&quot; href=&quot;#style-2-tech-geometric&quot; aria-label=&quot;Anchor link for: style-2-tech-geometric&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
@@ -336,9 +319,8 @@ draft = false
 &lt;li&gt;Glow effect for modern appeal&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Technical Implementation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;svg&quot; class=&quot;language-svg &quot;&gt;&lt;code class=&quot;language-svg&quot; data-lang=&quot;svg&quot;&gt;&amp;lt;polygon points=&amp;quot;20,40 50,20 130,20 160,40 130,60 50,60&amp;quot; fill=&amp;quot;url(#melfwareGradient2)&amp;quot; opacity=&amp;quot;0.1&amp;quot;&amp;#x2F;&amp;gt;
-&amp;lt;path d=&amp;quot;M25 40 L45 25 M35 55 L55 40...&amp;quot; stroke=&amp;quot;url(#melfwareGradient2)&amp;quot; stroke-width=&amp;quot;1&amp;quot; opacity=&amp;quot;0.3&amp;quot;&amp;#x2F;&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;polygon points=&amp;quot;20,40 50,20 130,20 160,40 130,60 50,60&amp;quot; fill=&amp;quot;url(#melfwareGradient2)&amp;quot; opacity=&amp;quot;0.1&amp;quot;&#x2F;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;path d=&amp;quot;M25 40 L45 25 M35 55 L55 40...&amp;quot; stroke=&amp;quot;url(#melfwareGradient2)&amp;quot; stroke-width=&amp;quot;1&amp;quot; opacity=&amp;quot;0.3&amp;quot;&#x2F;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;strong&gt;Best For&lt;&#x2F;strong&gt;: Tech conferences, developer communities, modern web applications&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;style-3-neural-network&quot;&gt;Style 3: Neural Network&lt;a class=&quot;zola-anchor&quot; href=&quot;#style-3-neural-network&quot; aria-label=&quot;Anchor link for: style-3-neural-network&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
@@ -351,10 +333,9 @@ draft = false
 &lt;li&gt;Organic curves balanced with technical precision&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Technical Implementation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;svg&quot; class=&quot;language-svg &quot;&gt;&lt;code class=&quot;language-svg&quot; data-lang=&quot;svg&quot;&gt;&amp;lt;path d=&amp;quot;M20 30 Q40 15 70 20 Q100 10 130 20...&amp;quot; fill=&amp;quot;url(#melfwareGradient3)&amp;quot; opacity=&amp;quot;0.2&amp;quot;&amp;#x2F;&amp;gt;
-&amp;lt;circle cx=&amp;quot;50&amp;quot; cy=&amp;quot;25&amp;quot; r=&amp;quot;3&amp;quot; fill=&amp;quot;url(#melfwareGradient3)&amp;quot;&amp;#x2F;&amp;gt;
-&amp;lt;path d=&amp;quot;M50 25 Q65 22 80 20...&amp;quot; stroke=&amp;quot;url(#melfwareGradient3)&amp;quot; stroke-width=&amp;quot;1&amp;quot; opacity=&amp;quot;0.4&amp;quot;&amp;#x2F;&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;path d=&amp;quot;M20 30 Q40 15 70 20 Q100 10 130 20...&amp;quot; fill=&amp;quot;url(#melfwareGradient3)&amp;quot; opacity=&amp;quot;0.2&amp;quot;&#x2F;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;circle cx=&amp;quot;50&amp;quot; cy=&amp;quot;25&amp;quot; r=&amp;quot;3&amp;quot; fill=&amp;quot;url(#melfwareGradient3)&amp;quot;&#x2F;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;path d=&amp;quot;M50 25 Q65 22 80 20...&amp;quot; stroke=&amp;quot;url(#melfwareGradient3)&amp;quot; stroke-width=&amp;quot;1&amp;quot; opacity=&amp;quot;0.4&amp;quot;&#x2F;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;strong&gt;Best For&lt;&#x2F;strong&gt;: AI&#x2F;ML projects, research contexts, innovative tech companies&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;style-4-elegant-serif&quot;&gt;Style 4: Elegant Serif&lt;a class=&quot;zola-anchor&quot; href=&quot;#style-4-elegant-serif&quot; aria-label=&quot;Anchor link for: style-4-elegant-serif&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
@@ -367,9 +348,8 @@ draft = false
 &lt;li&gt;Monochrome gradient suggesting sophistication&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Technical Implementation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;svg&quot; class=&quot;language-svg &quot;&gt;&lt;code class=&quot;language-svg&quot; data-lang=&quot;svg&quot;&gt;&amp;lt;text x=&amp;quot;15&amp;quot; y=&amp;quot;35&amp;quot; font-family=&amp;quot;serif&amp;quot; font-size=&amp;quot;32&amp;quot; font-weight=&amp;quot;bold&amp;quot; fill=&amp;quot;url(#melfwareGradient4)&amp;quot; filter=&amp;quot;url(#shadow4)&amp;quot;&amp;gt;M&amp;lt;&amp;#x2F;text&amp;gt;
-&amp;lt;line x1=&amp;quot;15&amp;quot; y1=&amp;quot;42&amp;quot; x2=&amp;quot;75&amp;quot; y2=&amp;quot;42&amp;quot; stroke=&amp;quot;url(#melfwareGradient4)&amp;quot; stroke-width=&amp;quot;2&amp;quot; opacity=&amp;quot;0.6&amp;quot;&amp;#x2F;&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;text x=&amp;quot;15&amp;quot; y=&amp;quot;35&amp;quot; font-family=&amp;quot;serif&amp;quot; font-size=&amp;quot;32&amp;quot; font-weight=&amp;quot;bold&amp;quot; fill=&amp;quot;url(#melfwareGradient4)&amp;quot; filter=&amp;quot;url(#shadow4)&amp;quot;&amp;gt;M&amp;lt;&#x2F;text&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;line x1=&amp;quot;15&amp;quot; y1=&amp;quot;42&amp;quot; x2=&amp;quot;75&amp;quot; y2=&amp;quot;42&amp;quot; stroke=&amp;quot;url(#melfwareGradient4)&amp;quot; stroke-width=&amp;quot;2&amp;quot; opacity=&amp;quot;0.6&amp;quot;&#x2F;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;strong&gt;Best For&lt;&#x2F;strong&gt;: Executive communications, premium branding, traditional industries&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;technical-considerations&quot;&gt;Technical Considerations&lt;a class=&quot;zola-anchor&quot; href=&quot;#technical-considerations&quot; aria-label=&quot;Anchor link for: technical-considerations&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h2&gt;
@@ -457,27 +437,23 @@ draft = false
 &lt;h3 id=&quot;1-modified-the-back-link-macro&quot;&gt;1. Modified the Back Link Macro&lt;a class=&quot;zola-anchor&quot; href=&quot;#1-modified-the-back-link-macro&quot; aria-label=&quot;Anchor link for: 1-modified-the-back-link-macro&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Overrode the theme&#x27;s macro to set the href to &lt;code&gt;#&lt;&#x2F;code&gt; instead of the section path:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;html&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{% macro back_link(path) %}
-&amp;lt;header&amp;gt;
-  &amp;lt;nav&amp;gt;
-    &amp;lt;a id=&amp;quot;back-link&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;← {{ config.extra.back_link_text }}&amp;lt;&amp;#x2F;a&amp;gt;
-  &amp;lt;&amp;#x2F;nav&amp;gt;
-&amp;lt;&amp;#x2F;header&amp;gt;
-{% endmacro %}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;2-updated-the-enablebacklink-function&quot;&gt;2. Updated the enableBackLink Function&lt;a class=&quot;zola-anchor&quot; href=&quot;#2-updated-the-enablebacklink-function&quot; aria-label=&quot;Anchor link for: 2-updated-the-enablebacklink-function&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{% macro back_link(path) %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;header&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;nav&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; id&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;back-link&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; href&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;#&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;← {{ config.extra.back_link_text }}&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;nav&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;header&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{% endmacro %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;2-updated-the-enablebacklink-function&quot;&gt;2. Updated the enableBackLink Function&lt;a class=&quot;zola-anchor&quot; href=&quot;#2-updated-the-enablebacklink-function&quot; aria-label=&quot;Anchor link for: 2-updated-the-enablebacklink-function&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Changed the function to always prevent the default link behavior and use &lt;code&gt;history.back()&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;javascript&quot; class=&quot;language-javascript &quot;&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;function enableBackLink() {
-  const backLink = document.querySelector(&amp;#x27;#back-link&amp;#x27;);
-  if (!backLink) return;
-  backLink.addEventListener(&amp;#x27;click&amp;#x27;, (e) =&amp;gt; {
-    e.preventDefault();
-    history.back();
-  });
-}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;3-template-override&quot;&gt;3. Template Override&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-template-override&quot; aria-label=&quot;Anchor link for: 3-template-override&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; enableBackLink&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;  const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; backLink&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; document.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;querySelector&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;#39;#back-link&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;  if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span&gt;backLink)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt; return&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  backLink.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;addEventListener&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;#39;click&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #F97583;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    e.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;preventDefault&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    history.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;back&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  });&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;3-template-override&quot;&gt;3. Template Override&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-template-override&quot; aria-label=&quot;Anchor link for: 3-template-override&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Created &lt;code&gt;&#x2F;templates&#x2F;macros&#x2F;prose.html&lt;&#x2F;code&gt; to override the theme&#x27;s macro, ensuring the change applies to all pages using the back link.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;key-features-of-the-fix&quot;&gt;Key Features of the Fix&lt;a class=&quot;zola-anchor&quot; href=&quot;#key-features-of-the-fix&quot; aria-label=&quot;Anchor link for: key-features-of-the-fix&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
@@ -683,26 +659,24 @@ draft = false
 &lt;li&gt;Link to related posts&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Example Sections:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;markdown&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;## Objective
-What specific problem does this solve?
-
-## Key Features
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Implementation Overview
-Brief explanation before diving in
-
-## Step-by-Step Guide
-### Step 1: ...
-### Step 2: ...
-
-## Key Takeaways
-- Lesson 1
-- Lesson 2
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;book-review-template-read-section&quot;&gt;Book Review Template (Read Section)&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-review-template-read-section&quot; aria-label=&quot;Anchor link for: book-review-template-read-section&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Objective&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;What specific problem does this solve?&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Key Features&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Feature 1&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Feature 2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Feature 3&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Implementation Overview&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Brief explanation before diving in&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Step-by-Step Guide&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;### Step 1: ...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;### Step 2: ...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Key Takeaways&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Lesson 1&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Lesson 2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;book-review-template-read-section&quot;&gt;Book Review Template (Read Section)&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-review-template-read-section&quot; aria-label=&quot;Anchor link for: book-review-template-read-section&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;&lt;strong&gt;Structure:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -724,27 +698,25 @@ Brief explanation before diving in
 &lt;li&gt;Suggest related books or ideas&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Example Structure:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;markdown&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;## What is [Book Title]?
-Brief description of the book and why it matters
-
-## Main Themes
-- Theme 1 and explanation
-- Theme 2 and explanation
-
-## Key Insights
-1. **Insight One** - What this means and why it matters
-2. **Insight Two** - Real-world application
-3. **Insight Three** - Why it changed my perspective
-
-## Personal Takeaway
-Your honest reaction and how it influences you
-
-## Who Should Read This
-Best suited for people interested in...
-
-## Final Thoughts
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;personal-blog-template-blog-section&quot;&gt;Personal Blog Template (Blog Section)&lt;a class=&quot;zola-anchor&quot; href=&quot;#personal-blog-template-blog-section&quot; aria-label=&quot;Anchor link for: personal-blog-template-blog-section&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## What is [Book Title]?&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Brief description of the book and why it matters&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Main Themes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Theme 1 and explanation&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Theme 2 and explanation&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Key Insights&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;1.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt; **Insight One**&lt;&#x2F;span&gt;&lt;span&gt; - What this means and why it matters&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;2.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt; **Insight Two**&lt;&#x2F;span&gt;&lt;span&gt; - Real-world application&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;3.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt; **Insight Three**&lt;&#x2F;span&gt;&lt;span&gt; - Why it changed my perspective&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Personal Takeaway&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Your honest reaction and how it influences you&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Who Should Read This&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Best suited for people interested in...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Final Thoughts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;personal-blog-template-blog-section&quot;&gt;Personal Blog Template (Blog Section)&lt;a class=&quot;zola-anchor&quot; href=&quot;#personal-blog-template-blog-section&quot; aria-label=&quot;Anchor link for: personal-blog-template-blog-section&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;&lt;strong&gt;Structure:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -765,22 +737,20 @@ Best suited for people interested in...
 &lt;li&gt;End with a thought that resonates&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Example Structure:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;markdown&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;## The Setup
-What happened and why it matters to you
-
-## How It Unfolded
-Narrative description of events
-
-## What Struck Me
-Personal observations and reactions
-
-## Thinking It Through
-Deeper reflection on what it means
-
-## Moving Forward
-Closing thoughts
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;ai-automation-template-ai-blubber-section&quot;&gt;AI &amp;amp; Automation Template (AI Blubber Section)&lt;a class=&quot;zola-anchor&quot; href=&quot;#ai-automation-template-ai-blubber-section&quot; aria-label=&quot;Anchor link for: ai-automation-template-ai-blubber-section&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## The Setup&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;What happened and why it matters to you&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## How It Unfolded&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Narrative description of events&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## What Struck Me&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Personal observations and reactions&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Thinking It Through&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Deeper reflection on what it means&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Moving Forward&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Closing thoughts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;ai-automation-template-ai-blubber-section&quot;&gt;AI &amp;amp; Automation Template (AI Blubber Section)&lt;a class=&quot;zola-anchor&quot; href=&quot;#ai-automation-template-ai-blubber-section&quot; aria-label=&quot;Anchor link for: ai-automation-template-ai-blubber-section&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;&lt;strong&gt;Structure:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -802,27 +772,25 @@ Closing thoughts
 &lt;li&gt;Be honest about limitations&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Example Structure:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;markdown&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;## The Challenge
-What problem were you trying to solve?
-
-## My Approach
-How did you decide to tackle it?
-
-## What I Built&amp;#x2F;Used
-Specific tools and methods
-
-## Results
-What happened when you tried it?
-
-## Lessons Learned
-- Key insight 1
-- Key insight 2
-- Key insight 3
-
-## What This Opens Up
-Future possibilities or related explorations
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;using-these-templates&quot;&gt;Using These Templates&lt;a class=&quot;zola-anchor&quot; href=&quot;#using-these-templates&quot; aria-label=&quot;Anchor link for: using-these-templates&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## The Challenge&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;What problem were you trying to solve?&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## My Approach&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;How did you decide to tackle it?&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## What I Built&#x2F;Used&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Specific tools and methods&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Results&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;What happened when you tried it?&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## Lessons Learned&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Key insight 1&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Key insight 2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFAB70;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; Key insight 3&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;font-weight: bold;&quot;&gt;## What This Opens Up&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Future possibilities or related explorations&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;using-these-templates&quot;&gt;Using These Templates&lt;a class=&quot;zola-anchor&quot; href=&quot;#using-these-templates&quot; aria-label=&quot;Anchor link for: using-these-templates&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;These templates aren&#x27;t strict rules, they&#x27;re guidelines. They ensure:&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -1306,18 +1274,16 @@ Future possibilities or related explorations
 &lt;h3 id=&quot;configuration-changes-summary&quot;&gt;Configuration Changes Summary&lt;a class=&quot;zola-anchor&quot; href=&quot;#configuration-changes-summary&quot; aria-label=&quot;Anchor link for: configuration-changes-summary&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;Key configuration updates in &lt;code&gt;config.toml&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# Enabled search functionality
-build_search_index = true
-
-# Improved site description for SEO
-description = &amp;quot;A personal blog about technology, personal thoughts, book reviews, and AI insights.&amp;quot;
-
-# Added SEO metadata
-author = &amp;quot;S. Moser&amp;quot;
-keywords = [&amp;quot;technology&amp;quot;, &amp;quot;cloud&amp;quot;, &amp;quot;Azure&amp;quot;, &amp;quot;AI&amp;quot;, &amp;quot;automation&amp;quot;, &amp;quot;blog&amp;quot;]
-language = &amp;quot;en&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;why-this-matters&quot;&gt;Why This Matters&lt;a class=&quot;zola-anchor&quot; href=&quot;#why-this-matters&quot; aria-label=&quot;Anchor link for: why-this-matters&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;# Enabled search functionality&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;build_search_index =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; true&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;# Improved site description for SEO&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;description =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;A personal blog about technology, personal thoughts, book reviews, and AI insights.&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;# Added SEO metadata&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;author =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;S. Moser&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;keywords = [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;technology&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;cloud&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;Azure&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;AI&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;automation&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;blog&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;language =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;en&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;why-this-matters&quot;&gt;Why This Matters&lt;a class=&quot;zola-anchor&quot; href=&quot;#why-this-matters&quot; aria-label=&quot;Anchor link for: why-this-matters&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;These technical improvements serve multiple purposes:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -1615,13 +1581,11 @@ oder
 &lt;li&gt;Solution Components&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Example from a recent AVD post:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;plaintext&quot; class=&quot;language-plaintext &quot;&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;Topic: AVD Custom Image Creation
-- Automated process needed
-- Must support multiple environments
-- Uses Azure Image Builder
-- Needs configuration management
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h4 id=&quot;personal-blog-posts&quot;&gt;Personal Blog Posts&lt;a class=&quot;zola-anchor&quot; href=&quot;#personal-blog-posts&quot; aria-label=&quot;Anchor link for: personal-blog-posts&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Topic: AVD Custom Image Creation&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Automated process needed&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Must support multiple environments&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Uses Azure Image Builder&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Needs configuration management&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h4 id=&quot;personal-blog-posts&quot;&gt;Personal Blog Posts&lt;a class=&quot;zola-anchor&quot; href=&quot;#personal-blog-posts&quot; aria-label=&quot;Anchor link for: personal-blog-posts&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h4&gt;
 &lt;p&gt;For personal content, I focus on:&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -1630,13 +1594,11 @@ oder
 &lt;li&gt;Notable details&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;A recent example:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;plaintext&quot; class=&quot;language-plaintext &quot;&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;- Trip to Cheyres
-- Packed essentials
-- Lunch stop
-- Lake activities
-- Weather note
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h4 id=&quot;book-reviews-insights&quot;&gt;Book Reviews&#x2F;Insights&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-reviews-insights&quot; aria-label=&quot;Anchor link for: book-reviews-insights&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Trip to Cheyres&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Packed essentials&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Lunch stop&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Lake activities&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Weather note&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h4 id=&quot;book-reviews-insights&quot;&gt;Book Reviews&#x2F;Insights&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-reviews-insights&quot; aria-label=&quot;Anchor link for: book-reviews-insights&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h4&gt;
 &lt;p&gt;For book reviews, I structure around:&lt;&#x2F;p&gt;
 &lt;ul&gt;

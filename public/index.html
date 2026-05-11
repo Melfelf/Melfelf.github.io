@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   
-  <meta name="description" content="A personal blog about technology, personal thoughts, book reviews, and AI insights.">
+  <meta name="description" content="Infrastructure, automation, AI, and practical systems that make work and life less frustrating.">
 
-  <title>MelfsBlog</title>
+  <title>Stefan &quot;Melf&quot; Moser</title>
   <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
@@ -79,6 +79,7 @@
 
   <link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
 
+<link rel="stylesheet" href="https://melf.ch/custom.css">
 
 
   
@@ -99,17 +100,88 @@
   
 <div id="wrapper">
   <main>
-    <section id="logo">
-      <a href="https://melf.ch" class="site-logo" aria-label="MelfsBlog - Home">
-        <img
-          src="https://melf.ch/img/melfware-logo.svg"
-          alt="A personal blog about technology, personal thoughts, book reviews, and AI insights."
-          class="site-logo-img"
-        >
-      </a>
+    
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+    <img src="https://melf.ch/img/melfware-logo.svg" alt="" class="brand-mark">
+    <span>Stefan &quot;Melf&quot; Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog">Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro">IT Pro</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/projects">Projects</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin">Melflin</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/ai-blubber">AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read">Books</a>
+      
+    
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub</a>
+      
+    
+  </div>
+</nav>
+
+
+    <section class="home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Infrastructure. Automation. Practical AI.</p>
+        <div id="brief" class="prose">
+          <h1 id="stefan-melf-moser">Stefan "Melf" Moser</h1>
+<p>I build infrastructure, automation, and AI-supported workflows that remove friction instead of adding another layer of shiny complexity.</p>
+<h2 id="mission">Mission</h2>
+<p><strong>Make Everything Less Frustrating With Automation &amp; Robotic Execution</strong></p>
+<p>This site is my working logbook for Azure, endpoint management, practical AI assistants, automation design, projects, books, and the human side of making systems useful.</p>
+<h2 id="what-you-ll-find-here">What you’ll find here</h2>
+<ul>
+<li><strong>Practical infrastructure notes</strong> from Azure, Intune, AVD, endpoint management, and operations work.</li>
+<li><strong>Automation patterns</strong> that reduce repeated manual effort without creating fragile magic.</li>
+<li><strong>AI assistant experiments</strong> around Melflin, workflows, memory, delegation, and everyday usefulness.</li>
+<li><strong>Reading and thinking notes</strong> about systems, decisions, leadership, and better tools for calmer work.</li>
+</ul>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Profile">
+        <a href="https://melf.ch" class="site-logo" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+          <img
+            src="https://melf.ch/img/melfware-logo.svg"
+            alt="Infrastructure, automation, AI, and practical systems that make work and life less frustrating."
+            class="site-logo-img"
+          >
+        </a>
+        <div class="signal-list">
+          <span>Azure & Endpoint</span>
+          <span>Automation design</span>
+          <span>AI workflows</span>
+          <span>Systems thinking</span>
+        </div>
+      </aside>
     </section>
 
-    <section id="info">
+    <section id="info" class="profile-strip">
       
       <div id="text">
         <div>
@@ -122,27 +194,7 @@
         <div id="bio"> IT System Engineer | Automatisierungsarchitekt </div>
         
       </div>
-    </section>
-
-    <section id="links">
-      <div id="left">
-        
-        <a href="https://melf.ch/it-pro" class="instant">it-pro</a>
-        
-        <a href="https://melf.ch/projects" class="instant">projects</a>
-        
-        <a href="https://melf.ch/ai-blubber" class="instant">ai-blubber</a>
-        
-        <a href="https://melf.ch/melflin" class="instant">melflin</a>
-        
-        <a href="https://melf.ch/read" class="instant">read</a>
-        
-        <a href="https://melf.ch/blog" class="instant">blog</a>
-        
-        <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel='noreferrer noopener'>github</a>
-        
-      </div>
-      <div id="right">
+      <div id="right" class="profile-contact" aria-label="Contact links">
         
         <a href="mailto:stefan@melf.ch" aria-label="Email" target="_blank" rel='noreferrer noopener'>
           
@@ -178,23 +230,121 @@
       </div>
     </section>
 
-    <section id="brief" class="prose">
-      <h1 id="stefan-melf-moser">Stefan "Melf" Moser</h1>
-<p>Hi, I'm Stefan, also known as <em>Melf</em>, a seasoned IT systems engineer with over two decades of experience in infrastructure, automation, and digital transformation. My journey spans from traditional IT operations to cutting-edge cloud architectures and AI-driven automation.</p>
-<h2 id="my-mission">My Mission</h2>
-<p><strong>Make Everything Less Frustrating With Automation &amp; Robotic Execution</strong></p>
-<p>I believe in the power of intelligent systems to bridge the gap between human intention and digital execution. Whether it's streamlining enterprise workflows, building smart home integrations, or exploring the philosophical implications of AI, I focus on creating solutions that reduce friction and amplify human potential.</p>
-<h2 id="what-you-ll-find-here">What You'll Find Here</h2>
-<ul>
-<li><strong>Technical Deep Dives</strong>: Azure infrastructure, automation frameworks, and cloud architecture insights</li>
-<li><strong>AI &amp; Automation</strong>: Exploring the intersection of artificial intelligence and practical automation</li>
-<li><strong>Personal Reflections</strong>: Thoughts on technology's impact on society, work, and human experience</li>
-<li><strong>Book Insights</strong>: Curated recommendations and analysis of books on technology, psychology, and philosophy</li>
-</ul>
-<p>Welcome to my corner of the internet — a space for thoughtful exploration of technology's role in shaping our future.</p>
+    <section class="section-grid" aria-label="Site sections">
+      
+        
+          
+          
+          
+          <a class="section-card instant" href="https://melf.ch/blog">
+            <span class="section-card-label">Blog</span>
+            <span class="section-card-summary">Persönliche Texte auf Deutsch: direkt, ungefiltert und näher an echten Gedanken als an sauberer Selbstinszenierung.</span>
+          </a>
+        
+      
+        
+          
+          
+          
+          <a class="section-card instant" href="https://melf.ch/it-pro">
+            <span class="section-card-label">IT Pro</span>
+            <span class="section-card-summary">Technische Beiträge aus der Praxis: Azure, Endpoint Management, Infrastruktur und Automatisierung mit echter Betriebsperspektive.</span>
+          </a>
+        
+      
+        
+          
+          
+          
+          <a class="section-card instant" href="https://melf.ch/projects">
+            <span class="section-card-label">Projects</span>
+            <span class="section-card-summary">Hier liegen die Dinge, die grösser sind als ein einzelner Artikel: Projekte mit eigener Struktur, Doku und laufender Entwicklung.</span>
+          </a>
+        
+      
+        
+          
+          
+          
+          <a class="section-card instant" href="https://melf.ch/melflin">
+            <span class="section-card-label">Melflin</span>
+            <span class="section-card-summary">Notizen aus dem Aufbau eines persönlichen AI-Assistenten: Automatisierung, Zuverlässigkeit, Fehltritte und was davon im Alltag wirklich trägt.</span>
+          </a>
+        
+      
+        
+          
+          
+          
+          <a class="section-card instant" href="https://melf.ch/ai-blubber">
+            <span class="section-card-label">AI Notes</span>
+            <span class="section-card-summary">Notizen zu AI jenseits des Hypes: praktische Nutzung, Experimente, Reibungen und Folgen für echte Arbeit.</span>
+          </a>
+        
+      
+        
+          
+          
+          
+          <a class="section-card instant" href="https://melf.ch/read">
+            <span class="section-card-label">Books</span>
+            <span class="section-card-summary">Keine Leseliste fürs Regal, sondern Bücher und Hörbücher, die beim Denken oder Handeln wirklich etwas ausgelöst haben.</span>
+          </a>
+        
+      
+        
+      
     </section>
 
     
+    
+    
+    
+    <section class="layout-list home-recent-posts">
+      <div class="section-intro">
+        <h2>Neu im Logbuch</h2>
+        <p>Die letzten Einträge aus dem persönlichen Blog.</p>
+      </div>
+      <div class="post-list">
+        
+        <a class="post instant " href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;stoiker&#x2F;">
+          <span>Als Philosoph wäre ich wohl ein Stoiker. Ich weiss zwar nicht wie Stoizismus genau funktioniert aber damit kann ich umgehen.</span>
+          <span class="date">
+            Jun 14, 2025 at 16:20
+            
+          </span>
+        </a>
+        
+        <a class="post instant " href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;writingthingsdown&#x2F;">
+          <span>Die Kraft des Aufschreibens</span>
+          <span class="date">
+            Jun 14, 2025 at 14:00
+            
+          </span>
+        </a>
+        
+        <a class="post instant " href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;wiedashierfunktioniert&#x2F;">
+          <span>Wie das hier funktioniert</span>
+          <span class="date">
+            Jun 14, 2025 at 11:30
+            
+          </span>
+        </a>
+        
+        <a class="post instant " href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;first&#x2F;">
+          <span>Korrelation und Kausalität - Ein wichtiger Unterschied</span>
+          <span class="date">
+            Jun 4, 2025 at 09:15
+            
+          </span>
+        </a>
+        
+      </div>
+      <div class="read-more">
+        <a class="instant" href="&#x2F;blog">all posts »</a>
+      </div>
+    </section>
+  
   </main>
 
   

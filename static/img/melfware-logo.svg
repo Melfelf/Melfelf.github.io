@@ -1,56 +1,54 @@
-<svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+<svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
   <title id="logoTitle">Melfware</title>
-  <desc id="logoDesc">Bold Melfware wordmark with an automation pulse forming a central W.</desc>
+  <desc id="logoDesc">A calm technical Melfware logo with a fox-like hex mark and connected automation pulse.</desc>
   <defs>
-    <linearGradient id="mw-word" x1="40" y1="30" x2="610" y2="130" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3b82f6"/>
-      <stop offset="0.48" stop-color="#0ea5e9"/>
-      <stop offset="1" stop-color="#2dd4bf"/>
+    <linearGradient id="markGradient" x1="56" y1="32" x2="184" y2="172" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="0.48" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#14b8a6"/>
     </linearGradient>
-    <linearGradient id="mw-line" x1="40" y1="130" x2="628" y2="130" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3b82f6"/>
-      <stop offset="0.52" stop-color="#0ea5e9"/>
-      <stop offset="1" stop-color="#2dd4bf"/>
+    <linearGradient id="wordGradient" x1="230" y1="64" x2="660" y2="138" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="0.55" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0f172a"/>
     </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
   </defs>
 
-  <text x="38" y="112"
-        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
-        font-size="92"
-        font-weight="800"
-        letter-spacing="-3.2"
-        fill="url(#mw-word)">Melf</text>
+  <g filter="url(#softShadow)">
+    <path d="M120 28 188 66v84l-68 38-68-38V66z" fill="url(#markGradient)"/>
+    <path d="M78 76 52 48v50z" fill="#1d4ed8" opacity="0.95"/>
+    <path d="M162 76 188 48v50z" fill="#0f766e" opacity="0.95"/>
+    <path d="M80 92h80l-40 58z" fill="#ffffff" opacity="0.95"/>
+    <path d="M92 94h56l-28 39z" fill="#dbeafe" opacity="0.95"/>
+    <circle cx="101" cy="93" r="5" fill="#0f172a"/>
+    <circle cx="139" cy="93" r="5" fill="#0f172a"/>
+    <path d="M120 128l-8 12h16z" fill="#0f172a" opacity="0.9"/>
+  </g>
 
-  <text x="432" y="112"
-        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
-        font-size="92"
-        font-weight="800"
-        letter-spacing="-3.2"
-        fill="url(#mw-word)">are</text>
+  <text x="228" y="112"
+        font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+        font-size="82"
+        font-weight="850"
+        letter-spacing="-4"
+        fill="url(#wordGradient)">Melfware</text>
 
-  <path d="M40 130
-           H270
-           L286 130
-           L314 182
-           L350 66
-           L386 182
-           L424 92
-           L444 130
-           H628"
+  <path d="M232 144h126l18-26 28 52 40-92 38 66h164"
         fill="none"
-        stroke="url(#mw-line)"
-        stroke-width="15"
+        stroke="#14b8a6"
+        stroke-width="10"
         stroke-linecap="round"
-        stroke-linejoin="round"/>
+        stroke-linejoin="round"
+        opacity="0.92"/>
+  <circle cx="232" cy="144" r="8" fill="#2563eb"/>
+  <circle cx="646" cy="144" r="8" fill="#14b8a6"/>
 
-  <circle cx="40" cy="130" r="12" fill="#3b82f6"/>
-  <circle cx="628" cy="130" r="12" fill="#2dd4bf"/>
-
-  <text x="432" y="174"
-        font-family="Arial, Helvetica, Liberation Sans, sans-serif"
-        font-size="20"
-        font-weight="700"
-        letter-spacing="7.4"
-        fill="#8b95a1"
-        opacity="0.86">AUTOMATION</text>
+  <text x="232" y="188"
+        font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+        font-size="18"
+        font-weight="750"
+        letter-spacing="5.8"
+        fill="#64748b">AUTOMATION · INFRASTRUCTURE · AI</text>
 </svg>

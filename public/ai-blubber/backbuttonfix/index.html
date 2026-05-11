@@ -82,6 +82,7 @@
 
 <link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
 
+<link rel="stylesheet" href="https://melf.ch/custom.css">
 
 
   
@@ -170,6 +171,51 @@
   </aside>
   <main>
     
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+    <img src="https://melf.ch/img/melfware-logo.svg" alt="" class="brand-mark">
+    <span>Stefan &quot;Melf&quot; Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog">Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro">IT Pro</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/projects">Projects</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin">Melflin</a>
+      
+    
+      
+      
+      <a class="instant active" href="https://melf.ch/ai-blubber">AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read">Books</a>
+      
+    
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub</a>
+      
+    
+  </div>
+</nav>
+
+    
 <header>
   <nav>
     <a id="back-link" href="#">← Back</a>
@@ -216,27 +262,23 @@
 <h3 id="1-modified-the-back-link-macro">1. Modified the Back Link Macro<a class="zola-anchor" href="#1-modified-the-back-link-macro" aria-label="Anchor link for: 1-modified-the-back-link-macro" style="visibility: hidden;"></a>
 </h3>
 <p>Overrode the theme's macro to set the href to <code>#</code> instead of the section path:</p>
-<pre data-lang="html" class="language-html "><code class="language-html" data-lang="html">{% macro back_link(path) %}
-&lt;header&gt;
-  &lt;nav&gt;
-    &lt;a id=&quot;back-link&quot; href=&quot;#&quot;&gt;← {{ config.extra.back_link_text }}&lt;&#x2F;a&gt;
-  &lt;&#x2F;nav&gt;
-&lt;&#x2F;header&gt;
-{% endmacro %}
-</code></pre>
-<h3 id="2-updated-the-enablebacklink-function">2. Updated the enableBackLink Function<a class="zola-anchor" href="#2-updated-the-enablebacklink-function" aria-label="Anchor link for: 2-updated-the-enablebacklink-function" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="html"><span class="giallo-l"><span>{% macro back_link(path) %}</span></span>
+<span class="giallo-l"><span>&lt;</span><span style="color: #85E89D;">header</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  &lt;</span><span style="color: #85E89D;">nav</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #85E89D;">a</span><span style="color: #B392F0;"> id</span><span>=</span><span style="color: #9ECBFF;">&quot;back-link&quot;</span><span style="color: #B392F0;"> href</span><span>=</span><span style="color: #9ECBFF;">&quot;#&quot;</span><span>&gt;← {{ config.extra.back_link_text }}&lt;/</span><span style="color: #85E89D;">a</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  &lt;/</span><span style="color: #85E89D;">nav</span><span>&gt;</span></span>
+<span class="giallo-l"><span>&lt;/</span><span style="color: #85E89D;">header</span><span>&gt;</span></span>
+<span class="giallo-l"><span>{% endmacro %}</span></span></code></pre><h3 id="2-updated-the-enablebacklink-function">2. Updated the enableBackLink Function<a class="zola-anchor" href="#2-updated-the-enablebacklink-function" aria-label="Anchor link for: 2-updated-the-enablebacklink-function" style="visibility: hidden;"></a>
 </h3>
 <p>Changed the function to always prevent the default link behavior and use <code>history.back()</code>:</p>
-<pre data-lang="javascript" class="language-javascript "><code class="language-javascript" data-lang="javascript">function enableBackLink() {
-  const backLink = document.querySelector(&#x27;#back-link&#x27;);
-  if (!backLink) return;
-  backLink.addEventListener(&#x27;click&#x27;, (e) =&gt; {
-    e.preventDefault();
-    history.back();
-  });
-}
-</code></pre>
-<h3 id="3-template-override">3. Template Override<a class="zola-anchor" href="#3-template-override" aria-label="Anchor link for: 3-template-override" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="javascript"><span class="giallo-l"><span style="color: #F97583;">function</span><span style="color: #B392F0;"> enableBackLink</span><span>() {</span></span>
+<span class="giallo-l"><span style="color: #F97583;">  const</span><span style="color: #79B8FF;"> backLink</span><span style="color: #F97583;"> =</span><span> document.</span><span style="color: #B392F0;">querySelector</span><span>(</span><span style="color: #9ECBFF;">&#39;#back-link&#39;</span><span>);</span></span>
+<span class="giallo-l"><span style="color: #F97583;">  if</span><span> (</span><span style="color: #F97583;">!</span><span>backLink)</span><span style="color: #F97583;"> return</span><span>;</span></span>
+<span class="giallo-l"><span>  backLink.</span><span style="color: #B392F0;">addEventListener</span><span>(</span><span style="color: #9ECBFF;">&#39;click&#39;</span><span>, (</span><span style="color: #FFAB70;">e</span><span>)</span><span style="color: #F97583;"> =&gt;</span><span> {</span></span>
+<span class="giallo-l"><span>    e.</span><span style="color: #B392F0;">preventDefault</span><span>();</span></span>
+<span class="giallo-l"><span>    history.</span><span style="color: #B392F0;">back</span><span>();</span></span>
+<span class="giallo-l"><span>  });</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre><h3 id="3-template-override">3. Template Override<a class="zola-anchor" href="#3-template-override" aria-label="Anchor link for: 3-template-override" style="visibility: hidden;"></a>
 </h3>
 <p>Created <code>/templates/macros/prose.html</code> to override the theme's macro, ensuring the change applies to all pages using the back link.</p>
 <h2 id="key-features-of-the-fix">Key Features of the Fix<a class="zola-anchor" href="#key-features-of-the-fix" aria-label="Anchor link for: key-features-of-the-fix" style="visibility: hidden;"></a>
@@ -274,7 +316,7 @@
 <footer>
   <div class="left">
     <div class="copyright">
-      © 2025 by S.Moser
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
       
       <span>|</span>
       Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>

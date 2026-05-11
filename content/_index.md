@@ -34,3 +34,10 @@ I build infrastructure, automation, and AI-supported workflows that remove frict
 **Make Everything Less Frustrating With Automation & Robotic Execution**
 
 This site is my working logbook for Azure, endpoint management, practical AI assistants, automation design, projects, books, and the human side of making systems useful.
+
+## What you’ll find here
+
+- **Practical infrastructure notes** from Azure, Intune, AVD, endpoint management, and operations work.
+- **Automation patterns** that reduce repeated manual effort without creating fragile magic.
+- **AI assistant experiments** around Melflin, workflows, memory, delegation, and everyday usefulness.
+- **Reading and thinking notes** about systems, decisions, leadership, and better tools for calmer work.

@@ -82,6 +82,7 @@
 
 <link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
 
+<link rel="stylesheet" href="https://melf.ch/custom.css">
 
 
   
@@ -290,6 +291,51 @@
   </aside>
   <main>
     
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+    <img src="https://melf.ch/img/melfware-logo.svg" alt="" class="brand-mark">
+    <span>Stefan &quot;Melf&quot; Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog">Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro">IT Pro</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/projects">Projects</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin">Melflin</a>
+      
+    
+      
+      
+      <a class="instant active" href="https://melf.ch/ai-blubber">AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read">Books</a>
+      
+    
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub</a>
+      
+    
+  </div>
+</nav>
+
+    
 <header>
   <nav>
     <a id="back-link" href="#">← Back</a>
@@ -341,24 +387,21 @@
 <h3 id="1-date-format-standardization">1. Date Format Standardization<a class="zola-anchor" href="#1-date-format-standardization" aria-label="Anchor link for: 1-date-format-standardization" style="visibility: hidden;"></a>
 </h3>
 <p>Updated all section configuration files to include time components:</p>
-<pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml"># Before
-date_format = &quot;%b %-d, %Y&quot;
-
-# After
-date_format = &quot;%b %-d, %Y at %H:%M&quot;
-</code></pre>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #6A737D;"># Before</span></span>
+<span class="giallo-l"><span>date_format =</span><span style="color: #9ECBFF;"> &quot;%b %-d, %Y&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #6A737D;"># After</span></span>
+<span class="giallo-l"><span>date_format =</span><span style="color: #9ECBFF;"> &quot;%b %-d, %Y at %H:%M&quot;</span></span></code></pre>
 <p>This change affects all sections: blog, ai-blubber, it-pro, read, projects, and organisation.</p>
 <h3 id="2-frontmatter-schema-enhancement">2. Frontmatter Schema Enhancement<a class="zola-anchor" href="#2-frontmatter-schema-enhancement" aria-label="Anchor link for: 2-frontmatter-schema-enhancement" style="visibility: hidden;"></a>
 </h3>
 <p>Extended post frontmatter to include both creation and modification timestamps with proper timezone information:</p>
-<pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml">+++
-title = &quot;Example Post&quot;
-date = 2025-12-21T16:00:00+01:00      # Creation timestamp (CET)
-updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
-# ... other fields
-+++
-</code></pre>
-<h3 id="3-timezone-handling">3. Timezone Handling<a class="zola-anchor" href="#3-timezone-handling" aria-label="Anchor link for: 3-timezone-handling" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">+++</span></span>
+<span class="giallo-l"><span>title =</span><span style="color: #9ECBFF;"> &quot;Example Post&quot;</span></span>
+<span class="giallo-l"><span>date =</span><span style="color: #79B8FF;"> 2025-12-21T16:00:00+01:00</span><span style="color: #6A737D;">      # Creation timestamp (CET)</span></span>
+<span class="giallo-l"><span>updated =</span><span style="color: #79B8FF;"> 2025-12-21T16:00:00+01:00</span><span style="color: #6A737D;">   # Last modified timestamp (CET)</span></span>
+<span class="giallo-l"><span style="color: #6A737D;"># ... other fields</span></span>
+<span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">+++</span></span></code></pre><h3 id="3-timezone-handling">3. Timezone Handling<a class="zola-anchor" href="#3-timezone-handling" aria-label="Anchor link for: 3-timezone-handling" style="visibility: hidden;"></a>
 </h3>
 <p>Implemented proper timezone support for Switzerland (Central European Time):</p>
 <ul>
@@ -372,59 +415,53 @@ updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
 <p>Created custom templates to display enhanced temporal information:</p>
 <h4 id="individual-post-template-templates-page-html">Individual Post Template (<code>templates/page.html</code>)<a class="zola-anchor" href="#individual-post-template-templates-page-html" aria-label="Anchor link for: individual-post-template-templates-page-html" style="visibility: hidden;"></a>
 </h4>
-<pre data-lang="html" class="language-html "><code class="language-html" data-lang="html">&lt;div class=&quot;post-meta&quot;&gt;
-  &lt;time datetime=&quot;{{ page.date | date(format=&#x27;%Y-%m-%dT%H:%M:%S%z&#x27;) }}&quot;&gt;
-    Created: {{ page.date | date(format=&#x27;%b %-d, %Y at %H:%M&#x27;) }}
-  &lt;&#x2F;time&gt;
-  {% if page.updated and page.updated != page.date %}
-  &lt;time datetime=&quot;{{ page.updated | date(format=&#x27;%Y-%m-%dT%H:%M:%S%z&#x27;) }}&quot;&gt;
-    • Updated: {{ page.updated | date(format=&#x27;%b %-d, %Y at %H:%M&#x27;) }}
-  &lt;&#x2F;time&gt;
-  {% endif %}
-  {% if page.extra.reading_time %}
-  &lt;span class=&quot;reading-time&quot;&gt;{{ page.extra.reading_time }} min read&lt;&#x2F;span&gt;
-  {% endif %}
-&lt;&#x2F;div&gt;
-</code></pre>
-<h4 id="homepage-recent-posts-templates-home-html">Homepage Recent Posts (<code>templates/home.html</code>)<a class="zola-anchor" href="#homepage-recent-posts-templates-home-html" aria-label="Anchor link for: homepage-recent-posts-templates-home-html" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="html"><span class="giallo-l"><span>&lt;</span><span style="color: #85E89D;">div</span><span style="color: #B392F0;"> class</span><span>=</span><span style="color: #9ECBFF;">&quot;post-meta&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  &lt;</span><span style="color: #85E89D;">time</span><span style="color: #B392F0;"> datetime</span><span>=</span><span style="color: #9ECBFF;">&quot;{{ page.date | date(format=&#39;%Y-%m-%dT%H:%M:%S%z&#39;) }}&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    Created: {{ page.date | date(format=&#39;%b %-d, %Y at %H:%M&#39;) }}</span></span>
+<span class="giallo-l"><span>  &lt;/</span><span style="color: #85E89D;">time</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  {% if page.updated and page.updated != page.date %}</span></span>
+<span class="giallo-l"><span>  &lt;</span><span style="color: #85E89D;">time</span><span style="color: #B392F0;"> datetime</span><span>=</span><span style="color: #9ECBFF;">&quot;{{ page.updated | date(format=&#39;%Y-%m-%dT%H:%M:%S%z&#39;) }}&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    • Updated: {{ page.updated | date(format=&#39;%b %-d, %Y at %H:%M&#39;) }}</span></span>
+<span class="giallo-l"><span>  &lt;/</span><span style="color: #85E89D;">time</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  {% endif %}</span></span>
+<span class="giallo-l"><span>  {% if page.extra.reading_time %}</span></span>
+<span class="giallo-l"><span>  &lt;</span><span style="color: #85E89D;">span</span><span style="color: #B392F0;"> class</span><span>=</span><span style="color: #9ECBFF;">&quot;reading-time&quot;</span><span>&gt;{{ page.extra.reading_time }} min read&lt;/</span><span style="color: #85E89D;">span</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  {% endif %}</span></span>
+<span class="giallo-l"><span>&lt;/</span><span style="color: #85E89D;">div</span><span>&gt;</span></span></code></pre><h4 id="homepage-recent-posts-templates-home-html">Homepage Recent Posts (<code>templates/home.html</code>)<a class="zola-anchor" href="#homepage-recent-posts-templates-home-html" aria-label="Anchor link for: homepage-recent-posts-templates-home-html" style="visibility: hidden;"></a>
 </h4>
-<pre data-lang="html" class="language-html "><code class="language-html" data-lang="html">&lt;span class=&quot;date&quot;&gt;
-  {{ post.date | date(format=section.extra.date_format) }}
-  {% if post.updated and post.updated != post.date %}
-  (updated {{ post.updated | date(format=section.extra.date_format) }})
-  {% endif %}
-&lt;&#x2F;span&gt;
-</code></pre>
-<h3 id="4-css-styling-enhancement">4. CSS Styling Enhancement<a class="zola-anchor" href="#4-css-styling-enhancement" aria-label="Anchor link for: 4-css-styling-enhancement" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="html"><span class="giallo-l"><span>&lt;</span><span style="color: #85E89D;">span</span><span style="color: #B392F0;"> class</span><span>=</span><span style="color: #9ECBFF;">&quot;date&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  {{ post.date | date(format=section.extra.date_format) }}</span></span>
+<span class="giallo-l"><span>  {% if post.updated and post.updated != post.date %}</span></span>
+<span class="giallo-l"><span>  (updated {{ post.updated | date(format=section.extra.date_format) }})</span></span>
+<span class="giallo-l"><span>  {% endif %}</span></span>
+<span class="giallo-l"><span>&lt;/</span><span style="color: #85E89D;">span</span><span>&gt;</span></span></code></pre><h3 id="4-css-styling-enhancement">4. CSS Styling Enhancement<a class="zola-anchor" href="#4-css-styling-enhancement" aria-label="Anchor link for: 4-css-styling-enhancement" style="visibility: hidden;"></a>
 </h3>
 <p>Added custom styling for timestamp display in <code>static/custom.css</code>:</p>
-<pre data-lang="css" class="language-css "><code class="language-css" data-lang="css">.post-meta {
-  margin: 1rem 0 2rem 0;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-accent);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.post-meta time {
-  color: var(--text-color);
-  font-weight: 500;
-}
-
-.post-meta .reading-time {
-  background: var(--primary-accent);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-</code></pre>
-<h2 id="migration-strategy">Migration Strategy<a class="zola-anchor" href="#migration-strategy" aria-label="Anchor link for: migration-strategy" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="css"><span class="giallo-l"><span style="color: #B392F0;">.post-meta</span><span> {</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  margin</span><span>:</span><span style="color: #79B8FF;"> 1</span><span style="color: #F97583;">rem</span><span style="color: #79B8FF;"> 0 2</span><span style="color: #F97583;">rem</span><span style="color: #79B8FF;"> 0</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  padding</span><span>:</span><span style="color: #79B8FF;"> 1</span><span style="color: #F97583;">rem</span><span style="color: #79B8FF;"> 0</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  border-bottom</span><span>:</span><span style="color: #79B8FF;"> 1</span><span style="color: #F97583;">px</span><span style="color: #79B8FF;"> solid var</span><span>(</span><span style="color: #FFAB70;">--border-accent</span><span>);</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  display</span><span>:</span><span style="color: #79B8FF;"> flex</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  flex-wrap</span><span>:</span><span style="color: #79B8FF;"> wrap</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  align-items</span><span>:</span><span style="color: #79B8FF;"> center</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  gap</span><span>:</span><span style="color: #79B8FF;"> 1</span><span style="color: #F97583;">rem</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  font-size</span><span>:</span><span style="color: #79B8FF;"> 0.9</span><span style="color: #F97583;">rem</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  color</span><span>:</span><span style="color: #79B8FF;"> var</span><span>(</span><span style="color: #FFAB70;">--text-muted</span><span>);</span></span>
+<span class="giallo-l"><span>}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #B392F0;">.post-meta</span><span style="color: #85E89D;"> time</span><span> {</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  color</span><span>:</span><span style="color: #79B8FF;"> var</span><span>(</span><span style="color: #FFAB70;">--text-color</span><span>);</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  font-weight</span><span>:</span><span style="color: #79B8FF;"> 500</span><span>;</span></span>
+<span class="giallo-l"><span>}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #B392F0;">.post-meta .reading-time</span><span> {</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  background</span><span>:</span><span style="color: #79B8FF;"> var</span><span>(</span><span style="color: #FFAB70;">--primary-accent</span><span>);</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  color</span><span>:</span><span style="color: #79B8FF;"> white</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  padding</span><span>:</span><span style="color: #79B8FF;"> 0.25</span><span style="color: #F97583;">rem</span><span style="color: #79B8FF;"> 0.75</span><span style="color: #F97583;">rem</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  border-radius</span><span>:</span><span style="color: #79B8FF;"> 12</span><span style="color: #F97583;">px</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  font-size</span><span>:</span><span style="color: #79B8FF;"> 0.8</span><span style="color: #F97583;">rem</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">  font-weight</span><span>:</span><span style="color: #79B8FF;"> 500</span><span>;</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre><h2 id="migration-strategy">Migration Strategy<a class="zola-anchor" href="#migration-strategy" aria-label="Anchor link for: migration-strategy" style="visibility: hidden;"></a>
 </h2>
 <h3 id="existing-content-updates">Existing Content Updates<a class="zola-anchor" href="#existing-content-updates" aria-label="Anchor link for: existing-content-updates" style="visibility: hidden;"></a>
 </h3>
@@ -442,11 +479,9 @@ updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
 <h3 id="visual-design">Visual Design<a class="zola-anchor" href="#visual-design" aria-label="Anchor link for: visual-design" style="visibility: hidden;"></a>
 </h3>
 <p>The timestamp display uses semantic HTML with proper <code>datetime</code> attributes for accessibility and SEO:</p>
-<pre data-lang="html" class="language-html "><code class="language-html" data-lang="html">&lt;time datetime=&quot;2025-12-21T16:00:00+01:00&quot;&gt;
-  Created: Dec 21, 2025 at 16:00
-&lt;&#x2F;time&gt;
-</code></pre>
-<h3 id="information-hierarchy">Information Hierarchy<a class="zola-anchor" href="#information-hierarchy" aria-label="Anchor link for: information-hierarchy" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="html"><span class="giallo-l"><span>&lt;</span><span style="color: #85E89D;">time</span><span style="color: #B392F0;"> datetime</span><span>=</span><span style="color: #9ECBFF;">&quot;2025-12-21T16:00:00+01:00&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  Created: Dec 21, 2025 at 16:00</span></span>
+<span class="giallo-l"><span>&lt;/</span><span style="color: #85E89D;">time</span><span>&gt;</span></span></code></pre><h3 id="information-hierarchy">Information Hierarchy<a class="zola-anchor" href="#information-hierarchy" aria-label="Anchor link for: information-hierarchy" style="visibility: hidden;"></a>
 </h3>
 <ul>
 <li><strong>Primary</strong>: Creation date (always visible)</li>
@@ -547,31 +582,26 @@ updated = 2025-12-21T16:00:00+01:00   # Last modified timestamp (CET)
 </h2>
 <h3 id="date-format-configuration">Date Format Configuration<a class="zola-anchor" href="#date-format-configuration" aria-label="Anchor link for: date-format-configuration" style="visibility: hidden;"></a>
 </h3>
-<pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml"># In content&#x2F;blog&#x2F;_index.md
-date_format = &quot;%b %-d, %Y at %H:%M&quot;
-</code></pre>
-<h3 id="post-frontmatter">Post Frontmatter<a class="zola-anchor" href="#post-frontmatter" aria-label="Anchor link for: post-frontmatter" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #6A737D;"># In content/blog/_index.md</span></span>
+<span class="giallo-l"><span>date_format =</span><span style="color: #9ECBFF;"> &quot;%b %-d, %Y at %H:%M&quot;</span></span></code></pre><h3 id="post-frontmatter">Post Frontmatter<a class="zola-anchor" href="#post-frontmatter" aria-label="Anchor link for: post-frontmatter" style="visibility: hidden;"></a>
 </h3>
-<pre data-lang="toml" class="language-toml "><code class="language-toml" data-lang="toml">+++
-title = &quot;Enhanced Timestamps&quot;
-date = 2025-12-21T16:00:00+01:00
-updated = 2025-12-21T16:30:00+01:00
-draft = false
-+++
-</code></pre>
-<h3 id="template-usage">Template Usage<a class="zola-anchor" href="#template-usage" aria-label="Anchor link for: template-usage" style="visibility: hidden;"></a>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">+++</span></span>
+<span class="giallo-l"><span>title =</span><span style="color: #9ECBFF;"> &quot;Enhanced Timestamps&quot;</span></span>
+<span class="giallo-l"><span>date =</span><span style="color: #79B8FF;"> 2025-12-21T16:00:00+01:00</span></span>
+<span class="giallo-l"><span>updated =</span><span style="color: #79B8FF;"> 2025-12-21T16:30:00+01:00</span></span>
+<span class="giallo-l"><span>draft =</span><span style="color: #79B8FF;"> false</span></span>
+<span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">+++</span></span></code></pre><h3 id="template-usage">Template Usage<a class="zola-anchor" href="#template-usage" aria-label="Anchor link for: template-usage" style="visibility: hidden;"></a>
 </h3>
-<pre data-lang="html" class="language-html "><code class="language-html" data-lang="html">&lt;!-- Individual posts --&gt;
-&lt;time datetime=&quot;{{ page.date | date(format=&#x27;%Y-%m-%dT%H:%M:%S%z&#x27;) }}&quot;&gt;
-  Created: {{ page.date | date(format=&#x27;%b %-d, %Y at %H:%M&#x27;) }}
-&lt;&#x2F;time&gt;
-
-&lt;!-- Homepage listings --&gt;
-{{ post.date | date(format=section.extra.date_format) }}
-{% if post.updated and post.updated != post.date %}
-(updated {{ post.updated | date(format=section.extra.date_format) }})
-{% endif %}
-</code></pre>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="html"><span class="giallo-l"><span style="color: #6A737D;">&lt;!-- Individual posts --&gt;</span></span>
+<span class="giallo-l"><span>&lt;</span><span style="color: #85E89D;">time</span><span style="color: #B392F0;"> datetime</span><span>=</span><span style="color: #9ECBFF;">&quot;{{ page.date | date(format=&#39;%Y-%m-%dT%H:%M:%S%z&#39;) }}&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>  Created: {{ page.date | date(format=&#39;%b %-d, %Y at %H:%M&#39;) }}</span></span>
+<span class="giallo-l"><span>&lt;/</span><span style="color: #85E89D;">time</span><span>&gt;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #6A737D;">&lt;!-- Homepage listings --&gt;</span></span>
+<span class="giallo-l"><span>{{ post.date | date(format=section.extra.date_format) }}</span></span>
+<span class="giallo-l"><span>{% if post.updated and post.updated != post.date %}</span></span>
+<span class="giallo-l"><span>(updated {{ post.updated | date(format=section.extra.date_format) }})</span></span>
+<span class="giallo-l"><span>{% endif %}</span></span></code></pre>
 <p>This implementation demonstrates how small, thoughtful improvements to information architecture can significantly enhance user experience and content credibility.</p>
 
       </article>
@@ -589,7 +619,7 @@ draft = false
 <footer>
   <div class="left">
     <div class="copyright">
-      © 2025 by S.Moser
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
       
       <span>|</span>
       Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
