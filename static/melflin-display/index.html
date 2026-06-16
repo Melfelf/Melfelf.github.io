@@ -7,12 +7,13 @@
   <style>
     body { margin: 0; background: #fff; color: #111; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: none; text-rendering: geometricPrecision; }
     .page { position: relative; width: 800px; height: 480px; margin: 0 auto; box-sizing: border-box; padding: 22px 24px 18px 24px; display: grid; grid-template-rows: auto 1fr; gap: 14px; overflow: hidden; background: #fff; }
-    .header { display: grid; grid-template-columns: 1fr 1fr; align-items: end; border-bottom: 3px solid #111; padding-bottom: 10px; gap: 18px; }
+    .header { display: grid; grid-template-columns: 1fr 1.28fr; align-items: end; border-bottom: 3px solid #111; padding-bottom: 10px; gap: 18px; }
     .left-header { display:flex; align-items:flex-end; gap:16px; }
     .title-big { font-size: 38px; font-weight: 800; line-height: 1; margin: 0; letter-spacing: -0.03em; }
     .right-header { display: grid; grid-template-columns: auto auto; justify-content: end; align-items: end; gap: 12px; text-align:right; }
-    .rbs-title { font-size: 16px; font-weight: 800; line-height: 1.2; }
-    .rbs-times { margin-top: 6px; font-size: 21px; font-weight: 800; line-height: 1.2; }
+    .transit-header { min-width: 250px; }
+    .rbs-title { font-size: 16px; font-weight: 800; line-height: 1.2; white-space: nowrap; }
+    .rbs-times { margin-top: 6px; font-size: 21px; font-weight: 800; line-height: 1.2; white-space: nowrap; }
     .content { display: grid; grid-template-columns: 1.52fr 0.92fr; gap: 18px; min-height: 0; }
     .events { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 10px; min-height: 0; }
     .event-card { border: 3px solid #111; border-radius: 14px; padding: 8px 12px 10px 12px; display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
@@ -36,8 +37,8 @@
     .note { font-size: 18px; line-height: 1.26; font-weight: 800; white-space: pre-line; }
     .note-secondary { margin-top: 8px; font-size: 14px; line-height: 1.28; font-weight: 700; color: #222; }
     .update-stamp { position: absolute; right: 24px; bottom: 18px; font-size: 11px; color: #444; font-weight: 800; }
-    .button-legend { display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; gap: 4px; font-weight: 900; color: #111; }
-    .button-hint { display: grid; grid-template-rows: auto auto; gap: 2px; min-width: 67px; border: 2px solid #111; border-radius: 8px; padding: 4px 6px; background: #fff; text-align: left; }
+    .button-legend { display: flex; justify-content: flex-end; align-items: stretch; gap: 6px; font-weight: 900; color: #111; }
+    .button-hint { display: grid; grid-template-rows: auto auto; gap: 2px; min-width: 62px; border: 2px solid #111; border-radius: 8px; padding: 4px 6px; background: #fff; text-align: left; }
     .button-key { color: #555; text-transform: uppercase; font-size: 10px; line-height: 1; }
     .button-action { color: #111; font-size: 13px; line-height: 1; }
   </style>
@@ -53,7 +54,7 @@
           <div class='button-hint' data-feedback='seen'><span class='button-key'>Weiss 1</span><span class='button-action'>Gesehen</span></div>
           <div class='button-hint' data-feedback='snooze'><span class='button-key'>Weiss 2</span><span class='button-action'>Später</span></div>
         </div>
-        <div>
+        <div class='transit-header'>
           <div class='rbs-title'>Nächste 4 RBS-Bähnli nach Bern</div>
           <div class='rbs-times' data-transit-times>05:18 - 05:39 - 05:54 - 06:09</div>
         </div>
@@ -107,12 +108,12 @@
         </div>
         <div class='panel'>
           <h2>Melflin</h2>
-          <div class='note'>Nicht alles gleichzeitig. Aber das Wichtige rechtzeitig.</div>
-          <div class='note-secondary'>Heute im Blick: Arthur: Pausendisco · Do 18.06. ganztägig</div>
+          <div class='note'>Später wieder.</div>
+          <div class='note-secondary'>Der Hinweis ist für 60 Minuten zurückgestellt.</div>
         </div>
       </div>
     </div>
-    <div class='update-stamp'>Letztes Update 16.06. 23:16</div>
+    <div class='update-stamp'>Letztes Update 16.06. 23:19</div>
   </div>
   <script>
     (() => {
