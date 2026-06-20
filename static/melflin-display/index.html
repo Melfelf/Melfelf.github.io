@@ -14,6 +14,7 @@
     .transit-header { min-width: 250px; }
     .rbs-title { font-size: 16px; font-weight: 800; line-height: 1.2; white-space: nowrap; }
     .rbs-times { margin-top: 6px; font-size: 21px; font-weight: 800; line-height: 1.2; white-space: nowrap; }
+    .device-status { margin-bottom: 6px; font-size: 13px; color: #444; font-weight: 800; line-height: 1; white-space: nowrap; }
     .content { display: grid; grid-template-columns: 1.52fr 0.92fr; gap: 18px; min-height: 0; }
     .events { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 10px; min-height: 0; }
     .event-card { border: 3px solid #111; border-radius: 14px; padding: 8px 12px 10px 12px; display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
@@ -36,7 +37,6 @@
     .subline-moon { margin-top: 8px; font-size: 13px; color: #444; }
     .note { font-size: 18px; line-height: 1.26; font-weight: 800; white-space: pre-line; }
     .note-secondary { margin-top: 8px; font-size: 14px; line-height: 1.28; font-weight: 700; color: #222; }
-    .device-status { position: absolute; left: 24px; bottom: 18px; font-size: 11px; color: #444; font-weight: 800; }
     .update-stamp { position: absolute; right: 24px; bottom: 18px; font-size: 11px; color: #444; font-weight: 800; }
     .button-legend { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 540px; font-weight: 900; color: #111; }
     .button-hint { display: grid; grid-template-rows: auto 1fr; gap: 3px; height: 45px; border: 2px solid #111; border-radius: 6px; padding: 4px 8px 5px; background: #fff; text-align: center; box-sizing: border-box; overflow: hidden; }
@@ -55,8 +55,9 @@
       </div>
       <div class='right-header'>
         <div class='transit-header'>
+          <div class='device-status'>Akku 75.9 % · 3.92 V</div>
           <div class='rbs-title'>Nächste 4 RBS-Bähnli nach Bern</div>
-          <div class='rbs-times' data-transit-times>19:39 - 19:54 - 20:09 - 20:24</div>
+          <div class='rbs-times' data-transit-times>20:09 - 20:24 - 20:39 - 20:54</div>
         </div>
       </div>
     </div>
@@ -103,17 +104,16 @@
       <div class='side'>
         <div class='panel panel-weather'>
           <div class='panel-head'><h2>Wetter · Bern</h2><div class='weather-icons'><div class='weather-icon' aria-label='Wetter'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='3.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='24' cy='24' r='9'/><path d='M24 8v6M24 34v6M8 24h6M34 24h6M13 13l4 4M31 31l4 4M13 35l4-4M31 17l4-4'/></g></svg></div></div></div>
-          <div class='subline'>Draussen: 27.7°C · klar</div><div class='subline'>Wohnzimmer: 24.3°C · innen</div><div class='subline'>In 3h: 22.2°C · klar</div><div class='subline'>In 6h: 17.4°C · klar</div>
+          <div class='subline'>Draussen: 27.4°C · klar</div><div class='subline'>Wohnzimmer: 24.3°C · innen</div><div class='subline'>In 3h: 20.1°C · überwiegend klar</div><div class='subline'>In 6h: 17.0°C · überwiegend klar</div>
         </div>
         <div class='panel'>
           <h2>Melflin</h2>
-          <div class='note'>Ruhig bleiben. Scharf denken. Einfach handeln.</div>
+          <div class='note'>Ein klarer nächster Schritt schlägt zehn lose Absichten.</div>
           <div class='note-secondary'>Als Nächstes: Türli duschen · So 21.06. 20:00</div>
         </div>
       </div>
     </div>
-    <div class='device-status'>Akku 64.3 % · 3.83 V</div>
-    <div class='update-stamp'>Letztes Update 20.06. 19:37</div>
+    <div class='update-stamp'>Letztes Update 20.06. 20:03</div>
   </div>
   <script>
     (() => {
