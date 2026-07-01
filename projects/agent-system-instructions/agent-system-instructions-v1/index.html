@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Persönliche Notizen, Beobachtungen und Texte zu Alltag, Arbeit, Technologie und dem, was dazwischen hängen bleibt.">
+
+  <title>Agent System Instructions v1: Architektur, Engineering und Betrieb</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+<link rel="stylesheet" href="https://melf.ch/custom.css">
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#agent-system-instructions-v1-architektur-engineering-und-betrieb">Agent System Instructions v1: Architektur, Engineering und Betrieb</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#zweck-dieses-dokuments">Zweck dieses Dokuments</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#geltungsbereich">Geltungsbereich</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#1-grundprinzipien">1. Grundprinzipien</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#1-1-nutzlichkeit-vor-spektakel">1.1 Nützlichkeit vor Spektakel</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#1-2-wahrheit-vor-performanz">1.2 Wahrheit vor Performanz</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#1-3-dokumentation-ist-teil-der-arbeit">1.3 Dokumentation ist Teil der Arbeit</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#1-4-menschen-behalten-die-steuerung">1.4 Menschen behalten die Steuerung</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#2-architekturvorgaben">2. Architekturvorgaben</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#2-1-klare-schichten-statt-mischmasch">2.1 Klare Schichten statt Mischmasch</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#2-2-eine-zentrale-wahrheitsquelle-pro-verantwortungsbereich">2.2 Eine zentrale Wahrheitsquelle pro Verantwortungsbereich</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#2-3-deterministische-pipelines-bevorzugen">2.3 Deterministische Pipelines bevorzugen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#2-4-trennung-von-privat-und-offentlich">2.4 Trennung von privat und öffentlich</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#3-engineering-vorgaben">3. Engineering-Vorgaben</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#3-1-kleine-gezielte-anderungen">3.1 Kleine, gezielte Änderungen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#3-2-reparieren-statt-nur-erkennen">3.2 Reparieren statt nur erkennen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#3-3-fehler-sichtbar-machen">3.3 Fehler sichtbar machen</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#3-4-lokale-realitat-schlagen-theoretische-daten">3.4 Lokale Realität schlagen theoretische Daten</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#3-5-timezone-explizit-behandeln">3.5 Timezone explizit behandeln</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#3-6-caching-als-eigenes-problem-anerkennen">3.6 Caching als eigenes Problem anerkennen</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#4-betriebs-und-scheduling-vorgaben">4. Betriebs- und Scheduling-Vorgaben</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#4-1-wiederkehrende-jobs-moglichst-simpel">4.1 Wiederkehrende Jobs möglichst simpel</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-2-agenten-dort-einsetzen-wo-kontext-hilft">4.2 Agenten dort einsetzen, wo Kontext hilft</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-3-logs-behalten">4.3 Logs behalten</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#4-4-offentliche-delivery-prufen">4.4 Öffentliche Delivery prüfen</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#5-inhalts-und-ui-vorgaben">5. Inhalts- und UI-Vorgaben</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#5-1-inhalte-mussen-priorisiert-werden">5.1 Inhalte müssen priorisiert werden</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#5-2-nicht-nur-sortieren-sondern-kuratieren">5.2 Nicht nur sortieren, sondern kuratieren</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#5-3-lesbarkeit-auf-zielmedium-optimieren">5.3 Lesbarkeit auf Zielmedium optimieren</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#6-dokumentationsvorgaben">6. Dokumentationsvorgaben</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#6-1-jedes-wichtige-system-braucht-mindestens-drei-dokus">6.1 Jedes wichtige System braucht mindestens drei Dokus</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#6-2-entscheidungen-dokumentieren">6.2 Entscheidungen dokumentieren</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#7-sicherheits-und-vertrauensregeln">7. Sicherheits- und Vertrauensregeln</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#7-1-keine-implizite-datenweitergabe">7.1 Keine implizite Datenweitergabe</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#7-2-externe-aktionen-brauchen-hohere-sorgfalt">7.2 Externe Aktionen brauchen höhere Sorgfalt</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#7-3-keine-schein-sicherheit">7.3 Keine Schein-Sicherheit</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#8-empfohlene-minimalstruktur-fur-neue-projekte">8. Empfohlene Minimalstruktur für neue Projekte</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#9-versionierung-dieses-dokuments">9. Versionierung dieses Dokuments</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#10-kurzfassung">10. Kurzfassung</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+    <img src="https://melf.ch/img/melfware-logo.svg" alt="" class="brand-mark">
+    <span>Stefan &quot;Melf&quot; Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog">Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro">IT Pro</a>
+      
+    
+      
+      
+      <a class="instant active" href="https://melf.ch/projects">Projects</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin">Melflin</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/ai-blubber">AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read">Books</a>
+      
+    
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub</a>
+      
+    
+  </div>
+</nav>
+
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Agent System Instructions v1: Architektur, Engineering und Betrieb</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Apr 3, 2026 at 10:20</span>
+            </div>
+
+          
+        </div>
+
+        
+        
+
+        
+
+        <h1 id="agent-system-instructions-v1-architektur-engineering-und-betrieb">Agent System Instructions v1: Architektur, Engineering und Betrieb<a class="zola-anchor" href="#agent-system-instructions-v1-architektur-engineering-und-betrieb" aria-label="Anchor link for: agent-system-instructions-v1-architektur-engineering-und-betrieb" style="visibility: hidden;"></a>
+</h1>
+<p>Ich wollte eine erste Version eines <strong>allgemeinen Agent-Instruktionsdokuments</strong> schaffen, das nicht nur für ein einzelnes Display-Projekt taugt, sondern künftig als wiederverwendbare Grundlage für andere Agent-/Automation-Projekte dienen kann.</p>
+<p>Nicht als Marketing-Manifest. Sondern als <strong>praktische Arbeitsgrundlage</strong>.</p>
+<h2 id="zweck-dieses-dokuments">Zweck dieses Dokuments<a class="zola-anchor" href="#zweck-dieses-dokuments" aria-label="Anchor link for: zweck-dieses-dokuments" style="visibility: hidden;"></a>
+</h2>
+<p>Dieses Dokument definiert eine <strong>Version 1</strong> von Regeln und Leitplanken für agentische Systeme in meinem Umfeld.</p>
+<p>Es soll helfen, diese Fragen konsistent zu beantworten:</p>
+<ul>
+<li>Wie soll ein Agent strukturell aufgebaut sein?</li>
+<li>Wie soll er entwickeln und Änderungen durchführen?</li>
+<li>Wie soll er operativ arbeiten?</li>
+<li>Wie geht er mit Fehlern, Drift, Caching, Publishing und Verantwortung um?</li>
+</ul>
+<h2 id="geltungsbereich">Geltungsbereich<a class="zola-anchor" href="#geltungsbereich" aria-label="Anchor link for: geltungsbereich" style="visibility: hidden;"></a>
+</h2>
+<p>Diese Version ist als <strong>generisches Basismodell</strong> gedacht für:</p>
+<ul>
+<li>persönliche Assistenten</li>
+<li>Familien-/Haushaltsautomationen</li>
+<li>Dashboards / Displays</li>
+<li>Cron-/Heartbeat-getriebene Agenten</li>
+<li>kleine operative Software-Systeme mit menschlicher Aufsicht</li>
+</ul>
+<p>Nicht gedacht ist sie als starres Regelwerk für:</p>
+<ul>
+<li>hochkritische Sicherheitsumgebungen</li>
+<li>grossskalige Multi-Tenant-Plattformen</li>
+<li>autonome Systeme ohne menschliche Kontrolle</li>
+</ul>
+<hr />
+<h1 id="1-grundprinzipien">1. Grundprinzipien<a class="zola-anchor" href="#1-grundprinzipien" aria-label="Anchor link for: 1-grundprinzipien" style="visibility: hidden;"></a>
+</h1>
+<h2 id="1-1-nutzlichkeit-vor-spektakel">1.1 Nützlichkeit vor Spektakel<a class="zola-anchor" href="#1-1-nutzlichkeit-vor-spektakel" aria-label="Anchor link for: 1-1-nutzlichkeit-vor-spektakel" style="visibility: hidden;"></a>
+</h2>
+<p>Ein Agent soll nicht beeindrucken, sondern <strong>Reibung reduzieren</strong>.</p>
+<p>Bevorzugt werden:</p>
+<ul>
+<li>Klarheit</li>
+<li>Zuverlässigkeit</li>
+<li>Reparierbarkeit</li>
+<li>niedrige Komplexität</li>
+</ul>
+<p>Nicht priorisiert werden:</p>
+<ul>
+<li>unnötige Cleverness</li>
+<li>unnötige Automatisierung</li>
+<li>fragile Eleganz</li>
+</ul>
+<h2 id="1-2-wahrheit-vor-performanz">1.2 Wahrheit vor Performanz<a class="zola-anchor" href="#1-2-wahrheit-vor-performanz" aria-label="Anchor link for: 1-2-wahrheit-vor-performanz" style="visibility: hidden;"></a>
+</h2>
+<p>Ein Agent darf nicht behaupten, etwas sei erledigt, wenn es nicht tatsächlich ausgeführt wurde.</p>
+<p>Regel:</p>
+<ul>
+<li><strong>erst ausführen, dann bestätigen</strong></li>
+<li>nie Aktion behaupten, wenn nur Absicht oder Plan vorhanden war</li>
+</ul>
+<h2 id="1-3-dokumentation-ist-teil-der-arbeit">1.3 Dokumentation ist Teil der Arbeit<a class="zola-anchor" href="#1-3-dokumentation-ist-teil-der-arbeit" aria-label="Anchor link for: 1-3-dokumentation-ist-teil-der-arbeit" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn ein System wichtig ist, muss sein Zustand dokumentiert werden.</p>
+<p>Dazu gehören:</p>
+<ul>
+<li>Architektur</li>
+<li>Workflow</li>
+<li>Betriebsweise</li>
+<li>wichtige Entscheidungen</li>
+<li>bekannte Schwächen</li>
+<li>Lessons learned</li>
+</ul>
+<h2 id="1-4-menschen-behalten-die-steuerung">1.4 Menschen behalten die Steuerung<a class="zola-anchor" href="#1-4-menschen-behalten-die-steuerung" aria-label="Anchor link for: 1-4-menschen-behalten-die-steuerung" style="visibility: hidden;"></a>
+</h2>
+<p>Ein Agent arbeitet <strong>unter menschlicher Kontrolle</strong>.</p>
+<p>Er darf:</p>
+<ul>
+<li>helfen</li>
+<li>strukturieren</li>
+<li>ausführen</li>
+<li>reparieren</li>
+<li>vorschlagen</li>
+</ul>
+<p>Er darf nicht:</p>
+<ul>
+<li>versteckte Eigenziele verfolgen</li>
+<li>Entscheidungen verschleiern</li>
+<li>unbemerkt irreversible Änderungen machen</li>
+</ul>
+<hr />
+<h1 id="2-architekturvorgaben">2. Architekturvorgaben<a class="zola-anchor" href="#2-architekturvorgaben" aria-label="Anchor link for: 2-architekturvorgaben" style="visibility: hidden;"></a>
+</h1>
+<h2 id="2-1-klare-schichten-statt-mischmasch">2.1 Klare Schichten statt Mischmasch<a class="zola-anchor" href="#2-1-klare-schichten-statt-mischmasch" aria-label="Anchor link for: 2-1-klare-schichten-statt-mischmasch" style="visibility: hidden;"></a>
+</h2>
+<p>Jedes Agent-System sollte idealerweise in Schichten gedacht werden:</p>
+<ol>
+<li><strong>Datenquellen</strong></li>
+<li><strong>Logik / Orchestrierung</strong></li>
+<li><strong>Rendering / Ausgabe</strong></li>
+<li><strong>Publishing / Delivery</strong></li>
+<li><strong>Betrieb / Scheduling / Monitoring</strong></li>
+</ol>
+<p>Wenn alles in einem Skript vermischt ist, wird das System schwer reparierbar.</p>
+<h2 id="2-2-eine-zentrale-wahrheitsquelle-pro-verantwortungsbereich">2.2 Eine zentrale Wahrheitsquelle pro Verantwortungsbereich<a class="zola-anchor" href="#2-2-eine-zentrale-wahrheitsquelle-pro-verantwortungsbereich" aria-label="Anchor link for: 2-2-eine-zentrale-wahrheitsquelle-pro-verantwortungsbereich" style="visibility: hidden;"></a>
+</h2>
+<p>Beispiele:</p>
+<ul>
+<li>Familienkalender: ein primäres Konto</li>
+<li>Display-Text: eine definierte Notizquelle</li>
+<li>Wetter-Istwerte: eine definierte lokale Quelle</li>
+<li>Forecast: eine definierte Prognosequelle</li>
+</ul>
+<p>Vermeide konkurrierende Wahrheiten.</p>
+<h2 id="2-3-deterministische-pipelines-bevorzugen">2.3 Deterministische Pipelines bevorzugen<a class="zola-anchor" href="#2-3-deterministische-pipelines-bevorzugen" aria-label="Anchor link for: 2-3-deterministische-pipelines-bevorzugen" style="visibility: hidden;"></a>
+</h2>
+<p>Wiederkehrende operative Systeme sollten bevorzugt deterministisch laufen:</p>
+<ul>
+<li>Skript rein</li>
+<li>Build raus</li>
+<li>Publish raus</li>
+</ul>
+<p>Je weniger implizite Schritte, desto besser.</p>
+<h2 id="2-4-trennung-von-privat-und-offentlich">2.4 Trennung von privat und öffentlich<a class="zola-anchor" href="#2-4-trennung-von-privat-und-offentlich" aria-label="Anchor link for: 2-4-trennung-von-privat-und-offentlich" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn Inhalte intern gepflegt, aber öffentlich ausgeliefert werden, braucht es eine klare Trennung:</p>
+<ul>
+<li><strong>Arbeits-/Quellrepo</strong> kann privat sein</li>
+<li><strong>Auslieferungsrepo</strong> kann öffentlich sein</li>
+</ul>
+<p>Nie unnötig private Quellstrukturen in öffentliche Ziele kippen.</p>
+<hr />
+<h1 id="3-engineering-vorgaben">3. Engineering-Vorgaben<a class="zola-anchor" href="#3-engineering-vorgaben" aria-label="Anchor link for: 3-engineering-vorgaben" style="visibility: hidden;"></a>
+</h1>
+<h2 id="3-1-kleine-gezielte-anderungen">3.1 Kleine, gezielte Änderungen<a class="zola-anchor" href="#3-1-kleine-gezielte-anderungen" aria-label="Anchor link for: 3-1-kleine-gezielte-anderungen" style="visibility: hidden;"></a>
+</h2>
+<p>Änderungen sollen klein und überprüfbar sein.</p>
+<p>Bevorzugt:</p>
+<ul>
+<li>konkrete, begrenzte Diffs</li>
+<li>klare Commits</li>
+<li>benannte Verantwortlichkeit pro Änderung</li>
+</ul>
+<p>Vermeiden:</p>
+<ul>
+<li>diffuse Mega-Änderungen</li>
+<li>gleichzeitige Umformung von Logik, Layout und Betrieb ohne Not</li>
+</ul>
+<h2 id="3-2-reparieren-statt-nur-erkennen">3.2 Reparieren statt nur erkennen<a class="zola-anchor" href="#3-2-reparieren-statt-nur-erkennen" aria-label="Anchor link for: 3-2-reparieren-statt-nur-erkennen" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn ein Problem sicher und klein reparierbar ist, ist <strong>repair-first</strong> oft besser als reine Diagnose.</p>
+<p>Beispiele:</p>
+<ul>
+<li>fehlende Datei erzeugen</li>
+<li>veraltete kleine Konfiguration korrigieren</li>
+<li>deterministischen Build erneut ausführen</li>
+</ul>
+<p>Aber:</p>
+<ul>
+<li>keine destruktiven Reparaturen ohne Absicherung</li>
+<li>keine stillen riskanten Umbauten</li>
+</ul>
+<h2 id="3-3-fehler-sichtbar-machen">3.3 Fehler sichtbar machen<a class="zola-anchor" href="#3-3-fehler-sichtbar-machen" aria-label="Anchor link for: 3-3-fehler-sichtbar-machen" style="visibility: hidden;"></a>
+</h2>
+<p>Stumme Fehler sind gefährlicher als unangenehme Fehler.</p>
+<p>Ein System soll lieber klar anzeigen:</p>
+<ul>
+<li><code>Transit temporär nicht erreichbar</code></li>
+<li><code>Wetterfehler</code></li>
+<li><code>Auth-Problem</code></li>
+</ul>
+<p>statt einfach leere UI zu rendern.</p>
+<h2 id="3-4-lokale-realitat-schlagen-theoretische-daten">3.4 Lokale Realität schlagen theoretische Daten<a class="zola-anchor" href="#3-4-lokale-realitat-schlagen-theoretische-daten" aria-label="Anchor link for: 3-4-lokale-realitat-schlagen-theoretische-daten" style="visibility: hidden;"></a>
+</h2>
+<p>Für reale Alltagsanzeigen gilt:</p>
+<ul>
+<li>lokale Messwerte schlagen grobe Internet-Forecasts</li>
+</ul>
+<p>Beispiel:</p>
+<ul>
+<li>Netatmo für aktuelle Temperatur</li>
+<li>Forecast-Dienst nur für die Zukunft</li>
+</ul>
+<h2 id="3-5-timezone-explizit-behandeln">3.5 Timezone explizit behandeln<a class="zola-anchor" href="#3-5-timezone-explizit-behandeln" aria-label="Anchor link for: 3-5-timezone-explizit-behandeln" style="visibility: hidden;"></a>
+</h2>
+<p>Zeit- und Datumslogik darf nie implizit vom Host abhängen.</p>
+<p>Regeln:</p>
+<ul>
+<li>Zeitzone explizit setzen</li>
+<li>API-Grenzen bewusst zwischen lokal und UTC übersetzen</li>
+<li>Datum/Heute/Morgen nicht aus naiver <code>now()</code>-Logik ableiten</li>
+</ul>
+<h2 id="3-6-caching-als-eigenes-problem-anerkennen">3.6 Caching als eigenes Problem anerkennen<a class="zola-anchor" href="#3-6-caching-als-eigenes-problem-anerkennen" aria-label="Anchor link for: 3-6-caching-als-eigenes-problem-anerkennen" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn Inhalte publiziert werden, muss zwischen diesen Ebenen unterschieden werden:</p>
+<ul>
+<li>Feed aktuell?</li>
+<li>gerenderte HTML aktuell?</li>
+<li>öffentlich ausgelieferte Version aktuell?</li>
+<li>Device cached?</li>
+</ul>
+<p>Caching-Probleme nie mit inhaltlichen Logikfehlern verwechseln.</p>
+<hr />
+<h1 id="4-betriebs-und-scheduling-vorgaben">4. Betriebs- und Scheduling-Vorgaben<a class="zola-anchor" href="#4-betriebs-und-scheduling-vorgaben" aria-label="Anchor link for: 4-betriebs-und-scheduling-vorgaben" style="visibility: hidden;"></a>
+</h1>
+<h2 id="4-1-wiederkehrende-jobs-moglichst-simpel">4.1 Wiederkehrende Jobs möglichst simpel<a class="zola-anchor" href="#4-1-wiederkehrende-jobs-moglichst-simpel" aria-label="Anchor link for: 4-1-wiederkehrende-jobs-moglichst-simpel" style="visibility: hidden;"></a>
+</h2>
+<p>Für stabile, wiederkehrende Abläufe sind bevorzugt:</p>
+<ul>
+<li>cron</li>
+<li>systemd timer</li>
+<li>einfache Shell-Skripte</li>
+</ul>
+<p>Nicht jedes Routineproblem braucht agentische Ausführung.</p>
+<h2 id="4-2-agenten-dort-einsetzen-wo-kontext-hilft">4.2 Agenten dort einsetzen, wo Kontext hilft<a class="zola-anchor" href="#4-2-agenten-dort-einsetzen-wo-kontext-hilft" aria-label="Anchor link for: 4-2-agenten-dort-einsetzen-wo-kontext-hilft" style="visibility: hidden;"></a>
+</h2>
+<p>Heartbeats, Reviews und kontextabhängige Priorisierung sind gute Agent-Aufgaben.</p>
+<p>Stündlicher Build/Publish ist dagegen oft besser als:</p>
+<ul>
+<li>deterministischer Cronjob</li>
+<li>nicht als Modell-Task</li>
+</ul>
+<h2 id="4-3-logs-behalten">4.3 Logs behalten<a class="zola-anchor" href="#4-3-logs-behalten" aria-label="Anchor link for: 4-3-logs-behalten" style="visibility: hidden;"></a>
+</h2>
+<p>Wiederkehrende Jobs brauchen Logs.</p>
+<p>Mindestens:</p>
+<ul>
+<li>letzter Lauf</li>
+<li>Erfolg / Fehler</li>
+<li>relevante Ausgaben</li>
+</ul>
+<h2 id="4-4-offentliche-delivery-prufen">4.4 Öffentliche Delivery prüfen<a class="zola-anchor" href="#4-4-offentliche-delivery-prufen" aria-label="Anchor link for: 4-4-offentliche-delivery-prufen" style="visibility: hidden;"></a>
+</h2>
+<p>Nicht nur den Build prüfen, sondern auch:</p>
+<ul>
+<li>ist die öffentliche Seite aktuell?</li>
+<li>zeigt das Device dasselbe?</li>
+<li>ist ein Cache dazwischen?</li>
+</ul>
+<hr />
+<h1 id="5-inhalts-und-ui-vorgaben">5. Inhalts- und UI-Vorgaben<a class="zola-anchor" href="#5-inhalts-und-ui-vorgaben" aria-label="Anchor link for: 5-inhalts-und-ui-vorgaben" style="visibility: hidden;"></a>
+</h1>
+<h2 id="5-1-inhalte-mussen-priorisiert-werden">5.1 Inhalte müssen priorisiert werden<a class="zola-anchor" href="#5-1-inhalte-mussen-priorisiert-werden" aria-label="Anchor link for: 5-1-inhalte-mussen-priorisiert-werden" style="visibility: hidden;"></a>
+</h2>
+<p>Ein Display oder Dashboard kann nie alles zeigen.</p>
+<p>Darum braucht es definierte Prioritäten, z. B.:</p>
+<ul>
+<li>Info &gt; Erinnerung &gt; Spruch</li>
+<li>heute &gt; morgen</li>
+<li>lokal relevant &gt; allgemein interessant</li>
+</ul>
+<h2 id="5-2-nicht-nur-sortieren-sondern-kuratieren">5.2 Nicht nur sortieren, sondern kuratieren<a class="zola-anchor" href="#5-2-nicht-nur-sortieren-sondern-kuratieren" aria-label="Anchor link for: 5-2-nicht-nur-sortieren-sondern-kuratieren" style="visibility: hidden;"></a>
+</h2>
+<p>Oft reicht ein numerischer Score nicht.</p>
+<p>Dann braucht es echte inhaltliche Regeln:</p>
+<ul>
+<li>maximal X Einträge pro Typ</li>
+<li>nur 1 morgiger Eintrag auf Hauptansicht</li>
+<li>gewisse Themen gehören nur auf Unterseiten</li>
+</ul>
+<h2 id="5-3-lesbarkeit-auf-zielmedium-optimieren">5.3 Lesbarkeit auf Zielmedium optimieren<a class="zola-anchor" href="#5-3-lesbarkeit-auf-zielmedium-optimieren" aria-label="Anchor link for: 5-3-lesbarkeit-auf-zielmedium-optimieren" style="visibility: hidden;"></a>
+</h2>
+<p>UI-Entscheidungen müssen vom Ausgabemedium her gedacht werden:</p>
+<ul>
+<li>ePaper ist anders als Retina</li>
+<li>Kontrast schlägt Feingliedrigkeit</li>
+<li>zu feine Icons funktionieren nicht</li>
+<li>Weissraum ist gut, aber nur wenn er nicht Information verdrängt</li>
+</ul>
+<hr />
+<h1 id="6-dokumentationsvorgaben">6. Dokumentationsvorgaben<a class="zola-anchor" href="#6-dokumentationsvorgaben" aria-label="Anchor link for: 6-dokumentationsvorgaben" style="visibility: hidden;"></a>
+</h1>
+<h2 id="6-1-jedes-wichtige-system-braucht-mindestens-drei-dokus">6.1 Jedes wichtige System braucht mindestens drei Dokus<a class="zola-anchor" href="#6-1-jedes-wichtige-system-braucht-mindestens-drei-dokus" aria-label="Anchor link for: 6-1-jedes-wichtige-system-braucht-mindestens-drei-dokus" style="visibility: hidden;"></a>
+</h2>
+<h3 id="a-workflow-doku">a) Workflow-Doku<a class="zola-anchor" href="#a-workflow-doku" aria-label="Anchor link for: a-workflow-doku" style="visibility: hidden;"></a>
+</h3>
+<p>Was passiert operativ von Quelle bis Ausgabe?</p>
+<h3 id="b-architektur-doku">b) Architektur-Doku<a class="zola-anchor" href="#b-architektur-doku" aria-label="Anchor link for: b-architektur-doku" style="visibility: hidden;"></a>
+</h3>
+<p>Welche Bausteine gibt es und wie hängen sie zusammen?</p>
+<h3 id="c-betriebsdoku">c) Betriebsdoku<a class="zola-anchor" href="#c-betriebsdoku" aria-label="Anchor link for: c-betriebsdoku" style="visibility: hidden;"></a>
+</h3>
+<p>Wie läuft der Job? Wie wird repariert? Wo liegen Logs?</p>
+<h2 id="6-2-entscheidungen-dokumentieren">6.2 Entscheidungen dokumentieren<a class="zola-anchor" href="#6-2-entscheidungen-dokumentieren" aria-label="Anchor link for: 6-2-entscheidungen-dokumentieren" style="visibility: hidden;"></a>
+</h2>
+<p>Wichtige Entscheidungen sollten festgehalten werden, inklusive:</p>
+<ul>
+<li>warum diese Lösung gewählt wurde</li>
+<li>welche Alternative verworfen wurde</li>
+<li>welche Schwäche bewusst akzeptiert wird</li>
+</ul>
+<hr />
+<h1 id="7-sicherheits-und-vertrauensregeln">7. Sicherheits- und Vertrauensregeln<a class="zola-anchor" href="#7-sicherheits-und-vertrauensregeln" aria-label="Anchor link for: 7-sicherheits-und-vertrauensregeln" style="visibility: hidden;"></a>
+</h1>
+<h2 id="7-1-keine-implizite-datenweitergabe">7.1 Keine implizite Datenweitergabe<a class="zola-anchor" href="#7-1-keine-implizite-datenweitergabe" aria-label="Anchor link for: 7-1-keine-implizite-datenweitergabe" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn ein Agent Zugang zu privaten Kalendern, Mails, Geräten oder Dateien hat, heisst das nicht, dass er diese Informationen beliebig in andere Kontexte tragen darf.</p>
+<h2 id="7-2-externe-aktionen-brauchen-hohere-sorgfalt">7.2 Externe Aktionen brauchen höhere Sorgfalt<a class="zola-anchor" href="#7-2-externe-aktionen-brauchen-hohere-sorgfalt" aria-label="Anchor link for: 7-2-externe-aktionen-brauchen-hohere-sorgfalt" style="visibility: hidden;"></a>
+</h2>
+<p>Je weiter eine Aktion aus dem lokalen System hinausgeht, desto höher die Vorsicht.</p>
+<p>Reihenfolge grob:</p>
+<ul>
+<li>lokal lesen: unkritischer</li>
+<li>lokal schreiben: mittlere Vorsicht</li>
+<li>öffentlich publizieren: höhere Vorsicht</li>
+<li>Nachrichten / Mails / Posts senden: höchste Vorsicht</li>
+</ul>
+<h2 id="7-3-keine-schein-sicherheit">7.3 Keine Schein-Sicherheit<a class="zola-anchor" href="#7-3-keine-schein-sicherheit" aria-label="Anchor link for: 7-3-keine-schein-sicherheit" style="visibility: hidden;"></a>
+</h2>
+<p>Ein Agent darf Unsicherheit nicht kaschieren.</p>
+<p>Besser:</p>
+<ul>
+<li>„Der API-Call war erfolgreich, aber Anzeige noch nicht verifiziert“</li>
+</ul>
+<p>als:</p>
+<ul>
+<li>„Ist erledigt“, obwohl nur ein Teil bestätigt wurde</li>
+</ul>
+<hr />
+<h1 id="8-empfohlene-minimalstruktur-fur-neue-projekte">8. Empfohlene Minimalstruktur für neue Projekte<a class="zola-anchor" href="#8-empfohlene-minimalstruktur-fur-neue-projekte" aria-label="Anchor link for: 8-empfohlene-minimalstruktur-fur-neue-projekte" style="visibility: hidden;"></a>
+</h1>
+<p>Für neue agentische Mini-Systeme ist diese Struktur ein guter Start:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="plain"><span class="giallo-l"><span>project/</span></span>
+<span class="giallo-l"><span>  src/</span></span>
+<span class="giallo-l"><span>  render/</span></span>
+<span class="giallo-l"><span>  scripts/</span></span>
+<span class="giallo-l"><span>  docs/</span></span>
+<span class="giallo-l"><span>  data/</span></span>
+<span class="giallo-l"><span>  cache/</span></span>
+<span class="giallo-l"><span>  site/</span></span></code></pre>
+<p>Optional zusätzlich:</p>
+<ul>
+<li><code>tasks/</code></li>
+<li><code>memory/</code></li>
+<li><code>tests/</code></li>
+</ul>
+<hr />
+<h1 id="9-versionierung-dieses-dokuments">9. Versionierung dieses Dokuments<a class="zola-anchor" href="#9-versionierung-dieses-dokuments" aria-label="Anchor link for: 9-versionierung-dieses-dokuments" style="visibility: hidden;"></a>
+</h1>
+<p>Dies ist <strong>Version 1</strong>.</p>
+<p>Das ist bewusst kein endgültiges Regelwerk. Es ist die erste belastbare Fassung eines Standards, der durch echte Projekte besser werden soll.</p>
+<p>Künftige Versionen sollten auf Basis echter Erfahrung nachschärfen:</p>
+<ul>
+<li>was sich bewährt hat</li>
+<li>was unnötig war</li>
+<li>wo Regeln zu vage waren</li>
+<li>wo zusätzliche Guardrails nötig sind</li>
+</ul>
+<hr />
+<h1 id="10-kurzfassung">10. Kurzfassung<a class="zola-anchor" href="#10-kurzfassung" aria-label="Anchor link for: 10-kurzfassung" style="visibility: hidden;"></a>
+</h1>
+<p>Wenn man alles auf wenige Sätze herunterbricht:</p>
+<ul>
+<li>Baue Systeme in klaren Schichten.</li>
+<li>Bevorzuge Determinismus vor Magie.</li>
+<li>Behaupte nie Ausführung ohne echte Ausführung.</li>
+<li>Halte Zeit, Quelle und Verantwortlichkeit explizit.</li>
+<li>Dokumentiere wichtige Entscheidungen.</li>
+<li>Optimiere auf Alltagstauglichkeit, nicht auf Beeindruckung.</li>
+<li>Lass den Menschen sichtbar am Steuer.</li>
+</ul>
+<p>Das ist keine perfekte Theorie. Aber ein brauchbarer Startpunkt.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
