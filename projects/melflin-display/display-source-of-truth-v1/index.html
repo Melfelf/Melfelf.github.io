@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="Persönliche Notizen, Beobachtungen und Texte zu Alltag, Arbeit, Technologie und dem, was dazwischen hängen bleibt.">
+
+  <title>Display Source of Truth v1</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+<link rel="stylesheet" href="https://melf.ch/custom.css">
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#display-source-of-truth-v1">Display Source of Truth v1</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#ziel">Ziel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#1-kalender-familienereignisse">1. Kalender: Familienereignisse</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#identifikation">Identifikation</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#fallback">Fallback</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#2-kalender-stefans-personlicher-kalender">2. Kalender: Stefans persönlicher Kalender</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-1">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-1">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#gate-regel">Gate-Regel</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#rolle-im-system">Rolle im System</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat-1">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#fallback-1">Fallback</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#3-wetter-aktuelle-reale-temperaturen">3. Wetter: aktuelle reale Temperaturen</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-2">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-2">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#warum-primar">Warum primär?</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat-2">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#fallback-2">Fallback</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#4-wetter-kurzfrist-forecast">4. Wetter: Kurzfrist-Forecast</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-3">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-3">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat-3">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#fallback-3">Fallback</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#5-transit">5. Transit</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-4">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-4">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat-4">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#fallback-4">Fallback</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#fallback-regel">Fallback-Regel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#6-melflin-block-manuelle-hinweise">6. Melflin-Block: manuelle Hinweise</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-5">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-5">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat-5">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#regel">Regel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#7-melflin-block-spruch-zitat-fallback">7. Melflin-Block: Spruch-&#x2F;Zitat-Fallback</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-6">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-6">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat-6">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#regel-1">Regel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#8-display-zeit-heute-morgen">8. Display-Zeit &#x2F; Heute &#x2F; Morgen</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-7">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-7">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prioritat-7">Priorität</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#fallback-5">Fallback</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#9-darstellung-layout">9. Darstellung &#x2F; Layout</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-quelle-8">Primäre Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-8">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#wichtig">Wichtig</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#10-publishing-wahrheit">10. Publishing-Wahrheit</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#primare-operative-quelle">Primäre operative Quelle</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#zweck-9">Zweck</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#offentliche-wahrheit">Öffentliche Wahrheit</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#prufregel">Prüfregel</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#11-tabelle-kompakt">11. Tabelle kompakt</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#12-kurzfassung">12. Kurzfassung</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+    <img src="https://melf.ch/img/melfware-logo.svg" alt="" class="brand-mark">
+    <span>Stefan &quot;Melf&quot; Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog">Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro">IT Pro</a>
+      
+    
+      
+      
+      <a class="instant active" href="https://melf.ch/projects">Projects</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin">Melflin</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/ai-blubber">AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read">Books</a>
+      
+    
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub</a>
+      
+    
+  </div>
+</nav>
+
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Display Source of Truth v1</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Apr 3, 2026 at 10:41</span>
+            </div>
+
+          
+        </div>
+
+        
+        
+
+        
+
+        <h1 id="display-source-of-truth-v1">Display Source of Truth v1<a class="zola-anchor" href="#display-source-of-truth-v1" aria-label="Anchor link for: display-source-of-truth-v1" style="visibility: hidden;"></a>
+</h1>
+<p>Wenn ein Display-System mit mehreren Datenquellen arbeitet, ist eine der wichtigsten Architekturfragen:</p>
+<blockquote>
+<p><strong>Welche Quelle ist für was die Wahrheit?</strong></p>
+</blockquote>
+<p>Ohne diese Klarheit entstehen schnell:</p>
+<ul>
+<li>doppelte Logik</li>
+<li>widersprüchliche Inhalte</li>
+<li>falsche Prioritäten</li>
+<li>unklare Debugging-Wege</li>
+</ul>
+<p>Dieses Dokument definiert die aktuelle <strong>Source-of-Truth-Tabelle</strong> für das Melflin-Display.</p>
+<hr />
+<h2 id="ziel">Ziel<a class="zola-anchor" href="#ziel" aria-label="Anchor link for: ziel" style="visibility: hidden;"></a>
+</h2>
+<p>Für jeden wichtigen Inhaltsbereich soll klar sein:</p>
+<ul>
+<li>primäre Quelle</li>
+<li>Zweck</li>
+<li>Fallback</li>
+<li>Priorität</li>
+<li>Verantwortungsbereich</li>
+</ul>
+<hr />
+<h1 id="1-kalender-familienereignisse">1. Kalender: Familienereignisse<a class="zola-anchor" href="#1-kalender-familienereignisse" aria-label="Anchor link for: 1-kalender-familienereignisse" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle">Primäre Quelle<a class="zola-anchor" href="#primare-quelle" aria-label="Anchor link for: primare-quelle" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><code>melflin2026@outlook.com</code></li>
+<li>Standardkalender / Familienkalender im Melflin-Konto</li>
+</ul>
+<h2 id="zweck">Zweck<a class="zola-anchor" href="#zweck" aria-label="Anchor link for: zweck" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>Familienereignisse</li>
+<li>Arthur-/Sandra-/Familie-Termine</li>
+<li>ganztägige und zeitgebundene Einträge</li>
+</ul>
+<h2 id="identifikation">Identifikation<a class="zola-anchor" href="#identifikation" aria-label="Anchor link for: identifikation" style="visibility: hidden;"></a>
+</h2>
+<p>Über Titelpräfixe:</p>
+<ul>
+<li><code>[Arthur]</code></li>
+<li><code>[Sandra]</code></li>
+<li><code>[Familie]</code></li>
+<li><code>[Stefan]</code></li>
+</ul>
+<h2 id="prioritat">Priorität<a class="zola-anchor" href="#prioritat" aria-label="Anchor link for: prioritat" style="visibility: hidden;"></a>
+</h2>
+<p><strong>hoch</strong></p>
+<p>Das ist die primäre Wahrheit für display-relevante Familienplanung.</p>
+<h2 id="fallback">Fallback<a class="zola-anchor" href="#fallback" aria-label="Anchor link for: fallback" style="visibility: hidden;"></a>
+</h2>
+<p>Kein echter fachlicher Fallback.</p>
+<p>Wenn diese Quelle fehlt oder fehlerhaft ist, soll das sichtbar werden.</p>
+<hr />
+<h1 id="2-kalender-stefans-personlicher-kalender">2. Kalender: Stefans persönlicher Kalender<a class="zola-anchor" href="#2-kalender-stefans-personlicher-kalender" aria-label="Anchor link for: 2-kalender-stefans-personlicher-kalender" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-1">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-1" aria-label="Anchor link for: primare-quelle-1" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>Stefans Outlook-Konto</li>
+</ul>
+<h2 id="zweck-1">Zweck<a class="zola-anchor" href="#zweck-1" aria-label="Anchor link for: zweck-1" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>nur ausgewählte persönliche Einträge mit Familienrelevanz</li>
+</ul>
+<h2 id="gate-regel">Gate-Regel<a class="zola-anchor" href="#gate-regel" aria-label="Anchor link for: gate-regel" style="visibility: hidden;"></a>
+</h2>
+<p>Nur Einträge mit:</p>
+<ul>
+<li><strong><code>Purple category</code></strong></li>
+</ul>
+<h2 id="rolle-im-system">Rolle im System<a class="zola-anchor" href="#rolle-im-system" aria-label="Anchor link for: rolle-im-system" style="visibility: hidden;"></a>
+</h2>
+<p>Diese Quelle ist <strong>ergänzend</strong>, nicht führend.</p>
+<h2 id="prioritat-1">Priorität<a class="zola-anchor" href="#prioritat-1" aria-label="Anchor link for: prioritat-1" style="visibility: hidden;"></a>
+</h2>
+<p><strong>mittel / sekundär</strong></p>
+<h2 id="fallback-1">Fallback<a class="zola-anchor" href="#fallback-1" aria-label="Anchor link for: fallback-1" style="visibility: hidden;"></a>
+</h2>
+<p>Kein Fallback nötig.</p>
+<p>Wenn nichts mit Purple vorhanden ist, erscheint auch nichts.</p>
+<hr />
+<h1 id="3-wetter-aktuelle-reale-temperaturen">3. Wetter: aktuelle reale Temperaturen<a class="zola-anchor" href="#3-wetter-aktuelle-reale-temperaturen" aria-label="Anchor link for: 3-wetter-aktuelle-reale-temperaturen" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-2">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-2" aria-label="Anchor link for: primare-quelle-2" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>Netatmo</strong></li>
+</ul>
+<h2 id="zweck-2">Zweck<a class="zola-anchor" href="#zweck-2" aria-label="Anchor link for: zweck-2" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>aktuelle Aussen-Temperatur</li>
+<li>aktuelle Wohnzimmer-Temperatur</li>
+</ul>
+<h2 id="warum-primar">Warum primär?<a class="zola-anchor" href="#warum-primar" aria-label="Anchor link for: warum-primar" style="visibility: hidden;"></a>
+</h2>
+<p>Weil lokale Ist-Werte wichtiger sind als ein allgemeiner Internet-Forecast.</p>
+<h2 id="prioritat-2">Priorität<a class="zola-anchor" href="#prioritat-2" aria-label="Anchor link for: prioritat-2" style="visibility: hidden;"></a>
+</h2>
+<p><strong>hoch</strong> für aktuelle Werte</p>
+<h2 id="fallback-2">Fallback<a class="zola-anchor" href="#fallback-2" aria-label="Anchor link for: fallback-2" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn Netatmo nicht verfügbar ist:</p>
+<ul>
+<li>Open-Meteo <code>current_weather</code></li>
+<li>aber nur als degradierter Ersatz</li>
+</ul>
+<hr />
+<h1 id="4-wetter-kurzfrist-forecast">4. Wetter: Kurzfrist-Forecast<a class="zola-anchor" href="#4-wetter-kurzfrist-forecast" aria-label="Anchor link for: 4-wetter-kurzfrist-forecast" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-3">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-3" aria-label="Anchor link for: primare-quelle-3" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>Open-Meteo</strong></li>
+</ul>
+<h2 id="zweck-3">Zweck<a class="zola-anchor" href="#zweck-3" aria-label="Anchor link for: zweck-3" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>in 3h</li>
+<li>in 6h</li>
+<li>in 9h</li>
+</ul>
+<h2 id="prioritat-3">Priorität<a class="zola-anchor" href="#prioritat-3" aria-label="Anchor link for: prioritat-3" style="visibility: hidden;"></a>
+</h2>
+<p><strong>hoch</strong> für Zukunft / Forecast</p>
+<h2 id="fallback-3">Fallback<a class="zola-anchor" href="#fallback-3" aria-label="Anchor link for: fallback-3" style="visibility: hidden;"></a>
+</h2>
+<p>Kein gleichwertiger Fallback aktuell.</p>
+<p>Wenn Forecast fehlt, sollte das lieber sichtbar oder reduziert sein als durch erfundene Daten ersetzt.</p>
+<hr />
+<h1 id="5-transit">5. Transit<a class="zola-anchor" href="#5-transit" aria-label="Anchor link for: 5-transit" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-4">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-4" aria-label="Anchor link for: primare-quelle-4" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><code>transport.opendata.ch</code></li>
+<li><code>stationboard</code> für <code>Bern, Felsenau</code></li>
+</ul>
+<h2 id="zweck-4">Zweck<a class="zola-anchor" href="#zweck-4" aria-label="Anchor link for: zweck-4" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>nächste RBS-Verbindungen nach Bern</li>
+</ul>
+<h2 id="prioritat-4">Priorität<a class="zola-anchor" href="#prioritat-4" aria-label="Anchor link for: prioritat-4" style="visibility: hidden;"></a>
+</h2>
+<p><strong>hoch</strong>, aber technisch störanfällig wegen externer API</p>
+<h2 id="fallback-4">Fallback<a class="zola-anchor" href="#fallback-4" aria-label="Anchor link for: fallback-4" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>lokaler Cache in:
+<ul>
+<li><code>cache/transit.json</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="fallback-regel">Fallback-Regel<a class="zola-anchor" href="#fallback-regel" aria-label="Anchor link for: fallback-regel" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn Live-Daten fehlschlagen, aber letzter gültiger Stand vorhanden ist:</p>
+<ul>
+<li>Cache anzeigen</li>
+<li>idealerweise gekennzeichnet</li>
+</ul>
+<hr />
+<h1 id="6-melflin-block-manuelle-hinweise">6. Melflin-Block: manuelle Hinweise<a class="zola-anchor" href="#6-melflin-block-manuelle-hinweise" aria-label="Anchor link for: 6-melflin-block-manuelle-hinweise" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-5">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-5" aria-label="Anchor link for: primare-quelle-5" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><code>/root/.openclaw/workspace/display-note.md</code></li>
+</ul>
+<h2 id="zweck-5">Zweck<a class="zola-anchor" href="#zweck-5" aria-label="Anchor link for: zweck-5" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>Info</li>
+<li>Erinnerung</li>
+<li>bewusst gesetzter Inhalt</li>
+</ul>
+<h2 id="prioritat-5">Priorität<a class="zola-anchor" href="#prioritat-5" aria-label="Anchor link for: prioritat-5" style="visibility: hidden;"></a>
+</h2>
+<p><strong>höchste Priorität</strong> innerhalb des Melflin-Blocks</p>
+<h2 id="regel">Regel<a class="zola-anchor" href="#regel" aria-label="Anchor link for: regel" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn dort sinnvoller Inhalt steht, wird dieser gezeigt.</p>
+<hr />
+<h1 id="7-melflin-block-spruch-zitat-fallback">7. Melflin-Block: Spruch-/Zitat-Fallback<a class="zola-anchor" href="#7-melflin-block-spruch-zitat-fallback" aria-label="Anchor link for: 7-melflin-block-spruch-zitat-fallback" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-6">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-6" aria-label="Anchor link for: primare-quelle-6" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><code>melflin-display/data/quotes.txt</code></li>
+</ul>
+<h2 id="zweck-6">Zweck<a class="zola-anchor" href="#zweck-6" aria-label="Anchor link for: zweck-6" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>ruhiger Fallback, wenn nichts Aktuelles vorliegt</li>
+</ul>
+<h2 id="prioritat-6">Priorität<a class="zola-anchor" href="#prioritat-6" aria-label="Anchor link for: prioritat-6" style="visibility: hidden;"></a>
+</h2>
+<p><strong>nur Fallback</strong></p>
+<h2 id="regel-1">Regel<a class="zola-anchor" href="#regel-1" aria-label="Anchor link for: regel-1" style="visibility: hidden;"></a>
+</h2>
+<p>Wird nur verwendet, wenn <code>display-note.md</code> keinen priorisierten sinnvollen Inhalt liefert.</p>
+<hr />
+<h1 id="8-display-zeit-heute-morgen">8. Display-Zeit / Heute / Morgen<a class="zola-anchor" href="#8-display-zeit-heute-morgen" aria-label="Anchor link for: 8-display-zeit-heute-morgen" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-7">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-7" aria-label="Anchor link for: primare-quelle-7" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>lokale Zeitlogik in <code>build_feed.py</code></li>
+<li>mit <code>Europe/Zurich</code></li>
+</ul>
+<h2 id="zweck-7">Zweck<a class="zola-anchor" href="#zweck-7" aria-label="Anchor link for: zweck-7" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>korrektes Datum</li>
+<li>Heute/Morgen-Einordnung</li>
+<li>Zeitfenster für Anzeige und Auswahl</li>
+</ul>
+<h2 id="prioritat-7">Priorität<a class="zola-anchor" href="#prioritat-7" aria-label="Anchor link for: prioritat-7" style="visibility: hidden;"></a>
+</h2>
+<p><strong>kritisch</strong></p>
+<h2 id="fallback-5">Fallback<a class="zola-anchor" href="#fallback-5" aria-label="Anchor link for: fallback-5" style="visibility: hidden;"></a>
+</h2>
+<p>Kein sinnvoller Fallback. Fehler hier verfälschen fast alles.</p>
+<hr />
+<h1 id="9-darstellung-layout">9. Darstellung / Layout<a class="zola-anchor" href="#9-darstellung-layout" aria-label="Anchor link for: 9-darstellung-layout" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-quelle-8">Primäre Quelle<a class="zola-anchor" href="#primare-quelle-8" aria-label="Anchor link for: primare-quelle-8" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><code>render/render_live_html.py</code></li>
+<li><code>render/render_family_html.py</code></li>
+</ul>
+<h2 id="zweck-8">Zweck<a class="zola-anchor" href="#zweck-8" aria-label="Anchor link for: zweck-8" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>visuelle Wahrheit des Displays</li>
+</ul>
+<h2 id="wichtig">Wichtig<a class="zola-anchor" href="#wichtig" aria-label="Anchor link for: wichtig" style="visibility: hidden;"></a>
+</h2>
+<p>Die Renderer sind <strong>nicht</strong> die Quelle der Inhalte.</p>
+<p>Sie dürfen nur darstellen, was der Feed vorgibt.</p>
+<p>Logik gehört primär in:</p>
+<ul>
+<li><code>src/build_feed.py</code></li>
+</ul>
+<hr />
+<h1 id="10-publishing-wahrheit">10. Publishing-Wahrheit<a class="zola-anchor" href="#10-publishing-wahrheit" aria-label="Anchor link for: 10-publishing-wahrheit" style="visibility: hidden;"></a>
+</h1>
+<h2 id="primare-operative-quelle">Primäre operative Quelle<a class="zola-anchor" href="#primare-operative-quelle" aria-label="Anchor link for: primare-operative-quelle" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><code>scripts/publish_pages.sh</code></li>
+</ul>
+<h2 id="zweck-9">Zweck<a class="zola-anchor" href="#zweck-9" aria-label="Anchor link for: zweck-9" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li>Feed bauen</li>
+<li>HTML rendern</li>
+<li>statische Seiten publizieren</li>
+</ul>
+<h2 id="offentliche-wahrheit">Öffentliche Wahrheit<a class="zola-anchor" href="#offentliche-wahrheit" aria-label="Anchor link for: offentliche-wahrheit" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><code>melf.ch/melflin-display/</code></li>
+</ul>
+<h2 id="prufregel">Prüfregel<a class="zola-anchor" href="#prufregel" aria-label="Anchor link for: prufregel" style="visibility: hidden;"></a>
+</h2>
+<p>Wenn lokal und öffentlich abweichen, muss geklärt werden, ob das Problem in:</p>
+<ul>
+<li>Feed</li>
+<li>Render</li>
+<li>Publish</li>
+<li>CDN/Cache</li>
+<li>Device</li>
+</ul>
+<p>liegt.</p>
+<hr />
+<h1 id="11-tabelle-kompakt">11. Tabelle kompakt<a class="zola-anchor" href="#11-tabelle-kompakt" aria-label="Anchor link for: 11-tabelle-kompakt" style="visibility: hidden;"></a>
+</h1>
+<table><thead><tr><th>Bereich</th><th>Source of Truth</th><th>Fallback</th><th>Priorität</th></tr></thead><tbody>
+<tr><td>Familienereignisse</td><td>Melflin Outlook</td><td>keiner</td><td>hoch</td></tr>
+<tr><td>Persönliche Display-Einträge</td><td>Stefans Outlook + <code>Purple category</code></td><td>keiner</td><td>mittel</td></tr>
+<tr><td>Aktuelles Wetter draussen / Wohnzimmer</td><td>Netatmo</td><td>Open-Meteo current</td><td>hoch</td></tr>
+<tr><td>Wetter-Forecast</td><td>Open-Meteo</td><td>keiner</td><td>hoch</td></tr>
+<tr><td>Transit</td><td>transport.opendata.ch</td><td><code>cache/transit.json</code></td><td>hoch</td></tr>
+<tr><td>Melflin-Hinweise</td><td><code>display-note.md</code></td><td><code>quotes.txt</code></td><td>hoch</td></tr>
+<tr><td>Zitat-Fallback</td><td><code>quotes.txt</code></td><td>Default-Satz</td><td>niedrig</td></tr>
+<tr><td>Datums-/Tageslogik</td><td><code>Europe/Zurich</code> in Feed-Logik</td><td>keiner</td><td>kritisch</td></tr>
+<tr><td>HTML-Darstellung</td><td>Renderer</td><td>keiner</td><td>mittel</td></tr>
+<tr><td>Öffentliche Auslieferung</td><td>publish script + Pages</td><td>keine echte Ersatzquelle</td><td>hoch</td></tr>
+</tbody></table>
+<hr />
+<h1 id="12-kurzfassung">12. Kurzfassung<a class="zola-anchor" href="#12-kurzfassung" aria-label="Anchor link for: 12-kurzfassung" style="visibility: hidden;"></a>
+</h1>
+<p>Das Display wird stabiler, wenn klar ist:</p>
+<ul>
+<li><strong>welche Quelle für welchen Inhaltsbereich führend ist</strong></li>
+<li><strong>welche Quelle nur ergänzend ist</strong></li>
+<li><strong>welcher Fallback überhaupt erlaubt ist</strong></li>
+</ul>
+<p>Die wichtigste Unterscheidung lautet:</p>
+<ul>
+<li>Familienkalender ist führend</li>
+<li>Purple-Personal ist ergänzend</li>
+<li>Netatmo ist Wahrheit für Jetzt</li>
+<li>Open-Meteo ist Wahrheit für Forecast</li>
+<li>Transit darf auf Cache zurückfallen</li>
+<li><code>display-note.md</code> schlägt Zitatliste</li>
+</ul>
+<p>Damit wird das System leichter debugbar und weniger widersprüchlich.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://melf.ch/blog/atom.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml">https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;melf.ch&#x2F;blog&#x2F;atom.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
