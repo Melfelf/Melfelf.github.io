@@ -1,0 +1,66 @@
+{% import "macros/prose.html" as prose %}
+{% import "macros/nav.html" as nav %}
+{% extends "_base.html" %}
+
+{% block page %}blog{% endblock page %}
+{% block lang %}{% if section.extra.lang %}{{ section.extra.lang }}{% else %}{{ section.lang }}{% endif %}{% endblock lang %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block desc %}
+  <meta name="description" content="{{ section.description | default(value=config.description) }}">
+{% endblock desc %}
+
+{% block head %}
+{% if config.extra.force_theme == "dark" %}
+  <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-dark.css') }}" />
+{% else %}
+  <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}">
+{% endblock head %}
+
+{% block content %}
+<div id="wrapper">
+  <main>
+    {{ nav::site_nav(current_path=section.path) }}
+    {{ prose::back_link(path=get_url(path="/")) }}
+
+    <div class="section-title">
+      <p class="section-kicker">Bereich / {{ section.title }}</p>
+      <h1>{{ section.extra.title | default(value=section.title) }}</h1>
+      {% if section.description %}<p>{{ section.description }}</p>{% endif %}
+    </div>
+
+    {% if section.content | trim != "" %}
+    <section class="prose section-introduction">
+      {{ section.content | safe }}
+    </section>
+    {% endif %}
+
+    {% set date_format = section.extra.date_format | default(value="%d.%m.%Y") %}
+
+    {% if section.pages | length > 0 %}
+    <section class="prose collection-wrapper" aria-label="Beiträge">
+      {% for page in section.pages %}
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="{{ page.permalink }}">{{ page.title }}</a>
+          {% if page.date %}<time class="date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format=date_format) }}</time>{% endif %}
+        </div>
+        {% if page.description %}
+        <div class="subtitle">{{ page.description }}</div>
+        {% elif page.summary %}
+        <div class="content">{{ page.summary | safe }}</div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    {% include "_footer.html" %}
+  </main>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{{ get_url(path='js/lightense.min.js') }}"></script>
+{% endblock script %}

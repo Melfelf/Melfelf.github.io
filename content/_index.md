@@ -2,42 +2,27 @@
 template = 'home.html'
 
 [extra]
-lang = 'en'
-
-# Show footer in home page
+lang = 'de'
 footer = false
 
-# Personal details
 name = "Stefan \"Melf\" Moser"
 id = "melf"
-bio = "IT System Engineer | Automatisierungsarchitekt"
-#avatar = "img/avatar.webp"
-links = [
-    { name = "Email", icon = "email", url = "mailto:stefan@melf.ch" },
-    { name = "GitHub", icon = "github", url = "https://github.com/Melfelf" },
-    { name = "Twitter", icon = "twitter", url = "https://x.com/Melf11" },   
+bio = "IT System Engineer · Automatisierungsarchitekt"
+profile_text = "Ich dokumentiere Systeme so, wie sie wirklich sind: mit Annahmen, Randfällen, Fehlversuchen und dem Teil, der am Ende verlässlich läuft."
+
+hero_kicker = "Infrastruktur · Automatisierung · praktische AI"
+hero_title = "Ich baue Systeme, die Arbeit leichter machen."
+hero_intro = "Azure, Endpoint Management, Automatisierung und persönliche AI-Assistenten – hier landen Lösungen, Experimente und ehrliche Learnings aus der Praxis."
+
+focus = [
+  { name = "Infrastruktur", short = "Azure · Endpoint · Betrieb", text = "Plattformen, Endpoints und Abläufe, die nicht nur auf der Architekturfolie funktionieren, sondern auch montagmorgens im Betrieb." },
+  { name = "Automatisierung", short = "Weniger Handarbeit", text = "Wiederholbare Workflows mit klaren Grenzen, sinnvollen Guardrails und möglichst wenig fragiler Magie." },
+  { name = "Praktische AI", short = "Assistenten im Alltag", text = "AI als laufendes System: nützlich, überprüfbar und ehrlich dokumentiert – inklusive Melflins gelegentlicher Ehrenrunde." },
 ]
 
-# Show a few recent posts in home page
-recent = true
-recent_max = 6
-recent_more_text = "all posts »"
-date_format = "%b %-d, %Y at %H:%M"
+links = [
+  { name = "E-Mail", icon = "email", url = "mailto:stefan@melf.ch" },
+  { name = "GitHub", icon = "github", url = "https://github.com/Melfelf" },
+  { name = "Twitter", icon = "twitter", url = "https://x.com/Melf11" },
+]
 +++
-
-# Stefan "Melf" Moser
-
-I build infrastructure, automation, and AI-supported workflows that remove friction instead of adding another layer of shiny complexity.
-
-## Mission
-
-**Make Everything Less Frustrating With Automation & Robotic Execution**
-
-This site is my working logbook for Azure, endpoint management, practical AI assistants, automation design, projects, books, and the human side of making systems useful.
-
-## What you’ll find here
-
-- **Practical infrastructure notes** from Azure, Intune, AVD, endpoint management, and operations work.
-- **Automation patterns** that reduce repeated manual effort without creating fragile magic.
-- **AI assistant experiments** around Melflin, workflows, memory, delegation, and everyday usefulness.
-- **Reading and thinking notes** about systems, decisions, leadership, and better tools for calmer work.
