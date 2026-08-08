@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  <meta name="description" content="Gedanken, Experimente und Einordnungen zu AI, Automatisierung und den Stellen, an denen Modelle im Alltag tatsächlich nützlich oder unerquicklich werden.">
+
+  <title>AI Notes</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+  <link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+<link rel="stylesheet" href="https://melf.ch/custom.css">
+
+  
+</head>
+
+<body class="blog">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <main>
+    
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan &quot;Melf&quot; Moser - Home">
+    <img src="https://melf.ch/img/melfware-logo.svg" alt="" class="brand-mark">
+    <span>Stefan &quot;Melf&quot; Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog">Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro">IT Pro</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/projects">Projects</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin">Melflin</a>
+      
+    
+      
+      
+      <a class="instant active" href="https://melf.ch/ai-blubber">AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read">Books</a>
+      
+    
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub</a>
+      
+    
+  </div>
+</nav>
+
+    
+<header>
+  <nav>
+    <a id="back-link" href="#">← Back</a>
+  </nav>
+</header>
+
+
+    <div class="section-title">
+      <p class="section-kicker">Bereich / AI Notes</p>
+      <h1>AI Notes</h1>
+      <p>Gedanken, Experimente und Einordnungen zu AI, Automatisierung und den Stellen, an denen Modelle im Alltag tatsächlich nützlich oder unerquicklich werden.</p>
+    </div>
+
+    
+    <section class="prose section-introduction">
+      <h2 id="ai-aber-ohne-weihrauch">AI, aber ohne Weihrauch<a class="zola-anchor" href="#ai-aber-ohne-weihrauch" aria-label="Anchor link for: ai-aber-ohne-weihrauch" style="visibility: hidden;"></a>
+</h2>
+<p>Hier sammle ich Gedanken und Versuche rund um AI, Automatisierung und die Frage, was davon im Alltag wirklich trägt.</p>
+<h2 id="was-du-hier-eher-findest">Was du hier eher findest<a class="zola-anchor" href="#was-du-hier-eher-findest" aria-label="Anchor link for: was-du-hier-eher-findest" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>praktische Nutzung statt Show</strong> — Workflows, Agenten, Hilfssysteme und der ganze klebrige Zwischenraum dazwischen</li>
+<li><strong>Reflexion mit Bodenhaftung</strong> — nicht nur was Modelle können, sondern auch wo sie nerven, täuschen oder unnötig kompliziert machen</li>
+<li><strong>Experimente mit Spuren</strong> — inklusive Fehlversuchen, Umwegen und Kurskorrekturen</li>
+<li><strong>ein bisschen Theorie, aber nur wenn sie hilft</strong></li>
+</ul>
+<h2 id="wie-ich-uber-ai-schreibe">Wie ich über AI schreibe<a class="zola-anchor" href="#wie-ich-uber-ai-schreibe" aria-label="Anchor link for: wie-ich-uber-ai-schreibe" style="visibility: hidden;"></a>
+</h2>
+<ul>
+<li><strong>Show your work</strong> — Prompts, Fehlannahmen und Iterationen gehören dazu</li>
+<li><strong>Guardrails first</strong> — lieber verlässlich als beeindruckend</li>
+<li><strong>bilingual by usefulness</strong> — Deutsch oder Englisch, je nachdem was dem Thema besser dient</li>
+<li><strong>Evidenz schlägt Vibe</strong> — wenn etwas getestet wurde, schreibe ich das dazu</li>
+</ul>
+<hr />
+
+    </section>
+    
+
+    
+
+    
+    <section class="prose collection-wrapper" aria-label="Beiträge">
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;timestampenhancement&#x2F;">Enhanced Timestamp Precision: Creation and Last Modified Dates on Every Blog Post</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 16:00</time>
+        </div>
+        
+        <div class="subtitle">Implementing precise temporal information with creation dates, last modified timestamps, and timezone accuracy visible on all blog posts</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;melfwarelogodesign&#x2F;">MelfWare Logo Design Exploration</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 12:00</time>
+        </div>
+        
+        <div class="subtitle">Creating and exploring four distinct logo styles for MelfWare branding</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;backbuttonfix&#x2F;">Back Button Fix</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">Fixing the back button behavior to properly use browser history when appropriate</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;contentenrichment&#x2F;">Content Enrichment: Making Posts More Accessible</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">Strategies for improving content accessibility through reading time estimates, structured formatting, and better visual hierarchy.</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;contenttemplates&#x2F;">Content Templates for Consistent Quality</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">Structured templates for technical posts, book reviews, personal blogs, and AI content to maintain consistency and quality.</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;siteimprovementjourney&#x2F;">Site Improvement Journey: What&#x27;s Done and What&#x27;s Next</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">Documentation of site improvements including documentation updates, structure and organization, and content enrichment features.</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;siteimprovementplan&#x2F;">Site Improvement Plan</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">Comprehensive plan for enhancing the website&#x27;s user experience, performance, and functionality</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;structureandorganization&#x2F;">Improving Site Structure and Organization</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">How clear site structure improves discoverability, user engagement, and professionalism for personal blogs and content sites.</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;technicalimprovements&#x2F;">Technical Improvements: Search, SEO, and Performance</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">Implementation of search functionality, SEO optimization, comment configuration, and performance improvements for the site.</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;visualenhancementplan&#x2F;">Visual Enhancement Plan</a>
+          <time class="date" datetime="2025-12-21">Dec 21, 2025 at 00:00</time>
+        </div>
+        
+        <div class="subtitle">A comprehensive plan to enhance the website&#x27;s visual style with colors and elements while maintaining professionalism</div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;beati-pauperes-spiritui&#x2F;">Beati pauperes spiritu</a>
+          <time class="date" datetime="2025-07-23">Jul 23, 2025 at 00:00</time>
+        </div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;aiblubberinstructions&#x2F;">How I Use AI to Enhance My Blog Posts</a>
+          <time class="date" datetime="2025-06-14">Jun 14, 2025 at 00:00</time>
+        </div>
+        
+      </article>
+      
+      <article class="collection card">
+        <div class="meta">
+          <a class="title instant" href="https:&#x2F;&#x2F;melf.ch&#x2F;ai-blubber&#x2F;aboutaiblubber&#x2F;">Improve BlogPosts with automation and AI </a>
+          <time class="date" datetime="2025-06-07">Jun 7, 2025 at 00:00</time>
+        </div>
+        
+      </article>
+      
+    </section>
+    
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2025–2026 Stefan &quot;Melf&quot; Moser
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+  </main>
+</div>
+
+  
+<script src="https://melf.ch/js/lightense.min.js"></script>
+
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
