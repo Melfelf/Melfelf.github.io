@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Stefan &quot;Melf&quot; Moser - Decision Architect</title>
+    <subtitle>Infrastructure, automation, AI, and practical systems that make work and life less frustrating.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://melf.ch/projects/decision-architect/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://melf.ch/projects/decision-architect/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-04-12T16:38:00+02:00</updated>
+    <id>https://melf.ch/projects/decision-architect/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Decision Architect V2: Von Optionen zu Lernschleifen</title>
+        <published>2026-04-12T16:38:00+02:00</published>
+        <updated>2026-04-12T16:38:00+02:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://melf.ch/projects/decision-architect/decision-architect-v2-von-optionen-zu-lernschleifen/"/>
+        <id>https://melf.ch/projects/decision-architect/decision-architect-v2-von-optionen-zu-lernschleifen/</id>
+        
+        <content type="html" xml:base="https://melf.ch/projects/decision-architect/decision-architect-v2-von-optionen-zu-lernschleifen/">&lt;h1 id=&quot;decision-architect-v2-von-optionen-zu-lernschleifen&quot;&gt;Decision Architect V2: Von Optionen zu Lernschleifen&lt;a class=&quot;zola-anchor&quot; href=&quot;#decision-architect-v2-von-optionen-zu-lernschleifen&quot; aria-label=&quot;Anchor link for: decision-architect-v2-von-optionen-zu-lernschleifen&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h1&gt;
+&lt;p&gt;Die erste Idee hinter dem &lt;strong&gt;Decision Architect&lt;&#x2F;strong&gt; war relativ einfach:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;drei brauchbare Optionen zeigen&lt;&#x2F;li&gt;
+&lt;li&gt;Details nur bei Bedarf öffnen&lt;&#x2F;li&gt;
+&lt;li&gt;Entscheidung nicht mit Analyse erschlagen&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das ist nach wie vor sinnvoll.
+Aber je länger ich darüber nachdenke, desto klarer wird: &lt;strong&gt;Eine gute Entscheidungsoberfläche allein reicht nicht.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Wenn das System nur drei Optionen liefert und danach verschwindet, bleibt ein grosser Teil des eigentlichen Problems ungelöst.&lt;&#x2F;p&gt;
+&lt;p&gt;Denn die interessante Frage ist nicht nur:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Welche Option wurde gewählt?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Sondern auch:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;wurde sie tatsächlich umgesetzt?&lt;&#x2F;li&gt;
+&lt;li&gt;war sie praktikabel?&lt;&#x2F;li&gt;
+&lt;li&gt;blieb sie liegen?&lt;&#x2F;li&gt;
+&lt;li&gt;war die Entscheidung im Alltag hilfreich?&lt;&#x2F;li&gt;
+&lt;li&gt;haben die Vorschläge überhaupt zur Realität gepasst?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Genau daraus entsteht die nächste Stufe der Idee.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;von-der-auswahloberflache-zum-entscheidungszyklus&quot;&gt;Von der Auswahloberfläche zum Entscheidungszyklus&lt;a class=&quot;zola-anchor&quot; href=&quot;#von-der-auswahloberflache-zum-entscheidungszyklus&quot; aria-label=&quot;Anchor link for: von-der-auswahloberflache-zum-entscheidungszyklus&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Version 2 denkt den Decision Architect nicht mehr nur als Auswahl-UI, sondern als &lt;strong&gt;lernenden Entscheidungszyklus&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Das System soll nicht nur Optionen anzeigen, sondern eine komplette Schleife unterstützen:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Entscheidung vorbereiten&lt;&#x2F;li&gt;
+&lt;li&gt;Optionen kuratieren&lt;&#x2F;li&gt;
+&lt;li&gt;Entscheidung treffen&lt;&#x2F;li&gt;
+&lt;li&gt;spätere Umsetzung rückmelden&lt;&#x2F;li&gt;
+&lt;li&gt;Ergebnis auswerten&lt;&#x2F;li&gt;
+&lt;li&gt;künftige Vorschläge verbessern&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Damit verschiebt sich der Schwerpunkt.&lt;&#x2F;p&gt;
+&lt;p&gt;V1 war vor allem ein gutes Interface.
+V2 wird eher ein System, das über Zeit &lt;strong&gt;bessere Entscheidungsvorbereitung&lt;&#x2F;strong&gt; liefern soll.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;das-eigentliche-problem&quot;&gt;Das eigentliche Problem&lt;a class=&quot;zola-anchor&quot; href=&quot;#das-eigentliche-problem&quot; aria-label=&quot;Anchor link for: das-eigentliche-problem&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Viele Alltags- und Projektentscheidungen sind nicht gross genug, um jedes Mal eine saubere Analyse zu rechtfertigen.&lt;&#x2F;p&gt;
+&lt;p&gt;Aber sie sind auch nicht klein genug, um beliebig zu sein.&lt;&#x2F;p&gt;
+&lt;p&gt;Genau dort entsteht Reibung.&lt;&#x2F;p&gt;
+&lt;p&gt;Man merkt oft:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;eigentlich sollte ich kurz sauber überlegen&lt;&#x2F;li&gt;
+&lt;li&gt;eigentlich sollte ich Alternativen vergleichen&lt;&#x2F;li&gt;
+&lt;li&gt;eigentlich sollte ich kurz recherchieren&lt;&#x2F;li&gt;
+&lt;li&gt;eigentlich sollte ich die Konsequenzen mitdenken&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Und dann macht man es trotzdem nicht, weil der Aufwand zu hoch ist.&lt;&#x2F;p&gt;
+&lt;p&gt;Das führt dazu, dass viele scheinbar kleine Entscheidungen auf wackliger Grundlage getroffen werden.
+Nicht aus Dummheit, sondern aus Ermüdung.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;die-rolle-des-agenten&quot;&gt;Die Rolle des Agenten&lt;a class=&quot;zola-anchor&quot; href=&quot;#die-rolle-des-agenten&quot; aria-label=&quot;Anchor link for: die-rolle-des-agenten&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Genau diesen anstrengenden Teil soll der Agent übernehmen.&lt;&#x2F;p&gt;
+&lt;p&gt;Nicht die Verantwortung.
+Nicht die letzte Entscheidung.
+Sondern den kognitiv lästigen Unterbau:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Optionen vorbereiten&lt;&#x2F;li&gt;
+&lt;li&gt;Annahmen sichtbar machen&lt;&#x2F;li&gt;
+&lt;li&gt;kleine Recherchen durchführen&lt;&#x2F;li&gt;
+&lt;li&gt;Tradeoffs sortieren&lt;&#x2F;li&gt;
+&lt;li&gt;schlechte Vorschläge aussortieren&lt;&#x2F;li&gt;
+&lt;li&gt;Widersprüche benennen&lt;&#x2F;li&gt;
+&lt;li&gt;die Vorschläge auf grösseren Gesamtnutzen prüfen&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das ist für mich die zentrale These hinter V2:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Der Agent übernimmt den anstrengenden Teil des Hinterfragens, Recherchierens und Kuratierens, damit auch kleine Entscheidungen auf einer besseren Grundlage getroffen werden und über Zeit zu besseren Gesamtergebnissen führen.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;warum-drei-optionen-trotzdem-bleiben&quot;&gt;Warum drei Optionen trotzdem bleiben&lt;a class=&quot;zola-anchor&quot; href=&quot;#warum-drei-optionen-trotzdem-bleiben&quot; aria-label=&quot;Anchor link for: warum-drei-optionen-trotzdem-bleiben&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Die kompakte Oberfläche aus V1 bleibt bestehen.&lt;&#x2F;p&gt;
+&lt;p&gt;Der Nutzer soll weiterhin zuerst sehen:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vorschlag 1&lt;&#x2F;li&gt;
+&lt;li&gt;Vorschlag 2&lt;&#x2F;li&gt;
+&lt;li&gt;Vorschlag 3&lt;&#x2F;li&gt;
+&lt;li&gt;plus Freitext&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Diese Ebene ist weiterhin wichtig, weil sie die kognitive Last klein hält.&lt;&#x2F;p&gt;
+&lt;p&gt;Der Unterschied ist nur:
+Die drei Vorschläge sollen in V2 nicht mehr einfach rohe Modellantworten sein.
+Sie sollen &lt;strong&gt;kuratiert&lt;&#x2F;strong&gt; sein.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;kuratierung-statt-roher-generierung&quot;&gt;Kuratierung statt roher Generierung&lt;a class=&quot;zola-anchor&quot; href=&quot;#kuratierung-statt-roher-generierung&quot; aria-label=&quot;Anchor link for: kuratierung-statt-roher-generierung&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Jede der drei Entscheidungsoptionen soll vor der Anzeige durch eine kleine interne Agentenlogik verbessert werden.&lt;&#x2F;p&gt;
+&lt;p&gt;Dafür bieten sich in meinem Setup besonders diese Rollen an:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-rubberduck&quot;&gt;1. Rubberduck+&lt;a class=&quot;zola-anchor&quot; href=&quot;#1-rubberduck&quot; aria-label=&quot;Anchor link for: 1-rubberduck&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Rubberduck+ hilft dabei,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;die eigentliche Frage zu schärfen&lt;&#x2F;li&gt;
+&lt;li&gt;versteckte Annahmen sichtbar zu machen&lt;&#x2F;li&gt;
+&lt;li&gt;Widersprüche zu erkennen&lt;&#x2F;li&gt;
+&lt;li&gt;unnötigen Denknebel wegzuschneiden&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-advisory-team&quot;&gt;2. Advisory Team&lt;a class=&quot;zola-anchor&quot; href=&quot;#2-advisory-team&quot; aria-label=&quot;Anchor link for: 2-advisory-team&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Das Advisory-Team hilft dabei,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tradeoffs klarer zu machen&lt;&#x2F;li&gt;
+&lt;li&gt;grössere Zusammenhänge mitzudenken&lt;&#x2F;li&gt;
+&lt;li&gt;lokale Bequemlichkeit von echter Sinnhaftigkeit zu unterscheiden&lt;&#x2F;li&gt;
+&lt;li&gt;Optionen in einen grösseren Kontext einzuordnen&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-recherche-layer&quot;&gt;3. Recherche-Layer&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-recherche-layer&quot; aria-label=&quot;Anchor link for: 3-recherche-layer&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Nicht jede Entscheidung braucht Recherche.
+Aber wenn Fakten oder Vergleichsinfos fehlen, sollte der Agent sie gezielt nachziehen.&lt;&#x2F;p&gt;
+&lt;p&gt;Zum Beispiel:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Preise&lt;&#x2F;li&gt;
+&lt;li&gt;technische Unterschiede&lt;&#x2F;li&gt;
+&lt;li&gt;Fristen&lt;&#x2F;li&gt;
+&lt;li&gt;Kompatibilität&lt;&#x2F;li&gt;
+&lt;li&gt;Erfahrungswerte&lt;&#x2F;li&gt;
+&lt;li&gt;Vergleich von Varianten&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Der Punkt ist nicht, jede Mikroentscheidung künstlich aufzublasen.
+Sondern die nötige Tiefe genau dort zu liefern, wo sie den Unterschied macht.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;outcome-tracking-die-entscheidung-endet-nicht-mit-dem-klick&quot;&gt;Outcome Tracking: Die Entscheidung endet nicht mit dem Klick&lt;a class=&quot;zola-anchor&quot; href=&quot;#outcome-tracking-die-entscheidung-endet-nicht-mit-dem-klick&quot; aria-label=&quot;Anchor link for: outcome-tracking-die-entscheidung-endet-nicht-mit-dem-klick&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Ein besonders wichtiger Teil von V2 ist die Rückmeldung nach der Entscheidung.&lt;&#x2F;p&gt;
+&lt;p&gt;Das System soll später abfragen können:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;erledigt&lt;&#x2F;li&gt;
+&lt;li&gt;teilweise erledigt&lt;&#x2F;li&gt;
+&lt;li&gt;liegen geblieben&lt;&#x2F;li&gt;
+&lt;li&gt;anders gelöst&lt;&#x2F;li&gt;
+&lt;li&gt;optional: warum&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das ist wichtig, weil sonst nur die &lt;strong&gt;Auswahl&lt;&#x2F;strong&gt; optimiert wird, nicht die &lt;strong&gt;tatsächliche Wirkung&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Ein Vorschlag kann auf dem Bildschirm plausibel wirken und im Alltag trotzdem regelmässig scheitern.
+Zum Beispiel weil er:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;zu ambitioniert war&lt;&#x2F;li&gt;
+&lt;li&gt;nicht in den Tagesablauf passt&lt;&#x2F;li&gt;
+&lt;li&gt;zu viel Kontext voraussetzt&lt;&#x2F;li&gt;
+&lt;li&gt;zwar rational gut aussieht, aber praktisch nie umgesetzt wird&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Wenn das System solche Muster erkennt, kann es mit der Zeit bessere Vorschläge machen.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;von-der-entscheidung-zur-lernschleife&quot;&gt;Von der Entscheidung zur Lernschleife&lt;a class=&quot;zola-anchor&quot; href=&quot;#von-der-entscheidung-zur-lernschleife&quot; aria-label=&quot;Anchor link for: von-der-entscheidung-zur-lernschleife&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Damit wird aus dem Decision Architect eine Lernschleife:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Welche Vorschläge werden oft gewählt?&lt;&#x2F;li&gt;
+&lt;li&gt;Welche werden tatsächlich umgesetzt?&lt;&#x2F;li&gt;
+&lt;li&gt;Welche bleiben regelmässig liegen?&lt;&#x2F;li&gt;
+&lt;li&gt;Welche Art von Begründung hilft?&lt;&#x2F;li&gt;
+&lt;li&gt;Wo sind Optionen theoretisch gut, aber praktisch untauglich?&lt;&#x2F;li&gt;
+&lt;li&gt;Welche Mikroentscheidungen zahlen langfristig wirklich auf grössere Ziele ein?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das ist für mich einer der spannendsten Teile der ganzen Idee.&lt;&#x2F;p&gt;
+&lt;p&gt;Denn gute Entscheidungsunterstützung sollte nicht nur im Moment der Auswahl gut aussehen.
+Sie sollte über Zeit merken, &lt;strong&gt;was tatsächlich trägt&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;was-das-fur-kleine-entscheidungen-bedeutet&quot;&gt;Was das für kleine Entscheidungen bedeutet&lt;a class=&quot;zola-anchor&quot; href=&quot;#was-das-fur-kleine-entscheidungen-bedeutet&quot; aria-label=&quot;Anchor link for: was-das-fur-kleine-entscheidungen-bedeutet&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Gerade bei kleinen Entscheidungen wird das interessant.&lt;&#x2F;p&gt;
+&lt;p&gt;Nicht bei den grossen, seltenen Grundsatzfragen.
+Sondern bei den vielen kleinen Dingen wie:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;was heute wirklich Priorität haben sollte&lt;&#x2F;li&gt;
+&lt;li&gt;welche Erledigung zuerst sinnvoll ist&lt;&#x2F;li&gt;
+&lt;li&gt;ob etwas jetzt gemacht, verschoben oder bewusst ignoriert werden sollte&lt;&#x2F;li&gt;
+&lt;li&gt;welche von mehreren plausiblen kleinen Optionen wirklich den grösseren Nutzen hat&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Genau dort ist die Reibung hoch und die Disziplin niedrig.
+Und genau dort kann ein guter Agent enorm nützlich sein.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;was-ich-bewusst-nicht-will&quot;&gt;Was ich bewusst nicht will&lt;a class=&quot;zola-anchor&quot; href=&quot;#was-ich-bewusst-nicht-will&quot; aria-label=&quot;Anchor link for: was-ich-bewusst-nicht-will&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Auch in V2 will ich kein System, das:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;jede Entscheidung künstlich dramatisiert&lt;&#x2F;li&gt;
+&lt;li&gt;für alles eine Mini-Strategieberatung aufführt&lt;&#x2F;li&gt;
+&lt;li&gt;aus Kleinkram ein Analyse-Theater macht&lt;&#x2F;li&gt;
+&lt;li&gt;den Nutzer mit Reflexionspflicht nervt&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das Ziel ist nicht mehr Aufwand.
+Das Ziel ist &lt;strong&gt;mehr Qualität bei weniger mentalem Verschleiss&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;die-form-in-der-ich-es-momentan-sehe&quot;&gt;Die Form, in der ich es momentan sehe&lt;a class=&quot;zola-anchor&quot; href=&quot;#die-form-in-der-ich-es-momentan-sehe&quot; aria-label=&quot;Anchor link for: die-form-in-der-ich-es-momentan-sehe&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Wenn ich die V2-Idee in einen Satz giessen müsste, dann so:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Decision Architect V2 erweitert die reine Auswahloberfläche zu einem lernenden Entscheidungszyklus: Optionen werden vorab durch Agenten kuratiert, mit Recherche angereichert und nach der Auswahl gegen die tatsächliche Umsetzung gespiegelt.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Oder noch einfacher:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nicht nur besser wählen. Auch besser daraus lernen.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;warum-mich-das-interessiert&quot;&gt;Warum mich das interessiert&lt;a class=&quot;zola-anchor&quot; href=&quot;#warum-mich-das-interessiert&quot; aria-label=&quot;Anchor link for: warum-mich-das-interessiert&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Mich interessiert diese Richtung, weil sie zwei Welten verbindet, die oft getrennt gedacht werden:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ruhige, gute Interfaces&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;agentische Tiefe im Hintergrund&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Vorne bleibt die Oberfläche knapp.
+Hinten darf das System ruhig mehr Arbeit übernehmen.&lt;&#x2F;p&gt;
+&lt;p&gt;Das ist für mich viel interessanter als entweder&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;eine dumme Oberfläche mit zu wenig Substanz&lt;&#x2F;li&gt;
+&lt;li&gt;oder ein beeindruckend wirkender Agent, der zwar viel redet, aber schlechte Entscheidungsoberflächen baut&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;vorlaufiges-fazit&quot;&gt;Vorläufiges Fazit&lt;a class=&quot;zola-anchor&quot; href=&quot;#vorlaufiges-fazit&quot; aria-label=&quot;Anchor link for: vorlaufiges-fazit&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;V1 war die Idee eines guten Auswahlfensters.&lt;&#x2F;p&gt;
+&lt;p&gt;V2 ist die Idee eines Systems, das:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;kleine Entscheidungen besser vorbereitet&lt;&#x2F;li&gt;
+&lt;li&gt;sie nicht nur anzeigt, sondern kuratiert&lt;&#x2F;li&gt;
+&lt;li&gt;die tatsächliche Umsetzung mitdenkt&lt;&#x2F;li&gt;
+&lt;li&gt;und aus diesem Feedback lernt&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Wenn das gut gemacht ist, entsteht vielleicht etwas Seltenes:&lt;&#x2F;p&gt;
+&lt;p&gt;Ein Assistent, der nicht nur Antworten liefert, sondern dazu beiträgt, dass auch kleine Entscheidungen im Alltag weniger zufällig und langfristig nützlicher werden.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Decision Architect: Drei Optionen statt Entscheidungsbrei</title>
+        <published>2026-04-12T15:50:00+02:00</published>
+        <updated>2026-04-12T15:50:00+02:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://melf.ch/projects/decision-architect/decision-architect-drei-optionen-statt-entscheidungsbrei/"/>
+        <id>https://melf.ch/projects/decision-architect/decision-architect-drei-optionen-statt-entscheidungsbrei/</id>
+        
+        <content type="html" xml:base="https://melf.ch/projects/decision-architect/decision-architect-drei-optionen-statt-entscheidungsbrei/">&lt;h1 id=&quot;decision-architect-drei-optionen-statt-entscheidungsbrei&quot;&gt;Decision Architect: Drei Optionen statt Entscheidungsbrei&lt;a class=&quot;zola-anchor&quot; href=&quot;#decision-architect-drei-optionen-statt-entscheidungsbrei&quot; aria-label=&quot;Anchor link for: decision-architect-drei-optionen-statt-entscheidungsbrei&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h1&gt;
+&lt;p&gt;Viele digitale Assistenten scheitern nicht daran, dass sie zu wenig wissen.&lt;&#x2F;p&gt;
+&lt;p&gt;Sie scheitern daran, dass sie einem Menschen im falschen Moment &lt;strong&gt;zu viel&lt;&#x2F;strong&gt; geben:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;zu viel Analyse&lt;&#x2F;li&gt;
+&lt;li&gt;zu viele Nebenpfade&lt;&#x2F;li&gt;
+&lt;li&gt;zu viel Begründung vor der eigentlichen Entscheidung&lt;&#x2F;li&gt;
+&lt;li&gt;zu wenig klare, wählbare Handlungsmöglichkeiten&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Genau daraus entsteht die Idee hinter einem kleinen Interface, das ich aktuell als &lt;strong&gt;Decision Architect&lt;&#x2F;strong&gt; denke.&lt;&#x2F;p&gt;
+&lt;p&gt;Nicht als allwissende Entscheidungsmaschine.
+Sondern als bewusst reduziertes Entscheidungs-Interface.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;das-problem&quot;&gt;Das Problem&lt;a class=&quot;zola-anchor&quot; href=&quot;#das-problem&quot; aria-label=&quot;Anchor link for: das-problem&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Wenn man eine Frage an ein System stellt, bekommt man oft eine von zwei schlechten Formen zurück:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;variante-1-eine-scheinbar-perfekte-antwort&quot;&gt;Variante 1: Eine scheinbar perfekte Antwort&lt;a class=&quot;zola-anchor&quot; href=&quot;#variante-1-eine-scheinbar-perfekte-antwort&quot; aria-label=&quot;Anchor link for: variante-1-eine-scheinbar-perfekte-antwort&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Das System tut so, als gäbe es eine klare richtige Lösung.&lt;&#x2F;p&gt;
+&lt;p&gt;Das ist bequem, aber oft falsch.
+Gerade bei echten Alltags- oder Projektentscheidungen gibt es selten nur einen sauberen Weg.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;variante-2-eine-textwand-mit-allem-gleichzeitig&quot;&gt;Variante 2: Eine Textwand mit allem gleichzeitig&lt;a class=&quot;zola-anchor&quot; href=&quot;#variante-2-eine-textwand-mit-allem-gleichzeitig&quot; aria-label=&quot;Anchor link for: variante-2-eine-textwand-mit-allem-gleichzeitig&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Das System liefert:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kontext&lt;&#x2F;li&gt;
+&lt;li&gt;Einordnung&lt;&#x2F;li&gt;
+&lt;li&gt;Tradeoffs&lt;&#x2F;li&gt;
+&lt;li&gt;Risiken&lt;&#x2F;li&gt;
+&lt;li&gt;Quellen&lt;&#x2F;li&gt;
+&lt;li&gt;Nebengedanken&lt;&#x2F;li&gt;
+&lt;li&gt;Absicherungen&lt;&#x2F;li&gt;
+&lt;li&gt;vielleicht noch eine Meta-Reflexion dazu&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das ist intellektuell manchmal nett, aber als Benutzeroberfläche oft unerquicklich.&lt;&#x2F;p&gt;
+&lt;p&gt;Man will in diesem Moment nicht immer eine Abhandlung lesen.
+Man will oft zuerst einfach sehen:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Was sind meine drei besten Optionen?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;die-grundidee&quot;&gt;Die Grundidee&lt;a class=&quot;zola-anchor&quot; href=&quot;#die-grundidee&quot; aria-label=&quot;Anchor link for: die-grundidee&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Die Grundidee ist radikal unspektakulär:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Zeige zuerst drei brauchbare Optionen. Mehr Tiefe nur dann, wenn sie wirklich gebraucht wird.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Das System soll also nicht sofort alles erklären, sondern zuerst die Entscheidungsfläche sauber machen.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wie-die-ui-funktionieren-soll&quot;&gt;Wie die UI funktionieren soll&lt;a class=&quot;zola-anchor&quot; href=&quot;#wie-die-ui-funktionieren-soll&quot; aria-label=&quot;Anchor link for: wie-die-ui-funktionieren-soll&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Die erste Ansicht ist bewusst knapp.&lt;&#x2F;p&gt;
+&lt;p&gt;Es gibt einfach:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Vorschlag 1&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Vorschlag 2&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Vorschlag 3&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;plus ein &lt;strong&gt;Freitext-Feld&lt;&#x2F;strong&gt; darunter&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Jeder Vorschlag ist eine kompakte Karte mit:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Titel&lt;&#x2F;li&gt;
+&lt;li&gt;sehr kurzer Zusammenfassung&lt;&#x2F;li&gt;
+&lt;li&gt;Auswahlmöglichkeit&lt;&#x2F;li&gt;
+&lt;li&gt;einer kleinen Aktion wie „Mehr Infos&quot;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Wichtig ist dabei: Die drei Vorschläge werden &lt;strong&gt;nicht&lt;&#x2F;strong&gt; in starre Typen eingeteilt.&lt;&#x2F;p&gt;
+&lt;p&gt;Also nicht:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;schnellste Option&lt;&#x2F;li&gt;
+&lt;li&gt;sicherste Option&lt;&#x2F;li&gt;
+&lt;li&gt;strategisch beste Option&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das wäre manchmal nützlich, würde das System aber auch unnötig in eine feste Dramaturgie pressen.&lt;&#x2F;p&gt;
+&lt;p&gt;Die drei Karten sollen einfach drei gute Möglichkeiten sein.
+Nicht mehr, aber vor allem auch nicht weniger.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;progressive-disclosure-statt-textlawine&quot;&gt;Progressive Disclosure statt Textlawine&lt;a class=&quot;zola-anchor&quot; href=&quot;#progressive-disclosure-statt-textlawine&quot; aria-label=&quot;Anchor link for: progressive-disclosure-statt-textlawine&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Der eigentliche Trick liegt nicht in den drei Optionen selbst, sondern in der &lt;strong&gt;Informationsstaffelung&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Standardmässig sieht man nur die kompakte Ebene.&lt;&#x2F;p&gt;
+&lt;p&gt;Wenn man bei einem Vorschlag auf „Mehr Infos&quot; klickt, öffnet sich die zweite Ebene:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;kurze Begründung&lt;&#x2F;li&gt;
+&lt;li&gt;relevante Annahmen&lt;&#x2F;li&gt;
+&lt;li&gt;Vor- und Nachteile&lt;&#x2F;li&gt;
+&lt;li&gt;Source &#x2F; Grundlage&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Die Details sind also vorhanden, aber sie liegen nicht sofort im Weg.&lt;&#x2F;p&gt;
+&lt;p&gt;Das ist für mich der Kern des ganzen Konzepts:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Kurz vorne, Tiefe hinten.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Oder weniger freundlich formuliert:
+Der Nutzer soll nicht durch gut gemeinte Analyse am Entscheiden gehindert werden.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;warum-nur-drei-optionen&quot;&gt;Warum nur drei Optionen?&lt;a class=&quot;zola-anchor&quot; href=&quot;#warum-nur-drei-optionen&quot; aria-label=&quot;Anchor link for: warum-nur-drei-optionen&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Weil die meisten Interfaces beim Helfen scheitern, wenn sie zu viele Möglichkeiten gleichzeitig aufblasen.&lt;&#x2F;p&gt;
+&lt;p&gt;Drei ist nicht magisch. Aber drei ist oft genug, um:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;echte Alternativen sichtbar zu machen&lt;&#x2F;li&gt;
+&lt;li&gt;keine Scheinsicherheit zu erzeugen&lt;&#x2F;li&gt;
+&lt;li&gt;und trotzdem nicht in Wahlparalyse zu kippen&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Eine Option ist zu dogmatisch.
+Fünf oder sieben sind in vielen Fällen schon wieder unnötiger Entscheidungsbrei.&lt;&#x2F;p&gt;
+&lt;p&gt;Drei ist oft die richtige Menge, um das Denken offen zu halten und die Oberfläche trotzdem ruhig zu halten.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;warum-ein-freitext-feld-dazugehort&quot;&gt;Warum ein Freitext-Feld dazugehört&lt;a class=&quot;zola-anchor&quot; href=&quot;#warum-ein-freitext-feld-dazugehort&quot; aria-label=&quot;Anchor link for: warum-ein-freitext-feld-dazugehort&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Weil kein System die Situation des Nutzers vollständig modelliert.&lt;&#x2F;p&gt;
+&lt;p&gt;Das Freitext-Feld hat deshalb eine wichtige Aufgabe:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;eigene Präferenz einbringen&lt;&#x2F;li&gt;
+&lt;li&gt;Sonderfall ergänzen&lt;&#x2F;li&gt;
+&lt;li&gt;Vorschlag korrigieren&lt;&#x2F;li&gt;
+&lt;li&gt;zusätzliche Randbedingung liefern&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Ohne dieses Feld wird das System schnell zu einem Auswahlautomaten.
+Mit diesem Feld bleibt es ein echter Denkpartner.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;was-nach-der-auswahl-passiert&quot;&gt;Was nach der Auswahl passiert&lt;a class=&quot;zola-anchor&quot; href=&quot;#was-nach-der-auswahl-passiert&quot; aria-label=&quot;Anchor link for: was-nach-der-auswahl-passiert&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Sobald ein Vorschlag ausgewählt wurde, beginnt erst die zweite Phase.&lt;&#x2F;p&gt;
+&lt;p&gt;Dann kann das System helfen bei:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verfeinerung&lt;&#x2F;li&gt;
+&lt;li&gt;Risikoabschätzung&lt;&#x2F;li&gt;
+&lt;li&gt;nächstem Schritt&lt;&#x2F;li&gt;
+&lt;li&gt;Umsetzungsplan&lt;&#x2F;li&gt;
+&lt;li&gt;Begründung der Entscheidung&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das heisst:&lt;&#x2F;p&gt;
+&lt;p&gt;Der &lt;strong&gt;Decision Architect&lt;&#x2F;strong&gt; soll nicht nur beim Wählen helfen, sondern auch beim Übergang von &lt;strong&gt;Option&lt;&#x2F;strong&gt; zu &lt;strong&gt;Handlung&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wofur-das-nutzlich-ware&quot;&gt;Wofür das nützlich wäre&lt;a class=&quot;zola-anchor&quot; href=&quot;#wofur-das-nutzlich-ware&quot; aria-label=&quot;Anchor link for: wofur-das-nutzlich-ware&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Ich sehe dafür mehrere sinnvolle Einsatzfelder:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-alltagsentscheidungen&quot;&gt;1. Alltagsentscheidungen&lt;a class=&quot;zola-anchor&quot; href=&quot;#1-alltagsentscheidungen&quot; aria-label=&quot;Anchor link for: 1-alltagsentscheidungen&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Zum Beispiel:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Was soll ich heute priorisieren?&lt;&#x2F;li&gt;
+&lt;li&gt;Soll ich heute Büro, Rennen oder Erledigungen gewichten?&lt;&#x2F;li&gt;
+&lt;li&gt;Welche drei brauchbaren Wege gibt es für diesen Tag?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-projektentscheidungen&quot;&gt;2. Projektentscheidungen&lt;a class=&quot;zola-anchor&quot; href=&quot;#2-projektentscheidungen&quot; aria-label=&quot;Anchor link for: 2-projektentscheidungen&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Zum Beispiel:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Welche Architekturvariante nehmen wir?&lt;&#x2F;li&gt;
+&lt;li&gt;Sollen wir das Feature fixen, vereinfachen oder vertagen?&lt;&#x2F;li&gt;
+&lt;li&gt;Welche drei sinnvollen nächsten Schritte gibt es?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-advisory-interface-fur-assistenten&quot;&gt;3. Advisory-Interface für Assistenten&lt;a class=&quot;zola-anchor&quot; href=&quot;#3-advisory-interface-fur-assistenten&quot; aria-label=&quot;Anchor link for: 3-advisory-interface-fur-assistenten&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h3&gt;
+&lt;p&gt;Das ist für mich besonders spannend.&lt;&#x2F;p&gt;
+&lt;p&gt;Viele Assistenten können heute schon viel begründen, viel zusammenfassen und viel strukturieren.
+Aber die Übersetzung in eine &lt;strong&gt;ruhige, gute Entscheidungsoberfläche&lt;&#x2F;strong&gt; ist oft noch schwach.&lt;&#x2F;p&gt;
+&lt;p&gt;Genau dort könnte so ein Interface sehr nützlich werden.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;was-ich-daran-bewusst-nicht-will&quot;&gt;Was ich daran bewusst nicht will&lt;a class=&quot;zola-anchor&quot; href=&quot;#was-ich-daran-bewusst-nicht-will&quot; aria-label=&quot;Anchor link for: was-ich-daran-bewusst-nicht-will&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Ich will kein Dashboard-Monster.
+Ich will keine Entscheidungstheater-Maschine.
+Ich will keine Oberfläche, die ihre eigene Cleverness aufführt.&lt;&#x2F;p&gt;
+&lt;p&gt;Ich will eher das Gegenteil:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ruhig&lt;&#x2F;li&gt;
+&lt;li&gt;klar&lt;&#x2F;li&gt;
+&lt;li&gt;knapp&lt;&#x2F;li&gt;
+&lt;li&gt;hilfreich&lt;&#x2F;li&gt;
+&lt;li&gt;vertiefbar, aber nicht aufdringlich&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Wenn das System smart ist, muss es das nicht schon im ersten Pixel beweisen.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;der-eigentliche-gedanke-dahinter&quot;&gt;Der eigentliche Gedanke dahinter&lt;a class=&quot;zola-anchor&quot; href=&quot;#der-eigentliche-gedanke-dahinter&quot; aria-label=&quot;Anchor link for: der-eigentliche-gedanke-dahinter&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Am Ende ist das keine rein technische Idee.
+Es ist eine kleine Produktthese:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gute Entscheidungsunterstützung beginnt nicht mit maximaler Analyse, sondern mit gut kuratierten, auswählbaren Optionen.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Das ist ein Unterschied.&lt;&#x2F;p&gt;
+&lt;p&gt;Nicht:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;„Hier sind alle Gedanken. Viel Glück.&quot;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Sondern:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;„Hier sind drei brauchbare Wege. Wenn du willst, gehen wir tiefer.&quot;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Das ist respektvoller gegenüber Aufmerksamkeit.
+Und meistens auch praktischer.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wie-ich-es-momentan-formulieren-wurde&quot;&gt;Wie ich es momentan formulieren würde&lt;a class=&quot;zola-anchor&quot; href=&quot;#wie-ich-es-momentan-formulieren-wurde&quot; aria-label=&quot;Anchor link for: wie-ich-es-momentan-formulieren-wurde&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;h2&gt;
+&lt;p&gt;Wenn ich das Konzept auf einen Satz reduzieren müsste, wäre es dieser:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Drei gute Optionen zuerst. Mehr Kontext nur dann, wenn er wirklich gebraucht wird.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Nicht revolutionär.
+Aber vielleicht genau die Sorte Interface-Idee, die im Alltag mehr bringt als noch ein weiterer Chat, der alles weiss und trotzdem nicht gut beim Entscheiden hilft.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
