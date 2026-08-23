@@ -12,7 +12,7 @@ lang = "de"
 posts_title = "Posts"
 posts_subtitle = "Wie ein persönlicher AI-Assistent im echten Betrieb besser, ruhiger und nützlicher wird."
 
-date_format = "%b %-d, %Y at %H:%M"
+date_format = "%d.%m.%Y · %H:%M"
 
 categorized = false
 back_to_top = true

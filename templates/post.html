@@ -4,9 +4,8 @@
 
 {% block page %}post{% endblock page %}
 {% block lang -%}
-{%- set blog_section_path = config.extra.blog_section_path | trim_start_matches(pat="/") -%}
-{%- set section_md_path = blog_section_path ~ "/_index.md" -%}
-{%- set section = get_section(path=section_md_path, metadata_only=true) -%}
+{%- set section_md_path = page.ancestors | last -%}
+{%- set_global section = get_section(path=section_md_path) -%}
 {%- if page.extra.lang %}{{page.extra.lang}}{% elif section.extra.lang %}{{section.extra.lang}}{% else %}{{page.lang}}{% endif -%}
 {%- endblock lang %}
 {% block title %}{{ page.title }}{% endblock title %}
@@ -55,7 +54,7 @@
 <div id="wrapper">
   <div id="blank"></div>
   <aside>
-    {% if page.extra.toc is defined %}{% set show_toc = page.extra.toc %}{% else %}{% set show_toc = section.extra.toc %}{% endif %}
+    {% if page.extra.toc is defined %}{% set show_toc = page.extra.toc %}{% else %}{% set show_toc = section.extra.toc | default(value=true) %}{% endif %}
     {% if show_toc and page.toc %}
     <nav>
       <ul>
@@ -76,7 +75,7 @@
       </ul>
     </nav>
     {% endif %}
-    {% if section.extra.back_to_top %}
+    {% if section.extra.back_to_top | default(value=true) %}
     <button id="back-to-top" aria-label="back to top">
       {% set icon = load_data(path="icon/arrow-up.svg") %}
       {{ icon | safe }}
@@ -88,7 +87,7 @@
     {{ macros::back_link(path = get_url(path=section.path)) }}
 
     <div>
-      {% if page.extra.copy is defined %}{% set allow_copy = page.extra.copy %}{% else %}{% set allow_copy = section.extra.copy %}{% endif %}
+      {% if page.extra.copy is defined %}{% set allow_copy = page.extra.copy %}{% else %}{% set allow_copy = section.extra.copy | default(value=true) %}{% endif %}
       {% if allow_copy %}
       {% set copy_icon = load_data(path="icon/copy.svg") %}
       {% set check_icon = load_data(path="icon/check.svg") %}
@@ -98,9 +97,9 @@
         <h1>{{ page.title }}</h1>
         <div id="post-info">
           <div id="date">
-            <span id="publish">{{ page.date | date(format=section.extra.date_format) }}</span>
+            <span id="publish">{{ page.date | date(format=section.extra.date_format | default(value="%d.%m.%Y · %H:%M")) }}</span>
             {% if page.updated and page.updated != page.date -%}
-            <span>Updated on <span id="updated">{{ page.updated | date(format=section.extra.date_format) }}</span></span>
+            <span>Aktualisiert am <span id="updated">{{ page.updated | date(format=section.extra.date_format | default(value="%d.%m.%Y · %H:%M")) }}</span></span>
             {% endif -%}
           </div>
 
@@ -114,13 +113,15 @@
           {% endif %}
         </div>
 
-        {% if page.extra.outdate_alert is defined %}{% set show_outdate_alert = page.extra.outdate_alert %}{% else %}{% set show_outdate_alert = section.extra.outdate_alert %}{% endif %}
-        {% if page.extra.outdate_alert_days is defined %}{% set outdate_alert_days = page.extra.outdate_alert_days %}{% else %}{% set outdate_alert_days = section.extra.outdate_alert_days %}{% endif %}
+        {% if page.extra.outdate_alert is defined %}{% set show_outdate_alert = page.extra.outdate_alert %}{% else %}{% set show_outdate_alert = section.extra.outdate_alert | default(value=false) %}{% endif %}
+        {% if page.extra.outdate_alert_days is defined %}{% set outdate_alert_days = page.extra.outdate_alert_days %}{% else %}{% set outdate_alert_days = section.extra.outdate_alert_days | default(value=90) %}{% endif %}
+        {% set outdate_text_before = section.extra.outdate_alert_text_before | default(value="Dieser Beitrag wurde zuletzt vor ") %}
+        {% set outdate_text_after = section.extra.outdate_alert_text_after | default(value=" Tagen aktualisiert und könnte veraltet sein.") %}
 
         {% if show_outdate_alert -%}
         <blockquote id="outdate_alert" class="callout caution hidden" data-days="{{ outdate_alert_days }}"
-          data-alert-text-before="{{ section.extra.outdate_alert_text_before }}"
-          data-alert-text-after="{{ section.extra.outdate_alert_text_after }}">
+          data-alert-text-before="{{ outdate_text_before }}"
+          data-alert-text-after="{{ outdate_text_after }}">
           <div class="content"></div>
         </blockquote>
         {% endif %}
@@ -133,7 +134,7 @@
       <div class="reaction {{ config.extra.reaction_align }}" data-endpoint="{{ config.extra.reaction_endpoint }}"></div>
       {% endif %}
 
-      {% if page.extra.comment is defined %}{% set show_comment = page.extra.comment %}{% else %}{% set show_comment = section.extra.comment %}{% endif %}
+      {% if page.extra.comment is defined %}{% set show_comment = page.extra.comment %}{% else %}{% set show_comment = section.extra.comment | default(value=false) %}{% endif %}
       {% if show_comment %}
       <div class="giscus"></div>
       {% include "_giscus_script.html" %}

@@ -8,12 +8,12 @@ insert_anchor_links = "right"
 generate_feeds = true
 
 [extra]
-lang = "en"
+lang = "de"
 
 title = "Blog"
 subtitle = "Persönliche Texte auf Deutsch: direkt, ungefiltert und näher an echten Gedanken als an sauberer Selbstinszenierung."
 
-date_format = "%b %-d, %Y at %H:%M"
+date_format = "%d.%m.%Y · %H:%M"
 
 categorized = false # posts can be categorized
 back_to_top = true # show back-to-top button

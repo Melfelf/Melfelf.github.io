@@ -8,12 +8,12 @@ insert_anchor_links = "right"
 generate_feeds = true
 
 [extra]
-lang = "en"
+lang = "de"
 
 title = "Projects"
 subtitle = "Hier liegen die Dinge, die grösser sind als ein einzelner Artikel: Projekte mit eigener Struktur, Doku und laufender Entwicklung."
 
-date_format = "%b %-d, %Y at %H:%M"
+date_format = "%d.%m.%Y · %H:%M"
 
 categorized = false
 back_to_top = true
@@ -31,6 +31,7 @@ Willkommen im Projektbereich. Hier landen Vorhaben, die über einen einzelnen Bl
 
 ## Quick Jump
 
+- [Fokusfuchs](/fokusfuchs-ios/)
 - [Decision Architect](./decision-architect/)
 - [Melflin Display](./melflin-display/)
 - [Agent System Instructions](./agent-system-instructions/)

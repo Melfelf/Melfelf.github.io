@@ -3,7 +3,12 @@ function enableBackLink() {
   if (!backLink) return;
   backLink.addEventListener('click', (e) => {
     e.preventDefault();
-    history.back();
+    const cameFromThisSite = document.referrer.startsWith(`${location.origin}/`);
+    if (cameFromThisSite && history.length > 1) {
+      history.back();
+    } else {
+      location.assign(backLink.href);
+    }
   });
 }
 

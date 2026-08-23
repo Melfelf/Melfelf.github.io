@@ -39,7 +39,7 @@
 <div id="wrapper">
   <main>
     {{ nav::site_nav(current_path=section.path) }}
-    {{ prose::back_link() }}
+    {{ prose::back_link(path=get_url(path="/")) }}
 
     <div class="section-title">
       <h1>{{ section.extra.title | default(value=section.title) }}</h1>

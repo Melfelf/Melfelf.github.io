@@ -12,7 +12,7 @@ profile_text = "Ich dokumentiere Systeme so, wie sie wirklich sind: mit Annahmen
 
 hero_kicker = "Infrastruktur · Automatisierung · praktische AI"
 hero_title = "Ich baue Systeme, die Arbeit leichter machen."
-hero_intro = "Azure, Endpoint Management, Automatisierung und persönliche AI-Assistenten – hier landen Lösungen, Experimente und ehrliche Learnings aus der Praxis."
+hero_intro = "Azure, Endpoint Management, Automatisierung, Apps und persönliche AI-Assistenten – hier landen Lösungen, Experimente und ehrliche Learnings aus der Praxis."
 
 focus = [
   { name = "Infrastruktur", short = "Azure · Endpoint · Betrieb", text = "Plattformen, Endpoints und Abläufe, die nicht nur auf der Architekturfolie funktionieren, sondern auch montagmorgens im Betrieb." },

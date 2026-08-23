@@ -185,6 +185,17 @@ h3 {
   font-size: clamp(4.5rem, 12vw, 7.8rem);
 }
 
+.hero-app-icon {
+  width: min(280px, 72vw);
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 26%;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 22px rgba(114, 230, 189, 0.06),
+    0 0 0 46px rgba(255, 107, 26, 0.045);
+}
+
 .actions,
 .trust-row {
   display: flex;
@@ -201,6 +212,7 @@ h3 {
   min-height: 50px;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   padding: 12px 20px;
   border: 1px solid transparent;
   border-radius: 15px;
@@ -235,6 +247,45 @@ h3 {
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 650;
+}
+
+.pill-accent {
+  border-color: rgba(255, 107, 26, 0.48);
+  background: rgba(255, 107, 26, 0.14);
+  color: #ffd0b9;
+}
+
+.availability {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(5, 20, 40, 0.45);
+}
+
+.availability > div {
+  padding: 20px 24px;
+}
+
+.availability > div + div {
+  border-left: 1px solid var(--border);
+}
+
+.availability strong,
+.availability span {
+  display: block;
+}
+
+.availability strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.availability span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .section {
@@ -365,7 +416,8 @@ h3 {
   margin: 0;
 }
 
-.contact-box p + p {
+.contact-box p + p,
+.notice p + p {
   margin-top: 8px;
 }
 
@@ -419,6 +471,15 @@ details p {
 
   .focus-ring {
     width: 190px;
+  }
+
+  .availability {
+    grid-template-columns: 1fr;
+  }
+
+  .availability > div + div {
+    border-top: 1px solid var(--border);
+    border-left: 0;
   }
 
   .grid,
