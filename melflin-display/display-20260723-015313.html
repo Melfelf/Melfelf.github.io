@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang='de'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>Melflin Heute</title>
+  <style>
+    :root { --ink: #111; --paper: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: none; text-rendering: geometricPrecision; }
+    .page { width: 800px; height: 480px; margin: 0 auto; padding: 18px 22px 14px; display: grid; grid-template-rows: 72px minmax(0, 1fr) 36px; gap: 11px; overflow: hidden; background: var(--paper); }
+    .eyebrow { font-size: 12px; line-height: 1; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .header { display: grid; grid-template-columns: 1.34fr 1fr; align-items: end; gap: 20px; border-bottom: 4px solid var(--ink); padding-bottom: 9px; min-width: 0; }
+    .date-block { min-width: 0; }
+    .title-big { margin-top: 8px; font-size: 34px; font-weight: 800; line-height: .95; letter-spacing: -.025em; white-space: nowrap; }
+    .transit-header { text-align: right; min-width: 0; }
+    .transit-label { display: flex; justify-content: flex-end; align-items: baseline; gap: 8px; font-size: 12px; line-height: 1; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .transit-line { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 20px; padding: 0 5px; color: var(--paper); background: var(--ink); font-size: 13px; letter-spacing: 0; }
+    .rbs-times { margin-top: 9px; font-size: 22px; font-weight: 800; line-height: 1; letter-spacing: 0; white-space: nowrap; }
+    .content { display: grid; grid-template-columns: 1.58fr 1fr; gap: 24px; min-height: 0; }
+    .agenda { min-width: 0; display: grid; grid-template-rows: 26px 1fr; gap: 5px; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--ink); padding-bottom: 5px; }
+    .section-count { font-size: 11px; line-height: 1; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .events { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); min-height: 0; }
+    .event-card { display: grid; grid-template-columns: 84px 1fr; column-gap: 7px; align-items: center; min-height: 0; border-bottom: 2px solid var(--ink); overflow: hidden; }
+    .event-card:last-child { border-bottom: 0; }
+    .event-role { width: 76px; padding: 7px 5px; border: 2px solid var(--ink); font-size: 11px; line-height: 1.08; font-weight: 800; text-align: center; text-transform: uppercase; }
+    .event-card.is-ongoing .event-role { color: var(--paper); background: var(--ink); }
+    .event-copy { min-width: 0; padding: 7px 0; }
+    .event-title { font-size: 20px; line-height: 1.08; font-weight: 800; letter-spacing: -.01em; max-height: 44px; overflow: hidden; }
+    .event-detail { margin-top: 7px; font-size: 13px; line-height: 1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .side { height: 100%; display: grid; grid-template-rows: 157px minmax(0, 1fr); gap: 13px; min-height: 0; overflow: hidden; }
+    .panel { min-height: 0; overflow: hidden; }
+    .panel-note { border-top: 3px solid var(--ink); padding-top: 9px; }
+    .panel-head { display: flex; align-items: flex-start; justify-content: space-between; }
+    .weather-hero { display: grid; grid-template-columns: 1fr 54px; align-items: center; min-height: 64px; }
+    .weather-now { display: flex; align-items: baseline; gap: 8px; }
+    .weather-temp { font-size: 38px; line-height: 1; font-weight: 800; letter-spacing: -.035em; }
+    .weather-desc { font-size: 15px; line-height: 1; font-weight: 800; text-transform: capitalize; }
+    .weather-icon { width: 52px; height: 52px; }
+    .weather-icon svg { width: 100%; height: 100%; display: block; }
+    .weather-list { border-top: 2px solid var(--ink); padding-top: 6px; }
+    .weather-row { display: grid; grid-template-columns: 78px 42px 1fr; gap: 6px; align-items: baseline; min-height: 24px; font-size: 12px; line-height: 1.05; font-weight: 700; }
+    .weather-row strong { font-size: 15px; }
+    .note { margin-top: 10px; font-size: 19px; line-height: 1.2; font-weight: 800; letter-spacing: 0; white-space: pre-line; }
+    .note-secondary { margin-top: 10px; font-size: 12px; line-height: 1.3; font-weight: 700; }
+    .footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 2px solid var(--ink); padding-top: 5px; overflow: hidden; }
+    .button-legend { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .button-hint { height: 26px; min-width: 112px; display: flex; align-items: center; gap: 7px; padding: 0 8px; border: 2px solid var(--ink); overflow: hidden; white-space: nowrap; }
+    .button-key { font-size: 10px; line-height: 1; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .button-action { font-size: 14px; line-height: 1; font-weight: 800; overflow: hidden; text-overflow: ellipsis; }
+    .footer-meta { display: flex; align-items: center; gap: 12px; font-size: 11px; line-height: 1; font-weight: 700; white-space: nowrap; }
+    .footer-meta span + span { border-left: 2px solid var(--ink); padding-left: 12px; }
+  </style>
+</head>
+<body>
+  <div class='page'>
+    <div class='header'>
+      <div class='date-block'>
+        <div class='eyebrow'>Heute im Überblick</div>
+        <div class='title-big'>Donnerstag, 23.07.2026</div>
+      </div>
+      <div class='transit-header'>
+        <div class='transit-label'><span>Felsenau → Bern</span><span class='transit-line'>S9</span></div>
+        <div class='rbs-times' data-transit-times>05:18 - 05:39 - 05:54 - 06:09</div>
+      </div>
+    </div>
+    <div class='content'>
+      <div class='agenda'>
+        <div class='section-head'><span class='eyebrow'>Agenda</span><span class='section-count'>4 Einträge</span></div>
+        <div class='events'>
+          <div class='event-card'>
+      <div class='event-role'>Heute</div>
+      <div class='event-copy'>
+        <div class='event-title'>Türli duschen</div>
+        <div class='event-detail'>Do 23.07. 20:00</div>
+      </div>
+    </div>
+    
+    <div class='event-card'>
+      <div class='event-role'>Danach</div>
+      <div class='event-copy'>
+        <div class='event-title'>Türli duschen</div>
+        <div class='event-detail'>So 26.07. 20:00</div>
+      </div>
+    </div>
+    
+    <div class='event-card'>
+      <div class='event-role'>Danach</div>
+      <div class='event-copy'>
+        <div class='event-title'>Türli duschen</div>
+        <div class='event-detail'>Do 30.07. 20:00</div>
+      </div>
+    </div>
+    
+    <div class='event-card'>
+      <div class='event-role'>Weiter</div>
+      <div class='event-copy'>
+        <div class='event-title'>Türli duschen</div>
+        <div class='event-detail'>So 02.08. 20:00</div>
+      </div>
+    </div>
+        </div>
+      </div>
+      <div class='side'>
+        <div class='panel'>
+          <div class='eyebrow'>Wetter · Bern</div>
+          <div class='weather-hero'>
+            <div class='weather-now'><span class='weather-temp'>16.9°</span><span class='weather-desc'>bedeckt</span></div>
+            <div class='weather-icon' aria-label='Wetter'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M22 46h24c7 0 12-5 12-11s-5-11-11-11h-1c-2-7-8-12-16-12-8 0-15 5-17 13-5 0-9 5-9 10 0 6 5 11 11 11h7'/></g></svg></div>
+          </div>
+          <div class='weather-list'><div class='weather-row'><span>Wohnzimmer</span><strong>23.7°</strong><span>innen</span></div><div class='weather-row'><span>In 3h</span><strong>13.0°</strong><span>bedeckt</span></div><div class='weather-row'><span>In 6h</span><strong>17.9°</strong><span>überwiegend klar</span></div></div>
+        </div>
+        <div class='panel panel-note'>
+          <div class='eyebrow'>Melflin</div>
+          <div class='note'>Ein guter Plan entlastet den Kopf schon vor dem ersten Schritt.</div>
+          <div class='note-secondary'>Als Nächstes: Türli duschen · Do 23.07. 20:00</div>
+        </div>
+      </div>
+    </div>
+    <div class='footer'>
+      <div class='button-legend' aria-label='Tastenbelegung'><div class='button-hint' data-button='left'><span class='button-key'>Links</span><span class='button-action'>Gesehen</span></div><div class='button-hint' data-button='right'><span class='button-key'>Rechts</span><span class='button-action'>Später</span></div></div>
+      <div class='footer-meta'>
+        <span>Akku 97.2 % · 4.09 V</span>
+        <span>Aktualisiert 23.07. 03:53</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const API = 'https://transport.opendata.ch/v1/stationboard?station=Bern%2C%20Felsenau&limit=12';
+      const timesEl = document.querySelector('[data-transit-times]');
+
+      function shortTime(raw) {
+        return typeof raw === 'string' && raw.length >= 16 ? raw.slice(11, 16) : '';
+      }
+
+      function isRbsToBern(entry) {
+        const category = String(entry.category || '');
+        const number = String(entry.number || '');
+        const operator = String(entry.operator || '').toUpperCase();
+        const destination = String(entry.to || '');
+        const line = number && !number.startsWith(category) ? `${category}${number}` : (number || category);
+        return operator.includes('RBS') && (category === 'S' || line.startsWith('S')) && destination.includes('Bern');
+      }
+
+      async function refreshTransit() {
+        if (!timesEl) return;
+        try {
+          const response = await fetch(`${API}&_=${Date.now()}`, { cache: 'no-store' });
+          if (!response.ok) return;
+          const data = await response.json();
+          const times = (data.stationboard || [])
+            .filter(isRbsToBern)
+            .map((entry) => shortTime(entry.stop && entry.stop.departure))
+            .filter(Boolean)
+            .slice(0, 4);
+          if (times.length) timesEl.textContent = times.join(' - ');
+        } catch (error) {
+          // Keep the server-rendered fallback when the live transit API is unavailable.
+        }
+      }
+
+      async function safeReload() {
+        try {
+          const probe = new URL(window.location.href);
+          probe.searchParams.set('probe', String(Date.now()));
+          const response = await fetch(probe.toString(), { cache: 'no-store' });
+          if (!response.ok) return;
+
+          const target = new URL(window.location.href);
+          target.searchParams.delete('probe');
+          target.searchParams.set('reload', String(Date.now()));
+          window.location.replace(target.toString());
+        } catch (error) {
+          // Keep the last working page visible while the display reconnects.
+        }
+      }
+
+      refreshTransit();
+      setInterval(refreshTransit, 120000);
+      setInterval(safeReload, 1800000);
+      window.addEventListener('online', () => setTimeout(safeReload, 3000));
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) setTimeout(safeReload, 3000);
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') setTimeout(safeReload, 3000);
+      });
+    })();
+  </script>
+</body>
+</html>
