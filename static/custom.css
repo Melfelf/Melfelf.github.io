@@ -1098,3 +1098,24 @@ a:focus-visible,
     word-break: normal;
   }
 }
+
+/* September 2026: app discovery and reading across every section. */
+body, body.dark { background-image: none; }
+:root { --melf-radius: 12px; --melf-reading: 780px; }
+.skip-link { position: fixed; top: -100px; left: 20px; z-index: 100; padding: 12px 18px; color: var(--melf-ink); background: var(--melf-paper-raised); border: 2px solid var(--melf-blue); }
+.skip-link:focus { top: 12px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--melf-blue); outline-offset: 5px; border-radius: 3px; }
+.nav-links a { min-height: 44px; display: inline-flex; align-items: center; font-size: .75rem; }
+.home-feature { border-radius: 18px; }
+.mnote-feature { background: #172958; }
+.mnote-feature .button-primary { background: #dce7ff; color: #172958; }
+.focus-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.prose { overflow-wrap: anywhere; }
+.prose p, .prose li { line-height: 1.8; }
+.prose h2, .prose h3 { scroll-margin-top: 24px; }
+.prose img[src*="app-icon.png"] { max-width: 180px; border-radius: 32px; }
+.prose img[src*="heute-1-3.png"] { width: min(100%,320px); border-radius: 24px; display: block; margin: 2rem auto; }
+.prose table { display: block; max-width: 100%; overflow-x: auto; }
+@media(max-width: 640px) { .focus-grid { grid-template-columns: 1fr; } .nav-links { justify-content: flex-start; } .home-feature { border-radius: 12px; } }
+body.prose-page #wrapper, body.page #wrapper { width: calc(100% - 40px); margin: 0 auto; padding-bottom: 40px; }
+body.prose-page .section-title h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); line-height: 1.08; }

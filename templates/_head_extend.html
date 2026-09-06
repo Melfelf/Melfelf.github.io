@@ -1,0 +1,24 @@
+{% if page is defined %}
+{% set share_title = page.title %}
+{% set share_description = page.description | default(value=config.description) %}
+{% set canonical_url = page.permalink %}
+{% elif section is defined %}
+{% set share_title = section.title | default(value=config.title) %}
+{% set share_description = section.description | default(value=config.description) %}
+{% set canonical_url = section.permalink %}
+{% else %}
+{% set share_title = config.title %}
+{% set share_description = config.description %}
+{% set canonical_url = current_url | default(value=config.base_url) %}
+{% endif %}
+<link rel="canonical" href="{{ canonical_url }}">
+<meta property="og:site_name" content="melf.ch">
+<meta property="og:title" content="{{ share_title }}">
+<meta property="og:description" content="{{ share_description | striptags }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:type" content="{% if page is defined %}article{% else %}website{% endif %}">
+{% if canonical_url is containing('m-note') %}
+<meta property="og:image" content="{{ get_url(path='images/m-note/app-icon.png') }}">
+{% elif canonical_url is containing('fokusfuchs') %}
+<meta property="og:image" content="{{ get_url(path='images/fokusfuchs/app-icon.png') }}">
+{% endif %}

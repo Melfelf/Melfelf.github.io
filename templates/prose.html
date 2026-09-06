@@ -46,7 +46,7 @@
 
 {% block content %}
 <div id="wrapper">
-  <main>
+  <main id="main-content">
     {{ nav::site_nav(current_path=section.path) }}
     {{ macros::back_link(path = get_url(path="/")) }}
     {% include "_section_title.html" %}

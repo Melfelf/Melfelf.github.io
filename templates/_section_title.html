@@ -1,0 +1,8 @@
+<div class="section-title">
+  <h1>{{ section.extra.title | default(value=section.title) }}</h1>
+  {% if section.extra.subtitle %}
+  <p>{{ section.extra.subtitle }}</p>
+  {% elif section.description %}
+  <p>{{ section.description }}</p>
+  {% endif %}
+</div>

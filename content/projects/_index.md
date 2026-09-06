@@ -1,5 +1,5 @@
 +++
-title = "Projects"
+title = "Projekte"
 description = "Projektbereiche mit Dokumentation, Architektur, Learnings und laufenden Iterationen statt einzelner verstreuter Posts."
 sort_by = "date"
 template = "projects.html"
@@ -10,7 +10,7 @@ generate_feeds = true
 [extra]
 lang = "de"
 
-title = "Projects"
+title = "Projekte"
 subtitle = "Hier liegen die Dinge, die grösser sind als ein einzelner Artikel: Projekte mit eigener Struktur, Doku und laufender Entwicklung."
 
 date_format = "%d.%m.%Y · %H:%M"
@@ -29,9 +29,11 @@ outdate_alert_text_after = " days ago and may be out of date."
 
 Willkommen im Projektbereich. Hier landen Vorhaben, die über einen einzelnen Blogpost hinausgehen und deshalb ihre eigene Struktur brauchen.
 
-## Quick Jump
+## Direkt zu den Projekten
 
 - [Fokusfuchs](/fokusfuchs-ios/)
+- [M-Note](/m-note/)
+- [Alle Apps und ihr Entwicklungsstand](/apps/)
 - [Decision Architect](./decision-architect/)
 - [Melflin Display](./melflin-display/)
 - [Agent System Instructions](./agent-system-instructions/)

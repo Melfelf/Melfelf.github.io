@@ -19,7 +19,7 @@
 
 {% block content %}
 <div id="wrapper">
-  <main>
+  <main id="main-content">
     {{ nav::site_nav(current_path="/") }}
 
     <section class="home-hero" aria-labelledby="hero-title">
@@ -28,7 +28,7 @@
         <h1 id="hero-title">{{ section.extra.hero_title }}</h1>
         <p class="hero-lead">{{ section.extra.hero_intro }}</p>
         <div class="hero-actions">
-          <a class="button-primary instant" href="{{ get_url(path='/melflin') }}">Melflin-Log lesen <span aria-hidden="true">↗</span></a>
+          <a class="button-primary instant" href="{{ get_url(path='/apps') }}">Meine Apps entdecken <span aria-hidden="true">↗</span></a>
           <a class="button-secondary instant" href="{{ get_url(path='/it-pro') }}">Zur IT-Praxis <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -36,7 +36,7 @@
       <aside class="hero-index" aria-label="Thematischer Index">
         <div class="index-head">
           <span>MELF.CH</span>
-          <span>WORKING LOG / 2026</span>
+          <span>APPS &amp; PRAXIS / 2026</span>
         </div>
         <ol>
           {% for item in section.extra.focus %}
@@ -49,7 +49,7 @@
           </li>
           {% endfor %}
         </ol>
-        <p class="index-note">Gebaut, getestet, aufgeschrieben. Ohne Hochglanznebel.</p>
+        <p class="index-note">Produkte, Arbeitsnotizen und Erfahrungen aus der Entwicklung.</p>
       </aside>
     </section>
 
@@ -80,22 +80,43 @@
 
     <section class="home-feature" aria-labelledby="fokusfuchs-title">
       <div class="home-feature-copy">
-        <p class="section-kicker">Neu im App Store</p>
-        <h2 id="fokusfuchs-title">Fokusfuchs ist veröffentlicht.</h2>
-        <p>Meine erste App im App Store: neun kurze Konzentrations- und Lernübungen für iPhone und iPad. Kostenlos, ohne Konto, Werbung oder Tracking.</p>
+        <p class="section-kicker">Fokusfuchs · iPhone &amp; iPad</p>
+        <h2 id="fokusfuchs-title">Mehr Ruhe. Klarer Fokus.</h2>
+        <p>Kurze Schulübungen und geführtes Konzentrationstraining. Zwei Trainingswelten, lokale Profile und persönlicher Fortschritt. Version 1.3 verbessert den Einstieg und die Lesbarkeit.</p>
         <div class="home-feature-actions">
           <a class="button-primary" href="https://apps.apple.com/ch/app/fokusfuchs/id6799122095">Im App Store <span aria-hidden="true">↗</span></a>
-          <a class="button-secondary instant" href="{{ get_url(path='/blog/fokusfuchs-erste-app-im-app-store') }}">Die Geschichte <span aria-hidden="true">→</span></a>
+          <a class="button-secondary instant" href="{{ get_url(path='/blog/fokusfuchs-1-3-klarer-fokus') }}">Zum Update <span aria-hidden="true">→</span></a>
         </div>
         <ul class="home-feature-facts" aria-label="Veröffentlichungsdetails">
-          <li><strong>1.0</strong><span>öffentliche Version</span></li>
-          <li><strong>21.08.2026</strong><span>veröffentlicht</span></li>
+          <li><strong>1.3</strong><span>Bei Apple eingereicht</span></li>
+          <li><strong>Ohne Konto</strong><span>lokale Profile</span></li>
           <li><strong>iPhone + iPad</strong><span>ab iOS 26</span></li>
         </ul>
       </div>
       <a class="home-feature-visual instant" href="{{ get_url(path='/fokusfuchs-ios/') }}" aria-label="Zur Fokusfuchs-Produktseite">
         <img src="{{ get_url(path='images/fokusfuchs/app-icon.png') }}" width="640" height="640" alt="App-Icon von Fokusfuchs">
         <span>Produkt, Support &amp; Datenschutz <span aria-hidden="true">↗</span></span>
+      </a>
+    </section>
+
+    <section class="home-feature mnote-feature" aria-labelledby="mnote-title">
+      <div class="home-feature-copy">
+        <p class="section-kicker">M-Note · In TestFlight</p>
+        <h2 id="mnote-title">Deine Gedanken.<br>Deine Dateien.</h2>
+        <p>Markdown-Notizen in iCloud Drive. Schreiben, suchen, lesen und Sprachnotizen weiterverarbeiten, in einer nativen Oberfläche für iPhone und iPad.</p>
+        <div class="home-feature-actions">
+          <a class="button-primary instant" href="{{ get_url(path='/m-note/') }}">M-Note kennenlernen <span aria-hidden="true">→</span></a>
+          <a class="button-secondary instant" href="{{ get_url(path='/blog/m-note-markdown-und-sprachnotizen/') }}">Entwicklungsbericht <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="home-feature-facts" aria-label="M-Note Eigenschaften">
+          <li><strong>Markdown</strong><span>portable Notizen</span></li>
+          <li><strong>iCloud Drive</strong><span>eigene Dateien</span></li>
+          <li><strong>Beta</strong><span>ab iOS 27</span></li>
+        </ul>
+      </div>
+      <a class="home-feature-visual instant" href="{{ get_url(path='/m-note/') }}" aria-label="Zur M-Note-Produktseite">
+        <img src="{{ get_url(path='images/m-note/app-icon.png') }}" width="1024" height="1024" loading="lazy" alt="M-Note App-Icon mit einem M aus Papier und einer Füllfeder">
+        <span>Funktionen &amp; Entwicklungsstand <span aria-hidden="true">↗</span></span>
       </a>
     </section>
 
@@ -118,7 +139,7 @@
     <section class="section-directory" aria-labelledby="directory-title">
       <div class="section-heading compact">
         <p class="section-kicker">Verzeichnis</p>
-        <h2 id="directory-title">Sechs Einstiege. Kein Menü-Labyrinth.</h2>
+        <h2 id="directory-title">Finde deinen Einstieg.</h2>
       </div>
       <div class="section-grid" aria-label="Bereiche der Website">
         {% for item in config.extra.sections %}
@@ -137,13 +158,13 @@
       </div>
     </section>
 
-    {% set melflin_section = get_section(path="melflin/_index.md") %}
+    {% set melflin_section = get_section(path="blog/_index.md") %}
     <section class="home-recent-posts" aria-labelledby="recent-title">
       <div class="recent-lead">
         <p class="section-kicker">Zuletzt notiert</p>
-        <h2 id="recent-title">Aus dem Melflin-Log</h2>
-        <p>Was beim Bau eines persönlichen AI-Assistenten tatsächlich passiert – inklusive Fehlern, Korrekturen und Dingen, die überraschend gut funktionieren.</p>
-        <a class="text-link instant" href="{{ get_url(path='/melflin') }}">Alle Melflin-Notizen <span aria-hidden="true">→</span></a>
+        <h2 id="recent-title">Neue Beiträge</h2>
+        <p>Updates zu meinen Apps und Einblicke in die Arbeit dahinter. Mit konkreten Änderungen und einem ehrlichen Blick auf das, was noch offen ist.</p>
+        <a class="text-link instant" href="{{ get_url(path='/blog') }}">Alle Blogbeiträge <span aria-hidden="true">→</span></a>
       </div>
       <div class="recent-list">
         {% for post in melflin_section.pages | slice(end=4) %}
@@ -158,7 +179,7 @@
 
     <footer class="home-footer">
       <span>© 2026 Stefan “Melf” Moser</span>
-      <span>Automation · Infrastructure · AI</span>
+      <span>Apps · Infrastruktur · Automatisierung</span>
       <a href="https://github.com/Melfelf" target="_blank" rel="noreferrer noopener">GitHub ↗</a>
     </footer>
   </main>

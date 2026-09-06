@@ -525,3 +525,9 @@ details p {
     transition: none;
   }
 }
+
+/* Product update preview, September 2026 */
+.screenshot-section { display:grid; grid-template-columns: 1fr minmax(220px,320px); gap:clamp(24px,6vw,80px); align-items:center; }
+.screenshot-section img { width:100%; height:auto; border-radius:28px; border:1px solid #526582; }
+a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #ffbc91; outline-offset:5px; }
+@media(max-width:640px){ .screenshot-section{grid-template-columns:1fr;} .screenshot-section img{max-width:300px;justify-self:center;} }

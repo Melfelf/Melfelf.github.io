@@ -11,6 +11,8 @@ tags = ["Fokusfuchs", "iOS", "SwiftUI", "App Store"]
 lang = "de"
 +++
 
+> **Aktualisierung vom 6. September 2026:** Dieser Beitrag beschreibt die erste Veröffentlichung. Inzwischen ist Version 1.2 veröffentlicht; die Arbeit an Version 1.3 steht im [neuen Update-Beitrag](/blog/fokusfuchs-1-3-klarer-fokus/).
+
 Am 21. August 2026 ist [Fokusfuchs im App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) erschienen. Version 1.0, kostenlos für iPhone und iPad – und meine erste veröffentlichte App.
 
 Zwischen dem ersten Commit und diesem Eintrag im Store lagen zwei Wochen. Kurz genug, um nach einem Sprint auszusehen. Lang genug, um zu lernen, dass «läuft auf meinem iPhone» und «ist bereit für den App Store» zwei sehr verschiedene Zustände sind.

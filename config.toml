@@ -39,11 +39,12 @@ anchors = "on"
 
 sections = [
   { name = "Blog", path = "/blog", is_external = false },
+  { name = "Apps", path = "/apps", is_external = false },
   { name = "IT Pro", path = "/it-pro", is_external = false },
-  { name = "Projects", path = "/projects", is_external = false },
+  { name = "Projekte", path = "/projects", is_external = false },
   { name = "Melflin", path = "/melflin", is_external = false },
   { name = "AI Notes", path = "/ai-blubber", is_external = false },
-  { name = "Books", path = "/read", is_external = false },
+  { name = "Bücher", path = "/read", is_external = false },
   # { name = "tags", path = "/tags", is_external = false },
   { name = "GitHub", path = "https://github.com/Melfelf", is_external = true },
 ]
