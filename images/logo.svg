@@ -1,0 +1,61 @@
+<svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer circuit ring -->
+  <circle cx="70" cy="70" r="65" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.3"/>
+  <circle cx="70" cy="70" r="60" fill="none" stroke="url(#logoGradient)" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Circuit nodes -->
+  <circle cx="35" cy="70" r="2" fill="url(#logoGradient)" opacity="0.8"/>
+  <circle cx="105" cy="70" r="2" fill="url(#logoGradient)" opacity="0.8"/>
+  <circle cx="70" cy="35" r="2" fill="url(#logoGradient)" opacity="0.8"/>
+  <circle cx="70" cy="105" r="2" fill="url(#logoGradient)" opacity="0.8"/>
+  <circle cx="45" cy="45" r="1.5" fill="url(#logoGradient)" opacity="0.6"/>
+  <circle cx="95" cy="45" r="1.5" fill="url(#logoGradient)" opacity="0.6"/>
+  <circle cx="45" cy="95" r="1.5" fill="url(#logoGradient)" opacity="0.6"/>
+  <circle cx="95" cy="95" r="1.5" fill="url(#logoGradient)" opacity="0.6"/>
+
+  <!-- Circuit connections -->
+  <path d="M35 70 L45 70 M95 70 L105 70 M70 35 L70 45 M70 95 L70 105" stroke="url(#logoGradient)" stroke-width="1" opacity="0.4"/>
+  <path d="M45 45 L35 70 L45 95 M95 45 L105 70 L95 95" stroke="url(#logoGradient)" stroke-width="0.8" opacity="0.3"/>
+  <path d="M45 45 L70 35 L95 45 M45 95 L70 105 L95 95" stroke="url(#logoGradient)" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Central M with tech elements -->
+  <g filter="url(#glow)">
+    <!-- M structure -->
+    <path d="M50 55 L50 85 L58 85 L65 70 L72 85 L80 85 L80 55 L75 55 L75 75 L70 60 L60 60 L55 75 L55 55 Z" fill="url(#logoGradient)"/>
+
+    <!-- Tech accents on M -->
+    <rect x="52" y="57" width="2" height="2" fill="white" opacity="0.9"/>
+    <rect x="76" y="57" width="2" height="2" fill="white" opacity="0.9"/>
+    <rect x="64" y="68" width="2" height="2" fill="white" opacity="0.9"/>
+    <rect x="52" y="81" width="2" height="2" fill="white" opacity="0.9"/>
+    <rect x="76" y="81" width="2" height="2" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Inner accent ring -->
+  <circle cx="70" cy="70" r="25" fill="none" stroke="url(#logoGradient)" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="70" cy="70" r="20" fill="none" stroke="url(#logoGradient)" stroke-width="0.3" opacity="0.3"/>
+
+  <!-- Corner decorative elements -->
+  <g opacity="0.4">
+    <path d="M15 15 L20 15 L20 20" stroke="url(#logoGradient)" stroke-width="1" fill="none"/>
+    <path d="M120 15 L125 15 L125 20" stroke="url(#logoGradient)" stroke-width="1" fill="none"/>
+    <path d="M15 120 L20 120 L20 125" stroke="url(#logoGradient)" stroke-width="1" fill="none"/>
+    <path d="M120 120 L125 120 L125 125" stroke="url(#logoGradient)" stroke-width="1" fill="none"/>
+  </g>
+</svg>
