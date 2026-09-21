@@ -20,25 +20,31 @@
     .content { display: grid; grid-template-columns: 1.76fr 1fr; gap: 18px; min-height: 0; }
     .agenda { min-width: 0; height: 100%; }
     .events { display: grid; grid-template-rows: repeat(6, minmax(0, 1fr)); min-height: 0; padding-bottom: 8px; overflow: hidden; }
-    .event-card { display: grid; grid-template-columns: 70px 1fr; column-gap: 8px; align-items: center; min-height: 0; border-bottom: 2px solid var(--ink); overflow: hidden; }
+    .event-card { display: grid; grid-template-columns: 62px 1fr; column-gap: 7px; align-items: center; min-height: 0; border-bottom: 2px solid var(--ink); overflow: hidden; }
     .event-card:last-child { border-bottom: 0; }
-    .event-role { width: 66px; padding: 6px 3px; border: 2px solid var(--ink); font-size: 9px; line-height: 1.05; font-weight: 800; text-align: center; text-transform: uppercase; }
+    .event-role { width: 58px; padding: 6px 2px; border: 2px solid var(--ink); font-size: 8px; line-height: 1.05; font-weight: 800; text-align: center; text-transform: uppercase; }
     .event-card.is-ongoing .event-role { color: var(--paper); background: var(--ink); }
     .event-copy { min-width: 0; min-height: 0; padding: 5px 0; overflow: hidden; transform: translateY(-3px); }
-    .event-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 17px; line-height: 1.05; font-weight: 800; letter-spacing: -.01em; max-height: 36px; overflow: hidden; }
+    .event-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 18px; line-height: 1.05; font-weight: 800; letter-spacing: -.01em; max-height: 38px; overflow: hidden; }
     .event-detail { margin-top: 4px; font-size: 10px; line-height: 1; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .side { height: 100%; display: grid; grid-template-rows: 170px minmax(0, 1fr); gap: 14px; min-height: 0; overflow: hidden; }
+    .side { height: 100%; display: grid; grid-template-rows: 195px minmax(0, 1fr); gap: 14px; min-height: 0; overflow: hidden; }
     .panel { min-height: 0; overflow: hidden; }
-    .weather-hero { display: grid; grid-template-columns: 1fr 54px; align-items: center; min-height: 64px; }
+    .weather-symbol-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 40px; margin-top: 4px; border-bottom: 2px solid var(--ink); }
+    .weather-symbol-item { display: flex; align-items: center; gap: 7px; min-width: 0; }
+    .weather-symbol-item + .weather-symbol-item { border-left: 2px solid var(--ink); padding-left: 9px; }
+    .weather-symbol-label { max-width: 112px; font-size: 10px; line-height: 1.05; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .moon-icon, .weather-symbol { width: 30px; height: 30px; flex: 0 0 auto; }
+    .moon-icon svg, .weather-symbol svg { width: 100%; height: 100%; display: block; }
+    .weather-hero { display: block; min-height: 47px; padding-top: 5px; }
     .weather-now { display: flex; align-items: baseline; gap: 8px; }
     .weather-temp { font-size: 38px; line-height: 1; font-weight: 800; letter-spacing: -.035em; }
     .weather-desc { font-size: 15px; line-height: 1; font-weight: 800; text-transform: capitalize; }
-    .weather-icon { width: 52px; height: 52px; }
-    .weather-icon svg { width: 100%; height: 100%; display: block; }
     .weather-list { border-top: 2px solid var(--ink); padding-top: 6px; }
-    .weather-row { display: grid; grid-template-columns: 78px 42px 1fr; gap: 6px; align-items: baseline; min-height: 24px; font-size: 12px; line-height: 1.05; font-weight: 700; }
+    .weather-row { display: grid; grid-template-columns: 82px 42px minmax(0, 1fr); gap: 6px; align-items: baseline; min-height: 24px; font-size: 11px; line-height: 1.05; font-weight: 700; }
+    .weather-row span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .weather-row strong { font-size: 15px; }
-    .transit-panel { border-top: 3px solid var(--ink); padding-top: 9px; }
+    .transit-panel { margin-top: 18px; border-top: 3px solid var(--ink); padding-top: 9px; }
+    .transit-panel .transit-label { justify-content: flex-start; text-align: left; }
     .transit-panel .rbs-times { margin-top: 12px; font-size: 25px; line-height: 1.1; white-space: normal; }
     .footer { display: flex; align-items: center; justify-content: flex-end; gap: 12px; border-top: 2px solid var(--ink); padding-top: 3px; overflow: hidden; }
     .footer-meta { display: flex; align-items: center; gap: 12px; font-size: 10px; line-height: 1; font-weight: 700; white-space: nowrap; }
@@ -107,9 +113,12 @@
       <div class='side'>
         <div class='panel'>
           <div class='eyebrow'>Wetter · Bern</div>
+          <div class='weather-symbol-row'>
+            <div class='weather-symbol-item'><div class='moon-icon' aria-label='Mondphase'><svg viewBox='0 0 64 64' aria-hidden='true'><defs><clipPath id='wmC'><circle cx='32' cy='32' r='18'/></clipPath></defs><circle cx='32' cy='32' r='18' fill='#fff' stroke='#111' stroke-width='0'/><ellipse cx='26' cy='32' rx='12' ry='18' fill='#111' clip-path='url(#wmC)'/></svg></div><span class='weather-symbol-label'>Zunehmender Mond</span></div>
+            <div class='weather-symbol-item'><div class='weather-symbol' aria-label='Wetter'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='3.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='24' cy='24' r='9'/><path d='M24 8v6M24 34v6M8 24h6M34 24h6M13 13l4 4M31 31l4 4M13 35l4-4M31 17l4-4'/></g></svg></div><span class='weather-symbol-label'>klar</span></div>
+          </div>
           <div class='weather-hero'>
-            <div class='weather-now'><span class='weather-temp'>17.2°</span><span class='weather-desc'>klar</span></div>
-            <div class='weather-icon' aria-label='Wetter'><svg viewBox='0 0 64 64' aria-hidden='true'><defs><clipPath id='wmC'><circle cx='32' cy='32' r='18'/></clipPath></defs><circle cx='32' cy='32' r='18' fill='#fff' stroke='#111' stroke-width='0'/><ellipse cx='26' cy='32' rx='12' ry='18' fill='#111' clip-path='url(#wmC)'/></svg></div>
+            <div class='weather-now'><span class='weather-temp'>17°</span><span class='weather-desc'>klar</span></div>
           </div>
           <div class='weather-list'><div class='weather-row'><span>Wohnzimmer</span><strong>22.5°</strong><span>innen</span></div><div class='weather-row'><span>In 3h</span><strong>10.9°</strong><span>klar</span></div><div class='weather-row'><span>In 6h</span><strong>8.8°</strong><span>klar</span></div></div>
         </div>
@@ -122,7 +131,7 @@
     <div class='footer'>
       <div class='footer-meta'>
         <span>Akku 14.1 % · 3.42 V</span>
-        <span>Aktualisiert 21.09. 22:14</span>
+        <span>Aktualisiert 21.09. 22:30</span>
       </div>
     </div>
   </div>
