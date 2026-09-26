@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Background -->
+  <rect width="900" height="600" fill="#1a1a2e"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" fill="#eee" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Self-Improvement Cycle (15 min)</text>
+  
+  <!-- Phase 1: Gateway Health -->
+  <rect x="50" y="60" width="180" height="60" rx="8" fill="#4a90a4" stroke="#2d5a6b" stroke-width="2"/>
+  <text x="140" y="85" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Phase 1</text>
+  <text x="140" y="105" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Gateway Health</text>
+  
+  <!-- Arrow -->
+  <line x1="140" y1="120" x2="140" y2="150" stroke="#666" stroke-width="2"/>
+  <polygon points="135,145 145,145 140,155" fill="#666"/>
+  
+  <!-- Phase 1b: Plan Evolution -->
+  <rect x="50" y="160" width="180" height="60" rx="8" fill="#e94560" stroke="#b83550" stroke-width="2"/>
+  <text x="140" y="185" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Phase 1b</text>
+  <text x="140" y="205" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Plan Evolution</text>
+  
+  <!-- Arrow -->
+  <line x1="140" y1="220" x2="140" y2="250" stroke="#666" stroke-width="2"/>
+  <polygon points="135,245 145,245 140,255" fill="#666"/>
+  
+  <!-- Phase 2: Execute Task -->
+  <rect x="50" y="260" width="180" height="60" rx="8" fill="#6b5b95" stroke="#4a3f6b" stroke-width="2"/>
+  <text x="140" y="285" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Phase 2</text>
+  <text x="140" y="305" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Execute Task</text>
+  <text x="140" y="320" fill="#aaa" font-family="Arial" font-size="8" text-anchor="middle">Read • Run • Mark Done</text>
+  
+  <!-- Arrow -->
+  <line x1="140" y1="320" x2="140" y2="350" stroke="#666" stroke-width="2"/>
+  <polygon points="135,345 145,345 140,355" fill="#666"/>
+  
+  <!-- Phase 3: Auto-Complete -->
+  <rect x="50" y="360" width="180" height="60" rx="8" fill="#2d5a6b" stroke="#1a3a4b" stroke-width="2"/>
+  <text x="140" y="385" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Phase 3</text>
+  <text x="140" y="405" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Auto-Complete</text>
+  <text x="140" y="420" fill="#aaa" font-family="Arial" font-size="8" text-anchor="middle">Backup • Log • Health</text>
+  
+  <!-- Arrow -->
+  <line x1="140" y1="420" x2="140" y2="450" stroke="#666" stroke-width="2"/>
+  <polygon points="135,445 145,445 140,455" fill="#666"/>
+  
+  <!-- Phase 4: Backup Check -->
+  <rect x="50" y="460" width="180" height="60" rx="8" fill="#0f3460" stroke="#0a2540" stroke-width="2"/>
+  <text x="140" y="485" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Phase 4</text>
+  <text x="140" y="505" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Backup Check</text>
+  <text x="140" y="520" fill="#aaa" font-family="Arial" font-size="8" text-anchor="middle">Create if >24h</text>
+  
+  <!-- Arrow -->
+  <line x1="140" y1="520" x2="140" y2="550" stroke="#666" stroke-width="2"/>
+  <polygon points="135,545 145,545 140,555" fill="#666"/>
+  
+  <!-- Phase 5: Archive -->
+  <rect x="50" y="560" width="180" height="35" rx="4" fill="#1a1a2e" stroke="#4a90a4" stroke-width="2"/>
+  <text x="140" y="582" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Phase 5: Archive Done</text>
+  
+  <!-- Right side - Telegram notifications -->
+  <rect x="670" y="60" width="180" height="80" rx="8" fill="#6b5b95" stroke="#4a3f6b" stroke-width="2"/>
+  <text x="760" y="85" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Notifications</text>
+  <text x="760" y="105" fill="#aaa" font-family="Arial" font-size="9" text-anchor="middle">Task completed</text>
+  <text x="760" y="120" fill="#aaa" font-family="Arial" font-size="9" text-anchor="middle">Status reports</text>
+  <text x="760" y="135" fill="#aaa" font-family="Arial" font-size="9" text-anchor="middle">Alerts</text>
+  
+  <!-- Status indicator -->
+  <rect x="670" y="160" width="180" height="60" rx="8" fill="#2d5a6b" stroke="#4a90a4" stroke-width="2"/>
+  <text x="760" y="185" fill="#4ade80" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Status Report</text>
+  <text x="760" y="210" fill="#aaa" font-family="Arial" font-size="9" text-anchor="middle">Hourly via Telegram</text>
+  
+  <!-- Configuration Panel -->
+  <rect x="670" y="240" width="180" height="180" rx="8" fill="#16213e" stroke="#4a90a4" stroke-width="2"/>
+  <text x="760" y="265" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Configuration</text>
+  
+  <text x="685" y="290" fill="#4ade80" font-family="monospace" font-size="9">BACKLOG_THRESHOLD=100</text>
+  <text x="685" y="310" fill="#4ade80" font-family="monospace" font-size="9">THRESHOLD=20</text>
+  <text x="685" y="330" fill="#4ade80" font-family="monospace" font-size="9">MIN_THRESHOLD=10</text>
+  <text x="685" y="355" fill="#aaa" font-family="Arial" font-size="9">Runs every 15 min</text>
+  <text x="685" y="375" fill="#aaa" font-family="Arial" font-size="9">Cron: */15 * * * *</text>
+  <text x="685" y="395" fill="#aaa" font-family="Arial" font-size="9">Location:</text>
+  <text x="685" y="410" fill="#aaa" font-family="monospace" font-size="8">/root/Melflin/scripts/</text>
+</svg>
