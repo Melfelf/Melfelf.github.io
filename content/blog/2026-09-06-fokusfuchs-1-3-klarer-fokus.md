@@ -13,6 +13,8 @@ Seit der ersten Veröffentlichung ist Fokusfuchs gewachsen. Aus neun kurzen Übu
 
 **Stand 6. September 2026:** Version 1.3 mit Build 35 ist bei Apple eingereicht und wartet auf die Prüfung. Die Freigabe für den App Store steht noch aus. Welche Version bereits erhältlich ist, zeigt der [App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095).
 
+> **Nachtrag vom 7. September 2026:** Version 1.3 ist inzwischen im App Store verfügbar. Die Angaben oben beschreiben den Stand bei der Einreichung.
+
 ## Weniger suchen, schneller anfangen
 
 Die Startseite stellt den nächsten Schritt deutlicher heraus. Das Tagesziel braucht weniger Platz, Konzentrationsübungen sind früher erreichbar und die wichtigste Aktion hebt sich klar von den übrigen Informationen ab.

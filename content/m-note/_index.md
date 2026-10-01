@@ -6,7 +6,7 @@ template = "prose.html"
 lang = "de"
 +++
 
-**In TestFlight-Entwicklung · Stand 6. September 2026**
+**TestFlight-Entwicklung · letzter bestätigter Upload: 0.23.1 (Build 53), 22. September 2026**
 
 ![M-Note App-Icon](/images/m-note/app-icon.png)
 
@@ -34,11 +34,13 @@ Die AI-Verarbeitung erfolgt ausserhalb des Geräts. Sie ist damit eine andere Da
 
 ## Wo M-Note heute steht
 
-Version 0.14.0 wurde über TestFlight verteilt. Der anschliessende Build 0.14.1 mit Verbesserungen an Liste, Editor und iPad-Darstellung wurde am 5. September hochgeladen. Die Verfügbarkeit dieses neueren Builds auf Testergeräten ist noch nicht bestätigt.
+Version 0.23.1 (Build 53) wurde am 22. September 2026 erfolgreich zu App Store Connect hochgeladen. Apple bestätigte die Verarbeitung des Pakets. Die Verfügbarkeit in TestFlight und die Gruppenzuweisung sind noch nicht bestätigt. Ein Upload ist keine öffentliche App-Store-Freigabe.
+
+Der Build verbessert den Start von Live-Gesprächen und begrenzt parallele Nutzung. Ein fehlgeschlagener leerer Start kann direkt wiederholt werden; Thema und Persona bleiben dabei erhalten. Diese Kapazitätsgrenzen sind keine Aussage über ein finanzielles Nutzungslimit.
 
 Die iPad-App lässt sich auch auf Macs mit Apple-Chip ausführen. Vor einem öffentlichen Release stehen zusätzliche Prüfungen der iCloud-Synchronisation, des Dateizugriffs und der Watch-Übertragung auf angemeldeten und gekoppelten Geräten an. M-Note ist noch nicht öffentlich im App Store erhältlich.
 
-[Entwicklungsbericht lesen](/blog/m-note-markdown-und-sprachnotizen/) · [Alle Apps](/apps/)
+[Früheren Produktbericht lesen](/blog/m-note-markdown-und-sprachnotizen/) · [Alle Apps](/apps/)
 
 ## Fragen und Feedback
 

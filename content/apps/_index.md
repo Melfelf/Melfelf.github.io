@@ -17,7 +17,7 @@ Zwei Apps, zwei unterschiedliche Aufgaben: Fokusfuchs hilft beim regelmässigen 
 
 Schulübungen und Konzentrationstraining in zwei Trainingswelten. Lokale Profile, Tagesziel, XP und Abzeichen machen den eigenen Fortschritt sichtbar. Die App benötigt kein Konto und enthält weder Werbung noch Analyse-Tracking.
 
-Version 1.3 überarbeitet die Darstellung und verbessert die Lesbarkeit. Das Update wurde am 6. September 2026 bei Apple eingereicht und wartet auf die Prüfung. Die aktuell verfügbare Version steht im App Store.
+Version 1.3 ist seit dem 7. September 2026 im App Store verfügbar. Das Update überarbeitet die Darstellung und verbessert die Lesbarkeit, grosse Schrift und Fortschrittsanzeigen.
 
 [App kennenlernen](/fokusfuchs-ios/) · [Im App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) · [Zum Update](/blog/fokusfuchs-1-3-klarer-fokus/)
 
@@ -29,6 +29,6 @@ Version 1.3 überarbeitet die Darstellung und verbessert die Lesbarkeit. Das Upd
 
 Markdown-Dateien in iCloud Drive, Ordner, Volltextsuche und eine getrennte Leseansicht. Dazu kommen Anhänge und Sprachnotizen mit optionaler AI-Verarbeitung. Eine Watch-App und eine Teilen-Erweiterung gehören zum Entwicklungsstand.
 
-M-Note ist noch nicht öffentlich im App Store verfügbar. Tests auf echten Geräten und weitere Verbesserungen gehören zum Weg bis zur Veröffentlichung.
+Der zuletzt bestätigte Upload ist Version 0.23.1 (Build 53) vom 22. September 2026. Die Verarbeitung bei Apple ist bestätigt, die Verfügbarkeit in TestFlight und die Gruppenzuweisung sind noch nicht bestätigt. M-Note ist noch nicht öffentlich im App Store verfügbar.
 
-[App und Entwicklungsstand](/m-note/) · [Zum Entwicklungsbericht](/blog/m-note-markdown-und-sprachnotizen/)
+[App und Entwicklungsstand](/m-note/) · [Früheren Entwicklungsbericht lesen](/blog/m-note-markdown-und-sprachnotizen/)
