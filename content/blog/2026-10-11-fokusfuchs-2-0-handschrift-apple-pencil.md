@@ -11,7 +11,7 @@ lang = "de"
 
 Fokusfuchs bekommt eine eigene Schreibwelt. Mit Version 2.0 lässt sich Handschrift direkt auf dem iPad mit dem Apple Pencil üben. Und wer lieber einen richtigen Stift in der Hand hält, druckt dieselben Vorlagen auf Papier aus. Die Lernspiele und Konzentrationsübungen bleiben dabei an ihrem Platz.
 
-**Aktualisierung vom 11. Oktober 2026:** Die Einreichung von Build 43 wurde zurückgezogen, weil die Schreibschrift-Vorlagen ungeeignet sind. Dieser Stil wird entfernt. Die korrigierte Version 2.0 bietet drei Druckschrift-Stile und wird vor einer neuen Einreichung erneut geprüft. Bis zur Freigabe bleibt Version 1.4 im [App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) erhältlich.
+**Aktualisierung vom 11. Oktober 2026:** Die Einreichung von Build 43 wurde zurückgezogen, weil die Schreibschrift-Vorlagen ungeeignet sind. Der korrigierte Build 44 entfernt die Schreibschrift vollständig und bietet drei Druckschrift-Stile. Er wurde erneut geprüft und bei Apple eingereicht; die Freigabe steht noch aus. Bis zur Freigabe bleibt Version 1.4 im [App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) erhältlich.
 
 ![Fokusfuchs übt mit dem Stift auf einem Tablet und auf Papier](/fokusfuchs-ios/images/writing-fox.jpg)
 
@@ -25,7 +25,7 @@ Mit der Einstellung «Nur Pencil» bleiben Fingerstriche aus. Ohne Apple Pencil 
 
 ## Die Schrift auswählen
 
-In der korrigierten Fokusfuchs-Version 2.0 stehen drei Stile zur Auswahl: Blockschrift, runde Druckschrift und geneigte Druckschrift. Die bisherige Schreibschrift wird entfernt. Die Auswahl gilt für die Übung auf dem Bildschirm und für die Druckvorlage.
+In der korrigierten Fokusfuchs-Version 2.0 stehen drei Stile zur Auswahl: Blockschrift, runde Druckschrift und geneigte Druckschrift. Die bisherige Schreibschrift ist vollständig entfernt. Die Auswahl gilt für die Übung auf dem Bildschirm und für die Druckvorlage.
 
 Gross- und Kleinbuchstaben gehören ebenso dazu wie Umlaute und ß. Du kannst einzelne Buchstabengruppen wiederholen und danach zu Wörtern und ganzen Sätzen wechseln.
 
@@ -61,6 +61,6 @@ Das Handschrifttraining ist auf «Heute» und unter «Lernen» erreichbar, unabh
 
 Fokusfuchs bleibt kostenlos, ohne Konto, Werbung oder Analyse-Tracking. Trainingsdaten werden lokal auf dem Gerät gespeichert.
 
-Für diesen Stand sind 121 Tests auf dem iPhone, sechs zusätzliche Prüfungen auf dem iPad und eine weitere Prüfung der iPhone-Aufnahmen erfolgreich durchgelaufen. Build 43 wurde lokal mit Xcode erstellt und in TestFlight erfolgreich verarbeitet. Die anschliessende Apple-Einreichung wurde wegen der Schreibschrift zurückgezogen. Die Korrektur wird vor dem erneuten Upload wieder vollständig geprüft.
+Für diesen Stand sind 123 Tests auf dem iPhone, sieben zusätzliche Prüfungen auf dem iPad und eine weitere Prüfung der iPhone-Aufnahmen erfolgreich durchgelaufen. Build 44 wurde lokal mit Xcode erstellt und in TestFlight erfolgreich verarbeitet. Nach der Rücknahme von Build 43 ist die korrigierte Version erneut bei Apple eingereicht. Die Veröffentlichung erfolgt nach Apples Freigabe manuell.
 
 [Zur neuen Produktseite](/fokusfuchs-ios/) · [Hilfe zu Pencil, Feedback und Drucken](/fokusfuchs-ios/support/) · [Fokusfuchs im App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095)
