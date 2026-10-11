@@ -15,11 +15,11 @@ Zwei Apps, zwei unterschiedliche Aufgaben: Fokusfuchs hilft beim regelmässigen 
 
 **Kostenlos im App Store, für iPhone und iPad ab iOS 26.**
 
-Schulübungen und Konzentrationstraining in zwei Trainingswelten. Lokale Profile, Tagesziel, XP und Abzeichen machen den eigenen Fortschritt sichtbar. Die App benötigt kein Konto und enthält weder Werbung noch Analyse-Tracking.
+Handschrift, Schulübungen und Konzentrationstraining. Lokale Profile, Tagesziel, XP und Abzeichen machen den eigenen Fortschritt sichtbar. Die App benötigt kein Konto und enthält weder Werbung noch Analyse-Tracking.
 
-Version 1.3 ist seit dem 7. September 2026 im App Store verfügbar. Das Update überarbeitet die Darstellung und verbessert die Lesbarkeit, grosse Schrift und Fortschrittsanzeigen.
+Version 2.0 bringt Handschrifttraining mit Apple Pencil, vier Schreibstile, deutsche Wörter und Sätze sowie druckbare A4-Blätter. Individuelle Fuchsillustrationen begleiten die Übungen. Das Update wurde am 11. Oktober 2026 bei Apple eingereicht und wartet auf die Prüfung. Bis zur Freigabe ist Version 1.4 erhältlich.
 
-[App kennenlernen](/fokusfuchs-ios/) · [Im App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) · [Zum Update](/blog/fokusfuchs-1-3-klarer-fokus/)
+[App kennenlernen](/fokusfuchs-ios/) · [Im App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) · [Zum Update](/blog/fokusfuchs-2-0-handschrift-apple-pencil/)
 
 ## M-Note
 
