@@ -17,7 +17,7 @@ Zwei Apps, zwei unterschiedliche Aufgaben: Fokusfuchs hilft beim regelmässigen 
 
 Handschrift, Schulübungen und Konzentrationstraining. Lokale Profile, Tagesziel, XP und Abzeichen machen den eigenen Fortschritt sichtbar. Die App benötigt kein Konto und enthält weder Werbung noch Analyse-Tracking.
 
-Version 2.0 bringt Handschrifttraining mit Apple Pencil, vier Schreibstile, deutsche Wörter und Sätze sowie druckbare A4-Blätter. Individuelle Fuchsillustrationen begleiten die Übungen. Das Update wurde am 11. Oktober 2026 bei Apple eingereicht und wartet auf die Prüfung. Bis zur Freigabe ist Version 1.4 erhältlich.
+Version 2.0 bringt Handschrifttraining mit Apple Pencil, drei Druckschrift-Stile, deutsche Wörter und Sätze sowie druckbare A4-Blätter. Individuelle Fuchsillustrationen begleiten die Übungen. Die Einreichung vom 11. Oktober 2026 wurde zur Korrektur ungeeigneter Schreibschrift-Vorlagen zurückgezogen. Dieser Stil wird entfernt und das Update erneut geprüft. Bis zur Freigabe ist Version 1.4 erhältlich.
 
 [App kennenlernen](/fokusfuchs-ios/) · [Im App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) · [Zum Update](/blog/fokusfuchs-2-0-handschrift-apple-pencil/)
 
