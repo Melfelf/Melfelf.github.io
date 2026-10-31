@@ -539,3 +539,6 @@ details p {
 .preview-grid img { display: block; width: 100%; height: auto; border-radius: 18px; }
 .preview-grid figcaption { color: var(--muted); margin-top: 14px; }
 @media (max-width: 580px) { .preview-grid { grid-template-columns: 1fr; } }
+
+.hero-comic { object-fit: contain; aspect-ratio: 1; max-height: 440px; }
+.card.illustrated .comic-art { object-fit: contain; aspect-ratio: 1; height: 190px; padding: 14px; }

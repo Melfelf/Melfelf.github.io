@@ -11,6 +11,8 @@ lang = "de"
 
 Fokusfuchs bekommt eine eigene Schreibwelt. Mit Version 2.0 lässt sich Handschrift direkt auf dem iPad mit dem Apple Pencil üben. Und wer lieber einen richtigen Stift in der Hand hält, druckt dieselben Vorlagen auf Papier aus. Die Lernspiele und Konzentrationsübungen bleiben dabei an ihrem Platz.
 
+**Stand 31. Oktober 2026:** Version 2.1 ist inzwischen im App Store erhältlich. Die [Vorschau auf die Comic-Werkstatt in 2.2](/blog/fokusfuchs-2-2-comic-werkstatt/) zeigt das nächste Update. Der folgende Beitrag dokumentiert den ursprünglichen Stand vom 11. Oktober.
+
 **Aktualisierung vom 11. Oktober 2026:** Die Einreichung von Build 43 wurde zurückgezogen, weil die Schreibschrift-Vorlagen ungeeignet sind. Der korrigierte Build 44 entfernt die Schreibschrift vollständig und bietet drei Druckschrift-Stile. Er wurde erneut geprüft und bei Apple eingereicht; die Freigabe steht noch aus. Bis zur Freigabe bleibt Version 1.4 im [App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) erhältlich.
 
 ![Fokusfuchs übt mit dem Stift auf einem Tablet und auf Papier](/fokusfuchs-ios/images/writing-fox.jpg)
