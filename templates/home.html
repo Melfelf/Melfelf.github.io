@@ -15,7 +15,7 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
-<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261102-3">
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261102-4">
 {% endblock head %}
 
 {% block content %}
@@ -26,33 +26,28 @@
     <section class="home-hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">{{ section.extra.hero_kicker }}</p>
-        <h1 id="hero-title">{{ section.extra.hero_title }}</h1>
-        <p class="hero-lead">{{ section.extra.hero_intro }}</p>
+        <h1 id="hero-title">Kleine Ideen.<br><em>Nützliche Software.</em></h1>
+        <p class="hero-lead">Ich bin Stefan «Melf» Moser. Hier entstehen Apps, Automatisierungen und Experimente mit AI — und ich zeige, was daraus wird.</p>
         <div class="hero-actions">
-          <a class="button-primary instant" href="{{ get_url(path='/apps') }}">Meine Apps entdecken <span aria-hidden="true">↗</span></a>
-          <a class="button-secondary instant" href="{{ get_url(path='/it-pro') }}">Zur IT-Praxis <span aria-hidden="true">→</span></a>
+          <a class="button-primary instant" href="{{ get_url(path='/apps') }}">Apps entdecken <span aria-hidden="true">↗</span></a>
+          <a class="button-secondary instant" href="{{ get_url(path='/blog') }}">Werkstatt &amp; Notizen <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
-      <aside class="hero-index" aria-label="Thematischer Index">
-        <div class="index-head">
-          <span>MELF.CH</span>
-          <span>APPS &amp; PRAXIS / 2026</span>
-        </div>
-        <ol>
-          {% for item in section.extra.focus %}
-          <li>
-            <span class="index-number">0{{ loop.index }}</span>
-            <span>
-              <strong>{{ item.name }}</strong>
-              <small>{{ item.short }}</small>
-            </span>
-          </li>
-          {% endfor %}
-        </ol>
-        <p class="index-note">Produkte, Arbeitsnotizen und Erfahrungen aus der Entwicklung.</p>
+      <aside class="hero-apps" aria-label="Aus meiner Werkstatt">
+        <p class="hero-apps-label">Aus meiner Werkstatt <span aria-hidden="true">✦</span></p>
+        <a class="hero-app-card instant" href="{{ get_url(path='/fokusfuchs-ios/') }}">
+          <img src="{{ get_url(path='fokusfuchs-ios/images/ComicWorkshopFox.png') }}" width="1024" height="1024" alt="Fokusfuchs mit seinem Comic">
+          <div><small>SPIELEN &amp; ENTDECKEN</small><h2>Fokusfuchs</h2><p>Platz für Neugier und eigene Ideen.</p><span class="hero-app-link">App entdecken ↗</span></div>
+        </a>
+        <a class="hero-app-card instant" href="{{ get_url(path='/m-note/') }}">
+          <img src="{{ get_url(path='images/m-note/app-icon.png') }}" width="1024" height="1024" alt="M-Note App-Icon">
+          <div><small>NOTIZEN &amp; GEDANKEN</small><h2>M-Note</h2><p>Ein ruhiger Ort für das, was bleibt.</p><span class="hero-app-link">Beta kennenlernen ↗</span></div>
+        </a>
       </aside>
     </section>
+
+    <p class="hero-topics">Infrastruktur <span>·</span> Automatisierung <span>·</span> Praktische AI <span>·</span> Notizen aus der Entwicklung</p>
 
     <section class="profile-strip" aria-label="Über Stefan Moser">
       <div class="profile-name">
