@@ -1158,3 +1158,8 @@ body:not(.dark) .origin-ai-generated { color:#6840a4; background:#f1eafa; }
  .prose .collection.card .meta .date { grid-column:1; grid-row:auto; }
  .prose .collection.card .meta .origin-badge { grid-column:1; }
 }
+
+/* Selected serif wordmark with orange star, extracted from the approved artwork. */
+.brand-serif { width:220px; max-width:100%; }
+body.dark .brand-serif { filter:invert(1) hue-rotate(180deg); }
+@media(max-width:660px) { .brand-serif { width:190px; } }
