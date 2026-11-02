@@ -5,14 +5,15 @@ template = 'home.html'
 lang = 'de'
 footer = false
 
-name = "Stefan \"Melf\" Moser"
+name = "Stefan Moser"
 id = "melf"
 bio = "IT System Engineer · Automatisierungsarchitekt"
 profile_text = "Ich dokumentiere Systeme so, wie sie wirklich sind: mit Annahmen, Randfällen, Fehlversuchen und dem Teil, der am Ende verlässlich läuft."
 
 hero_kicker = "Apps · Infrastruktur · Automatisierung"
-hero_title = "Ich baue Systeme, die Arbeit leichter machen."
-hero_intro = "Fokusfuchs und M-Note, zuverlässige IT und praktische AI. Hier zeige ich, was ich baue, wie es funktioniert und was ich dabei lerne."
+hero_title = "Was mich beschäftigt."
+hero_title_second = "Was daraus entsteht."
+hero_intro = "Ich bin Stefan Moser. Hier zeige ich meine Apps, teile Erfahrungen aus der IT-Praxis und experimentiere mit AI. Dazu gehören fertige Projekte genauso wie offene Fragen und Dinge, die noch nicht funktionieren."
 
 focus = [
   { name = "Eigene Apps", short = "Fokusfuchs · M-Note", text = "Native Apps für Konzentration und Notizen. Mit klaren Oberflächen, nachvollziehbarer Datenhaltung und sichtbarem Entwicklungsstand." },
