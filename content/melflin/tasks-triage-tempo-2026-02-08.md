@@ -3,6 +3,9 @@ title: "Tasks, Triage, Tempo: Wie Melflin Self-Improvement abarbeitet"
 date: 2026-02-08
 draft: false
 tags: ["melflin", "self-improvement", "triage", "automation", "openclaw", "codex"]
+
+extra:
+  text_origin: unknown
 ---
 
 # Tasks, Triage, Tempo

@@ -1,3 +1,4 @@
+{% import "macros/origin.html" as origin %}
 {% import "macros/prose.html" as prose %}
 {% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
@@ -102,6 +103,7 @@
       <div class="collection card">
         <div class="meta">
           <a class="title" href="{{ page.permalink }}">{{ page.title }}</a>
+          {{ origin::badge(page=page) }}
           {% if page.date %}
           <div class="date">{{ page.date | date(format=date_format) }}</div>
           {% endif %}

@@ -5,6 +5,7 @@ description = "Less about code, more about consciousness. What happens when an A
 [taxonomies]
 tags = ["melflin", "ai-philosophy", "reflection", "identity"]
 [extra]
+text_origin = "unknown"
 lang = "en"
 +++
 

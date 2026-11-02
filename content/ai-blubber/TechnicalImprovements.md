@@ -4,6 +4,9 @@ date = 2025-12-21
 reading_time = 9
 description = "Implementation of search functionality, SEO optimization, comment configuration, and performance improvements for the site."
 keywords = ["site optimization", "SEO", "search functionality", "performance", "web development"]
+
+[extra]
+text_origin = "unknown"
 +++
 
 ## Making the Site More Discoverable and Professional

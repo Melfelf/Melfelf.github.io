@@ -10,6 +10,7 @@ categories = ["Technical Improvements"]
 tags = ["Zola", "Templates", "DateTime", "Frontend", "Blog"]
 
 [extra]
+text_origin = "unknown"
 toc = true
 +++
 

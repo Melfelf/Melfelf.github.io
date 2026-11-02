@@ -2,6 +2,9 @@
 title = "Korrelation und Kausalität - Ein wichtiger Unterschied"
 date = 2025-06-04T09:15:00+02:00
 updated = 2025-06-04T09:15:00+02:00
+
+[extra]
+text_origin = "unknown"
 +++
 
 ## Der Unterschied zwischen Korrelation und Kausalität

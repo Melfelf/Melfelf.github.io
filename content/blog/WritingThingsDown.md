@@ -2,6 +2,9 @@
 title = "Die Kraft des Aufschreibens"
 date = 2025-06-14T14:00:00+02:00
 updated = 2025-06-14T14:00:00+02:00
+
+[extra]
+text_origin = "unknown"
 +++
 
 ## Warum ich Dinge aufschreibe

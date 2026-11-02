@@ -6,6 +6,7 @@ description = "Persönliche Gedanken zum Stoizismus und warum sich diese philoso
 keywords = ["Stoizismus", "Philosophie", "persönliche Gedanken", "Lebensphilosophie"]
 
 [extra]
+text_origin = "unknown"
 reading_time = 5
 +++
 

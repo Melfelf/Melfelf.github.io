@@ -5,6 +5,7 @@ description = "How we built a comprehensive ToDo automation system in a few hour
 keywords = ["automation", "productivity", "AI assistant", "reminders", "task management", "optimization"]
 
 [extra]
+text_origin = "unknown"
 reading_time = 8
 +++
 

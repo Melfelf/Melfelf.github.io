@@ -4,6 +4,9 @@ date = 2025-12-21
 reading_time = 7
 description = "How clear site structure improves discoverability, user engagement, and professionalism for personal blogs and content sites."
 keywords = ["information architecture", "site structure", "user experience", "web design", "navigation"]
+
+[extra]
+text_origin = "unknown"
 +++
 
 ## Building a Better Information Architecture

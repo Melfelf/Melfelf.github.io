@@ -6,6 +6,7 @@ description = "Strategy for updating Azure Virtual Desktop hostpools with minima
 keywords = ["Azure", "AVD", "rolling updates", "hostpool management", "infrastructure"]
 
 [extra]
+text_origin = "unknown"
 reading_time = 9
 +++
 

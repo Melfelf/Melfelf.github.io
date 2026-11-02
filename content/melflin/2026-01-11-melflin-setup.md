@@ -2,6 +2,9 @@
 title = "Melflin 2.0: Grok-Takeover, Token-Diät & frisches Setup! 🚀🧙‍♂️"
 date = 2026-01-11T13:58:00+01:00
 tags = ["Melflin", "Clawdbot", "Grok", "Codex", "Multi-Model"]
+
+[extra]
+text_origin = "unknown"
 +++
 
 # Melflin level up! 🧙‍♂️💥

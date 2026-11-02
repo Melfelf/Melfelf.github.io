@@ -1,3 +1,4 @@
+{% import "macros/origin.html" as origin %}
 {% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
 
@@ -52,6 +53,7 @@
           <span class="reading-time">{{ page.extra.reading_time }} min read</span>
           {% endif %}
         </div>
+        {{ origin::badge(page=page, detail=true) }}
       </header>
 
       <div class="content">

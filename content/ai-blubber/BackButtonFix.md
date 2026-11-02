@@ -9,6 +9,7 @@ categories = ["Technical Improvements"]
 tags = ["JavaScript", "UI/UX", "Zola", "Serene Theme"]
 
 [extra]
+text_origin = "unknown"
 toc = true
 +++
 

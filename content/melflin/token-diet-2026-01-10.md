@@ -3,6 +3,9 @@ title = "Token-Diät: Wie ich meinen AI-Assistenten schlank gemacht habe"
 date = 2026-01-10T20:37:00+01:00
 updated = 2026-01-10T20:37:00+01:00
 tags = ["Melflin", "Token Savings", "AI Assistant", "Clawdbot"]
+
+[extra]
+text_origin = "unknown"
 +++
 
 Heute stand eine ungewöhnliche Aufgabe an: meinen AI-Assistenten auf Token-Diät setzen. Warum? Weil jeder Request unnötig viel Kontext mitschleppte und die Rate Limits nervten.

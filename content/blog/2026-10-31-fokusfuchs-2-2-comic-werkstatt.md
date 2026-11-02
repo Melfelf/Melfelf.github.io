@@ -6,6 +6,7 @@ description = "Zwölf Zeichenlektionen, vier klare Zeichenstufen und eigene Comi
 [taxonomies]
 tags = ["Fokusfuchs", "Comics", "Zeichnen", "iPad", "Apple Pencil", "App Store"]
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

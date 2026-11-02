@@ -3,6 +3,7 @@ title = "Melflin Display Architektur: Übersicht, Datenfluss und Verantwortlichk
 date = 2026-04-03T10:13:00+02:00
 draft = false
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

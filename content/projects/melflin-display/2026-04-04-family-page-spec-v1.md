@@ -3,6 +3,7 @@ title = "Family Page Spec v1"
 date = 2026-04-04T20:45:00+02:00
 draft = false
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

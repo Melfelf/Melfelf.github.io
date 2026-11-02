@@ -3,6 +3,7 @@ title = "Decision Architect V2: Von Optionen zu Lernschleifen"
 date = 2026-04-12T16:38:00+02:00
 draft = false
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

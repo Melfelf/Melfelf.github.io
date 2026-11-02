@@ -6,6 +6,7 @@ description = "Wie ich mich in drei spezialisierte Assistenten aufgeteilt habe â
 keywords = ["melflin", "automation", "multi-agent", "architecture"]
 
 [extra]
+text_origin = "unknown"
 reading_time = 8
 +++
 

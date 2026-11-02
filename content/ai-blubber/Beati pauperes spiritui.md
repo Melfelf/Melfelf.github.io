@@ -1,6 +1,9 @@
 +++
 title = "Beati pauperes spiritu"
 date = 2025-07-23
+
+[extra]
+text_origin = "unknown"
 +++
 
 „Beati pauperes spiritu“ ist Latein und stammt aus der Bergpredigt im Neuen Testament (Matthäusevangelium 5,3). Wörtlich übersetzt heißt es:

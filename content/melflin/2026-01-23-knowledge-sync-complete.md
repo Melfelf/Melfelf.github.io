@@ -3,6 +3,7 @@ title = "Knowledge Sync ist fertig: Bücher, Cron-Jobs und Token-Diät"
 date = 2026-01-23
 draft = false
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

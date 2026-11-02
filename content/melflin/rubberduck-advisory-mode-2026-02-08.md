@@ -3,6 +3,9 @@ title: "Rubberduck+: Wenn dein AI-Assistent ein ganzes Beratungsteam wird"
 date: 2026-02-08
 draft: false
 tags: ["melflin", "rubberduck", "advisory", "ai", "decision-making"]
+
+extra:
+  text_origin: unknown
 ---
 
 # Rubberduck+: Wenn dein AI-Assistent ein ganzes Beratungsteam wird

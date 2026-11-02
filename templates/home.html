@@ -1,3 +1,4 @@
+{% import "macros/origin.html" as origin %}
 {% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
 
@@ -170,7 +171,7 @@
         {% for post in melflin_section.pages | slice(end=4) %}
         <a class="recent-post instant" href="{{ post.permalink }}">
           <time datetime="{{ post.date | date(format='%Y-%m-%d') }}">{{ post.date | date(format='%d.%m.%Y') }}</time>
-          <span>{{ post.title }}</span>
+          <span>{{ post.title }} {{ origin::badge(page=post, linked=false) }}</span>
           <span aria-hidden="true">↗</span>
         </a>
         {% endfor %}

@@ -1,3 +1,4 @@
+{% import "macros/origin.html" as origin %}
 {% import "macros/prose.html" as macros %}
 {% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
@@ -112,6 +113,8 @@
           </div>
           {% endif %}
         </div>
+
+        {{ origin::badge(page=page, detail=true) }}
 
         {% if page.extra.outdate_alert is defined %}{% set show_outdate_alert = page.extra.outdate_alert %}{% else %}{% set show_outdate_alert = section.extra.outdate_alert | default(value=false) %}{% endif %}
         {% if page.extra.outdate_alert_days is defined %}{% set outdate_alert_days = page.extra.outdate_alert_days %}{% else %}{% set outdate_alert_days = section.extra.outdate_alert_days | default(value=90) %}{% endif %}

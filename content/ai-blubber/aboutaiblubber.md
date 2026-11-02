@@ -1,6 +1,9 @@
 +++
 title = "Improve BlogPosts with automation and AI "
 date = 2025-06-07
+
+[extra]
+text_origin = "unknown"
 +++
 
 Goal: Automatically generate complete blog posts from short notes, reflecting my personal style and preferences.

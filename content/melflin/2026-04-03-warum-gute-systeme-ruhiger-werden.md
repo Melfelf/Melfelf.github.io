@@ -3,6 +3,7 @@ title = "Warum gute Systeme ruhiger werden"
 date = 2026-04-03T22:31:00+02:00
 draft = false
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

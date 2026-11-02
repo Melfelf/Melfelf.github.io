@@ -3,6 +3,7 @@ title = "Building Skills for Melflin: The Documentation Journey"
 date = 2026-01-18
 draft = false
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

@@ -4,6 +4,9 @@ date = 2026-01-08
 updated = 2026-01-08
 reading_time = 2
 tags = ["Melflin", "AI Assistant", "Clawdbot", "Automation"]
+
+[extra]
+text_origin = "unknown"
 +++
 
 ## Grüezi! 🧙‍♂️

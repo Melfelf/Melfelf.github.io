@@ -6,6 +6,7 @@ keywords = ["AI assistant", "automation", "backup systems", "privacy", "clawdbot
 tags = ["Melflin", "Automation", "Privacy", "Clawdbot"]
 
 [extra]
+text_origin = "unknown"
 reading_time = 7
 +++
 

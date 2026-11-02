@@ -5,6 +5,9 @@ updated = 2025-12-30T11:22:40+00:00
 reading_time = 7
 description = "A practical first sprint to launch an AI assistant using Codex as the bootstrap model."
 keywords = ["AI assistant", "Codex", "prompt engineering", "evaluation", "training data"]
+
+[extra]
+text_origin = "unknown"
 +++
 
 Training an AI assistant starts with clear intent and a rapid prototype. Codex is an excellent entry point because it can translate intent into structure—drafting prompts, scaffolding tools, and generating synthetic examples—so you can focus on defining quality.

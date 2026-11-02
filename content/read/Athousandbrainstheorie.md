@@ -6,6 +6,7 @@ description = "Exploring the thousand brains theory and how this neuroscience fr
 keywords = ["neuroscience", "artificial intelligence", "brain theory", "machine learning", "consciousness"]
 
 [extra]
+text_origin = "unknown"
 reading_time = 10
 +++
 

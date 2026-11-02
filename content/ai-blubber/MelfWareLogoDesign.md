@@ -10,6 +10,7 @@ categories = ["Technical Improvements"]
 tags = ["Design", "Branding", "Logo", "SVG", "UI/UX"]
 
 [extra]
+text_origin = "unknown"
 toc = true
 +++
 

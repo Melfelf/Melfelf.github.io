@@ -1,6 +1,9 @@
 +++
 title = "How I Use AI to Enhance My Blog Posts"
 date = 2025-06-14
+
+[extra]
+text_origin = "unknown"
 +++
 
 ## A Structured Approach to AI-Enhanced Blogging

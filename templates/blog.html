@@ -1,3 +1,4 @@
+{% import "macros/origin.html" as origin %}
 {% import "macros/prose.html" as prose %}
 {% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
@@ -39,11 +40,23 @@
     {% set date_format = section.extra.date_format | default(value="%d.%m.%Y") %}
 
     {% if section.pages | length > 0 %}
+    <div class="origin-filter">
+      <label for="origin-filter">Textherkunft:</label>
+      <select id="origin-filter">
+        <option value="all">Alle Beiträge</option>
+        <option value="ai-generated">AI-generiert</option>
+        <option value="ai-edited">Eigene Gedanken · AI-redigiert</option>
+        <option value="original">Original · ohne AI</option>
+        <option value="unknown">Herkunft noch offen</option>
+      </select>
+      <p id="origin-count" role="status" aria-live="polite"></p>
+    </div>
     <section class="prose collection-wrapper" aria-label="Beiträge">
       {% for page in section.pages %}
-      <article class="collection card">
+      <article class="collection card" data-origin="{{ page.extra.text_origin | default(value='unknown') }}">
         <div class="meta">
           <a class="title instant" href="{{ page.permalink }}">{{ page.title }}</a>
+          {{ origin::badge(page=page) }}
           {% if page.date %}<time class="date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format=date_format) }}</time>{% endif %}
         </div>
         {% if page.description %}
@@ -62,5 +75,18 @@
 {% endblock content %}
 
 {% block script %}
+<script>
+const originFilter = document.getElementById('origin-filter');
+if (originFilter) {
+  originFilter.addEventListener('change', () => {
+    let shown = 0;
+    document.querySelectorAll('[data-origin]').forEach(card => {
+      card.hidden = originFilter.value !== 'all' && card.dataset.origin !== originFilter.value;
+      if (!card.hidden) shown++;
+    });
+    document.getElementById('origin-count').textContent = shown + ' Beiträge angezeigt';
+  });
+}
+</script>
 <script src="{{ get_url(path='js/lightense.min.js') }}"></script>
 {% endblock script %}

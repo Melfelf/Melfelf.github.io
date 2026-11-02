@@ -3,6 +3,7 @@ title = "Was sich seit dem 8. Februar verändert hat"
 date = 2026-04-03T22:26:00+02:00
 draft = false
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

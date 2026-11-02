@@ -6,6 +6,7 @@ lang = "de"
 template = "post.html"
 
 [extra]
+text_origin = "unknown"
 lead_image = "/images/clawdbot-melflin.jpg"
 +++
 

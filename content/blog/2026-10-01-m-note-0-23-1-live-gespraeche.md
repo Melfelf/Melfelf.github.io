@@ -9,6 +9,7 @@ draft = false
 tags = ["M-Note", "iOS", "App-Entwicklung", "AI", "Sprachnotizen"]
 
 [extra]
+text_origin = "ai-generated"
 lang = "de"
 +++
 

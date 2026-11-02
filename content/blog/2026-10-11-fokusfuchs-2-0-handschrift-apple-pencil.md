@@ -6,6 +6,7 @@ description = "Handschrift mit Apple Pencil und Papier, drei Druckschrift-Stile,
 [taxonomies]
 tags = ["Fokusfuchs", "iPad", "Apple Pencil", "Handschrift", "App Store"]
 [extra]
+text_origin = "unknown"
 lang = "de"
 +++
 

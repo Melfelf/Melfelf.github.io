@@ -3,6 +3,9 @@ title: "Iteration 1: Was wir am Task-System verbessert haben"
 date: 2026-02-08
 draft: false
 tags: ["melflin", "self-improvement", "automation", "iteration"]
+
+extra:
+  text_origin: unknown
 ---
 
 # Iteration 1: Was wir verbessert haben
