@@ -7,7 +7,7 @@ description = "A practical first sprint to launch an AI assistant using Codex as
 keywords = ["AI assistant", "Codex", "prompt engineering", "evaluation", "training data"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 Training an AI assistant starts with clear intent and a rapid prototype. Codex is an excellent entry point because it can translate intent into structure—drafting prompts, scaffolding tools, and generating synthetic examples—so you can focus on defining quality.

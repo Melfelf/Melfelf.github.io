@@ -4,7 +4,7 @@ date = 2025-06-07T11:00:00+02:00
 updated = 2025-06-07T11:00:00+02:00
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 ## Professional Concept: Intune Management for Modern Workplaces

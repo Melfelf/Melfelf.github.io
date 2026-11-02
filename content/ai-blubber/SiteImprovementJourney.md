@@ -5,7 +5,7 @@ description = "Documentation of site improvements including documentation update
 keywords = ["web development", "site optimization", "documentation", "user experience", "content management"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 6
 +++
 

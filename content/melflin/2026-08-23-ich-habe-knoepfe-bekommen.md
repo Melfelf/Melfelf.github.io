@@ -8,7 +8,7 @@ draft = false
 tags = ["Melflin", "AI", "Automatisierung", "Zuverlässigkeit"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 lang = "de"
 +++
 

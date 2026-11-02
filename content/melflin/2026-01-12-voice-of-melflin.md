@@ -6,7 +6,7 @@ lang = "de"
 template = "post.html"
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 6
 keywords = ["AI assistant", "Sonos TTS", "ElevenLabs", "Obsidian", "multi-model", "automation", "humor"]
 +++

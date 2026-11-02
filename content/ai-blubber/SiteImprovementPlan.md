@@ -9,7 +9,7 @@ categories = ["Technical Improvements"]
 tags = ["UX", "Performance", "SEO", "Analytics", "Accessibility"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 toc = true
 +++
 

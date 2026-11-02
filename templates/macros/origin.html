@@ -1,6 +1,6 @@
 {% macro badge(page, detail=false, linked=true) %}
-{% if page.extra.text_origin is defined %}
-{% set origin = page.extra.text_origin %}
+{% set origin = page.extra.text_origin | default(value="ai-generated") %}
+{% if origin != "original" and origin != "ai-edited" %}{% set origin = "ai-generated" %}{% endif %}
 {% if origin == "ai-generated" %}
 {% set label = "AI-generiert" %}
 {% set explanation = "AI hat diesen Text wesentlich ausformuliert, gegebenenfalls auf Basis eigener Ideen und Projektfakten." %}
@@ -16,5 +16,4 @@
 {% endif %}
 {% if linked %}<a class="origin-badge origin-{{ origin }}" href="{{ get_url(path='@/text-herkunft.md') }}" title="{{ explanation }}">{{ label }}</a>{% else %}<span class="origin-badge origin-{{ origin }}" title="{{ explanation }}">{{ label }}</span>{% endif %}
 {% if detail %}<p class="origin-explanation">{{ explanation }} <a href="{{ get_url(path='@/text-herkunft.md') }}">Zur Herkunftslegende</a></p>{% endif %}
-{% endif %}
 {% endmacro %}

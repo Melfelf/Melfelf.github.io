@@ -3,7 +3,7 @@ title = "Display Source of Truth v1"
 date = 2026-04-03T10:41:00+02:00
 draft = false
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 lang = "de"
 +++
 

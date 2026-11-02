@@ -47,13 +47,12 @@
         <option value="ai-generated">AI-generiert</option>
         <option value="ai-edited">Eigene Gedanken · AI-redigiert</option>
         <option value="original">Original · ohne AI</option>
-        <option value="unknown">Herkunft noch offen</option>
       </select>
       <p id="origin-count" role="status" aria-live="polite"></p>
     </div>
     <section class="prose collection-wrapper" aria-label="Beiträge">
       {% for page in section.pages %}
-      <article class="collection card" data-origin="{{ page.extra.text_origin | default(value='unknown') }}">
+      <article class="collection card" data-origin="{{ page.extra.text_origin | default(value='ai-generated') }}">
         <div class="meta">
           <a class="title instant" href="{{ page.permalink }}">{{ page.title }}</a>
           {{ origin::badge(page=page) }}

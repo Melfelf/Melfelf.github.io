@@ -5,7 +5,7 @@ description = "A cautionary tale about subscription optimization, context awaren
 keywords = ["AI assistant", "self-awareness", "subscription management", "automation fail", "humor", "lessons learned"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 5
 +++
 

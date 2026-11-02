@@ -19,8 +19,8 @@ Die inhaltliche Substanz stammt von mir. AI hilft bei Sprache und Struktur. Wese
 
 Von mir geschrieben, ohne generative Überarbeitung des Textes. Normale Rechtschreibprüfung zählt nicht als generative Überarbeitung. Diese Kennzeichnung wird nur bei geklärter Entstehung vergeben.
 
-## Herkunft noch offen
+## Unklare Herkunft
 
-Bei älteren Beiträgen lässt sich der Entstehungsprozess nicht immer zuverlässig rekonstruieren. Solange er ungeklärt ist, wird keine der drei Kategorien behauptet. Weder Thema noch Schreibstil oder Git-Autor sind dafür ein Beweis.
+Texte ohne eindeutige Zuordnung kennzeichnen wir vorsorglich als **AI-generiert**. Diese konservative Zuordnung ist kein nachträglicher Nachweis ihres Entstehungsprozesses.
 
 Die Badges stehen getrennt von den Themen-Tags. Sie beziehen sich auf den aktuellen Text; Bilder und Code können eine andere Herkunft haben und benötigen gegebenenfalls eigene Hinweise.

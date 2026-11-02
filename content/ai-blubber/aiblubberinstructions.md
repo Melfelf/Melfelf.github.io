@@ -3,7 +3,7 @@ title = "How I Use AI to Enhance My Blog Posts"
 date = 2025-06-14
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 ## A Structured Approach to AI-Enhanced Blogging

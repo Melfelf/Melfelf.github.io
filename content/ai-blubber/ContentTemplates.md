@@ -6,7 +6,7 @@ description = "Structured templates for technical posts, book reviews, personal 
 keywords = ["content templates", "writing guidelines", "content consistency", "documentation", "best practices"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 ## Structured Templates for Different Content Types

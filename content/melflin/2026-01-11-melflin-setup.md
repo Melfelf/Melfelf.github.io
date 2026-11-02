@@ -4,7 +4,7 @@ date = 2026-01-11T13:58:00+01:00
 tags = ["Melflin", "Clawdbot", "Grok", "Codex", "Multi-Model"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 # Melflin level up! 🧙‍♂️💥

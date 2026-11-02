@@ -5,7 +5,7 @@ description = "Strategies for improving content accessibility through reading ti
 keywords = ["content strategy", "accessibility", "user experience", "readability", "blog optimization"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 8
 +++
 

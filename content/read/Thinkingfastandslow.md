@@ -6,7 +6,7 @@ description = "A groundbreaking exploration of the dual systems of thought that 
 keywords = ["psychology", "behavioral economics", "decision-making", "Kahneman", "book review"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 12
 +++
 

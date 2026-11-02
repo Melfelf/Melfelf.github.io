@@ -6,7 +6,7 @@ description = "How clear site structure improves discoverability, user engagemen
 keywords = ["information architecture", "site structure", "user experience", "web design", "navigation"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 ## Building a Better Information Architecture

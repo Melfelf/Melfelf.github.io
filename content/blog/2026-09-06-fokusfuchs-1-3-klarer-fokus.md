@@ -6,7 +6,7 @@ description = "Die nächste Fokusfuchs-Version verbessert Startseite, Kontraste,
 [taxonomies]
 tags = ["Fokusfuchs", "iOS", "SwiftUI", "App Store"]
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 lang = "de"
 +++
 

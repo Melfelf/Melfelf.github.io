@@ -3,7 +3,7 @@ title = "Agent System Instructions v1: Architektur, Engineering und Betrieb"
 date = 2026-04-03T10:20:00+02:00
 draft = false
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 lang = "de"
 +++
 

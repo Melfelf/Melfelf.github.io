@@ -6,7 +6,7 @@ reading_time = 2
 tags = ["Melflin", "AI Assistant", "Clawdbot", "Automation"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 ## Grüezi! 🧙‍♂️

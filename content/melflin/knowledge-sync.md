@@ -6,7 +6,7 @@ description = "Wie Wissen aus verschiedenen Quellen gesammelt, normalisiert und 
 keywords = ["knowledge", "learning", "productivity", "sync", "memory"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 5
 +++
 

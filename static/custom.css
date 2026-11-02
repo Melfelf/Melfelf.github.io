@@ -1134,3 +1134,10 @@ body.prose-page .section-title h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); lin
 
 .collection.card[hidden] { display:none; }
 .origin-filter select { max-width:100%; padding:.4rem; font:inherit; }
+
+/* Melfware workshop identity */
+:root { --melf-blue:#163f35; --melf-teal:#163f35; --melf-orange:#f26a39; }
+body.dark { --melf-blue:#96cbb4; --melf-teal:#96cbb4; --melf-orange:#ff9469; }
+.brand-mark { width:188px; }
+.origin-badge { border-radius:4px; font-family:var(--melf-mono); font-weight:600; }
+@media(max-width:660px) { .brand-mark { width:160px; } }

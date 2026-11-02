@@ -6,7 +6,7 @@ description = "Ein Blick auf M-Note: portable Notizen in iCloud Drive, native Le
 [taxonomies]
 tags = ["M-Note", "iOS", "SwiftUI", "Markdown", "AI"]
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 lang = "de"
 +++
 

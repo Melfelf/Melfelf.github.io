@@ -3,7 +3,7 @@ title = "Display Platform v2 Design"
 date = 2026-04-03T22:38:00+02:00
 draft = false
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 lang = "de"
 +++
 

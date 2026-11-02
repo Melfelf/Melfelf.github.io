@@ -9,7 +9,7 @@ categories = ["Technical Improvements"]
 tags = ["JavaScript", "UI/UX", "Zola", "Serene Theme"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 toc = true
 +++
 

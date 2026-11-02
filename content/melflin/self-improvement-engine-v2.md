@@ -6,7 +6,7 @@ description = "Update v2 des Self-Improvement-Systems: Smart Task Execution, Lea
 keywords = ["Self-Improvement", "Automation", "Melflin", "Task Classification", "Learning Loop"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 8
 +++
 

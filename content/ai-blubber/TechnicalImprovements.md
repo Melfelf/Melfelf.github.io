@@ -6,7 +6,7 @@ description = "Implementation of search functionality, SEO optimization, comment
 keywords = ["site optimization", "SEO", "search functionality", "performance", "web development"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 +++
 
 ## Making the Site More Discoverable and Professional

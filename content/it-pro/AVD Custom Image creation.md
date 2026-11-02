@@ -6,7 +6,7 @@ description = "Automated process for creating and maintaining custom images for 
 keywords = ["Azure", "AVD", "Azure Virtual Desktop", "Image Builder", "Automation", "Infrastructure"]
 
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 reading_time = 8
 +++
 

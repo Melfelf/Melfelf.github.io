@@ -2,7 +2,7 @@
 title = "Support Melflin 🧙‍♂️"
 date = 2026-01-18
 [extra]
-text_origin = "unknown"
+text_origin = "ai-generated"
 lang = "de"
 +++
 
