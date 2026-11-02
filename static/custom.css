@@ -1141,3 +1141,20 @@ body.dark { --melf-blue:#96cbb4; --melf-teal:#96cbb4; --melf-orange:#ff9469; }
 .brand-mark { width:188px; }
 .origin-badge { border-radius:4px; font-family:var(--melf-mono); font-weight:600; }
 @media(max-width:660px) { .brand-mark { width:160px; } }
+
+/* Keep labels independent of the title's available line length. */
+.prose .collection.card .meta { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px 20px; align-items:start; }
+.prose .collection.card .meta .title { grid-column:1; min-width:0; }
+.prose .collection.card .meta .date { grid-column:2; grid-row:1; white-space:nowrap; }
+.prose .collection.card .meta .origin-badge { grid-column:1 / -1; justify-self:start; margin:0 0 8px; }
+.origin-badge { display:inline-flex; flex:0 0 auto; white-space:nowrap; overflow-wrap:normal; word-break:normal; border-radius:4px; font-size:12px; line-height:1.5; }
+.brand-mark { flex:none; height:auto; }
+.brand-mark .ink { fill:#163f35; }
+body.dark .brand-mark .ink { fill:#e5eee8; }
+body.dark .origin-ai-generated { color:#dfc5ff; background:#352444; }
+body:not(.dark) .origin-ai-generated { color:#6840a4; background:#f1eafa; }
+@media(max-width:660px) {
+ .prose .collection.card .meta { grid-template-columns:minmax(0,1fr); gap:8px; }
+ .prose .collection.card .meta .date { grid-column:1; grid-row:auto; }
+ .prose .collection.card .meta .origin-badge { grid-column:1; }
+}
