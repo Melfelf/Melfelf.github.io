@@ -1166,7 +1166,7 @@ body.dark .brand-serif { filter:invert(1) hue-rotate(180deg); }
 
 /* A quieter editorial opening, with real projects in view. */
 .home-hero { grid-template-columns:minmax(0,1.3fr) minmax(320px,.85fr); gap:64px; padding:36px 0 42px; align-items:center; }
-.hero-copy h1 { max-width:none; font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.6rem,4.5vw,4.3rem); font-weight:400; letter-spacing:-.045em; line-height:1.14; }
+.hero-copy h1 { max-width:none; font-family:var(--melf-sans); font-size:clamp(2.6rem,4.5vw,4.3rem); font-weight:700; letter-spacing:-.045em; line-height:1.14; }
 .hero-copy h1 em { color:var(--melf-teal); font-weight:400; font-style:italic; }
 .hero-copy .eyebrow { font-size:.63rem; margin-bottom:24px; }
 .hero-lead { max-width:44ch; font-size:1.05rem; line-height:1.75; margin-top:26px; }
