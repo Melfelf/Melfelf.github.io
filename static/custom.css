@@ -1185,3 +1185,16 @@ body.dark .brand-serif { filter:invert(1) hue-rotate(180deg); }
 .hero-topics span { color:var(--melf-orange); }
 @media(max-width:900px) { .home-hero { grid-template-columns:1fr; gap:36px; } .hero-apps { max-width:580px; } }
 @media(max-width:660px) { .hero-copy h1 { font-size:clamp(2.2rem,8.8vw,3.4rem); } .home-hero { padding-top:10px; } .hero-app-card { padding:18px; gap:16px; grid-template-columns:80px minmax(0,1fr); } .hero-app-card img { width:80px; height:80px; } }
+
+/* Four working fields: consistent two-column rows and a clean mobile stack. */
+.focus-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.focus-grid > .focus-item { min-width:0; min-height:0; padding:28px 28px 32px 0; border:0; }
+.focus-grid > .focus-item:nth-child(even) { padding-left:28px; padding-right:0; border-left:1px solid var(--melf-line); }
+.focus-grid > .focus-item:nth-child(n+3) { border-top:1px solid var(--melf-line); }
+.focus-grid .focus-item h3 { margin:22px 0 12px; line-height:1.3; }
+@media(max-width:640px) {
+ .focus-grid { grid-template-columns:minmax(0,1fr); }
+ .focus-grid > .focus-item:nth-child(n) { padding:24px 0; border-left:0; border-top:0; }
+ .focus-grid > .focus-item + .focus-item { border-top:1px solid var(--melf-line); }
+ .focus-grid .focus-item h3 { margin-top:16px; }
+}
