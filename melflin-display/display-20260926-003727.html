@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang='de'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>Melflin Heute</title>
+  <style>
+    :root { --ink: #111; --paper: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: none; }
+    .page { width: 800px; height: 480px; margin: 0 auto; padding: 12px 16px 9px; display: grid; grid-template-rows: 44px minmax(0, 1fr) 19px; gap: 8px; overflow: hidden; background: var(--paper); }
+    .header { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 3px solid var(--ink); padding: 0 2px 7px; min-width: 0; }
+    .battery-status { text-align: right; max-width: 270px; }
+    .battery-title { display: flex; justify-content: flex-end; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; line-height: 1.15; }
+    .battery-icon { width: 29px; height: 17px; }
+    .battery-note { margin-top: 3px; font-size: 10px; line-height: 1.15; }
+    .title-big { font-size: 30px; font-weight: 700; line-height: 1.1; letter-spacing: -.02em; white-space: nowrap; }
+    .content { display: grid; grid-template-columns: minmax(0, 1fr) 244px; gap: 14px; min-height: 0; }
+    .agenda { min-width: 0; min-height: 0; }
+    .events { height: 100%; display: grid; grid-template-rows: 18px minmax(40px, 1fr) 18px minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, .85fr); min-height: 0; }
+    .event-card { display: grid; grid-template-columns: 51px minmax(0, 1fr) 74px; gap: 9px; align-items: center; min-height: 0; padding: 0 2px; }
+    .group-heading { display: flex; align-items: center; gap: 9px; padding: 0 2px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; }
+    .group-heading::after { content: ''; flex: 1; border-top: 1px solid var(--ink); }
+    .is-continuous { border-top: 1px solid var(--ink); }
+    .text-time strong { font-size: 10px !important; font-weight: 400; }
+    .event-time { display: flex; flex-direction: column; gap: 5px; align-self: center; }
+    .is-focus .event-time { background: var(--ink); color: var(--paper); padding: 5px 2px; align-items: center; gap: 3px; }
+    .is-next .event-time { border: 1px solid var(--ink); padding: 4px 1px; align-items: center; gap: 3px; }
+    .focus-label { font-size: 9px; line-height: 1; text-transform: uppercase; letter-spacing: .025em; }
+    .event-time strong { font-size: 17px; line-height: 1; font-variant-numeric: tabular-nums; }
+    .event-copy { min-width: 0; }
+    .event-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 18px; line-height: 1.06; font-weight: 700; letter-spacing: -.015em; overflow: hidden; overflow-wrap: anywhere; }
+    .event-detail { display: flex; flex-direction: column; gap: 3px; min-width: 0; padding-right: 1px; text-align: right; font-size: 11px; line-height: 1.2; overflow-wrap: anywhere; }
+    .event-detail strong { font-size: 12px; font-weight: 700; }
+    .side { display: grid; grid-template-rows: minmax(0, 1fr) 117px; gap: 10px; min-width: 0; min-height: 0; border-left: 1px solid var(--ink); padding-left: 12px; }
+    /* A small inset protects glyph overhang, including W, during rasterisation. */
+    .panel { min-width: 0; min-height: 0; padding: 2px 3px 0; }
+    .eyebrow { font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+    .weather-hero { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 0 7px; }
+    .weather-temp { font-size: 38px; line-height: 1; font-weight: 700; letter-spacing: -.04em; }
+    .weather-now-label { margin-top: 3px; white-space: nowrap; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+    .weather-now { flex-shrink: 0; }
+    .weather-condition { min-width: 0; display: flex; align-items: center; gap: 3px; max-width: 128px; }
+    .weather-symbol { width: 49px; height: 49px; flex-shrink: 0; }
+    .weather-symbol-label { font-size: 11px; line-height: 1.1; overflow-wrap: anywhere; }
+    svg { display: block; width: 100%; height: 100%; }
+    .weather-list { border-top: 1px solid var(--ink); padding-top: 2px; }
+    .indoor-row { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 1px 6px; font-size: 12px; }
+    .indoor-row strong { font-size: 17px; }
+    .forecast-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 5px 0 0; border-top: 1px solid var(--ink); }
+    .forecast-card { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 0; }
+    .forecast-card + .forecast-card { border-left: 1px solid var(--ink); }
+    .forecast-time { font-size: 11px; line-height: 1.2; white-space: nowrap; }
+    .forecast-icon { width: 33px; height: 33px; }
+    .forecast-card strong { font-size: 17px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+    .rain-chance { min-height: 11px; font-size: 9px; line-height: 1.1; white-space: nowrap; }
+    .weather-empty { grid-column: 1 / -1; padding: 8px 0; font-size: 12px; }
+    .moon-row { display: flex; align-items: center; gap: 7px; margin-top: 4px; border-top: 1px solid var(--ink); padding-top: 3px; font-size: 12px; line-height: 1.15; }
+    .moon-icon { width: 40px; height: 40px; flex-shrink: 0; }
+    .transit-panel { border-top: 2px solid var(--ink); padding-top: 9px; }
+    .transit-label { display: flex; justify-content: space-between; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; }
+    .transit-line { padding: 2px 5px; color: var(--paper); background: var(--ink); font-size: 12px; }
+    .rbs-times { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); grid-template-rows: repeat(3, 22px); gap: 3px 12px; margin-top: 9px; font-size: 23px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+    .rbs-times > span:first-child:not(.transit-empty) { grid-row: 1 / 4; display: flex; flex-direction: column; justify-content: center; gap: 4px; font-size: 36px; }
+    .rbs-times > span:first-child:not(.transit-empty)::before { content: attr(data-caption); font-size: 10px; font-weight: 400; }
+    .rbs-times > span:not(:first-child) { grid-column: 2; text-align: right; }
+    .transit-empty { grid-column: 1 / -1; font-size: 14px; line-height: 1.3; }
+    .footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ink); padding-top: 4px; }
+    .overflow-note { font-size: 10px; }
+    .footer-meta { display: flex; gap: 12px; font-size: 10px; line-height: 1.15; white-space: nowrap; }
+    .footer-meta span + span { border-left: 1px solid var(--ink); padding-left: 12px; }
+  </style>
+</head>
+<body>
+  <div class='page'>
+    <div class='header'>
+      <div class='date-block'>
+        <div class='title-big'>Samstag, 26.09.2026</div>
+      </div>
+      <div class='battery-status'><div class='battery-title'><span class='battery-icon'><svg viewBox='0 0 40 20' aria-hidden='true'><rect x='1' y='2' width='34' height='16' rx='1' fill='none' stroke='#111' stroke-width='2'/><path d='M37 7v6' stroke='#111' stroke-width='3'/><rect x='4' y='5' width='28.00' height='10' fill='#111'/></svg></span><span>Akku 100 %</span></div><div class='battery-note'>Messung 00:44</div></div>
+    </div>
+    <div class='content'>
+      <div class='agenda'>
+        <div class='events'>
+          <div class='group-heading'>Morgen</div><div class='event-card is-next'><div class='event-time'><span class='focus-label'>Nächster</span><strong>20:00</strong></div><div class='event-copy'><div class='event-title' title='Türli duschen'>Türli duschen</div></div><div class='event-detail'></div></div><div class='group-heading'>Demnächst</div><div class='event-card'><div class='event-time'><strong>18:00</strong></div><div class='event-copy'><div class='event-title' title='Fr 4.- Taschengeld für Arthur'>Fr 4.- Taschengeld für Arthur</div></div><div class='event-detail'><strong>Familie</strong><span>Mo 28.09.</span></div></div><div class='event-card'><div class='event-time'><strong>10:15</strong></div><div class='event-copy'><div class='event-title' title='Handel &amp; Transport'>Handel &amp; Transport</div></div><div class='event-detail'><strong>Sandra</strong><span>Di 29.09.</span></div></div><div class='event-card'><div class='event-time'><strong>12:15</strong></div><div class='event-copy'><div class='event-title' title='Begleittutorium Handel und Transport im Mittelalter'>Begleittutorium Handel und Transport im Mittelalter</div></div><div class='event-detail'><strong>Sandra</strong><span>Di 29.09.</span></div></div><div class='event-card'><div class='event-time'><strong>14:15</strong></div><div class='event-copy'><div class='event-title' title='Lektürekurs: Sterben &amp; Tod'>Lektürekurs: Sterben &amp; Tod</div></div><div class='event-detail'><strong>Sandra</strong><span>Di 29.09.</span></div></div><div class='event-card'><div class='event-time'><strong>15:30</strong></div><div class='event-copy'><div class='event-title' title='Für Arthur da sein → Stefan'>Für Arthur da sein → Stefan</div></div><div class='event-detail'><strong>Familie</strong><span>Di 29.09.</span></div></div><div class='event-card'><div class='event-time'><strong>08:15</strong></div><div class='event-copy'><div class='event-title' title='ARP Grundübung I'>ARP Grundübung I</div></div><div class='event-detail'><strong>Sandra</strong><span>Mi 30.09.</span></div></div><div class='event-card is-continuous'><div class='event-time text-time'><strong>Läuft</strong></div><div class='event-copy'><div class='event-title' title='Herbstferien'>Herbstferien</div></div><div class='event-detail'><strong>Arthur</strong><span>bis So 11.10.</span></div></div>
+        </div>
+      </div>
+      <div class='side'>
+        <div class='panel'>
+          <div class='eyebrow'>Wetter · Bern</div>
+          <div class='weather-hero'>
+            <div class='weather-now'><div class='weather-temp'>13°</div><div class='weather-now-label'>Draussen · jetzt</div></div>
+            <div class='weather-condition'><div class='weather-symbol'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(0 -6) scale(.8)'><path d='M40 9a23 23 0 1 0 15 34A23 23 0 0 1 40 9Z'/><path d='M49 12v10m-5-5h10'/></g><path fill='white' d='M17 43h31a10 10 0 0 0 1-20 16 16 0 0 0-30-4 12 12 0 0 0-2 24Z'/></g></svg></div><span class='weather-symbol-label'>überwiegend klar</span></div>
+          </div>
+          <div class='weather-list'><div class='indoor-row'><span>Wohnzimmer</span><strong>21.9°</strong></div><div class='forecast-grid'><div class='forecast-card' title='klar'><span class='forecast-time'>05 Uhr</span><div class='forecast-icon' role='img' aria-label='klar'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M40 9a23 23 0 1 0 15 34A23 23 0 0 1 40 9Z'/><path d='M49 12v10m-5-5h10'/></g></svg></div><strong>8.8°</strong><span class='rain-chance'></span></div><div class='forecast-card' title='klar'><span class='forecast-time'>08 Uhr</span><div class='forecast-icon' role='img' aria-label='klar'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><circle cx='32' cy='32' r='11'/><path d='M32 6v7m0 38v7M6 32h7m38 0h7M14 14l5 5m26 26 5 5M14 50l5-5m26-26 5-5'/></g></svg></div><strong>7.8°</strong><span class='rain-chance'></span></div><div class='forecast-card' title='klar'><span class='forecast-time'>11 Uhr</span><div class='forecast-icon' role='img' aria-label='klar'><svg viewBox='0 0 64 64' aria-hidden='true'><g fill='none' stroke='#111' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><circle cx='32' cy='32' r='11'/><path d='M32 6v7m0 38v7M6 32h7m38 0h7M14 14l5 5m26 26 5 5M14 50l5-5m26-26 5-5'/></g></svg></div><strong>16.0°</strong><span class='rain-chance'></span></div></div></div>
+          <div class='moon-row'><div class='moon-icon'><svg viewBox='0 0 64 64' aria-hidden='true'><circle cx='32' cy='32' r='21' fill='#111'/><path d='M32 11A21 21 0 0 1 32 53A20.834 21 0 0 1 32 11Z' fill='white'/><circle cx='32' cy='32' r='21' fill='none' stroke='#111' stroke-width='2.5'/></svg></div><span>Vollmond</span></div>
+        </div>
+        <div class='panel transit-panel'>
+          <div class='transit-label'><span>Felsenau → Bern</span><span class='transit-line'>S9</span></div>
+          <div class='rbs-times' data-transit-times data-asof='2026-09-26T02:37:27+02:00'><span data-caption='Nächste Abfahrt' data-departure='2026-09-26T05:18:00+02:00'>05:18</span><span data-caption='Nächste Abfahrt' data-departure='2026-09-26T05:39:00+02:00'>05:39</span><span data-caption='Nächste Abfahrt' data-departure='2026-09-26T05:54:00+02:00'>05:54</span><span data-caption='Nächste Abfahrt' data-departure='2026-09-26T06:09:00+02:00'>06:09</span></div>
+        </div>
+      </div>
+    </div>
+    <div class='footer'>
+      <span class='overflow-note'>+14 weitere Termine</span>
+      <div class='footer-meta'>
+        <span>Datenstand 26.09. 02:37</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const API = 'https://transport.opendata.ch/v1/stationboard?station=Bern%2C%20Felsenau&limit=12';
+      const timesEl = document.querySelector('[data-transit-times]');
+
+      const lineEl = document.querySelector('.transit-line');
+      const localTime = (raw) => new Intl.DateTimeFormat('de-CH', { timeZone: 'Europe/Zurich', hour: '2-digit', minute: '2-digit' }).format(new Date(raw));
+      const lineFor = (entry) => {
+        const category = String(entry.category || '');
+        const number = String(entry.number || '');
+        return number && !number.startsWith(category) ? `${category}${number}` : (number || category);
+      };
+
+      function isRbsToBern(entry) {
+        return String(entry.operator || '').toUpperCase().includes('RBS')
+          && lineFor(entry).startsWith('S') && String(entry.to || '').includes('Bern');
+      }
+
+      function showEmpty(message) {
+        const item = document.createElement('span');
+        item.className = 'transit-empty';
+        item.textContent = message;
+        timesEl.replaceChildren(item);
+        lineEl.textContent = 'RBS';
+      }
+
+      function keepValidFallback() {
+        const age = Date.now() - Date.parse(timesEl.dataset.asof);
+        const fresh = Number.isFinite(age) && age >= 0 && age <= 3600000;
+        const remaining = [...timesEl.querySelectorAll('[data-departure]')].filter(item => fresh && Date.parse(item.dataset.departure) >= Date.now());
+        if (!remaining.length) {
+          showEmpty('Abfahrten nicht verfügbar');
+          return;
+        }
+        remaining.forEach(item => item.dataset.caption = 'Stand ' + localTime(timesEl.dataset.asof));
+        timesEl.replaceChildren(...remaining);
+      }
+
+      async function refreshTransit() {
+        if (!timesEl) return;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+        try {
+          const response = await fetch(`${API}&_=${Date.now()}`, { cache: 'no-store', signal: controller.signal });
+          if (!response.ok) throw new Error('Transit unavailable');
+          const data = await response.json();
+          if (!Array.isArray(data.stationboard)) throw new Error('Missing stationboard');
+          const seen = new Set();
+          const entries = data.stationboard
+            .filter(entry => entry && isRbsToBern(entry) && Date.parse(entry.stop?.departure) >= Date.now())
+            .sort((a, b) => Date.parse(a.stop.departure) - Date.parse(b.stop.departure))
+            .filter(entry => {
+              const key = `${Date.parse(entry.stop.departure)}|${lineFor(entry)}|${entry.to}`;
+              if (seen.has(key)) return false;
+              seen.add(key);
+              return true;
+            })
+            .slice(0, 4);
+          timesEl.dataset.asof = new Date().toISOString();
+          if (!entries.length) {
+            showEmpty('Keine weiteren Abfahrten');
+            return;
+          }
+          const lines = new Set(entries.map(lineFor));
+          lineEl.textContent = lines.size === 1 ? [...lines][0] : 'RBS';
+          timesEl.replaceChildren(...entries.map(entry => {
+            const item = document.createElement('span');
+            item.textContent = localTime(entry.stop.departure);
+            item.dataset.departure = entry.stop.departure;
+            item.dataset.caption = 'Nächste Abfahrt';
+            return item;
+          }));
+        } catch (error) {
+          keepValidFallback();
+        } finally {
+          clearTimeout(timeout);
+        }
+      }
+
+      async function safeReload() {
+        try {
+          const probe = new URL(window.location.href);
+          probe.searchParams.set('probe', String(Date.now()));
+          const response = await fetch(probe.toString(), { cache: 'no-store' });
+          if (!response.ok) return;
+
+          const target = new URL(window.location.href);
+          target.searchParams.delete('probe');
+          target.searchParams.set('reload', String(Date.now()));
+          window.location.replace(target.toString());
+        } catch (error) {
+          // Keep the last working page visible while the display reconnects.
+        }
+      }
+
+      if (window.location.protocol === 'file:') return;
+      refreshTransit();
+      setInterval(refreshTransit, 120000);
+      setInterval(safeReload, 1800000);
+      window.addEventListener('online', () => setTimeout(safeReload, 3000));
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) setTimeout(safeReload, 3000);
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') setTimeout(safeReload, 3000);
+      });
+    })();
+  </script>
+</body>
+</html>
