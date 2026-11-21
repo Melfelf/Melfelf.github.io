@@ -4,7 +4,7 @@ description = "Fokusfuchs und M-Note: native Apps für Konzentration und Notizen
 template = "prose.html"
 [extra]
 lang = "de"
-subtitle = "Fokusfuchs und M-Note. Was sie können und wo sie heute stehen."
+subtitle = "Fokusfuchs und M-Note: was sie können, für wen sie gedacht sind und wo sie gerade stehen."
 +++
 
 Zwei Apps, zwei unterschiedliche Aufgaben: Fokusfuchs hilft beim regelmässigen Üben. M-Note gibt Gedanken und Aufzeichnungen einen Platz in eigenen Dateien.

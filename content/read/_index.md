@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Books"
-subtitle = "Keine Leseliste fürs Regal, sondern Bücher und Hörbücher, die beim Denken oder Handeln wirklich etwas ausgelöst haben."
+subtitle = "Bücher und Hörbücher, die etwas in mir bewegt haben, und das, was davon hängen geblieben ist."
 
 date_format = "%b %-d, %Y at %H:%M"
 

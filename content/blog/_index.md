@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "de"
 
 title = "Blog"
-subtitle = "Persönliche Texte auf Deutsch: direkt, ungefiltert und näher an echten Gedanken als an sauberer Selbstinszenierung."
+subtitle = "Gedanken aus Alltag und Arbeit: persönlich, auf Deutsch und manchmal noch ein bisschen unfertig."
 
 date_format = "%d.%m.%Y · %H:%M"
 

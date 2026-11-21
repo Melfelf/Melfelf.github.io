@@ -15,7 +15,7 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
-<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261102-8">
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-1">
 {% if page.extra.math %}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -42,15 +42,15 @@
         <h1>{{ page.title }}</h1>
         <div class="post-meta">
           <time datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
-            Created: {{ page.date | date(format='%b %-d, %Y at %H:%M') }}
+            Geschrieben am {{ page.date | date(format='%d.%m.%Y') }}
           </time>
           {% if page.updated and page.updated != page.date %}
           <time datetime="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
-            • Updated: {{ page.updated | date(format='%b %-d, %Y at %H:%M') }}
+            · aktualisiert am {{ page.updated | date(format='%d.%m.%Y') }}
           </time>
           {% endif %}
           {% if page.extra.reading_time %}
-          <span class="reading-time">{{ page.extra.reading_time }} min read</span>
+          <span class="reading-time">{{ page.extra.reading_time }} Minuten Lesezeit</span>
           {% endif %}
         </div>
         {{ origin::badge(page=page, detail=true) }}

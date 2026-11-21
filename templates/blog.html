@@ -16,7 +16,7 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
-<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261102-8">
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-1">
 {% endblock head %}
 
 {% block content %}
@@ -26,9 +26,9 @@
     {{ prose::back_link(path=get_url(path="/")) }}
 
     <div class="section-title">
-      <p class="section-kicker">Bereich / {{ section.title }}</p>
+      <p class="section-kicker"><span class="spark" aria-hidden="true">✦</span> {{ section.pages | length }} Texte zum Stöbern</p>
       <h1>{{ section.extra.title | default(value=section.title) }}</h1>
-      {% if section.description %}<p>{{ section.description }}</p>{% endif %}
+      {% set intro = section.extra.subtitle | default(value=section.description) %}{% if intro %}<p>{{ intro }}</p>{% endif %}
     </div>
 
     {% if section.content | trim != "" %}
@@ -41,7 +41,7 @@
 
     {% if section.pages | length > 0 %}
     <div class="origin-filter">
-      <label for="origin-filter">Textherkunft:</label>
+      <label for="origin-filter">Wie viel AI steckt drin?</label>
       <select id="origin-filter">
         <option value="all">Alle Beiträge</option>
         <option value="ai-generated">AI-generiert</option>

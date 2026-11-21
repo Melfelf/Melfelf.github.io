@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "de"
 
 title = "Projekte"
-subtitle = "Hier liegen die Dinge, die grösser sind als ein einzelner Artikel: Projekte mit eigener Struktur, Doku und laufender Entwicklung."
+subtitle = "Die grösseren Baustellen, mit Plänen, Umwegen und allem, was ich unterwegs gelernt habe."
 
 date_format = "%d.%m.%Y · %H:%M"
 

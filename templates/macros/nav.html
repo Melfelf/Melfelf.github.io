@@ -1,5 +1,5 @@
 {% macro site_nav(current_path="") %}
-<a class="skip-link" href="#main-content">Zum Inhalt</a>
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 <nav class="site-nav" aria-label="Hauptnavigation">
   <a class="brand-link instant" href="{{ get_url(path='/') }}" aria-label="{{ config.title }} · Startseite">
     <img class="brand-mark brand-serif" src="{{ get_url(path='img/melfware-serif-star.png') }}" alt="Melfware" width="2160" height="720">
@@ -8,7 +8,7 @@
   <div class="nav-links">
     {% for item in config.extra.sections %}
       {% if item.is_external %}
-      <a href="{{ item.path }}" target="_blank" rel="noreferrer noopener">{{ item.name }}</a>
+      <a class="nav-external" href="{{ item.path }}" target="_blank" rel="noreferrer noopener">{{ item.name }} <span aria-hidden="true">↗</span></a>
       {% else %}
       {% set item_path = item.path ~ "/" %}
       <a class="instant {% if current_path == item.path or current_path is starting_with(item_path) %}active{% endif %}" href="{{ get_url(path=item.path) }}" {% if current_path == item.path or current_path is starting_with(item_path) %}aria-current="page"{% endif %}>{{ item.name }}</a>

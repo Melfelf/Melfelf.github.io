@@ -9,6 +9,7 @@ generate_feeds = true
 
 [extra]
 lang = "de"
+subtitle = "Wie mein persönlicher AI-Assistent lernt, verlässlicher zu werden. Inklusive der Tage, an denen das nicht geklappt hat."
 posts_title = "Posts"
 posts_subtitle = "Wie ein persönlicher AI-Assistent im echten Betrieb besser, ruhiger und nützlicher wird."
 
