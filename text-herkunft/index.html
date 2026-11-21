@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  <meta name="description" content="Transparenz über eigene Texte und den Einsatz von AI auf melf.ch.">
+
+  <title>Wie diese Texte entstehen</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://melf.ch/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://melf.ch/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://melf.ch/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+
+  <style>
+  body {
+    --primary-color: #b5502b;
+    --primary-pale-color: #b5502b33;
+    --primary-decoration-color: #b5502b10;
+    --bg-color: #f8f5ef;
+    --text-color: #1c1b19;
+    --text-pale-color: #6b6860;
+    --text-decoration-color: #c9c5bb;
+    --highlight-mark-color: #f0c9a855;
+    --callout-note-color: #46637d;
+    --callout-tip-color: #3d6b56;
+    --callout-important-color: #6d5a8c;
+    --callout-warning-color: #a1662a;
+    --callout-caution-color: #b5502b;
+  }
+  body.dark {
+    --primary-color: #e8875f;
+    --primary-pale-color: #e8875f55;
+    --primary-decoration-color: #e8875f14;
+    --bg-color: #1b1a18;
+    --text-color: #eceae4;
+    --text-pale-color: #a3a098;
+    --text-decoration-color: #4a4843;
+    --highlight-mark-color: #e8875f33;
+    --callout-note-color: #93b0c9;
+    --callout-tip-color: #8fc2a8;
+    --callout-important-color: #b8a5d6;
+    --callout-warning-color: #d9a56c;
+    --callout-caution-color: #e8875f;
+  }
+  body {
+    --main-font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+    --homepage-max-width: 1080px;
+    --main-max-width: 720px;
+    --avatar-size: 60px;
+    --font-size: 16.5px;
+    --line-height: 1.7;
+    --img-border-radius: 10px;
+    --detail-border-radius: 8px;
+    --dark-mode-img-brightness: 0.9;
+    --dark-mode-chart-brightness: 0.85;
+    --inline-code-border-radius: 5px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 10px;
+    --block-code-border-color: var(--text-decoration-color);
+    --detail-border-color: var(--text-decoration-color);
+  }
+</style>
+
+  <link rel="stylesheet" href="https://melf.ch/main.css">
+  
+
+  <link id="hl" rel="stylesheet" type="text/css" href="https://melf.ch/hl-light.css" />
+
+<link rel="stylesheet" href="https://melf.ch/custom.css?v=20261121-3">
+
+
+  
+
+
+
+
+<link rel="canonical" href="https:&#x2F;&#x2F;melf.ch&#x2F;text-herkunft&#x2F;">
+<meta property="og:site_name" content="melf.ch">
+<meta property="og:title" content="Wie diese Texte entstehen">
+<meta property="og:description" content="Transparenz über eigene Texte und den Einsatz von AI auf melf.ch.">
+<meta property="og:url" content="https:&#x2F;&#x2F;melf.ch&#x2F;text-herkunft&#x2F;">
+<meta property="og:type" content="article">
+
+
+</head>
+
+<body class="page">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://melf.ch/hl-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <main id="main-content">
+    
+<a class="skip-link" href="#main-content">Zum Inhalt</a>
+<nav class="site-nav" aria-label="Hauptnavigation">
+  <a class="brand-link instant" href="https://melf.ch" aria-label="Stefan Moser · Startseite">
+    <img class="brand-mark brand-serif" src="https://melf.ch/img/melfware-serif-star.png" alt="Melfware" width="2160" height="720">
+    <span>Stefan Moser</span>
+  </a>
+  <div class="nav-links">
+    
+      
+      
+      <a class="instant " href="https://melf.ch/blog" >Blog</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/apps" >Apps</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/it-pro" >IT Pro</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/projects" >Projekte</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/melflin" >Melflin</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/ai-blubber" >AI Notes</a>
+      
+    
+      
+      
+      <a class="instant " href="https://melf.ch/read" >Bücher</a>
+      
+    
+      
+      <a class="nav-external" href="https:&#x2F;&#x2F;github.com&#x2F;Melfelf" target="_blank" rel="noreferrer noopener">GitHub <span aria-hidden="true">↗</span></a>
+      
+    
+  </div>
+</nav>
+
+    <article>
+      <header>
+        <h1>Wie diese Texte entstehen</h1>
+        <div class="post-meta">
+          <time datetime="2026-11-02T00:00:00+0000">
+            Geschrieben am 02.11.2026
+          </time>
+          
+          
+        </div>
+      </header>
+
+      <div class="content">
+        <p>Die Herkunftskennzeichnung beschreibt, wie ein <strong>Text</strong> entstanden ist – nicht seine Qualität und nicht sein Thema. Ein Artikel über AI muss nicht von AI geschrieben sein.</p>
+<h2 id="ai-generiert">AI-generiert</h2>
+<p>AI hat den Text wesentlich ausformuliert. Eigene Ideen, Erfahrungen oder Projektfakten können dabei die Grundlage bilden. Das ist mehr als eine sprachliche Überarbeitung eines eigenen Textes.</p>
+<h2 id="eigene-gedanken-ai-redigiert">Eigene Gedanken · AI-redigiert</h2>
+<p>Die inhaltliche Substanz stammt von mir. AI hilft bei Sprache und Struktur. Wesentliche inhaltliche Ergänzungen durch AI fallen nicht unter reine Redaktion.</p>
+<h2 id="original-ohne-ai">Original · ohne AI</h2>
+<p>Von mir geschrieben, ohne generative Überarbeitung des Textes. Normale Rechtschreibprüfung zählt nicht als generative Überarbeitung. Diese Kennzeichnung wird nur bei geklärter Entstehung vergeben.</p>
+<h2 id="unklare-herkunft">Unklare Herkunft</h2>
+<p>Texte ohne eindeutige Zuordnung kennzeichnen wir vorsorglich als <strong>AI-generiert</strong>. Diese konservative Zuordnung ist kein nachträglicher Nachweis ihres Entstehungsprozesses.</p>
+<p>Die Badges stehen getrennt von den Themen-Tags. Sie beziehen sich auf den aktuellen Text; Bilder und Code können eine andere Herkunft haben und benötigen gegebenenfalls eigene Hinweise.</p>
+
+      </div>
+    </article>
+  </main>
+</div>
+
+  
+  <script src="https://melf.ch/js/main.js"></script>
+</body>
+
+</html>
