@@ -286,7 +286,7 @@ body.post aside a:hover, body.post aside a.active { color: var(--accent); }
 .prose a { color: var(--accent); }
 .prose img { border-radius: var(--r); }
 .prose img[src*="app-icon.png"] { max-width: 140px; border-radius: 24%; }
-.prose img[src*="heute-1-3.png"] { width: min(100%, 320px); display: block; margin: 2rem auto; border-radius: 24px; }
+.prose img[src*="/fokusfuchs-ios/images/build"], .prose img[src*="heute-1-3.png"] { width: min(100%, 320px); display: block; margin: 2rem auto; border-radius: 24px; }
 .prose blockquote { color: var(--ink-2); background: var(--subtle); border-left: 3px solid var(--line-strong); border-radius: 0 var(--r-sm) var(--r-sm) 0; }
 .prose table { display: block; max-width: 100%; overflow-x: auto; }
 .prose pre { border-radius: 10px; }
