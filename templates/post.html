@@ -1,4 +1,3 @@
-{% import "macros/origin.html" as origin %}
 {% import "macros/prose.html" as macros %}
 {% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
@@ -29,7 +28,7 @@
 {% else %}
 <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
-<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-2">
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-3">
 {% if page.extra.math %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
@@ -114,7 +113,6 @@
           {% endif %}
         </div>
 
-        {{ origin::badge(page=page, detail=true) }}
 
         {% if page.extra.outdate_alert is defined %}{% set show_outdate_alert = page.extra.outdate_alert %}{% else %}{% set show_outdate_alert = section.extra.outdate_alert | default(value=false) %}{% endif %}
         {% if page.extra.outdate_alert_days is defined %}{% set outdate_alert_days = page.extra.outdate_alert_days %}{% else %}{% set outdate_alert_days = section.extra.outdate_alert_days | default(value=90) %}{% endif %}

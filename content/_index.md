@@ -9,11 +9,9 @@ name = "Stefan Moser"
 id = "melf"
 bio = "IT System Engineer"
 
-hero_kicker = "Stefan Moser · melf.ch"
-hero_title = "Apps, Infrastruktur und praktische AI."
-hero_intro = "Hier stehen die iOS-Apps Fokusfuchs und M-Note, technische Beiträge aus dem IT-Betrieb und Notizen zu Automatisierung und AI. Der Entwicklungsstand wird offen dokumentiert, auch wenn etwas noch nicht funktioniert."
-
-ai_note = "Die Texte auf dieser Website entstehen mit AI, auf Basis von Stefans Ideen und den Fakten aus den Projekten. Jeder Beitrag ist entsprechend gekennzeichnet."
+hero_kicker = "Willkommen auf melf.ch"
+hero_title = "Kleine Apps, solide Infrastruktur und praktische AI."
+hero_intro = "Hier gibt es die iOS-Apps Fokusfuchs und M-Note, Erfahrungen aus IT-Betrieb und Automatisierung sowie Experimente mit AI. Mit offenem Blick auf den Entwicklungsstand, auch wenn etwas noch nicht ganz rund läuft."
 
 links = [
   { name = "E-Mail", icon = "email", url = "mailto:stefan@melf.ch" },

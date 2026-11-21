@@ -1,4 +1,3 @@
-{% import "macros/origin.html" as origin %}
 {% import "macros/nav.html" as nav %}
 {% extends "_base.html" %}
 
@@ -15,7 +14,7 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
-<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-2">
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-3">
 {% if page.extra.math %}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -53,7 +52,6 @@
           <span class="reading-time">{{ page.extra.reading_time }} Minuten Lesezeit</span>
           {% endif %}
         </div>
-        {{ origin::badge(page=page, detail=true) }}
       </header>
 
       <div class="content">
