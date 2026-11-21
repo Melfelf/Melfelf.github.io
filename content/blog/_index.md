@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "de"
 
 title = "Blog"
-subtitle = "Gedanken aus Alltag und Arbeit: persönlich, auf Deutsch und manchmal noch ein bisschen unfertig."
+subtitle = "Updates zu den Apps und Notizen aus Alltag und Arbeit."
 
 date_format = "%d.%m.%Y · %H:%M"
 

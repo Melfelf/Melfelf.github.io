@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "Books"
-subtitle = "Bücher und Hörbücher, die etwas in mir bewegt haben, und das, was davon hängen geblieben ist."
+subtitle = "Bücher und Hörbücher mit kurzen Einordnungen."
 
 date_format = "%b %-d, %Y at %H:%M"
 

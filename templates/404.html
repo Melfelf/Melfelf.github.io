@@ -3,14 +3,13 @@
 {% block page %}not-found{% endblock page%}
 {% block lang %}{{ config.default_language }}{% endblock lang %}
 {% block title %}Seite nicht gefunden{% endblock title %}
-{% block head %}<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-1">{% endblock head %}
+{% block head %}<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-3">{% endblock head %}
 
 {% block content %}
 <div class="wrapper lost">
-  <img src="{{ get_url(path='fokusfuchs-ios/images/ComicWorkshopFox.png') }}" width="1024" height="1024" alt="Der Fokusfuchs schaut neugierig in sein Comicheft">
   <p class="lost-code">404</p>
   <h1 class="error">{{ config.extra.not_found_error_text }}</h1>
-  <p>Vielleicht wurde sie verschoben, vielleicht war es nur ein Tippfehler. Das passiert. Der Fuchs und ich helfen dir gern zurück.</p>
-  <a class="btn btn-primary instant" href="{{ get_url(path='/') }}">{{ config.extra.not_found_recover_text }} <span aria-hidden="true">→</span></a>
+  <p>Die Adresse existiert nicht oder wurde verschoben.</p>
+  <a class="btn btn-primary instant" href="{{ get_url(path='/') }}">{{ config.extra.not_found_recover_text }}</a>
 </div>
 {% endblock %}
