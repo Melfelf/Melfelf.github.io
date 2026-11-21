@@ -15,213 +15,154 @@
 {% else %}
   <link id="hl" rel="stylesheet" type="text/css" href="{{ get_url(path='hl-light.css') }}" />
 {% endif %}
-<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-1">
+<link rel="stylesheet" href="{{ get_url(path='custom.css') }}?v=20261121-2">
 {% endblock head %}
 
 {% block content %}
+{% set blog_section = get_section(path="blog/_index.md") %}
 <div id="wrapper">
   <main id="main-content">
     {{ nav::site_nav(current_path="/") }}
 
-    {# ───────────── Hello ───────────── #}
-    <section class="hello" aria-labelledby="hello-title">
-      <div class="hello-copy">
-        <p class="greeting"><span class="wave" aria-hidden="true">👋</span> <span data-greeting>Hallo, schön, dass du da bist.</span></p>
-        <h1 id="hello-title">
-          {{ section.extra.hero_title | safe }}
-          <span class="scribble">{{ section.extra.hero_title_accent }}</span>
-          {{ section.extra.hero_title_end }}
-        </h1>
-        <p class="hello-lead">{{ section.extra.hero_intro }}</p>
-        <div class="hello-actions">
-          <a class="btn btn-primary instant" href="{{ get_url(path='/apps') }}">Meine Apps ansehen <span aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="#brief">Erst mal Hallo sagen</a>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="kicker">{{ section.extra.hero_kicker }}</p>
+        <h1 id="intro-title">{{ section.extra.hero_title }}</h1>
+        <p class="intro-lead">{{ section.extra.hero_intro }}</p>
+        <div class="intro-actions">
+          <a class="btn btn-primary instant" href="{{ get_url(path='/apps') }}">Apps ansehen</a>
+          <a class="btn btn-quiet instant" href="{{ get_url(path='/blog') }}">Beiträge lesen</a>
         </div>
       </div>
 
-      <div class="hello-visual" aria-hidden="true">
-        <div class="blob"></div>
-        <a class="snap snap-fox instant" href="{{ get_url(path='/fokusfuchs-ios/') }}" tabindex="-1">
-          <img src="{{ get_url(path='fokusfuchs-ios/images/NumberJourneyFox.png') }}" width="1254" height="1254" alt="">
-          <span class="snap-caption">Fokusfuchs</span>
-        </a>
-        <a class="snap snap-note instant" href="{{ get_url(path='/m-note/') }}" tabindex="-1">
-          <img src="{{ get_url(path='images/m-note/app-icon.png') }}" width="1024" height="1024" alt="">
-          <span class="snap-caption">M-Note</span>
-        </a>
-        <p class="handnote">psst … der Fuchs lernt gerade Zählen auf Französisch
-          <svg viewBox="0 0 120 60" class="handnote-arrow"><path d="M4 8c30 4 62 12 86 38" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M78 44l13 4-2-14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </p>
-        <span class="float-spark s1">✦</span>
-        <span class="float-spark s2">✦</span>
-        <span class="float-spark s3">✦</span>
-      </div>
-    </section>
-
-    {# ───────────── Apps ───────────── #}
-    <section class="apps" aria-labelledby="apps-title">
-      <div class="section-head">
-        <p class="section-kicker"><span class="spark" aria-hidden="true">✦</span> Aus meiner Werkstatt</p>
-        <h2 id="apps-title">Zwei kleine Apps, mit viel Sorgfalt gebaut.</h2>
-      </div>
-
-      <div class="app-cards">
-        <article class="app-card app-fox">
-          <div class="app-card-copy">
-            <p class="app-pill">Neu in 2.3: Zahlenreise</p>
-            <h3>Fokusfuchs</h3>
-            <p class="app-tagline">Üben, das sich nach Spielen anfühlt.</p>
-            <p>Zahlen auf Französisch, Italienisch oder Englisch, Handschrift mit dem Apple Pencil, eigene Comics und kleine Konzentrationsübungen. Der Fuchs begleitet dich dabei, in deinem Tempo.</p>
-            <ul class="chips" aria-label="Eigenschaften">
-              <li>Ohne Konto</li><li>Keine Werbung</li><li>iPhone &amp; iPad</li>
-            </ul>
-            <div class="app-actions">
-              <a class="btn btn-primary" href="https://apps.apple.com/ch/app/fokusfuchs/id6799122095">Im App Store laden <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-ghost instant" href="{{ get_url(path='/fokusfuchs-ios/') }}">Mehr erfahren</a>
-            </div>
-          </div>
-          <a class="app-card-art instant" href="{{ get_url(path='/fokusfuchs-ios/') }}" aria-label="Zur Fokusfuchs-Seite">
-            <img src="{{ get_url(path='fokusfuchs-ios/images/ComicWorkshopFox.png') }}" width="1024" height="1024" loading="lazy" alt="Der Fokusfuchs zeichnet in seiner Comic-Werkstatt">
-          </a>
-        </article>
-
-        <article class="app-card app-note">
-          <div class="app-card-copy">
-            <p class="app-pill">Gerade in TestFlight</p>
-            <h3>M-Note</h3>
-            <p class="app-tagline">Ein ruhiger Ort für deine Gedanken.</p>
-            <p>Jede Notiz bleibt eine eigene Markdown-Datei in deinem iCloud Drive. Schreiben, suchen, lesen und Sprachnotizen festhalten, nativ auf iPhone und iPad.</p>
-            <ul class="chips" aria-label="Eigenschaften">
-              <li>Markdown</li><li>Deine Dateien</li><li>Beta ab iOS 27</li>
-            </ul>
-            <div class="app-actions">
-              <a class="btn btn-primary instant" href="{{ get_url(path='/m-note/') }}">M-Note kennenlernen <span aria-hidden="true">→</span></a>
-              <a class="btn btn-ghost instant" href="{{ get_url(path='/blog/m-note-markdown-und-sprachnotizen/') }}">Wie sie entsteht</a>
-            </div>
-          </div>
-          <a class="app-card-art instant" href="{{ get_url(path='/m-note/') }}" aria-label="Zur M-Note-Seite">
-            <img src="{{ get_url(path='images/m-note/app-icon.png') }}" width="1024" height="1024" loading="lazy" alt="M-Note App-Icon: ein M aus Papier mit einer Füllfeder">
-          </a>
-        </article>
-      </div>
-    </section>
-
-    {# ───────────── Principles ───────────── #}
-    <section class="principles" aria-labelledby="principles-title">
-      <div class="section-head">
-        <p class="section-kicker"><span class="spark" aria-hidden="true">✦</span> Was mir wichtig ist</p>
-        <h2 id="principles-title">Ein paar Dinge, an die ich mich halte.</h2>
-      </div>
-      <div class="principle-grid">
-        {% for item in section.extra.principles %}
-        <article class="principle p-{{ item.icon }}">
-          <span class="principle-icon" aria-hidden="true">
-            {% if item.icon == "heart" %}
-            <svg viewBox="0 0 32 32"><path d="M16 27c-6-4.2-11-8.6-11-14a6 6 0 0 1 11-3.4A6 6 0 0 1 27 13c0 5.4-5 9.8-11 14z"/></svg>
-            {% elif item.icon == "leaf" %}
-            <svg viewBox="0 0 32 32"><path d="M6 26C6 13 14 6 27 5c0 13-7 21-20 21z"/><path d="M6 26c5-6 10-10 15-13"/></svg>
-            {% elif item.icon == "hands" %}
-            <svg viewBox="0 0 32 32"><circle cx="11" cy="10" r="4"/><circle cx="22" cy="12" r="3.2"/><path d="M4 27c0-5 3-9 7-9s7 4 7 9"/><path d="M17 21c1-3 3-4.6 5-4.6 3.4 0 6 3.2 6 8"/></svg>
-            {% else %}
-            <svg viewBox="0 0 32 32"><path d="M16 3c1 7 4 11 13 13-9 2-12 6-13 13-1-7-4-11-13-13 9-2 12-6 13-13z"/></svg>
-            {% endif %}
-          </span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
-          {% if item.link %}<a class="soft-link instant" href="{{ get_url(path=item.link) }}">{{ item.link_text }} <span aria-hidden="true">→</span></a>{% endif %}
-        </article>
-        {% endfor %}
-      </div>
-    </section>
-
-    {# ───────────── Letter ───────────── #}
-    <section class="letter-wrap" id="brief" aria-labelledby="letter-title">
-      <article class="letter">
-        <p class="letter-stamp" aria-hidden="true">✦ melf.ch</p>
-        <h2 id="letter-title">Hallo du,</h2>
-        <p>schön, dass du vorbeischaust. Diese Seite ist so etwas wie mein offenes Notizbuch. Hier landen meine Apps, Erfahrungen aus Infrastruktur und Automatisierung, Experimente mit AI und die Geschichten von Melflin, meinem AI-Assistenten.</p>
-        <p>Ich schreibe die Dinge so auf, wie sie wirklich sind: mit Annahmen, Umwegen und Fehlversuchen. Und mit dem Teil, der am Ende verlässlich läuft. Wenn du eine Frage hast oder dir etwas auffällt, schreib mir einfach.</p>
-        <p class="signature">Herzlich, Stefan</p>
-        <div class="letter-contact">
-          {% for link in section.extra.links %}
-          <a class="contact-pill" href="{{ link.url }}" {% if link.icon != "email" %}target="_blank" rel="noreferrer noopener"{% endif %}>
-            {% set icon_path = "icon/" ~ link.icon ~ ".svg" %}
-            {% set icon = load_data(path=icon_path) %}
-            {{ icon | safe }}<span>{{ link.name }}</span>
-          </a>
-          {% endfor %}
-        </div>
-      </article>
-
-      <aside class="now" aria-labelledby="now-title">
-        <p class="handwritten" id="now-title">Woran ich gerade arbeite</p>
-        <ul>
-          {% for item in section.extra.focus %}
-          <li><strong>{{ item.name }}</strong><span>{{ item.text }}</span></li>
+      <aside class="status" aria-labelledby="status-title">
+        <h2 id="status-title" class="status-title">Aktueller Stand</h2>
+        <ul class="status-list">
+          <li>
+            <span class="dot dot-live" aria-hidden="true"></span>
+            <div><strong>Fokusfuchs 2.3</strong><span>Im App Store · neu: Zahlenreise</span></div>
+          </li>
+          <li>
+            <span class="dot dot-beta" aria-hidden="true"></span>
+            <div><strong>M-Note</strong><span>In TestFlight · noch nicht öffentlich</span></div>
+          </li>
+          {% for post in blog_section.pages | slice(end=1) %}
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div><strong>Neuester Beitrag</strong><a class="instant" href="{{ post.permalink }}">{{ post.title }}</a></div>
+          </li>
           {% endfor %}
         </ul>
       </aside>
     </section>
 
-    {# ───────────── Recent posts ───────────── #}
-    {% set blog_section = get_section(path="blog/_index.md") %}
-    <section class="recent" aria-labelledby="recent-title">
-      <div class="section-head with-link">
-        <div>
-          <p class="section-kicker"><span class="spark" aria-hidden="true">✦</span> Frisch aufgeschrieben</p>
-          <h2 id="recent-title">Was zuletzt passiert ist.</h2>
-        </div>
-        <a class="soft-link instant" href="{{ get_url(path='/blog') }}">Alle Beiträge <span aria-hidden="true">→</span></a>
+    <section class="block" aria-labelledby="apps-title">
+      <div class="block-head">
+        <h2 id="apps-title">Apps</h2>
+        <a class="more instant" href="{{ get_url(path='/apps') }}">Alle Details</a>
       </div>
-      <div class="recent-grid">
-        {% for post in blog_section.pages | slice(end=4) %}
-        <a class="recent-card instant" href="{{ post.permalink }}">
-          <time datetime="{{ post.date | date(format='%Y-%m-%d') }}">{{ post.date | date(format='%d.%m.%Y') }}</time>
-          <span class="recent-title">{{ post.title }}</span>
-          <span class="recent-meta">{{ origin::badge(page=post, linked=false) }}<span class="recent-arrow" aria-hidden="true">→</span></span>
-        </a>
-        {% endfor %}
+      <div class="app-grid">
+        <article class="app">
+          <div class="app-top">
+            <img src="{{ get_url(path='images/fokusfuchs/app-icon.png') }}" width="1024" height="1024" alt="" loading="lazy">
+            <div>
+              <h3>Fokusfuchs</h3>
+              <p class="app-sub">Üben für Schule und Konzentration</p>
+            </div>
+          </div>
+          <p>Zahlen in Fremdsprachen, Handschrift mit dem Apple Pencil, Comics und Konzentrationsübungen. Mit lokalen Profilen und sichtbarem Fortschritt.</p>
+          <dl class="facts">
+            <div><dt>Status</dt><dd>Im App Store, kostenlos</dd></div>
+            <div><dt>Geräte</dt><dd>iPhone und iPad ab iOS 26</dd></div>
+            <div><dt>Daten</dt><dd>Kein Konto, keine Werbung, kein Tracking</dd></div>
+          </dl>
+          <div class="app-links">
+            <a class="btn btn-primary" href="https://apps.apple.com/ch/app/fokusfuchs/id6799122095">App Store</a>
+            <a class="btn btn-quiet instant" href="{{ get_url(path='/fokusfuchs-ios/') }}">Produktseite</a>
+          </div>
+        </article>
+
+        <article class="app">
+          <div class="app-top">
+            <img src="{{ get_url(path='images/m-note/app-icon.png') }}" width="1024" height="1024" alt="" loading="lazy">
+            <div>
+              <h3>M-Note</h3>
+              <p class="app-sub">Notizen als eigene Markdown-Dateien</p>
+            </div>
+          </div>
+          <p>Schreiben, suchen und lesen in einer nativen Oberfläche. Jede Notiz bleibt eine Markdown-Datei in iCloud Drive, dazu Anhänge und Sprachnotizen.</p>
+          <dl class="facts">
+            <div><dt>Status</dt><dd>In TestFlight-Entwicklung</dd></div>
+            <div><dt>Geräte</dt><dd>iPhone und iPad ab iOS 27</dd></div>
+            <div><dt>Daten</dt><dd>Eigene Dateien in iCloud Drive</dd></div>
+          </dl>
+          <div class="app-links">
+            <a class="btn btn-primary instant" href="{{ get_url(path='/m-note/') }}">Mehr zu M-Note</a>
+            <a class="btn btn-quiet instant" href="{{ get_url(path='/blog/m-note-markdown-und-sprachnotizen/') }}">Entwicklungsbericht</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    {# ───────────── Directory ───────────── #}
-    <section class="directory" aria-labelledby="directory-title">
-      <div class="section-head">
-        <p class="section-kicker"><span class="spark" aria-hidden="true">✦</span> Zum Stöbern</p>
-        <h2 id="directory-title">Wo möchtest du weiterlesen?</h2>
+    <section class="block" aria-labelledby="recent-title">
+      <div class="block-head">
+        <h2 id="recent-title">Neue Beiträge</h2>
+        <a class="more instant" href="{{ get_url(path='/blog') }}">Alle Beiträge</a>
       </div>
-      <div class="tile-grid">
+      <ul class="rows">
+        {% for post in blog_section.pages | slice(end=5) %}
+        <li>
+          <a class="row instant" href="{{ post.permalink }}">
+            <time datetime="{{ post.date | date(format='%Y-%m-%d') }}">{{ post.date | date(format='%d.%m.%Y') }}</time>
+            <span class="row-title">{{ post.title }}</span>
+            <span class="row-end">{{ origin::badge(page=post, linked=false) }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="block" aria-labelledby="areas-title">
+      <div class="block-head">
+        <h2 id="areas-title">Bereiche</h2>
+      </div>
+      <div class="areas">
         {% for item in config.extra.sections %}
           {% if not item.is_external %}
           {% set item_base = item.path | trim_start_matches(pat="/") %}
-          {% set section_path = item_base ~ "/_index.md" %}
-          {% set nav_section = get_section(path=section_path, metadata_only=true) %}
-          <a class="tile tile-{{ loop.index }} instant" href="{{ get_url(path=item.path) }}">
-            <span class="tile-label">{{ item.name }}</span>
-            <span class="tile-text">{{ nav_section.extra.subtitle | default(value=nav_section.description) | default(value=nav_section.title) }}</span>
-            <span class="tile-arrow" aria-hidden="true">→</span>
+          {% set nav_section = get_section(path=item_base ~ "/_index.md", metadata_only=true) %}
+          <a class="area instant" href="{{ get_url(path=item.path) }}">
+            <strong>{{ item.name }}</strong>
+            <span>{{ nav_section.extra.subtitle | default(value=nav_section.description) }}</span>
           </a>
           {% endif %}
         {% endfor %}
       </div>
     </section>
 
-    {# ───────────── Goodbye ───────────── #}
-    <footer class="goodbye">
-      <p class="goodbye-line">Danke, dass du hier warst. <span class="handwritten">Bis bald!</span></p>
-      <div class="goodbye-meta">
-        <span>© 2026 Stefan Moser · mit Sorgfalt gebaut in der Schweiz</span>
-        <span class="goodbye-actions">
-          <a href="https://github.com/Melfelf" target="_blank" rel="noreferrer noopener">GitHub ↗</a>
-          {% if not config.extra.force_theme %}
-          {% set moon_icon = load_data(path="icon/moon.svg") %}
-          {% set sun_icon = load_data(path="icon/sun.svg") %}
-          <button id="theme-toggle" aria-label="Hell oder dunkel">
-            <span class="moon-icon">{{ moon_icon | safe }}</span>
-            <span class="sun-icon">{{ sun_icon | safe }}</span>
-          </button>
-          {% endif %}
-        </span>
+    <section class="ai-note" aria-labelledby="ai-title">
+      <h2 id="ai-title">Zur Entstehung der Texte</h2>
+      <p>{{ section.extra.ai_note }}</p>
+      <a class="more instant" href="{{ get_url(path='@/text-herkunft.md') }}">Kennzeichnung erklärt</a>
+    </section>
+
+    <footer class="home-foot">
+      <div class="foot-name">
+        <strong>{{ section.extra.name }}</strong>
+        <span>{{ section.extra.bio }}</span>
+      </div>
+      <div class="foot-links">
+        {% for link in section.extra.links %}
+        <a href="{{ link.url }}" {% if link.icon != "email" %}target="_blank" rel="noreferrer noopener"{% endif %}>{{ link.name }}</a>
+        {% endfor %}
+        {% if not config.extra.force_theme %}
+        {% set moon_icon = load_data(path="icon/moon.svg") %}
+        {% set sun_icon = load_data(path="icon/sun.svg") %}
+        <button id="theme-toggle" aria-label="Farbschema wechseln">
+          <span class="moon-icon">{{ moon_icon | safe }}</span>
+          <span class="sun-icon">{{ sun_icon | safe }}</span>
+        </button>
+        {% endif %}
       </div>
     </footer>
   </main>
@@ -229,14 +170,5 @@
 {% endblock content %}
 
 {% block script %}
-<script>
-  (function () {
-    var el = document.querySelector('[data-greeting]');
-    if (!el) return;
-    var h = new Date().getHours();
-    var hello = h < 5 ? 'Noch wach? Schön' : h < 11 ? 'Guten Morgen, schön' : h < 18 ? 'Grüezi, schön' : h < 23 ? 'Guten Abend, schön' : 'Noch wach? Schön';
-    el.textContent = hello + ', dass du da bist.';
-  })();
-</script>
 <script src="{{ get_url(path='js/lightense.min.js') }}"></script>
 {% endblock script %}

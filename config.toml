@@ -56,7 +56,7 @@ force_theme = false # false | "light" | "dark"
 footer_copyright = "© 2025–2026 Stefan Moser"
 footer_credits = false # Whether to show "Built with zola and serene" in footer
 
-not_found_error_text = "Hoppla, diese Seite gibt es (noch) nicht."
+not_found_error_text = "Seite nicht gefunden"
 not_found_recover_text = "Zurück zur Startseite"
 
 reaction = false # Whether to enable anonymous emoji reactions (Note: You need to set up a working api endpoint to enable this feature)

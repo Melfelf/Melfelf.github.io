@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "IT Pro"
-subtitle = "Aus dem Maschinenraum: Azure, Intune und Automatisierung, so erklärt, dass es auch am Montagmorgen noch hilft."
+subtitle = "Technische Beiträge zu Azure, Endpoint Management, Infrastruktur und Automatisierung."
 
 date_format = "%b %-d, %Y at %H:%M"
 

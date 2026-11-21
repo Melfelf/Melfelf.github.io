@@ -11,7 +11,7 @@ generate_feeds = true
 lang = "en"
 
 title = "AI Notes"
-subtitle = "Ehrliche Notizen zu AI: wo sie wirklich hilft, wo sie stolpert und was das für unsere Arbeit bedeutet."
+subtitle = "Notizen zu AI: praktische Nutzung, Experimente und Grenzen."
 
 date_format = "%b %-d, %Y at %H:%M"
 
