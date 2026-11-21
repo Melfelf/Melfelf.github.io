@@ -40,8 +40,8 @@
     </section>
 
     <section class="status-strip" aria-label="Aktueller Stand">
-      <div><span class="dot dot-live" aria-hidden="true"></span><strong>Fokusfuchs 2.3</strong><span>im App Store</span></div>
-      <div><span class="dot dot-beta" aria-hidden="true"></span><strong>M-Note</strong><span>in TestFlight</span></div>
+      <div><span class="dot dot-live" aria-hidden="true"></span><strong>Fokusfuchs 2.3</strong><span>im App Store · 2.4 im Test</span></div>
+      <div><span class="dot dot-beta" aria-hidden="true"></span><strong>M-Note 0.52.2</strong><span>interne TestFlight-Beta</span></div>
       {% for post in blog_section.pages | slice(end=1) %}
       <a class="instant" href="{{ post.permalink }}"><span class="dot" aria-hidden="true"></span><strong>Neu im Blog</strong><span>{{ post.title }}</span></a>
       {% endfor %}
@@ -102,7 +102,7 @@
           </div>
           <p>Jede Notiz bleibt eine eigene Markdown-Datei in iCloud Drive. Schreiben, suchen, lesen und Sprachnotizen festhalten, nativ auf iPhone und iPad.</p>
           <ul class="chips">
-            <li>Markdown</li><li>Eigene Dateien</li><li>In TestFlight</li><li>Ab iOS 27</li>
+            <li>Markdown</li><li>Eigene Dateien</li><li>Suche mit Fundstelle</li><li>Beta ab iOS 27</li>
           </ul>
           <div class="app-links">
             <a class="btn btn-primary instant" href="{{ get_url(path='/m-note/') }}">M-Note kennenlernen</a>

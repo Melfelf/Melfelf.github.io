@@ -6,7 +6,7 @@ template = "prose.html"
 lang = "de"
 +++
 
-**TestFlight-Entwicklung · letzter bestätigter Upload: 0.23.1 (Build 53), 22. September 2026**
+**Interne TestFlight-Beta · aktueller Stand: 0.52.2 (Build 99), 21. November 2026**
 
 ![M-Note App-Icon](/images/m-note/app-icon.png)
 
@@ -18,9 +18,9 @@ Der Dateiname ist der Titel. Im Dokument steht dein Markdown, ohne automatisch e
 
 ## Schreiben und Lesen mit Platz für den Inhalt
 
-Die Notizliste zeigt Inhaltsvorschauen und bietet Suche und Sortierung. Auf dem iPad bleibt sie neben dem Dokument erreichbar. Die separate Leseansicht stellt Überschriften, Listen, Zitate und Code dar. Beim Wechsel zur Anzeige wird der Markdown-Quelltext nicht umgeschrieben.
+Die Notizliste zeigt Inhaltsvorschauen und bietet Suche und Sortierung. Bei einer Suche zeigt die Vorschau direkt die passende Stelle im Text. Auf dem iPad bleibt die Liste neben dem Dokument erreichbar. Die separate Leseansicht stellt Überschriften, Listen, Zitate und Code dar. Beim Wechsel zur Anzeige wird der Markdown-Quelltext nicht umgeschrieben.
 
-Das aktuelle Refinement richtet Titel, Text und Anhänge auf eine gemeinsame lesbare Breite aus. Doppelte Aktionen in der Seitenleiste entfallen. Light und Dark Mode folgen dem System.
+Titel, Text und Anhänge stehen auf einer gemeinsamen lesbaren Breite. Light und Dark Mode folgen dem System. Wer es ruhiger mag, wählt das monochrome Erscheinungsbild «Graphit». Auf dem iPhone lässt sich die Tastatur im Editor per Taste ausblenden.
 
 ## Mehr als getippter Text
 
@@ -34,11 +34,17 @@ Die AI-Verarbeitung erfolgt ausserhalb des Geräts. Sie ist damit eine andere Da
 
 ## Wo M-Note heute steht
 
-Version 0.23.1 (Build 53) wurde am 22. September 2026 erfolgreich zu App Store Connect hochgeladen. Apple bestätigte die Verarbeitung des Pakets. Die Verfügbarkeit in TestFlight und die Gruppenzuweisung sind noch nicht bestätigt. Ein Upload ist keine öffentliche App-Store-Freigabe.
+M-Note ist in einer internen TestFlight-Beta. Der aktuelle Stand ist Version 0.52.2 (Build 99) vom 21. November 2026. M-Note ist noch nicht öffentlich im App Store erhältlich.
 
-Der Build verbessert den Start von Live-Gesprächen und begrenzt parallele Nutzung. Ein fehlgeschlagener leerer Start kann direkt wiederholt werden; Thema und Persona bleiben dabei erhalten. Diese Kapazitätsgrenzen sind keine Aussage über ein finanzielles Nutzungslimit.
+Neu in den letzten Builds:
 
-Die iPad-App lässt sich auch auf Macs mit Apple-Chip ausführen. Vor einem öffentlichen Release stehen zusätzliche Prüfungen der iCloud-Synchronisation, des Dateizugriffs und der Watch-Übertragung auf angemeldeten und gekoppelten Geräten an. M-Note ist noch nicht öffentlich im App Store erhältlich.
+- **Suche mit Fundstelle.** Die Vorschau in der Notizliste zeigt den Ausschnitt, in dem der Suchbegriff vorkommt.
+- **Aufnahmequalität auf einen Blick.** Neben den Anhängen steht eine Einschätzung als «Gut», «Brauchbar» oder «Schlecht». Beim Antippen gibt es konkrete Hinweise.
+- **Klarerer Einstieg.** Der erste Start funktioniert auch ohne iCloud Drive, die Schnellaktionen sind beschriftet.
+- **Einstellungen auf allen Geräten.** Eigene Prompts, Vorlagen, Darstellung und weitere Einstellungen gleichen sich über iCloud ab.
+- **Graphit und Tastatur.** Ein monochromes Erscheinungsbild und eine Taste zum Ausblenden der Tastatur auf dem iPhone.
+
+Die iPad-App lässt sich auch auf Macs mit Apple-Chip ausführen. Vor einem öffentlichen Release stehen noch Prüfungen der iCloud-Synchronisation mit mehreren Geräten und der Übertragung von der Apple Watch aus.
 
 [Früheren Produktbericht lesen](/blog/m-note-markdown-und-sprachnotizen/) · [Alle Apps](/apps/)
 
