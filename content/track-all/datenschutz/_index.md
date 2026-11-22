@@ -6,7 +6,7 @@ template = "prose.html"
 lang = "de"
 +++
 
-Stand 22. November 2026. Verantwortlich für Track All ist Stefan Moser. Bei Datenschutzfragen und Anfragen zu Auskunft, Berichtigung oder Löschung erreichst du ihn unter [stefan@melf.ch](mailto:stefan@melf.ch?subject=Track%20All%20Datenschutz).
+Stand 22. November 2026 für Version 1.0. Verantwortlich für Track All ist Stefan Moser. Bei Datenschutzfragen und Anfragen zu Auskunft, Berichtigung oder Löschung erreichst du ihn unter [stefan@melf.ch](mailto:stefan@melf.ch?subject=Track%20All%20Datenschutz).
 
 ## Tagebuch und Berichte
 
@@ -18,7 +18,9 @@ Mitteilungen werden auf deinem Gerät geplant. Wenn du eine Sicherung oder einen
 
 Track All liest nur die Apple-Health-Kategorien, die du erlaubst. Je nach Auswahl sind das Gewicht, Schritte, Schlaf und Trainings. Importkopien werden auf dem Gerät gespeichert und lassen sich in Track All entfernen. Die App schreibt keine Daten in Apple Health.
 
-Wenn du den angebotenen iCloud-Abgleich ausdrücklich aktivierst, speichert Apple Mahlzeiten, Wasser, manuell erfasstes Gewicht, Favoriten, Entscheidungen, manuelle Alltagseinträge, Notizen und Hypothesen in deinem privaten iCloud-Bereich. Ernährungsziele werden über Apples iCloud-Schlüsselwertspeicher abgeglichen. Deinen privaten iCloud-Inhalt kann Stefan Moser nicht einsehen. Das Ausschalten beendet den Abgleich nach einem vollständigen Neustart. Es löscht bereits in iCloud gespeicherte Daten nicht. Apple-Health-Importkopien sind vom iCloud-Abgleich ausgeschlossen.
+Wenn du den iCloud-Abgleich ausdrücklich aktivierst, synchronisiert Track All Entscheidungen, To-dos, Ideen und Notizen über Apples private iCloud-Datenbank. Ernährung, Wasser, Gewicht, Ernährungsziele, Alltagseinträge, Beobachtungen und Apple-Health-Importkopien bleiben auf dem Gerät. Stefan Moser kann deinen privaten iCloud-Inhalt nicht einsehen.
+
+Das Ausschalten beendet den Abgleich nach einem vollständigen Neustart. Bereits gespeicherte iCloud-Kopien bleiben erhalten. Das gilt auch für Daten, die mit einer früheren Beta synchronisiert wurden.
 
 ## Produkt- und Wetterabfragen
 
