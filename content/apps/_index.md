@@ -19,7 +19,7 @@ Comics zeichnen, Handschrift üben, Schulübungen und Konzentrationstraining. Lo
 
 Im App Store ist Version 2.3 erhältlich. Sie bringt die Zahlenreise: Zahlwörter auf Französisch, Italienisch oder Englisch hören und im Quiz zuordnen. Unter «Heute» sind die Übungen schneller zu finden. Dazu gehören die Comic-Werkstatt aus Version 2.2 und das Handschrifttraining mit Apple Pencil aus Version 2.0.
 
-Version 2.4 ist in der internen Testphase. Sie bringt unter anderem «Fuchs spricht»: Anleitungen, Rückmeldungen und Lesetexte können vorgelesen werden. Wann 2.4 im App Store erscheint, steht noch nicht fest.
+Das nächste Update 2.5.0 bringt «Fuchs spricht». Du kannst Anleitungen, Rückmeldungen und Lesetexte mit vier Fuchsstimmen anhören. Für neu erzeugte Sprache brauchst du ein Gerät mit mindestens 8 GB Arbeitsspeicher und einen einmaligen WLAN-Download von rund 1,7 GB. Auf «Heute» gibt es einen zentralen Lautsprecher und die Stufen heissen «leicht», «mittel» und «knifflig».
 
 [App kennenlernen](/fokusfuchs-ios/) · [Im App Store](https://apps.apple.com/ch/app/fokusfuchs/id6799122095) · [Comic-Werkstatt](/blog/fokusfuchs-2-2-comic-werkstatt/)
 
