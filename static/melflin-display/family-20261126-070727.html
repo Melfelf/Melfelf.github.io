@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melflin · Familienkalender</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #111; background: white; -webkit-font-smoothing: none; }
+main { width: 800px; height: 480px; margin: 0 auto; padding: 11px 16px 9px; display: grid;
+        grid-template-rows: 60px minmax(0,1fr) 23px; gap: 8px; }
+header, footer, .meta, .buttons { display: flex; align-items: center; justify-content: space-between; }
+header { border-bottom: 3px solid; padding-bottom: 6px; }
+h1 { margin: 0; font-size: 30px; line-height: 1.05; }
+.date { margin-top: 2px; font-size: 16px; }
+.buttons { gap: 14px; font-size: 14px; }
+.buttons b { display: block; font-size: 16px; }
+section { display: grid; grid-auto-flow: row; grid-template-columns: repeat(2,minmax(0,1fr));
+           grid-template-rows: repeat(4,minmax(0,1fr)); column-gap: 24px; }
+article { min-width: 0; padding: 5px 0 4px; border-bottom: 1px solid; }
+.meta { gap: 6px; font-size: 14px; line-height: 17px; }
+.subject { margin-top: 3px; font-size: 20px; font-weight: 700; line-height: 1.08;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
+.location { margin-top: 2px; font-size: 14px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+footer { border-top: 2px solid; padding-top: 4px; font-size: 12px; }
+p { grid-column: 1/-1; font-size: 23px; font-weight: 700; }
+</style></head><body><main>
+<header><div><h1>Familienkalender</h1><div class="date">Donnerstag, 26.11.2026</div></div>
+<div class="buttons" aria-label="Tastenbelegung"><span data-feedback="seen">Weiss 1<b>Gesehen</b></span>
+<span data-feedback="snooze">Weiss 2<b>Später</b></span></div></header>
+<section><article><div class='meta'><span>Heute · Do 26.11. 20:00</span><b></b></div><div class='subject'>Türli duschen</div><div class='location'></div></article><article><div class='meta'><span>Morgen · Fr 27.11. 10:15</span><b>Sandra</b></div><div class='subject'>Einführung in die archäologischen Wissenschaften (433617-HS2026-0)</div><div class='location'>Hörraum 114, Hauptgebäude H4</div></article><article><div class='meta'><span>Morgen · ganztägig</span><b>Arthur</b></div><div class='subject'>Rückmeldung Schulbeginn nach Lichterfest</div><div class='location'>Basisstufe</div></article><article><div class='meta'><span>Sa 28.11. 12:00</span><b>Familie</b></div><div class='subject'>Arthur Geburtstagsfest??</div><div class='location'></div></article><article><div class='meta'><span>So 29.11. 20:00</span><b></b></div><div class='subject'>Türli duschen</div><div class='location'></div></article><article><div class='meta'><span>Mo 30.11. 17:30</span><b>Arthur</b></div><div class='subject'>Lichterfest mit Basisstufe Burgund</div><div class='location'>Basisstufe / Waldplatz</div></article><article><div class='meta'><span>Mo 30.11. 18:00</span><b>Familie</b></div><div class='subject'>Fr 4.- Taschengeld für Arthur</div><div class='location'></div></article><article><div class='meta'><span>Di 01.12. 10:15</span><b>Sandra</b></div><div class='subject'>Handel und Transport im Mittelalter (520646-HS2026-0)</div><div class='location'>Seminarraum F -106, Hörraumgebäude Unitobler</div></article></section>
+<footer><b>+17 weitere Termine</b><span>Stand 26.11. 08:07</span></footer>
+</main></body></html>
