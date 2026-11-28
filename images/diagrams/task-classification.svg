@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+    <linearGradient id="trivialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="autoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="humanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8fafc"/>
+  <rect width="800" height="100" fill="#1e293b"/>
+  <text x="400" y="60" text-anchor="middle" fill="white" font-size="28" font-weight="bold" font-family="system-ui">Smart Task Execution: Task-Klassifikation</text>
+
+  <!-- Task Input -->
+  <rect x="275" y="140" width="250" height="50" rx="10" fill="#64748b" filter="url(#shadow)"/>
+  <text x="400" y="170" text-anchor="middle" fill="white" font-size="16" font-family="system-ui">📝 Input: Task-Text</text>
+
+  <!-- Arrow down -->
+  <path d="M400 200 L400 230" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+  <!-- Classification Node -->
+  <rect x="275" y="240" width="250" height="60" rx="15" fill="#8b5cf6" filter="url(#shadow)"/>
+  <text x="400" y="275" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="system-ui">🧠 Classification Engine</text>
+
+  <!-- Arrow split -->
+  <path d="M400 310 L200 370" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M400 310 L400 370" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M400 310 L600 370" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Three paths -->
+  <!-- TRIVIAL -->
+  <rect x="100" y="390" width="200" height="80" rx="10" fill="url(#trivialGrad)" filter="url(#shadow)"/>
+  <text x="200" y="425" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="system-ui">✅ TRIVIAL</text>
+  <text x="200" y="445" text-anchor="middle" fill="white" font-size="11" font-family="system-ui">Backup, Review, Reflection</text>
+
+  <!-- AUTO -->
+  <rect x="300" y="390" width="200" height="80" rx="10" fill="url(#autoGrad)" filter="url(#shadow)"/>
+  <text x="400" y="425" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="system-ui">⚙️ AUTO</text>
+  <text x="400" y="445" text-anchor="middle" fill="white" font-size="11" font-family="system-ui">Scripts, Cron, Monitoring</text>
+
+  <!-- HUMAN -->
+  <rect x="500" y="390" width="200" height="80" rx="10" fill="url(#humanGrad)" filter="url(#shadow)"/>
+  <text x="600" y="425" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="system-ui">📱 HUMAN</text>
+  <text x="600" y="445" text-anchor="middle" fill="white" font-size="11" font-family="system-ui">Installation, Entscheidungen</text>
+
+  <!-- Results -->
+  <path d="M200 480 L200 510 L300 510" stroke="#10b981" stroke-width="2"/>
+  <path d="M400 480 L400 530" stroke="#3b82f6" stroke-width="2"/>
+  <path d="M600 480 L600 510 L500 510" stroke="#f59e0b" stroke-width="2"/>
+
+  <rect x="220" y="520" width="160" height="35" rx="8" fill="#10b981"/>
+  <text x="300" y="543" text-anchor="middle" fill="white" font-size="12" font-family="system-ui">✅ Auto-Complete</text>
+
+  <rect x="340" y="540" width="120" height="35" rx="8" fill="#3b82f6"/>
+  <text x="400" y="563" text-anchor="middle" fill="white" font-size="12" font-family="system-ui">⚙️ Script</text>
+
+  <rect x="420" y="520" width="160" height="35" rx="8" fill="#f59e0b"/>
+  <text x="500" y="543" text-anchor="middle" fill="white" font-size="12" font-family="system-ui">📱 Telegram</text>
+
+</svg>
